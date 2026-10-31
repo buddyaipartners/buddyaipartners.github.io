@@ -999,7 +999,7 @@
     /* ---------- Reveal ---------- */
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
     .reveal.in-view,
-    .page-view.active .reveal { opacity: 1; transform: none; }
+    .page-view.active .reveal { opacity: 1 !important; transform: none !important; }
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
       .marquee-track { animation: none; }
@@ -1640,12 +1640,12 @@
             </div>
           </article>
           <article class="card card-hover cert-card" data-cert-index="3">
-            <figure class="cert-figure"><img src="images/certs/cert-google-genai.webp" alt="Google Cloud &amp; Google Skills Certificate of Completion — Generative AI Learning Achievement earned by Rahul Kumar Dhal" width="1080" height="713" loading="eager" decoding="async" /></figure>
+            <figure class="cert-figure"><img src="images/certs/cert-google-genai.jpg" alt="Google Cloud &amp; Google Skills Certificate of Completion — Generative AI Learning Achievement earned by Rahul Kumar Dhal" width="1080" height="713" loading="eager" decoding="async" style="cursor:zoom-in" onclick="window.open('images/certs/cert-google-genai.jpg','_blank')" /></figure>
             <div class="cert-cap">
               <span class="cert-issuer">Google Cloud × Google Skills</span>
               <b>Google Cloud Generative AI Learning Achievement</b>
-              <small>8 learning paths · agents, governance, security &amp; model armor · issued Oct 2026</small>
-              <a class="cert-verify" href="https://www.skills.google/credentials" target="_blank" rel="noopener noreferrer">Credential GCS-GAI-2026-1001-RKD · Verify on skills.google ↗</a>
+              <small>8 learning paths · Gen AI Apps, Agents, Model Armor, Security &amp; Governance · signed by Thomas Kurian (CEO, Google Cloud) · issued Oct 1, 2026</small>
+              <a class="cert-verify" href="https://skills.google/credentials" target="_blank" rel="noopener noreferrer">Credential GCS-GAI-2026-1001-RKD · Verify on skills.google ↗</a>
             </div>
           </article>
         </div>
@@ -1948,7 +1948,7 @@
           <p class="eyebrow center">Searchable directory</p>
           <h2 class="display-l">AI ecosystem <span class="gold-i">directory.</span></h2>
         </div>
-        <div id="ecoDirectory" class="card reveal" style="padding:clamp(1.1rem,2.4vw,1.6rem)">
+        <div id="ecoDirectory" class="card" style="padding:clamp(1.1rem,2.4vw,1.6rem);opacity:1;visibility:visible;">
           <div style="display:flex;justify-content:space-between;align-items:center;gap:.8rem;flex-wrap:wrap;margin-bottom:.9rem">
             <p class="small t-muted">Logos via Simple Icons CDN (CC0 · trademarks with owners). Badges show usage in our work — no certifications claimed, no model rankings.</p>
             <p class="eco-count" id="ecoCount" aria-live="polite">104 of 104 shown</p>
