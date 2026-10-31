@@ -502,6 +502,104 @@
     .cert-strip .mini-tag { font-family: var(--font-ui); font-size: .68rem; font-weight: 600; letter-spacing: .05em; color: var(--sky-soft); border: 1px solid var(--line-strong); background: rgba(56, 189, 248, .07); border-radius: 999px; padding: .38rem .8rem; display: inline-flex; align-items: center; gap: .4rem; }
     .cert-strip .mini-tag::before { content: "✔"; color: var(--sky); font-size: .7rem; }
 
+    /* ---------- Verified credentials auto-carousel & 3D tilt ---------- */
+    .cert-controls {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: .8rem; margin-top: 1.2rem; margin-bottom: .6rem; flex-wrap: wrap;
+    }
+    .cert-mode-switches { display: inline-flex; gap: .45rem; }
+    .cert-mode-btn {
+      font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      padding: .45rem .95rem; border-radius: 999px; border: 1px solid var(--line-strong); background: rgba(14, 32, 60, .6);
+      color: var(--body); transition: all .25s ease; cursor: pointer;
+    }
+    .cert-mode-btn:hover { border-color: var(--sky); color: #fff; }
+    .cert-mode-btn.active {
+      background: linear-gradient(135deg, #FCE07A, #EAB308); color: #1a1202; border-color: transparent;
+      box-shadow: 0 4px 18px rgba(234, 179, 8, .3);
+    }
+    .cert-nav-actions { display: inline-flex; align-items: center; gap: .6rem; }
+    .cert-arrow-btn {
+      width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line-strong);
+      background: rgba(8, 20, 42, .8); color: var(--ink); display: grid; place-items: center;
+      transition: all .25s ease; cursor: pointer; font-size: .85rem;
+    }
+    .cert-arrow-btn:hover { border-color: var(--sky); background: rgba(56, 189, 248, .2); color: #fff; }
+    .cert-dots { display: inline-flex; gap: .35rem; align-items: center; }
+    .cert-dot {
+      width: 8px; height: 8px; border-radius: 999px; background: rgba(255, 255, 255, .25);
+      border: 0; padding: 0; transition: all .3s ease; cursor: pointer;
+    }
+    .cert-dot.active { width: 22px; background: var(--sky); box-shadow: 0 0 10px var(--sky); }
+    .cert-pause-btn { font-size: .65rem; padding: .35rem .7rem; }
+
+    /* Carousel Mode on .cert-grid.carousel-active */
+    .cert-grid.carousel-active {
+      display: grid; grid-template-columns: 1fr; max-width: 46rem; margin-inline: auto;
+    }
+    .cert-grid.carousel-active .cert-card {
+      display: none;
+    }
+    .cert-grid.carousel-active .cert-card.active-cert {
+      display: flex; animation: certSlideIn .5s cubic-bezier(.16, 1, .3, 1);
+    }
+    @keyframes certSlideIn {
+      from { opacity: 0; transform: scale(.96) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .cert-card {
+      transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s ease;
+    }
+    .cert-card:hover { transform: translateY(-4px); }
+    .cert-figure img { transition: transform .4s var(--ease); }
+    .cert-card:hover .cert-figure img { transform: scale(1.02); }
+
+    /* ---------- Intelligence & Dispatch Blog ---------- */
+    .blog-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.2rem; margin-bottom: 1.4rem; }
+    .blog-filter-btn {
+      font-family: var(--font-ui); font-size: .72rem; font-weight: 600; letter-spacing: .05em;
+      padding: .45rem .9rem; border-radius: 999px; border: 1px solid var(--line);
+      background: rgba(14, 32, 60, .45); color: var(--body); cursor: pointer; transition: all .25s ease;
+    }
+    .blog-filter-btn:hover { border-color: var(--line-strong); color: #fff; }
+    .blog-filter-btn.active { background: rgba(56, 189, 248, .15); border-color: var(--sky); color: var(--sky-soft); box-shadow: 0 0 15px rgba(56, 189, 248, .2); }
+    .blog-grid { display: grid; gap: 1.3rem; grid-template-columns: 1fr; }
+    @media (min-width: 768px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+    .blog-card {
+      background: linear-gradient(165deg, rgba(14, 32, 60, .6), rgba(4, 10, 22, .85));
+      border: 1px solid var(--line); border-radius: 16px; padding: 1.4rem 1.45rem;
+      display: flex; flex-direction: column; justify-content: space-between; gap: .9rem;
+      transition: transform .3s var(--ease), border-color .3s ease, box-shadow .3s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px); border-color: var(--line-strong);
+      box-shadow: 0 18px 45px rgba(2, 6, 16, .6), 0 0 25px rgba(56, 189, 248, .12);
+    }
+    .blog-meta-row { display: flex; align-items: center; justify-content: space-between; gap: .6rem; }
+    .blog-tag {
+      font-family: var(--font-mono); font-size: .62rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--sky); padding: .22rem .55rem;
+      border-radius: 6px; background: rgba(56, 189, 248, .12); border: 1px solid rgba(56, 189, 248, .25);
+    }
+    .blog-tag.gold { color: #fce07a; background: rgba(234, 179, 8, .12); border-color: rgba(234, 179, 8, .3); }
+    .blog-tag.emerald { color: #5fe3a1; background: rgba(16, 185, 129, .12); border-color: rgba(16, 185, 129, .3); }
+    .blog-time { font-family: var(--font-mono); font-size: .65rem; color: var(--muted); }
+    .blog-card h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--ink); line-height: 1.28; }
+    .blog-card p { font-size: .84rem; line-height: 1.6; color: var(--body); }
+    .blog-foot { display: flex; align-items: center; justify-content: space-between; padding-top: .6rem; border-top: 1px solid rgba(255, 255, 255, .06); }
+    .blog-author { font-size: .72rem; color: var(--muted); font-family: var(--font-ui); }
+    .blog-expand-btn {
+      font-family: var(--font-ui); font-size: .74rem; font-weight: 600; color: var(--sky-soft);
+      background: none; border: 0; display: inline-flex; align-items: center; gap: .3rem; cursor: pointer;
+    }
+    .blog-expand-btn:hover { color: #fff; }
+    .blog-drawer {
+      margin-top: .6rem; padding: 1rem 1.1rem; border-radius: 10px;
+      background: rgba(3, 7, 16, .7); border: 1px solid var(--line);
+      font-size: .8rem; line-height: 1.65; color: var(--body); display: none;
+    }
+    .blog-drawer.open { display: block; animation: pageIn .3s var(--ease); }
+
     /* ---------- Stats ---------- */
     .stat-band { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; grid-template-columns: 1fr; }
     @media (min-width: 760px) { .stat-band { grid-template-columns: repeat(3, 1fr); } }
@@ -1442,8 +1540,27 @@
           <h2 class="display-l">Certificates &amp; <span class="gold-i">proof of learning.</span></h2>
           <p class="lead" style="margin-top:.5rem">Industry certifications behind the delivery practice — each one verifiable with the credential ID shown.</p>
         </div>
-        <div class="cert-grid reveal" style="margin-top:1.2rem">
-          <article class="card card-hover cert-card">
+
+        <div class="cert-controls reveal">
+          <div class="cert-mode-switches" role="tablist" aria-label="Credentials display mode">
+            <button type="button" class="cert-mode-btn active" id="btnCertCarousel" onclick="setCertViewMode('carousel')">✦ Auto Showcase (3D)</button>
+            <button type="button" class="cert-mode-btn" id="btnCertGrid" onclick="setCertViewMode('grid')">Grid View (All 4)</button>
+          </div>
+          <div class="cert-nav-actions" id="certNavActions">
+            <button type="button" class="cert-arrow-btn" id="certPrevBtn" aria-label="Previous certificate" onclick="stepCert(-1)">←</button>
+            <div class="cert-dots" id="certDotsGroup" role="group" aria-label="Certificate slides">
+              <button type="button" class="cert-dot active" aria-label="Certificate 1" onclick="jumpCert(0)"></button>
+              <button type="button" class="cert-dot" aria-label="Certificate 2" onclick="jumpCert(1)"></button>
+              <button type="button" class="cert-dot" aria-label="Certificate 3" onclick="jumpCert(2)"></button>
+              <button type="button" class="cert-dot" aria-label="Certificate 4" onclick="jumpCert(3)"></button>
+            </div>
+            <button type="button" class="cert-arrow-btn" id="certNextBtn" aria-label="Next certificate" onclick="stepCert(1)">→</button>
+            <button type="button" class="ctrl cert-pause-btn" id="certAutoToggle" onclick="toggleCertAuto()">Pause</button>
+          </div>
+        </div>
+
+        <div class="cert-grid carousel-active reveal" id="credentialsGrid" style="margin-top:1.2rem">
+          <article class="card card-hover cert-card active-cert" data-cert-index="0">
             <figure class="cert-figure"><img src="images/certs/cert-knr-dme.jpg" alt="KNR Digital certificate of achievement — Google Digital Marketing &amp; E-commerce, presented to Rahul Kumar Dhal" width="1600" height="1066" loading="eager" decoding="async" /></figure>
             <div class="cert-cap">
               <span class="cert-issuer">KNR Digital · Internal</span>
@@ -1451,7 +1568,7 @@
               <small>Professional certificate track · issued Sep 2025</small>
             </div>
           </article>
-          <article class="card card-hover cert-card">
+          <article class="card card-hover cert-card" data-cert-index="1">
             <figure class="cert-figure"><img src="images/certs/cert-google-dme.webp" alt="Google Career Certificate — Google Digital Marketing &amp; E-commerce, earned by Rahul Kumar Dhal" width="1320" height="980" loading="eager" decoding="async" /></figure>
             <div class="cert-cap">
               <span class="cert-issuer">Google × Coursera</span>
@@ -1460,7 +1577,7 @@
               <span class="cert-verify">Credential RKD-GOOGLE-DME-2025 · Verified</span>
             </div>
           </article>
-          <article class="card card-hover cert-card">
+          <article class="card card-hover cert-card" data-cert-index="2">
             <figure class="cert-figure"><img src="images/certs/cert-meta-dma.jpg" alt="Meta certified digital marketing associate certificate for Rahul Kumar Dhal" width="1600" height="1244" loading="eager" decoding="async" /></figure>
             <div class="cert-cap">
               <span class="cert-issuer">Meta</span>
@@ -1469,7 +1586,7 @@
               <a class="cert-verify" href="https://www.certiport.com/" target="_blank" rel="noopener noreferrer">Verify at certiport.com ↗</a>
             </div>
           </article>
-          <article class="card card-hover cert-card">
+          <article class="card card-hover cert-card" data-cert-index="3">
             <div class="cert-sheet">
               <div class="flex between iwrap">
                 <span class="big">8</span>
@@ -1652,6 +1769,114 @@
         </div>
 
         <p class="stack-note reveal">Evidence note: case studies use anonymized operational patterns — no invented clients, metrics or certifications. Rough prototypes are labelled. Client identities in private case studies: demo on request only.</p>
+
+        <!-- ================= TECH & AI DISPATCH BLOG ================= -->
+        <div class="sec-head reveal" id="blog-dispatch" style="margin-top:3.5rem">
+          <p class="eyebrow">Intelligence &amp; Dispatch</p>
+          <h2 class="display-l">AI, Cybersecurity &amp; <span class="gold-i">Growth Field Notes.</span></h2>
+          <p class="lead" style="margin-top:.6rem">Technical breakdowns, open-source model benchmarks, prompt-injection defense, and CRM growth hacks — written from real production deployments.</p>
+        </div>
+
+        <div class="blog-filters reveal" role="tablist" aria-label="Dispatch categories">
+          <button type="button" class="blog-filter-btn active" data-blog-cat="all" onclick="filterBlogPosts('all')">All Dispatches (4)</button>
+          <button type="button" class="blog-filter-btn" data-blog-cat="growth" onclick="filterBlogPosts('growth')">✦ Growth &amp; Pricing Hacks</button>
+          <button type="button" class="blog-filter-btn" data-blog-cat="security" onclick="filterBlogPosts('security')">✦ Cybersecurity &amp; Defense</button>
+          <button type="button" class="blog-filter-btn" data-blog-cat="crm" onclick="filterBlogPosts('crm')">✦ Business CRM &amp; SLAs</button>
+          <button type="button" class="blog-filter-btn" data-blog-cat="agents" onclick="filterBlogPosts('agents')">✦ AI Agent Swarms</button>
+        </div>
+
+        <div class="blog-grid reveal">
+          <!-- Article 1: ₹2,999 Shift -->
+          <article class="blog-card" data-cat="growth">
+            <div>
+              <div class="blog-meta-row">
+                <span class="blog-tag gold">Free AI Blueprint</span>
+                <span class="blog-time">4 MIN READ · NOV 2026</span>
+              </div>
+              <h3 style="margin-top:.7rem">The ₹2,999 Sovereign Setup: Why Paying $20/mo to Closed Cloud AI is Obsolete</h3>
+              <p style="margin-top:.5rem">How Indian founders and developers are replacing ₹15,000/mo SaaS bills (ChatGPT Plus, Claude Pro, Canva, Otter) with sovereign local-first cascades (Ollama + Qwen 2.5 Coder + Gemini Flash). Zero recurring fees, zero message cutoffs, 100% private.</p>
+            </div>
+            <div>
+              <div class="blog-drawer" id="blogPost1">
+                <h5 style="color:var(--sky);margin-bottom:.4rem">The Sovereign Architecture</h5>
+                <p>Most commercial AI platforms lock users into $20/mo tiers with aggressive rate cutoffs. By cascading local Ollama models with fast zero-cost cloud relays (Gemini Flash &amp; Gemma 4), you achieve 0.8s response latency and unlimited daily requests without sending proprietary business data to foreign third-party clouds.</p>
+                <div style="margin-top:.6rem;display:flex;gap:.5rem">
+                  <a class="btn btn-gold btn-sm" href="#page-contact" onclick="selectServiceAndContact('Buddy AI Starter Pack (₹2,999 One-Time — Laptop/Mobile Setup)')">Get 1-on-1 Setup (₹2,999)</a>
+                </div>
+              </div>
+              <div class="blog-foot">
+                <span class="blog-author">By Rahul Kumar Dhal</span>
+                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('blogPost1', this)">Read dispatch →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 2: Model Armor & Hacking Defense -->
+          <article class="blog-card" data-cat="security">
+            <div>
+              <div class="blog-meta-row">
+                <span class="blog-tag">Cybersecurity &amp; Defense</span>
+                <span class="blog-time">6 MIN READ · OCT 2026</span>
+              </div>
+              <h3 style="margin-top:.7rem">Model Armor &amp; Prompt Injection: Defending Customer-Facing AI Agents from Exploits</h3>
+              <p style="margin-top:.5rem">A hands-on teardown of indirect prompt injection, tool jailbreaking, and memory leaks in autonomous WhatsApp &amp; web CRM agents — and how to enforce strict deterministic guardrails before production.</p>
+            </div>
+            <div>
+              <div class="blog-drawer" id="blogPost2">
+                <h5 style="color:var(--sky);margin-bottom:.4rem">Deterministic Sanitization</h5>
+                <p>Never give an LLM raw SQL or unfettered terminal tool execution without an intermediate validator. We implement a dual-gate architecture: an inbound classifier scrubs adversarial tokens, while outbound responses pass through a strict JSON-schema policy filter to prevent prompt exfiltration.</p>
+              </div>
+              <div class="blog-foot">
+                <span class="blog-author">By Rahul Kumar Dhal</span>
+                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('blogPost2', this)">Read dispatch →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 3: CRM & Calling SLA -->
+          <article class="blog-card" data-cat="crm">
+            <div>
+              <div class="blog-meta-row">
+                <span class="blog-tag emerald">Enterprise Automation</span>
+                <span class="blog-time">5 MIN READ · OCT 2026</span>
+              </div>
+              <h3 style="margin-top:.7rem">Zero-Leak Architecture: How We Automated 18,000+ Leads for KNR Integrity</h3>
+              <p style="margin-top:.5rem">Inside the sovereign n8n + Playwright + WhatsApp engine: 12-point dedupe, ORERA compliance verification, and 14-second bilingual brochure dispatch that saved ₹1.9L+ in operational overhead.</p>
+            </div>
+            <div>
+              <div class="blog-drawer" id="blogPost3">
+                <h5 style="color:var(--sky);margin-bottom:.4rem">Eliminating the Human Bottleneck</h5>
+                <p>Speed to lead determines conversion. When a buyer submits an inquiry, our webhook parses phone numbers, runs history dedupe, cross-references ORERA project numbers, and dispatches a personalized bilingual WhatsApp brochure in under 200 ms.</p>
+              </div>
+              <div class="blog-foot">
+                <span class="blog-author">By Rahul Kumar Dhal</span>
+                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('blogPost3', this)">Read dispatch →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 4: AI Agent Swarms -->
+          <article class="blog-card" data-cat="agents">
+            <div>
+              <div class="blog-meta-row">
+                <span class="blog-tag">Agent Engineering</span>
+                <span class="blog-time">7 MIN READ · OCT 2026</span>
+              </div>
+              <h3 style="margin-top:.7rem">Engineering Autonomous Background Swarms for 24/7 Cloud Operations</h3>
+              <p style="margin-top:.5rem">How to deploy autonomous office daemons on Render or Oracle Cloud ARM that scan market trends, generate viral content, and dispatch leads even when your laptop is completely powered off.</p>
+            </div>
+            <div>
+              <div class="blog-drawer" id="blogPost4">
+                <h5 style="color:var(--sky);margin-bottom:.4rem">Decoupled Cloud Workers</h5>
+                <p>By pairing Supabase PostgreSQL with asynchronous FastAPI daemons and Baileys WhatsApp sockets, your company's digital office never sleeps. Even when you are offline, incoming inquiries are scored, qualified, and answered instantly.</p>
+              </div>
+              <div class="blog-foot">
+                <span class="blog-author">By Rahul Kumar Dhal</span>
+                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('blogPost4', this)">Read dispatch →</button>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
   </section>
@@ -3438,6 +3663,154 @@
       } catch (e) {}
     }
 
+    /* ---------- 22. Verified credentials auto-carousel & 3D tilt ---------- */
+    var certCurrentIdx = 0;
+    var certAutoTimer = null;
+    var certIsAutoPlaying = true;
+    var certMode = 'carousel';
+
+    function setCertViewMode(mode) {
+      certMode = mode;
+      var grid = document.getElementById('credentialsGrid');
+      var btnC = document.getElementById('btnCertCarousel');
+      var btnG = document.getElementById('btnCertGrid');
+      var nav = document.getElementById('certNavActions');
+      if (!grid) return;
+      if (mode === 'grid') {
+        grid.classList.remove('carousel-active');
+        if (btnC) btnC.classList.remove('active');
+        if (btnG) btnG.classList.add('active');
+        if (nav) nav.style.opacity = '0.35';
+        stopCertAuto();
+      } else {
+        grid.classList.add('carousel-active');
+        if (btnC) btnC.classList.add('active');
+        if (btnG) btnG.classList.remove('active');
+        if (nav) nav.style.opacity = '1';
+        renderCertSlide(certCurrentIdx);
+        if (certIsAutoPlaying) startCertAuto();
+      }
+    }
+
+    function renderCertSlide(idx) {
+      var cards = document.querySelectorAll('#credentialsGrid .cert-card');
+      var dots = document.querySelectorAll('#certDotsGroup .cert-dot');
+      if (!cards.length) return;
+      certCurrentIdx = (idx + cards.length) % cards.length;
+      cards.forEach(function (c, i) {
+        if (i === certCurrentIdx) {
+          c.classList.add('active-cert');
+        } else {
+          c.classList.remove('active-cert');
+        }
+      });
+      dots.forEach(function (d, i) {
+        if (i === certCurrentIdx) {
+          d.classList.add('active');
+        } else {
+          d.classList.remove('active');
+        }
+      });
+    }
+
+    function stepCert(delta) {
+      renderCertSlide(certCurrentIdx + delta);
+      if (certIsAutoPlaying) {
+        stopCertAuto();
+        startCertAuto();
+      }
+    }
+
+    function jumpCert(idx) {
+      renderCertSlide(idx);
+      if (certIsAutoPlaying) {
+        stopCertAuto();
+        startCertAuto();
+      }
+    }
+
+    function startCertAuto() {
+      stopCertAuto();
+      certAutoTimer = setInterval(function () {
+        if (certMode === 'carousel' && certIsAutoPlaying) {
+          stepCert(1);
+        }
+      }, 4500);
+    }
+
+    function stopCertAuto() {
+      if (certAutoTimer) {
+        clearInterval(certAutoTimer);
+        certAutoTimer = null;
+      }
+    }
+
+    function toggleCertAuto() {
+      certIsAutoPlaying = !certIsAutoPlaying;
+      var btn = document.getElementById('certAutoToggle');
+      if (btn) {
+        btn.textContent = certIsAutoPlaying ? 'Pause' : 'Play';
+        btn.setAttribute('aria-pressed', String(!certIsAutoPlaying));
+      }
+      if (certIsAutoPlaying) {
+        startCertAuto();
+      } else {
+        stopCertAuto();
+      }
+    }
+
+    function initCertShowcase() {
+      try {
+        renderCertSlide(0);
+        startCertAuto();
+        document.querySelectorAll('#credentialsGrid .cert-card').forEach(function (card) {
+          card.addEventListener('mousemove', function (e) {
+            var rect = card.getBoundingClientRect();
+            var x = e.clientX - rect.left - rect.width / 2;
+            var y = e.clientY - rect.top - rect.height / 2;
+            var rotateX = -(y / rect.height) * 10;
+            var rotateY = (x / rect.width) * 10;
+            card.style.transform = 'perspective(900px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) translateY(-4px)';
+          });
+          card.addEventListener('mouseleave', function () {
+            card.style.transform = '';
+          });
+        });
+      } catch (e) {}
+    }
+
+    /* ---------- 23. Tech & AI Dispatch Blog ---------- */
+    function filterBlogPosts(cat, btn) {
+      try {
+        document.querySelectorAll('.blog-filter-btn').forEach(function (b) { b.classList.remove('active'); });
+        if (btn) btn.classList.add('active');
+        var cards = document.querySelectorAll('.blog-card');
+        cards.forEach(function (card) {
+          var cCat = card.getAttribute('data-cat');
+          if (cat === 'all' || cCat === cat) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      } catch (e) {}
+    }
+
+    function toggleBlogDrawer(drawerId, btn) {
+      try {
+        var drawer = document.getElementById(drawerId);
+        if (!drawer) return;
+        var isOpen = drawer.classList.contains('open');
+        if (isOpen) {
+          drawer.classList.remove('open');
+          if (btn) btn.textContent = 'Read dispatch →';
+        } else {
+          drawer.classList.add('open');
+          if (btn) btn.textContent = 'Close dispatch ✕';
+        }
+      } catch (e) {}
+    }
+
     /* ---------- 21. Boot ---------- */
     function initApp() {
       try { renderSlide(0); } catch (e) {}
@@ -3501,6 +3874,7 @@
       try { wireLabFilter(); } catch (e) {}
       try { initReveals(); } catch (e) {}
       try { wireCopyButtons(); } catch (e) {}
+      try { initCertShowcase(); } catch (e) {}
     }
     try {
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initApp);
