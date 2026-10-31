@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Buddy AI — Digital Office & Automation Studio",
+  "version": "1.0.0",
+  "description": "Autonomous AI operator for BUDDY AI PARTNERS: 1-click social media automation, video scripts, client deal closer, and lead management.",
+  "permissions": ["sidePanel", "activeTab", "scripting", "storage", "tabs", "clipboardWrite", "notifications"],
+  "host_permissions": [
+    "http://127.0.0.1:8787/*",
+    "http://localhost:8787/*",
+    "http://localhost:3000/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Open Buddy Digital Office"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  }
+}

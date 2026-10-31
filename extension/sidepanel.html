@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Buddy — Digital Office & AI Automation</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <div class="aura" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="orb" aria-hidden="true"><span class="orb-core"></span></span>
+        <div class="brand-text">
+          <strong>BUDDY</strong>
+          <span>Digital Office</span>
+        </div>
+      </div>
+      <div class="status" id="status" title="Runtime status">
+        <span class="dot" id="statusDot"></span>
+        <span id="statusText">checking…</span>
+      </div>
+    </header>
+
+    <nav class="nav-tabs" aria-label="Workspaces">
+      <button class="tab-link active" data-view="chat" type="button">💬 Chat</button>
+      <button class="tab-link" data-view="deals" type="button">🤝 Deal Closer</button>
+      <button class="tab-link" data-view="video" type="button">🎬 AI Video</button>
+      <button class="tab-link" data-view="social" type="button">📱 Social Studio</button>
+    </nav>
+
+    <section class="controls">
+      <label class="field">
+        <span>Workspace</span>
+        <select id="clientSelect" aria-label="Client workspace">
+          <option value="buddy_ai_partners" selected>BUDDY AI PARTNERS (Parent AI Company)</option>
+          <option value="knr_integrity">KNR Integrity Real Estate (Client Zero)</option>
+          <option value="rahul_kr_dhal">Rahul Kumar Dhal (Founder Personal Brand)</option>
+        </select>
+      </label>
+
+      <label class="toggle" title="When on, Buddy queues drafts instead of taking external actions">
+        <input type="checkbox" id="dryRunToggle" checked />
+        <span class="track"><span class="thumb"></span></span>
+        <span class="toggle-label">Drafts only</span>
+      </label>
+
+      <button class="ghost" id="settingsToggle" type="button" aria-expanded="false">Settings</button>
+    </section>
+
+    <section class="settings" id="settings" hidden>
+      <label class="field">
+        <span>Buddy API</span>
+        <input id="apiUrl" type="url" value="http://127.0.0.1:8787" spellcheck="false" />
+      </label>
+      <label class="field">
+        <span>Admin token (only if the API asks)</span>
+        <input id="adminToken" type="password" placeholder="optional" autocomplete="off" />
+      </label>
+      <div class="settings-actions">
+        <button class="primary small" id="saveSettings" type="button">Save</button>
+        <button class="ghost small" id="checkHealth" type="button">Test connection</button>
+      </div>
+    </section>
+
+    <!-- ═════════ VIEW 1: CHAT ═════════ -->
+    <div class="panel-view active" id="viewChat">
+      <nav class="quick" aria-label="Quick actions">
+        <button type="button" data-action="brief">Morning brief</button>
+        <button type="button" data-action="summarise">Summarise page</button>
+        <button type="button" data-action="reply">Draft reply</button>
+        <button type="button" data-action="social">Queue social post</button>
+        <button type="button" data-action="plan">Today's plan</button>
+      </nav>
+
+      <main class="chat" id="chat" aria-live="polite"></main>
+
+      <form class="composer" id="composer">
+        <textarea id="message" rows="2" placeholder="Ask Buddy… (Enter to send, Shift+Enter for a new line)"></textarea>
+        <button class="send" id="sendBtn" type="submit" aria-label="Send">↑</button>
+      </form>
+    </div>
+
+    <!-- ═════════ VIEW 2: AI VIDEO STUDIO ═════════ -->
+    <div class="panel-view" id="viewVideo">
+      <div class="studio-container">
+        <div class="studio-card">
+          <div class="studio-header">
+            <span class="studio-title">🎬 AI Video Generator</span>
+            <span class="badge-tag">Zero-Cost AI Tools</span>
+          </div>
+          <p style="color:var(--muted);font-size:11px;line-height:1.4;">
+            Generate high-growth organic lead generation video packages with hooks, kinetic B-roll cues, real project CDN images, and 1-click launch to free video AI engines.
+          </p>
+
+          <label class="field">
+            <span>Project / Asset</span>
+            <select id="videoProjectSelect">
+              <option value="buddy_starter" selected>Buddy AI Starter Pack (₹3,500 Launch Offer — Solo Creator & Founder)</option>
+              <option value="php_remediation">PHP Security & Web Modernization (Vulnerable site remediation)</option>
+              <option value="no_website_biz">Local Business Web Launch & 24/7 WhatsApp AI Concierge</option>
+              <option value="b2b_lead_engine">B2B Lead Engine & Sub-5m Calling SLA</option>
+              <option value="costa_crestview">KNR Portfolio: Costa Fortune Crestview (Chandaka Rd)</option>
+              <option value="harmonious_haven">KNR Portfolio: The Harmonious Haven (Rasulgarh Triplex)</option>
+              <option value="custom">Custom Property or Current Web Page</option>
+            </select>
+          </label>
+
+          <div id="videoCustomTopicWrap" style="display:none;">
+            <label class="field">
+              <span>Custom Topic or Landing Page</span>
+              <input type="text" id="videoCustomTopic" placeholder="e.g., Gharabadi Plotted Enclave Pahala or URL" />
+            </label>
+          </div>
+
+          <div class="studio-grid-2">
+            <label class="field">
+              <span>Free AI Engine</span>
+              <select id="videoEngineSelect">
+                <option value="invideo">InVideo AI (Auto Full Video)</option>
+                <option value="canva">Canva Video Studio</option>
+                <option value="capcut">CapCut Web (Trending)</option>
+                <option value="clipchamp">Clipchamp AI</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Format</span>
+              <select id="videoFormatSelect">
+                <option value="vertical_reel_9_16">9:16 Reel / Shorts</option>
+                <option value="landscape_16_9">16:9 Landscape</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Language & Tone</span>
+            <select id="videoLanguageSelect">
+              <option value="english">English (Consultative & HNI)</option>
+              <option value="hindi">Hindi (Engaging & High-Trust)</option>
+              <option value="odia">Odia (Local Cultural Connect)</option>
+              <option value="hinglish">Hinglish (NRI & Youth Viral)</option>
+            </select>
+          </label>
+
+          <button class="btn-launch" id="btnLaunchVideo" type="button">
+            🚀 1-Click Launch Video AI & Copy Prompt
+          </button>
+        </div>
+
+        <div class="studio-card" id="videoOutputCard" style="display:none;">
+          <div class="studio-header">
+            <span class="studio-title">📦 Production Blueprint</span>
+            <span class="badge-tag" id="videoOutputEngineTag">InVideo AI</span>
+          </div>
+
+          <label class="field">
+            <span>Cinematic Prompt (Copied to Clipboard)</span>
+            <div class="code-box" id="videoPromptPreview"></div>
+          </label>
+
+          <div class="action-row">
+            <button class="btn-pill" id="btnCopyPrompt" type="button">📋 Copy Prompt</button>
+            <button class="btn-pill" id="btnCopyImages" type="button">🖼 Copy Image URLs</button>
+            <button class="btn-pill" id="btnOpenEngineTab" type="button">🌐 Open Video Tool</button>
+          </div>
+
+          <label class="field" style="margin-top:6px;">
+            <span>High-Converting Social Caption & CTA</span>
+            <div class="code-box" id="videoCaptionPreview" style="max-height:100px;"></div>
+          </label>
+          <div class="action-row">
+            <button class="btn-pill" id="btnCopyCaption" type="button">📋 Copy Caption</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════════ VIEW 3: ORGANIC SOCIAL STUDIO ═════════ -->
+    <div class="panel-view" id="viewSocial">
+      <div class="studio-container">
+        <div class="studio-card">
+          <div class="studio-header">
+            <span class="studio-title">📱 1-Click Organic Social Poster</span>
+            <span class="badge-tag">Zero API Cost</span>
+          </div>
+          <p style="color:var(--muted);font-size:11px;line-height:1.4;">
+            Bypass paid third-party APIs. Buddy crafts compliant, viral captions with 30-year non-encumbrance title clearance guarantees, copies to clipboard, and opens the official web composer in 1 click.
+          </p>
+
+          <label class="field">
+            <span>Campaign Post Topic</span>
+            <input type="text" id="socialTopicInput" value="Buddy AI Starter Pack: Why paying ₹2,000/mo for ChatGPT is obsolete (₹3,500 Lifetime Setup)" />
+          </label>
+
+          <button class="btn-launch" id="btnDraftSocial" type="button" style="margin-top:4px;">
+            ✨ Generate High-Growth Caption
+          </button>
+        </div>
+
+        <div class="studio-card" id="socialPreviewCard">
+          <div class="studio-header">
+            <span class="studio-title">📝 Drafted Caption & Hashtags</span>
+            <button class="btn-pill" id="btnCopySocialText" type="button">📋 Copy</button>
+          </div>
+          <div class="code-box" id="socialCaptionPreview" style="max-height:150px;">
+🏡 Costa Fortune Crestview — ₹34.20 Lakhs – ₹1.05 Cr* in Kantabada, Chandaka Road, Bhubaneswar
+
+✨ Located in booming Chandaka-Kantabada growth corridor. Minutes from Patia Infocity. Gated society with clubhouse, swimming pool, 24/7 security, and 0% buyer brokerage.
+
+🛡️ 100% ORERA MP/19/2024/01244 | Mandatory 30-Year Non-Encumbrance Title Clearance | ₹0 Buyer Brokerage
+
+👉 Comment 'DETAILS' below or DM us to receive the full brochure & floor plans instantly on WhatsApp!
+
+Visit: https://knrintegrity.com/costa-furtune-crestview/
+📞 WhatsApp Advisory: +91 73280 89908
+
+#CostaFortuneCrestview #BhubaneswarRealEstate #KNRIntegrity #OdishaProperty #LuxuryLiving
+          </div>
+
+          <div style="margin-top:8px;">
+            <span style="font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:6px;">
+              Publish to Web (Auto-Copies Caption):
+            </span>
+            <div class="platform-buttons">
+              <button class="btn-social" data-platform="instagram" type="button">📸 Instagram</button>
+              <button class="btn-social" data-platform="facebook" type="button">👥 Meta / Facebook</button>
+              <button class="btn-social" data-platform="linkedin" type="button">💼 LinkedIn</button>
+              <button class="btn-social" data-platform="youtube" type="button">▶️ YouTube Shorts</button>
+              <button class="btn-social" data-platform="x" type="button">🐦 X / Twitter</button>
+              <button class="btn-social" data-platform="whatsapp" type="button">💬 WhatsApp Web</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════════ VIEW 4: DEAL CLOSER (BUDDY B2B) ═════════ -->
+    <div class="panel-view" id="viewDeals">
+      <div class="studio-container">
+        <div class="studio-card">
+          <div class="studio-header">
+            <span class="studio-title">🤝 Founder Deal Closer</span>
+            <span class="badge-tag" id="dealsCountTag">22 Deals</span>
+          </div>
+          <p style="color:var(--muted);font-size:11px;line-height:1.4;">
+            Autonomous Bhubaneswar market intelligence. The AI swarm audits businesses, identifies conversion bottlenecks, and architects custom proposals. Rahul closes deals; the AI swarm delivers.
+          </p>
+
+          <div style="display:flex;gap:6px;margin-top:6px;">
+            <input type="text" id="dealSearchInput" placeholder="Filter company or sector…" style="flex:1;background:rgba(255,255,255,0.05);border:1px solid var(--line);border-radius:6px;padding:6px 10px;color:var(--text);font-size:11px;" />
+            <button class="btn-pill" id="btnRefreshDeals" type="button">🔄 Refresh</button>
+          </div>
+        </div>
+
+        <!-- Deals Scrollable List -->
+        <div id="dealsListContainer" style="display:flex;flex-direction:column;gap:8px;max-height:220px;overflow-y:auto;padding-right:2px;">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- Deal Closer Dossier Detail Card -->
+        <div class="studio-card" id="dealDetailCard" style="display:none;margin-top:8px;">
+          <div class="studio-header">
+            <span class="studio-title" id="detailBusinessName">Business Name</span>
+            <span class="badge-tag" id="detailHealthScore">Score: 85</span>
+          </div>
+          <p id="detailPackageName" style="color:var(--teal);font-weight:600;font-size:11px;margin:2px 0 6px;"></p>
+          
+          <div style="background:rgba(0,0,0,0.3);border:1px solid var(--line);border-radius:8px;padding:8px;font-size:11px;margin-bottom:8px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+              <span style="color:var(--muted);">Setup Investment:</span>
+              <strong id="detailSetupPrice" style="color:var(--gold);">₹75,000</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+              <span style="color:var(--muted);">Monthly Retainer:</span>
+              <strong id="detailMonthlyPrice" style="color:var(--teal);">₹18,000/mo</strong>
+            </div>
+            <div style="margin-top:4px;border-top:1px solid rgba(255,255,255,0.08);padding-top:4px;">
+              <span style="color:var(--muted);display:block;margin-bottom:2px;">Primary Technical Flaw:</span>
+              <span id="detailFlaw" style="color:var(--danger);font-size:10px;display:block;"></span>
+            </div>
+          </div>
+
+          <!-- Cold Call Script -->
+          <div style="margin-bottom:8px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+              <span style="font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);">
+                📞 Rahul's 60-Second Cold Call Script:
+              </span>
+              <button class="btn-pill" id="btnCopyCallScript" type="button" style="padding:2px 8px;font-size:9px;">📋 Copy</button>
+            </div>
+            <div class="code-box" id="detailCallScript" style="max-height:90px;font-size:10px;line-height:1.4;"></div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="action-row" style="margin-top:6px;gap:6px;">
+            <a class="btn-pill" id="btnOpenWhatsAppPitch" href="#" target="_blank" style="text-decoration:none;text-align:center;background:#25D366;color:#000;font-weight:bold;flex:1;">💬 WhatsApp Pitch</a>
+            <button class="btn-pill" id="btnAutoDeliver" type="button" style="background:var(--teal);color:#000;font-weight:bold;flex:1;">⚡ AI Auto-Deliver</button>
+            <a class="btn-pill" id="btnLivePreview" href="#" target="_blank" style="text-decoration:none;text-align:center;display:none;background:#6366f1;color:#fff;font-weight:bold;">🌐 Live Preview</a>
+          </div>
+          <div id="deliveryStatusNote" style="font-size:10px;color:var(--muted);text-align:center;margin-top:4px;display:none;"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="foot">
+      <span id="pageHint">No page captured yet</span>
+      <button class="ghost tiny" id="capture" type="button">Capture page</button>
+    </footer>
+
+    <script src="sidepanel.js"></script>
+  </body>
+</html>
