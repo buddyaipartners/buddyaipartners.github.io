@@ -82,12 +82,12 @@ try {
 } catch (e) { fail('app eval threw: ' + e.message); }
 try {
   const active = () => Object.values(reg).filter(e => e._cls.has('page-view') && e._cls.has('active')).map(e => e.id);
-  for (const pg of ['home', 'stack', 'process', 'contact', 'portfolio', 'services', 'about', 'buddy']) {
+  for (const pg of ['home', 'stack', 'process', 'contact', 'portfolio', 'services', 'about', 'buddy', 'blog']) {
     switchPage(pg);
     const a = active();
     if (a.length !== 1 || a[0] !== 'page-' + pg) fail('switchPage(' + pg + '): active=' + JSON.stringify(a));
   }
-  console.log('navigation isolation: 8/8 single-active OK');
+  console.log('navigation isolation: 9/9 single-active OK');
   const cards = () => (reg['ecoSections'].innerHTML.match(/eco-card/g) || []).length;
   const n1 = cards();
   switchPage('home'); switchPage('stack'); switchPage('stack');

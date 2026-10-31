@@ -12,7 +12,7 @@ import { test, expect } from '@playwright/test';
 const BASE_URL = process.env.BUDDY_TEST_BASE_URL || 'http://127.0.0.1:8765';
 
 // data-nav values on the desktop header buttons map to #page-<id> sections.
-const SECTIONS = ['home', 'about', 'services', 'portfolio', 'stack', 'process', 'contact'];
+const SECTIONS = ['home', 'about', 'services', 'portfolio', 'stack', 'blog', 'process', 'contact'];
 const PAGE_IDS = [...SECTIONS, 'buddy'];
 
 // Load the site and dismiss the cinematic entry portal (if present).
@@ -35,7 +35,7 @@ test.describe('Cinematic entry portal', () => {
     await expect(portal).toContainText('BUDDY AI · DIGITAL OFFICE ACTIVE');
     await expect(portal).toContainText('Welcome to our');
     await expect(portal).toContainText('digital office.');
-    await expect(portal).toContainText('Sovereign real-estate pipelines, automated CRM workflows, and autonomous AI agents.');
+    await expect(portal).toContainText('Autonomous AI agents, automated CRM workflows, and sovereign digital systems.');
     const cta = portal.locator('button', { hasText: 'Initialize & Enter Workspace' });
     await expect(cta).toBeVisible();
     await cta.click();

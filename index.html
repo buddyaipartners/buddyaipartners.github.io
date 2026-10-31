@@ -338,14 +338,55 @@
     /* ---------- Header ---------- */
     .site-header {
       position: sticky; top: 0; z-index: 70;
-      background: rgba(4, 10, 22, .82); backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
+      background: rgba(4, 10, 22, .88); backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(56, 189, 248, .14);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .45);
     }
-    .hdr-inner { display: flex; align-items: center; gap: .8rem; padding-block: .65rem; }
-    .brand { display: flex; align-items: center; gap: .7rem; margin-right: auto; }
-    .brand img { width: 38px; height: 38px; }
-    .brand-name { font-family: var(--font-display); font-weight: 600; font-size: 1.02rem; color: var(--ink); line-height: 1.1; }
-    .brand-sub { font-family: var(--font-ui); font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+    .hdr-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: .9rem; padding-block: .65rem;
+    }
+    .brand {
+      display: flex; align-items: center; gap: .8rem; margin-right: auto;
+      text-decoration: none; cursor: pointer; background: none; border: 0; padding: 0;
+    }
+    .brand-avatar {
+      position: relative; width: 42px; height: 42px; border-radius: 50%;
+      padding: 2px; flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(56, 189, 248, .85), rgba(29, 78, 216, .45), rgba(246, 226, 122, .7));
+      box-shadow: 0 0 18px rgba(56, 189, 248, .35);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+    }
+    .brand:hover .brand-avatar {
+      transform: scale(1.06) rotate(3deg);
+      box-shadow: 0 0 24px rgba(56, 189, 248, .6);
+    }
+    .brand-avatar img {
+      width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;
+    }
+    .brand-live-dot {
+      position: absolute; bottom: -1px; right: -1px; width: 9px; height: 9px;
+      border-radius: 50%; background: #10B981; border: 2px solid #040A16;
+      box-shadow: 0 0 6px #10B981;
+    }
+    .brand-text {
+      display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 2px;
+    }
+    .brand-name {
+      font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
+      letter-spacing: .02em; color: #FFFFFF; line-height: 1.15;
+    }
+    .brand-name .gold-accent {
+      background: linear-gradient(135deg, #F6E27A 20%, #D4AF37 80%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .brand-sub {
+      font-family: var(--font-ui); font-size: .58rem; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase; color: var(--sky-soft); line-height: 1;
+    }
+    .hdr-actions { display: flex; align-items: center; gap: .6rem; }
     .main-nav { display: none; align-items: center; gap: .15rem; background: rgba(8, 20, 39, .55); border: 1px solid var(--line); border-radius: 999px; padding: .3rem; }
     @media (min-width: 1120px) { .main-nav { display: flex; } }
     .nav-btn {
@@ -1010,12 +1051,15 @@
   <header class="site-header no-print">
     <span id="scrollProgressBar" aria-hidden="true"></span>
     <div class="shell-wide hdr-inner">
-      <button type="button" class="brand" onclick="switchPage('home')" aria-label="Go to home" style="background:none;border:0">
-        <img src="images/logo.svg" alt="BUDDY AI PARTNERS logo" />
-        <span>
-          <span class="brand-name">BUDDY AI PARTNERS</span>
-          <span class="brand-sub">AI Automation &amp; Digital Growth</span>
-        </span>
+      <button type="button" class="brand" onclick="switchPage('home')" aria-label="BUDDY AI PARTNERS Home">
+        <div class="brand-avatar">
+          <img src="images/logo.svg" alt="BUDDY AI PARTNERS logo" />
+          <span class="brand-live-dot" title="Autonomous Systems Active"></span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">BUDDY AI <span class="gold-accent">PARTNERS</span></span>
+          <span class="brand-sub">Autonomous AI &amp; Digital Growth</span>
+        </div>
       </button>
 
       <nav class="main-nav" aria-label="Main Navigation">
@@ -1025,12 +1069,15 @@
         <button type="button" class="nav-btn" data-nav="services" onclick="switchPage('services')">Services</button>
         <button type="button" class="nav-btn" data-nav="portfolio" onclick="switchPage('portfolio')">Work</button>
         <button type="button" class="nav-btn" data-nav="stack" onclick="switchPage('stack')">Stack</button>
+        <button type="button" class="nav-btn" data-nav="blog" onclick="switchPage('blog')">Blog</button>
         <button type="button" class="nav-btn" data-nav="process" onclick="switchPage('process')">Process</button>
         <button type="button" class="nav-btn" data-nav="contact" onclick="switchPage('contact')">Contact</button>
       </nav>
 
-      <button type="button" class="hdr-buddy" aria-label="Open Buddy AI preview chat" onclick="switchPage('buddy')"><span class="dotw"></span> Try Buddy AI</button>
-      <button type="button" class="btn btn-gold btn-sm hide-m" onclick="switchPage('contact')">Start Project</button>
+      <div class="hdr-actions">
+        <button type="button" class="hdr-buddy" aria-label="Open Buddy AI preview chat" onclick="switchPage('buddy')"><span class="dotw"></span> Try Buddy AI</button>
+        <button type="button" class="btn btn-gold btn-sm hide-m" onclick="switchPage('contact')">Start Project</button>
+      </div>
 
       <nav id="mobileMenu" aria-label="Mobile Navigation" hidden class="mobile-menu">
         <button type="button" class="mnav-btn active" data-mnav="home" onclick="switchPage('home');closeMenu()">Home</button>
@@ -1039,6 +1086,7 @@
         <button type="button" class="mnav-btn" data-mnav="services" onclick="switchPage('services');closeMenu()">Services</button>
         <button type="button" class="mnav-btn" data-mnav="portfolio" onclick="switchPage('portfolio');closeMenu()">Work &amp; Proof</button>
         <button type="button" class="mnav-btn" data-mnav="stack" onclick="switchPage('stack');closeMenu()">Tech Stack</button>
+        <button type="button" class="mnav-btn" data-mnav="blog" onclick="switchPage('blog');closeMenu()">📰 Blog &amp; Tech Updates</button>
         <button type="button" class="mnav-btn" data-mnav="process" onclick="switchPage('process');closeMenu()">Process</button>
         <button type="button" class="mnav-btn" data-mnav="buddy" onclick="switchPage('buddy');closeMenu()">✦ Try Buddy AI</button>
         <button type="button" class="mnav-btn" data-mnav="contact" onclick="switchPage('contact');closeMenu()">Pricing &amp; Contact</button>
@@ -1960,6 +2008,174 @@
     </div>
   </section>
 
+  <!-- ========================== BLOG & TECH INTELLIGENCE ========================== -->
+  <section id="page-blog" class="page-view">
+    <div class="sec">
+      <div class="shell">
+        <div class="sec-head reveal">
+          <p class="eyebrow">◈ FIELD INTELLIGENCE &amp; GLOBAL TECH DISPATCH</p>
+          <h1 class="display-l">Continuous Tech Updates &amp; <span class="gold-i">Global AI Intelligence.</span></h1>
+          <p class="lead" style="margin-top:.6rem">Autonomous agent blueprints, 2026 enterprise LLM cascades, PHP security remediation benchmarks, and sub-5-minute WhatsApp conversion funnels — published directly from our engineering desk in Bhubaneswar.</p>
+          
+          <!-- Live Telemetry Ticker -->
+          <div class="stack-metric-strip" style="margin-top:1.2rem;display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;background:rgba(4,10,22,0.7);padding:.8rem 1.2rem;border-radius:12px;border:1px solid rgba(56,189,248,0.2)">
+            <span class="chip chip-live"><span class="dot"></span>LIVE DISPATCH ACTIVE</span>
+            <span class="small t-muted">⚡ Gemini Flash-Lite &amp; Gemma 4 Active</span>
+            <span class="small t-muted">◈ WhatsApp Bridge Port 3006: Connected</span>
+            <span class="small" style="color:var(--gold-soft);font-weight:600">★ Pipeline Target: ₹1 Cr Conversion Engine</span>
+          </div>
+
+          <!-- Category Filters -->
+          <div class="blog-filters">
+            <button type="button" class="blog-filter-btn active" data-bcat="all" onclick="filterBlog('all')">All Intelligence</button>
+            <button type="button" class="blog-filter-btn" data-bcat="security" onclick="filterBlog('security')">PHP &amp; Security Audits</button>
+            <button type="button" class="blog-filter-btn" data-bcat="local" onclick="filterBlog('local')">Local Business &amp; ₹3,500 Pack</button>
+            <button type="button" class="blog-filter-btn" data-bcat="ai" onclick="filterBlog('ai')">Autonomous AI &amp; Agents</button>
+            <button type="button" class="blog-filter-btn" data-bcat="cloud" onclick="filterBlog('cloud')">Zero-Cost Cloud Infra</button>
+          </div>
+          <p id="blogCountText" class="xsmall t-muted">Showing 5 intelligence briefings</p>
+        </div>
+
+        <div class="blog-grid" style="margin-top:1.4rem">
+          <!-- Article 1: PHP Vulnerabilities & Modern Rebuilds -->
+          <article class="blog-card reveal" data-cat="security">
+            <div>
+              <div class="blog-meta-row">
+                <span class="blog-tag gold">SECURITY &amp; AUDIT</span>
+                <span class="blog-time">5 MIN READ · NOV 2026</span>
+              </div>
+              <h3 style="margin-top:.6rem">The 2026 PHP Security &amp; Speed Crisis: Why Indian MSMEs Lose 40% of Inbound Leads</h3>
+              <p style="margin-top:.5rem">An exhaustive audit of legacy PHP 7.x/8.x business portals across Odisha &amp; pan-India. Unescaped POST forms leak inquiries, while 4.8s mobile load times drive Google bounce rates above 65%. How Buddy AI executes a sovereign, zero-data-loss Next.js rebuild in 48 hours for ₹14,999.</p>
+            </div>
+            <div>
+              <div class="blog-foot">
+                <span class="blog-author">By Rahul Kumar Dhal · Lead Architect</span>
+                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('drawerPhp', this)">Read Briefing ↓</button>
+              </div>
+              <div id="drawerPhp" class="blog-drawer">
+                <h4 style="color:#F6E27A;margin-bottom:.4rem">Vulnerability Vector &amp; Edge Migration Blueprint</h4>
+                <p>1. <strong>Legacy Form Exposure:</strong> Contact forms built with raw PHP mailer scripts frequently lack CSRF tokens, basic sanitize filters, or rate-limiting, making them targets for automated bot spam and lead spoofing.</p>
+                <p>2. <strong>Mobile Conversion Penalty:</strong> Core Web Vitals heavily punish monolithic server-side rendering over Indian 4G/5G mobile networks. A 4-second delay drops booking conversion by 42%.</p>
+                <p>3. <strong>The 48-Hour Next.js Edge Cure:</strong> Buddy AI ports existing MySQL/Postgres databases into a headless API with a static edge frontend on Vercel/GitHub Pages + automated WhatsApp lead routing. Zero monthly hosting fees for the client.</p>
+                <div style="margin-top:.8rem">
+                  <a class="btn btn-gold btn-sm" href="https://wa.me/917328089908?text=Hi%20Rahul%21%20I%20read%20the%20PHP%20security%20audit%20article%20and%20want%20a%20free%20website%20security%20audit." target="_blank" rel="noopener noreferrer">Request a Free PHP Security &amp; Speed Audit →</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 2: Zero Website Penalty for Local Clinics & Businesses -->
+          <article class="blog-card reveal" data-cat="local">
+            <div>
+              <div class="blog-meta-row">
+                <span class="blog-tag emerald">₹3,500 LAUNCH PACK</span>
+                <span class="blog-time">4 MIN READ · NOV 2026</span>
+              </div>
+              <h3 style="margin-top:.6rem">The High Cost of Zero Digital Presence: Why Local Clinics &amp; MSMEs Lose ₹3 Lakhs/Mo</h3>
+              <p style="margin-top:.5rem">Relying solely on Justdial or Google Maps listings forces business owners to share leads with 4 competitors simultaneously. How our ₹3,500 Launch Offer provides a verified Google presence, mobile PWA, and direct 1-tap WhatsApp consultation in 24 hours.</p>
+            </div>
+            <div>
+              <div class="blog-foot">
+                <span class="blog-author">By Rahul Kumar Dhal · Founder</span>
+                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('drawerNoWeb', this)">Read Briefing ↓</button>
+              </div>
+              <div id="drawerNoWeb" class="blog-drawer">
+                <h4 style="color:#5fe3a1;margin-bottom:.4rem">The Turnkey Local Authority Architecture</h4>
+                <p>1. <strong>The Aggregator Trap:</strong> When a prospective customer searches for a dental clinic, builder, or consultant, aggregator portals sell their inquiry as a shared lead to multiple vendors, sparking a margin-killing price war.</p>
+                <p>2. <strong>Direct Sovereign Ingress:</strong> Having your own domain and indexed website immediately routes 100% of high-intent searchers directly to your personal WhatsApp.</p>
+                <p>3. <strong>What ₹3,500 Delivers:</strong> Custom mobile-first responsive landing page, verified Google Business Profile schema, instant UPI QR payment gateway, and pre-configured WhatsApp lead concierge with zero monthly SaaS subscriptions.</p>
+                <div style="margin-top:.8rem">
+                  <a class="btn btn-gold btn-sm" href="https://wa.me/917328089908?text=Hi%20Rahul%21%20I%20want%20to%20claim%20the%20Buddy%20AI%20Starter%20Pack%20for%20my%20business%20at%20₹3,500." target="_blank" rel="noopener noreferrer">Claim ₹3,500 Launch Offer on WhatsApp →</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 3: Autonomous Terminal Intelligence (ATI) vs Chatbots -->
+          <article class="blog-card reveal" data-cat="ai">
+            <div>
+              <div class="blog-meta-row">
+                <span class="blog-tag">AUTONOMOUS AGENTS</span>
+                <span class="blog-time">7 MIN READ · OCT 2026</span>
+              </div>
+              <h3 style="margin-top:.6rem">ATI vs Traditional Chatbots: Why Autonomous Multi-Agent Loops Close 42% More Deals</h3>
+              <p style="margin-top:.5rem">Moving beyond canned conversational chat. How Autonomous Terminal Intelligence (ATI) uses multi-turn tool calling, live CRM memory, and sub-minute response SLAs to manage 18,678 enterprise leads with zero lead leakage.</p>
+            </div>
+            <div>
+              <div class="blog-foot">
+                <span class="blog-author">By Rahul Kumar Dhal · Lead Architect</span>
+                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('drawerAti', this)">Read Briefing ↓</button>
+              </div>
+              <div id="drawerAti" class="blog-drawer">
+                <h4 style="color:#38BDF8;margin-bottom:.4rem">The ReAct Tool Execution Loop</h4>
+                <p>1. <strong>Why Standard Chatbots Fail:</strong> Basic chatbots only answer text. When a lead asks for inventory, pricing, or appointment booking, the bot hallucinates or tells them to call back.</p>
+                <p>2. <strong>Autonomous Action Execution:</strong> Buddy ATI actively checks live database availability, calculates personalized ROI, generates custom contracts, and logs the customer to the calling queue in under 120 seconds.</p>
+                <p>3. <strong>Proof of Work:</strong> Deployed live across KNR Integrity Real Estate Advisory, handling 60+ projects, ORERA title verification, and automated AC cab dispatch.</p>
+                <div style="margin-top:.8rem">
+                  <button type="button" class="btn btn-glass btn-sm" onclick="switchPage('buddy')">Test Buddy AI In Real Time →</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 4: Zero-Cost 24/7 Cloud Architecture -->
+          <article class="blog-card reveal" data-cat="cloud">
+            <div>
+              <div class="blog-meta-row">
+                <span class="blog-tag">CLOUD &amp; DOCKER</span>
+                <span class="blog-time">6 MIN READ · OCT 2026</span>
+              </div>
+              <h3 style="margin-top:.6rem">Bypassing Cloud Inflation: Deploying 24/7 AI Backends with Zero Monthly Hosting Bills</h3>
+              <p style="margin-top:.5rem">A battle-tested guide to avoiding cloud subscription traps like Render's $7/month database surprises. Running containerized FastAPI backends on Hugging Face Spaces (16GB RAM) + Supabase Edge for 100% free forever.</p>
+            </div>
+            <div>
+              <div class="blog-foot">
+                <span class="blog-author">By Rahul Kumar Dhal · Infrastructure Lead</span>
+                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('drawerCloud', this)">Read Briefing ↓</button>
+              </div>
+              <div id="drawerCloud" class="blog-drawer">
+                <h4 style="color:#BAE6FD;margin-bottom:.4rem">The Sovereign Free Stack Blueprint</h4>
+                <p>1. <strong>Hugging Face Spaces (Docker):</strong> 2 vCPU, 16GB RAM, persistent container, HTTPS endpoint — completely free with zero credit card requirements.</p>
+                <p>2. <strong>Supabase Edge (Free Tier):</strong> 500MB PostgreSQL database, instant REST APIs, WebSocket real-time subscriptions, and auth sessions.</p>
+                <p>3. <strong>Cloudflare Tunnel:</strong> Direct secure tunneling from your local workstation or edge server to a global CDN domain without opening router ports or paying for static IPs.</p>
+                <div style="margin-top:.8rem">
+                  <a class="btn btn-gold btn-sm" href="https://wa.me/917328089908?text=Hi%20Rahul%21%20I%20want%20to%20set%20up%20zero-cost%20cloud%20hosting%20for%20my%20AI%20system." target="_blank" rel="noopener noreferrer">Get Cloud Architecture Consultation →</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 5: 1 Cr Revenue Pipeline Blueprint -->
+          <article class="blog-card reveal" data-cat="security">
+            <div>
+              <div class="blog-meta-row">
+                <span class="blog-tag gold">B2B REVENUE ENGINE</span>
+                <span class="blog-time">6 MIN READ · NOV 2026</span>
+              </div>
+              <h3 style="margin-top:.6rem">The Sub-5-Minute Lead Ingress Funnel: Targeting ₹1 Crore in Conversions with AI Triage</h3>
+              <p style="margin-top:.5rem">Field telemetry reveals that leads contacted within 5 minutes convert at 391% higher rates than those called after 30 minutes. How Playwright scrapers and WhatsApp triage turn raw B2B leads into high-ticket closures.</p>
+            </div>
+            <div>
+              <div class="blog-foot">
+                <span class="blog-author">By Rahul Kumar Dhal · Founder</span>
+                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('drawerFunnel', this)">Read Briefing ↓</button>
+              </div>
+              <div id="drawerFunnel" class="blog-drawer">
+                <h4 style="color:#F6E27A;margin-bottom:.4rem">The 4-Stage High-Ticket Closing Mechanism</h4>
+                <p>1. <strong>Deep Diagnostic Pre-Scoring:</strong> Never pitch blind. Buddy AI identifies whether a prospect has an insecure PHP site, no digital presence, or high-volume booking bottlenecks before sending a single message.</p>
+                <p>2. <strong>Personalized Value Outreach:</strong> We provide actionable value first — a free vulnerability report or mockup preview — demonstrating instant ROI.</p>
+                <p>3. <strong>Bilingual WhatsApp Qualification:</strong> Seamless Odia, Hindi, and English multi-turn conversations that answer objections, schedule founder demos, and take token deposits.</p>
+                <div style="margin-top:.8rem">
+                  <button type="button" class="btn btn-gold btn-sm" onclick="switchPage('contact')">Discuss Your Enterprise B2B Growth Move →</button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ========================== CONTACT & PRICING ========================== -->
   <section id="page-contact" class="page-view">
     <div class="sec">
@@ -2580,6 +2796,34 @@
       window.addEventListener('DOMContentLoaded', handleHashNav);
     } catch (e) {}
 
+    /* ---------- Blog & Field Intelligence Controller ---------- */
+    function filterBlog(cat) {
+      try { playCyberSfx('click'); } catch (e) {}
+      document.querySelectorAll('.blog-filter-btn').forEach(function (b) {
+        b.classList.toggle('active', b.getAttribute('data-bcat') === cat);
+      });
+      var cards = document.querySelectorAll('.blog-card');
+      var visible = 0;
+      cards.forEach(function (c) {
+        var match = cat === 'all' || c.getAttribute('data-cat') === cat;
+        c.style.display = match ? 'flex' : 'none';
+        if (match) visible++;
+      });
+      var countEl = document.getElementById('blogCountText');
+      if (countEl) countEl.textContent = 'Showing ' + visible + ' intelligence briefings';
+    }
+
+    function toggleBlogDrawer(drawerId, btn) {
+      try { playCyberSfx('nav'); } catch (e) {}
+      var drawer = document.getElementById(drawerId);
+      if (!drawer) return;
+      var isOpen = drawer.style.display === 'block';
+      drawer.style.display = isOpen ? 'none' : 'block';
+      if (btn) {
+        btn.innerHTML = isOpen ? 'Read Briefing ↓' : 'Hide Briefing ↑';
+      }
+    }
+
     /* ---------- 2. Digital office stations ---------- */
     const VOFFICE_STATIONS = {
       kabir: {
@@ -2828,6 +3072,34 @@
       window.addEventListener('hashchange', handleHashNav);
       window.addEventListener('DOMContentLoaded', handleHashNav);
     } catch (e) {}
+
+    /* ---------- Blog & Field Intelligence Controller ---------- */
+    function filterBlog(cat) {
+      try { playCyberSfx('click'); } catch (e) {}
+      document.querySelectorAll('.blog-filter-btn').forEach(function (b) {
+        b.classList.toggle('active', b.getAttribute('data-bcat') === cat);
+      });
+      var cards = document.querySelectorAll('.blog-card');
+      var visible = 0;
+      cards.forEach(function (c) {
+        var match = cat === 'all' || c.getAttribute('data-cat') === cat;
+        c.style.display = match ? 'flex' : 'none';
+        if (match) visible++;
+      });
+      var countEl = document.getElementById('blogCountText');
+      if (countEl) countEl.textContent = 'Showing ' + visible + ' intelligence briefings';
+    }
+
+    function toggleBlogDrawer(drawerId, btn) {
+      try { playCyberSfx('nav'); } catch (e) {}
+      var drawer = document.getElementById(drawerId);
+      if (!drawer) return;
+      var isOpen = drawer.style.display === 'block';
+      drawer.style.display = isOpen ? 'none' : 'block';
+      if (btn) {
+        btn.innerHTML = isOpen ? 'Read Briefing ↓' : 'Hide Briefing ↑';
+      }
+    }
 
     /* ---------- 4. Hero capabilities carousel ---------- */
     var slides = [
