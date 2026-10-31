@@ -84,7 +84,7 @@
         "name": "BUDDY AI PARTNERS",
         "url": "https://buddyaipartners.github.io/",
         "image": "https://buddyaipartners.github.io/images/og-cover.jpg",
-        "priceRange": "₹2,999 - ₹1.99L",
+        "priceRange": "₹3,500 - ₹1.99L",
         "address": { "@type": "PostalAddress", "addressLocality": "Bhubaneswar", "addressRegion": "Odisha", "postalCode": "751024", "addressCountry": "IN" },
         "areaServed": { "@type": "Country", "name": "India" },
         "openingHoursSpecification": {
@@ -99,7 +99,7 @@
           "@type": "OfferCatalog",
           "name": "AI Systems & Growth Engineering",
           "itemListElement": [
-            { "@type": "Offer", "priceCurrency": "INR", "price": "2999", "name": "Buddy AI Personal Assistant — Starter Pack", "description": "One-time guided install of a personal AI operating assistant on laptop or mobile." },
+            { "@type": "Offer", "priceCurrency": "INR", "price": "3500", "name": "Buddy AI Personal Assistant — Starter Pack (Launch Offer)", "description": "One-time guided install of a personal AI operating assistant on laptop or mobile." },
             { "@type": "Offer", "priceCurrency": "INR", "price": "24999", "name": "Lead Engine — Scraper & Calling SLA", "description": "Multi-sector lead ingress, Meta/Google ads, sub-5-minute calling queue and weekly telemetry." },
             { "@type": "Offer", "priceCurrency": "INR", "price": "49999", "name": "Autonomous Business CRM", "description": "Sovereign CRM pipeline with concierge, dedupe, multilingual WhatsApp delivery and live monitoring." },
             { "@type": "Offer", "priceCurrency": "INR", "price": "89999", "name": "Enterprise Software Swarm", "description": "Full custom web application plus autonomous office agents and security hardening." }
@@ -953,7 +953,8 @@
 
     /* ---------- Reveal ---------- */
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
-    .reveal.in-view { opacity: 1; transform: none; }
+    .reveal.in-view,
+    .page-view.active .reveal { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
       .marquee-track { animation: none; }
@@ -1587,25 +1588,12 @@
             </div>
           </article>
           <article class="card card-hover cert-card" data-cert-index="3">
-            <div class="cert-sheet">
-              <div class="flex between iwrap">
-                <span class="big">8</span>
-                <span class="cert-issuer" style="color:var(--sky-soft)">Google Skills · Google Cloud</span>
-              </div>
-              <span class="cert-sheet-title">Generative AI Learning Achievement</span>
-              <p class="small" style="color:var(--body)">Eight completed Gen AI learning paths — agents, governance, security and applied deployment.</p>
-              <div class="path-chips">
-                <span>Gen AI Apps: Transform Your Work</span>
-                <span>Gen AI Agents: Transform Your Organization</span>
-                <span>Gen AI: Navigate the Landscape</span>
-                <span>Gen AI: Unlock Foundational Concepts</span>
-                <span>Gen AI: Beyond the Chatbot</span>
-                <span>Model Armor: Securing AI Deployments</span>
-                <span>Google Cloud Agent Governance &amp; Security</span>
-                <span>Secure Enterprise AI Agents</span>
-              </div>
-              <small class="cert-id">Credential GC5-GA-2026-1001-RKD · issued Oct 2026</small>
-              <a class="cert-verify" href="https://www.skills.google/credentials" target="_blank" rel="noopener noreferrer">Verify on skills.google ↗</a>
+            <figure class="cert-figure"><img src="images/certs/cert-google-genai.webp" alt="Google Cloud &amp; Google Skills Certificate of Completion — Generative AI Learning Achievement earned by Rahul Kumar Dhal" width="1080" height="713" loading="eager" decoding="async" /></figure>
+            <div class="cert-cap">
+              <span class="cert-issuer">Google Cloud × Google Skills</span>
+              <b>Google Cloud Generative AI Learning Achievement</b>
+              <small>8 learning paths · agents, governance, security &amp; model armor · issued Oct 2026</small>
+              <a class="cert-verify" href="https://www.skills.google/credentials" target="_blank" rel="noopener noreferrer">Credential GCS-GAI-2026-1001-RKD · Verify on skills.google ↗</a>
             </div>
           </article>
         </div>
@@ -1786,14 +1774,14 @@
         </div>
 
         <div class="blog-grid reveal">
-          <!-- Article 1: ₹2,999 Shift -->
+          <!-- Article 1: ₹3,500 Shift -->
           <article class="blog-card" data-cat="growth">
             <div>
               <div class="blog-meta-row">
                 <span class="blog-tag gold">Free AI Blueprint</span>
                 <span class="blog-time">4 MIN READ · NOV 2026</span>
               </div>
-              <h3 style="margin-top:.7rem">The ₹2,999 Sovereign Setup: Why Paying $20/mo to Closed Cloud AI is Obsolete</h3>
+              <h3 style="margin-top:.7rem">The ₹3,500 Sovereign Setup: Why Paying $20/mo to Closed Cloud AI is Obsolete</h3>
               <p style="margin-top:.5rem">How Indian founders and developers are replacing ₹15,000/mo SaaS bills (ChatGPT Plus, Claude Pro, Canva, Otter) with sovereign local-first cascades (Ollama + Qwen 2.5 Coder + Gemini Flash). Zero recurring fees, zero message cutoffs, 100% private.</p>
             </div>
             <div>
@@ -1801,7 +1789,7 @@
                 <h5 style="color:var(--sky);margin-bottom:.4rem">The Sovereign Architecture</h5>
                 <p>Most commercial AI platforms lock users into $20/mo tiers with aggressive rate cutoffs. By cascading local Ollama models with fast zero-cost cloud relays (Gemini Flash &amp; Gemma 4), you achieve 0.8s response latency and unlimited daily requests without sending proprietary business data to foreign third-party clouds.</p>
                 <div style="margin-top:.6rem;display:flex;gap:.5rem">
-                  <a class="btn btn-gold btn-sm" href="#page-contact" onclick="selectServiceAndContact('Buddy AI Starter Pack (₹2,999 One-Time — Laptop/Mobile Setup)')">Get 1-on-1 Setup (₹2,999)</a>
+                  <a class="btn btn-gold btn-sm" href="#page-contact" onclick="selectServiceAndContact('Buddy AI Starter Pack (₹3,500 One-Time — Launch Offer)')">Get 1-on-1 Setup (₹3,500)</a>
                 </div>
               </div>
               <div class="blog-foot">
@@ -1995,7 +1983,7 @@
               <label class="field"><span>Service required</span>
                 <select id="clientService" name="clientService" class="select">
                   <option value="">Select a service…</option>
-                  <option value="Buddy AI Starter Pack (₹2,999 One-Time — Laptop/Mobile Setup)">Buddy AI Starter Pack (₹2,999 one-time)</option>
+                  <option value="Buddy AI Starter Pack (₹3,500 One-Time — Launch Offer)">Buddy AI Starter Pack (₹3,500 one-time launch offer)</option>
                   <option value="B2B &amp; Real Estate Lead Scraper &amp; Calling SLA (₹24,999/mo)">Lead Scraper &amp; Calling SLA (₹24,999/mo)</option>
                   <option value="Autonomous Business CRM &amp; Client Concierge (₹49,999 setup)">Autonomous Business CRM (₹49,999 setup)</option>
                   <option value="Enterprise Software &amp; Autonomous Swarm (₹89k-₹1.99L)">Enterprise Software Swarm (₹89k+)</option>
@@ -2059,8 +2047,8 @@
         <div class="price-grid">
           <article class="card card-hover spotlight-card price-card reveal" id="starter-pack-card"><span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span><span class="price-flag">Individual · 1-on-1</span>
             <h3 class="price-name">Buddy AI Personal Starter</h3>
-            <p class="price-num">₹2,999 <small>one-time · lifetime</small></p>
-            <p class="price-desc">Early adopter access <s class="t-muted">₹5,999</s></p>
+            <p class="price-num">₹3,500 <small>one-time · launch offer</small></p>
+            <p class="price-desc">Early adopter access <s class="t-muted">₹6,999</s></p>
             <div><p class="price-li">Rahul installs 1-on-1 on laptop (Mac/Win/Linux) or mobile</p><p class="price-li">Replaces 5+ paid AI apps with free local models</p><p class="price-li">Daily Reels scripts, posts, WhatsApp pitches &amp; research</p><p class="price-li">Zero monthly API bills — lifetime execution</p></div>
             <div class="save-box"><span class="xsmall t-muted" style="letter-spacing:.14em;text-transform:uppercase">Est. annual savings</span><p class="v">₹1,29,552 / yr</p></div>
             <a class="btn btn-emerald" href="#upi-payment-card" data-jump="upi-payment-card" onclick="return jumpToEl('upi-payment-card')">Pay via UPI →</a>
@@ -2090,7 +2078,7 @@
 
         <div class="card reveal" style="margin-top:1.2rem">
           <div class="flex between wrap" style="gap:.8rem;margin-bottom:.8rem">
-            <div><p class="eyebrow">Never pay for AI apps again</p><p class="small t-muted" style="margin-top:.3rem">Included in the ₹2,999 Starter Pack — where a sensible free alternative exists.</p></div>
+            <div><p class="eyebrow">Never pay for AI apps again</p><p class="small t-muted" style="margin-top:.3rem">Included in the ₹3,500 Starter Pack — where a sensible free alternative exists.</p></div>
             <div class="save-box" style="min-width:190px"><p class="v">₹1,29,552 / yr saved</p></div>
           </div>
           <div style="overflow-x:auto">
@@ -2113,8 +2101,8 @@
     <div class="sec" style="padding-top:0">
       <div class="shell upi-grid">
         <div>
-          <div class="qr-frame"><img src="images/upi-qr.svg" alt="BHIM UPI QR code to pay ₹2,999 once for the Buddy AI Starter Pack" width="240" height="240" loading="eager" decoding="sync" /></div>
-          <p class="qr-cap">BHIM UPI · ₹2,999 Starter Pack</p>
+          <div class="qr-frame"><img src="images/upi-qr.svg" alt="BHIM UPI QR code to pay ₹3,500 once for the Buddy AI Starter Pack" width="240" height="240" loading="eager" decoding="sync" /></div>
+          <p class="qr-cap">BHIM UPI · ₹3,500 Launch Offer</p>
         </div>
         <div class="card card-hover reveal" id="upi-payment-card">
           <p class="eyebrow">Instant UPI payment</p>
@@ -2125,12 +2113,12 @@
             <span class="upi-id">rahulkumardhal@oksbi <button type="button" class="copy-btn" data-copy="rahulkumardhal@oksbi">Copy</button></span>
           </div>
           <div class="app-links">
-            <a class="btn btn-emerald btn-sm" href="upi://pay?pa=7328089908@upi&amp;pn=Rahul%20Kumar%20Dhal&amp;am=2999&amp;cu=INR&amp;tn=Buddy%20AI%20Starter%20Pack">⚡ Any UPI app</a>
+            <a class="btn btn-emerald btn-sm" href="upi://pay?pa=7328089908@upi&amp;pn=Rahul%20Kumar%20Dhal&amp;am=3500&amp;cu=INR&amp;tn=Buddy%20AI%20Starter%20Pack">⚡ Any UPI app</a>
             <a class="btn btn-glass btn-sm" href="https://pay.google.com/payments/u/0/#home" target="_blank" rel="noopener noreferrer">GPay</a>
             <a class="btn btn-glass btn-sm" href="https://www.phonepe.com/app" target="_blank" rel="noopener noreferrer">PhonePe</a>
             <a class="btn btn-glass btn-sm" href="https://paytm.com" target="_blank" rel="noopener noreferrer">Paytm</a>
           </div>
-          <a class="btn btn-crimson" style="margin-top:1rem" data-wa="Hi Rahul! I have completed the UPI payment of ₹2,999 for the Buddy AI Starter Pack. Here is my screenshot. Please schedule my installation call." href="https://wa.me/917328089908?text=Hi%20Rahul%21%20I%20have%20completed%20the%20UPI%20payment%20of%20%E2%82%B92%2C999%20for%20the%20Buddy%20AI%20Starter%20Pack.%20Here%20is%20my%20screenshot.%20Please%20schedule%20my%20installation%20call." target="_blank" rel="noopener noreferrer">Send payment screenshot →</a>
+          <a class="btn btn-crimson" style="margin-top:1rem" data-wa="Hi Rahul! I have completed the UPI payment of ₹3,500 for the Buddy AI Starter Pack. Here is my screenshot. Please schedule my installation call." href="https://wa.me/917328089908?text=Hi%20Rahul%21%20I%20have%20completed%20the%20UPI%20payment%20of%20%E2%82%B93%2C500%20for%20the%20Buddy%20AI%20Starter%20Pack.%20Here%20is%20my%20screenshot.%20Please%20schedule%20my%20installation%20call." target="_blank" rel="noopener noreferrer">Send payment screenshot →</a>
         </div>
       </div>
     </div>
@@ -2462,7 +2450,7 @@
           <span class="foot-link" style="color:var(--muted);cursor:default">Patia Infocity, Bhubaneswar, Odisha</span>
         </div>
         <div class="flex wrap" style="gap:.4rem;margin-top:1rem">
-          <span class="chip gold"><span class="dot"></span>Starter pack ₹2,999</span>
+          <span class="chip gold"><span class="dot"></span>Starter pack ₹3,500</span>
           <span class="chip"><span class="dot"></span>Client: knrintegrity.com</span>
         </div>
       </div>
@@ -2484,7 +2472,7 @@
       <div class="bp-actions">
         <button type="button" class="bp-act" onclick="chooseBuddyPath('Custom CRM & Lead Operations','Leads from different channels are getting missed; my team needs one pipeline with calling queues and follow-up reminders.')">Leads get lost between chats &amp; sheets</button>
         <button type="button" class="bp-act" onclick="chooseBuddyPath('AI Workflow Automation (Python / n8n)','Manual copy-paste of listings/inquiries delays follow-ups; I need intake to flow straight into the CRM with dedupe.')">Manual copy-paste slows follow-ups</button>
-        <button type="button" class="bp-act" onclick="chooseBuddyPath('Buddy AI Starter Pack (₹2,999 One-Time — Laptop/Mobile Setup)','I want a personal AI operating assistant installed 1-on-1 on my laptop or mobile.')">I want my own AI assistant</button>
+        <button type="button" class="bp-act" onclick="chooseBuddyPath('Buddy AI Starter Pack (₹3,500 One-Time — Launch Offer)','I want a personal AI operating assistant installed 1-on-1 on my laptop or mobile.')">I want my own AI assistant</button>
       </div>
       <button type="button" class="btn btn-gold btn-sm" onclick="switchPage('buddy');toggleBuddyGuide(false)" style="width:100%">Open full chat →</button>
     </div>
@@ -2552,9 +2540,13 @@
         document.querySelectorAll('.page-view').forEach(function (p) { p.classList.remove('active'); });
       } catch (e) {}
       var target = document.getElementById('page-' + pageId);
-      if (target) target.classList.add('active');
+      if (target) {
+        target.classList.add('active');
+        try { target.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in-view'); }); } catch (e) {}
+      }
       if (pageId === 'buddy') { try { baiStart(); } catch (e) {} }
       if (pageId === 'digital-office') { try { vofficeInit(); } catch (e) {} }
+      if (pageId === 'stack') { try { ecoRender(); ovRender(); } catch (e) {} }
       try {
         document.querySelectorAll('.nav-btn').forEach(function (btn) {
           var active = btn.getAttribute('data-nav') === pageId;
@@ -2739,7 +2731,7 @@
         defaultName: "Solo Creator & Founder OS",
         tag: "INDIVIDUAL STARTER BLUEPRINT",
         title: "Buddy AI Personal Operating Assistant",
-        cost: "₹2,999 one-time (Lifetime Access)",
+        cost: "₹3,500 one-time (Launch Offer)",
         features: "1-on-1 guided install on laptop/mobile by Rahul, replaces 5+ paid AI subscriptions, vertical Reels/video scriptwriter, unlimited neural inference.",
         roi: "Saves ₹1,29,552 / year on SaaS fees, 100% free models with zero recurring monthly bills."
       }
