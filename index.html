@@ -161,24 +161,29 @@
     [hidden] { display: none !important; }
     body {
       font-family: var(--font-body);
-      font-size: 15px;
-      line-height: 1.65;
-      letter-spacing: .01em;
+      font-size: clamp(15px, 0.94rem + 0.2vw, 16.5px);
+      line-height: 1.72;
+      letter-spacing: .012em;
       background: var(--obsidian);
       color: var(--body);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
     body.portal-open { overflow: hidden; }
+    #galaxyCanvas {
+      position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .48;
+      transition: opacity .4s ease;
+    }
     .nebula {
-      position: fixed; inset: 0; pointer-events: none; z-index: -1;
+      position: fixed; inset: 0; pointer-events: none; z-index: -2;
       background:
-        radial-gradient(circle at 18% 18%, rgba(56, 189, 248, .07) 0%, transparent 45%),
-        radial-gradient(circle at 82% 82%, rgba(212, 175, 55, .05) 0%, transparent 45%),
-        radial-gradient(circle at 50% 50%, rgba(14, 32, 60, .35) 0%, transparent 70%);
+        radial-gradient(circle at 18% 18%, rgba(56, 189, 248, .08) 0%, transparent 48%),
+        radial-gradient(circle at 82% 82%, rgba(212, 175, 55, .06) 0%, transparent 48%),
+        radial-gradient(circle at 50% 50%, rgba(14, 32, 60, .4) 0%, transparent 70%);
       filter: blur(40px);
     }
     img { max-width: 100%; display: block; }
+    p { max-width: 72ch; }
     a { color: var(--sky); text-decoration: none; }
     a:hover { color: var(--sky-soft); }
     button { font-family: inherit; cursor: pointer; }
@@ -193,18 +198,18 @@
     noscript + .cinematic { display: none !important; }
 
     /* ---------- Typography ---------- */
-    h1, h2, h3 { font-family: var(--font-display); color: var(--ink); font-weight: 600; line-height: 1.12; letter-spacing: .002em; text-wrap: balance; }
+    h1, h2, h3 { font-family: var(--font-display); color: var(--ink); font-weight: 600; line-height: 1.14; letter-spacing: .002em; text-wrap: balance; }
     .display-xl { font-family: var(--font-display); font-size: clamp(2.35rem, 6.2vw, 4.35rem); line-height: 1.05; letter-spacing: .001em; }
-    .display-l { font-family: var(--font-display); font-size: clamp(1.9rem, 4.4vw, 3.1rem); line-height: 1.08; }
-    .h3 { font-family: var(--font-display); font-size: clamp(1.28rem, 2.4vw, 1.7rem); line-height: 1.2; }
-    .h4 { font-family: var(--font-ui); font-size: .95rem; font-weight: 600; color: var(--ink); letter-spacing: .015em; }
+    .display-l { font-family: var(--font-display); font-size: clamp(1.9rem, 4.4vw, 3.1rem); line-height: 1.1; }
+    .h3 { font-family: var(--font-display); font-size: clamp(1.28rem, 2.4vw, 1.7rem); line-height: 1.22; }
+    .h4 { font-family: var(--font-ui); font-size: 1rem; font-weight: 600; color: var(--ink); letter-spacing: .015em; line-height: 1.35; }
     .gold-i { font-family: var(--font-display); font-style: italic; font-weight: 500; background: linear-gradient(120deg, #FFF5CC 0%, #F5D36B 35%, #D4AF37 75%, #AA820A 100%); -webkit-background-clip: text; background-clip: text; color: #D4AF37; -webkit-text-fill-color: transparent; filter: drop-shadow(0 2px 14px rgba(212, 175, 55, .25)); }
-    .lead { font-size: clamp(1rem, 1.6vw, 1.16rem); color: var(--body); line-height: 1.7; }
+    .lead { font-size: clamp(1.02rem, 1.7vw, 1.18rem); color: #E2E8F0; line-height: 1.72; max-width: 68ch; }
     .t-gold { color: var(--gold-soft); } .t-emerald { color: #34d399; } .t-crimson { color: #f28b82; }
     .t-mint { color: var(--mint); } .t-white { color: var(--ink); } .t-muted { color: var(--muted); }
     .mono { font-family: var(--font-mono); letter-spacing: .02em; }
-    .small { font-size: .8rem; }
-    .xsmall { font-size: .72rem; }
+    .small { font-size: .84rem; line-height: 1.6; }
+    .xsmall { font-size: .74rem; line-height: 1.5; }
     .center { text-align: center; }
 
     .eyebrow {
@@ -490,7 +495,6 @@
     .trust-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.6rem; }
     .trust-row .chip { transition: transform .25s var(--ease), border-color .25s ease, background-color .25s ease; }
     .trust-row .chip:hover { transform: translateY(-2px); border-color: var(--line-strong); }
-    #galaxyCanvas { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .55; }
 
     .hero-frame { position: relative; padding: clamp(.55rem, 1.4vw, .85rem); filter: drop-shadow(0 20px 50px rgba(4, 10, 22, .75)); }
     .hero-frame::before {
@@ -1029,6 +1033,7 @@
 
 <body class="portal-open">
   <div class="nebula" aria-hidden="true"></div>
+  <canvas id="galaxyCanvas" aria-hidden="true"></canvas>
   <!-- ======================= CINEMATIC ENTRY PORTAL ======================= -->
   <section id="digital-office-entry" class="cinematic" aria-label="Digital office entry">
     <div class="portal-orb">
@@ -1102,7 +1107,6 @@
   <main>
   <!-- ========================== HOME ========================== -->
   <section id="page-home" class="page-view active">
-    <canvas id="galaxyCanvas" aria-hidden="true"></canvas>
 
     <div class="hero-band">
       <div class="shell hero-grid">
