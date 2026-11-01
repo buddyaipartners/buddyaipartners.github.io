@@ -33,9 +33,18 @@ cp -r "$ROOT/public/images/." "$DIST/images/"
 cp -r "$ROOT/public/images/." "$DIST/public/images/"
 [ ! -f "$ROOT/robots.txt" ] || cp "$ROOT/robots.txt" "$DIST/robots.txt"
 [ ! -f "$ROOT/sitemap.xml" ] || cp "$ROOT/sitemap.xml" "$DIST/sitemap.xml"
+[ ! -f "$ROOT/404.html" ] || cp "$ROOT/404.html" "$DIST/404.html"
 [ ! -f "$ROOT/llms.txt" ] || cp "$ROOT/llms.txt" "$DIST/llms.txt"
 [ ! -f "$ROOT/5b44e100446fef7d326fe15d85f5d157.txt" ] || cp "$ROOT/5b44e100446fef7d326fe15d85f5d157.txt" "$DIST/5b44e100446fef7d326fe15d85f5d157.txt"
 [ ! -f "$ROOT/googleb8ea7c1bfd32f1e7.html" ] || cp "$ROOT/googleb8ea7c1bfd32f1e7.html" "$DIST/googleb8ea7c1bfd32f1e7.html"
+
+# Copy crawlable sub-page routes into dist
+for sub in services demo pricing digital-office portfolio blog about contact; do
+  if [ -d "$ROOT/$sub" ]; then
+    mkdir -p "$DIST/$sub"
+    cp -r "$ROOT/$sub/." "$DIST/$sub/"
+  fi
+done
 
 # Post-build gate: every local URL in the built HTML must exist inside dist,
 # so a silently broken local URL can never be published.
