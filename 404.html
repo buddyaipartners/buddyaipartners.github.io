@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | BUDDY AI PARTNERS</title>
+  <base href="https://buddyaipartners.github.io/">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
+  <style>
+    body {
+      background: #030712;
+      color: #f8fafc;
+      font-family: system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .card {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 20px;
+      padding: 2.5rem;
+      max-width: 520px;
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #38bdf8, #facc15);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p {
+      color: #94a3b8;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #38bdf8;
+      color: #030712;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn:hover {
+      background: #0284c7;
+      color: #fff;
+    }
+  </style>
+  <script>
+    // GitHub Pages SPA Redirect Handler
+    // Redirects /path to /#path so the SPA router can handle it gracefully
+    (function() {
+      var path = window.location.pathname.replace(/^\/|\/$/g, '');
+      if (path && path !== '404.html') {
+        window.location.replace('https://buddyaipartners.github.io/#' + path);
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="card">
+    <h1>404</h1>
+    <p>The page you are looking for has migrated or does not exist. Redirecting to BUDDY AI PARTNERS command center...</p>
+    <a href="https://buddyaipartners.github.io/" class="btn">Return to Home Command Center →</a>
+  </div>
+</body>
+</html>
