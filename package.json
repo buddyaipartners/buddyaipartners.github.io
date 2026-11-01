@@ -9,6 +9,7 @@
     "build": "sh deploy-surge.sh"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
     "@playwright/test": "^1.64.1",
     "playwright": "^1.64.1"
   }

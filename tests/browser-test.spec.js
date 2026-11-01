@@ -57,7 +57,7 @@ test.describe('Navigation sections', () => {
 
   test('Buddy AI header pill switches to the buddy page', async ({ page }) => {
     await openSite(page);
-    await page.click('button[aria-label="Open Buddy AI preview chat"]');
+    await page.click('button.hdr-buddy');
     await expect(page.locator('#page-buddy.active')).toBeVisible();
     const activeCount = await page.locator('.page-view.active').count();
     expect(activeCount).toBe(1);

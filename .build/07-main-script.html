@@ -376,14 +376,18 @@
       tagEl.textContent = s.tag;
       container.innerHTML =
         '<span class="chip gold"><span class="dot"></span>' + s.badge + '</span>' +
-        '<h4 style="margin-top:.9rem;font-family:var(--font-display);font-size:clamp(1.3rem,2.6vw,1.8rem);color:var(--ink);font-weight:600">' + s.title + '</h4>' +
+        '<h2 style="margin-top:.9rem;font-family:var(--font-display);font-size:clamp(1.3rem,2.6vw,1.8rem);color:var(--ink);font-weight:600">' + s.title + '</h2>' +
         '<p class="small" style="margin-top:.5rem;line-height:1.6">' + s.desc + '</p>' +
         '<div style="margin-top:1.2rem;padding:.8rem .9rem;border-radius:12px;border:1px solid var(--line);background:rgba(3,7,16,.55);display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap">' +
         '<span class="mono xsmall" style="color:var(--mint)">◆ ' + s.metric + '</span>' +
         '<button type="button" onclick="switchPage(\'services\')" class="link-arrow" style="background:none;border:0">Details</button>' +
         '</div>';
       try {
-        document.querySelectorAll('.slide-dot').forEach(function (d, i) { d.classList.toggle('on', i === index); });
+        document.querySelectorAll('.slide-dot').forEach(function (d, i) {
+          var on = i === index;
+          d.classList.toggle('on', on);
+          d.setAttribute('aria-selected', String(on));
+        });
       } catch (e) {}
       var prog = document.getElementById('slideProgress');
       if (prog) {

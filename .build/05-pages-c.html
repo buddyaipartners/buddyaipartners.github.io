@@ -355,14 +355,14 @@
           <p class="eyebrow">Agent capability console</p>
           <h2 class="display-l">Assign an <span class="gold-i">AI director.</span></h2>
         </div>
-        <div class="arch-tabs" id="officeTabs">
-          <button type="button" class="arch-tab agent-tab selected" data-agent="vikram" aria-selected="true" onclick="selectOfficeAgent('vikram')">Vikram · Sales</button>
-          <button type="button" class="arch-tab agent-tab" data-agent="aanya" aria-selected="false" onclick="selectOfficeAgent('aanya')">Aanya · Media</button>
-          <button type="button" class="arch-tab agent-tab" data-agent="arjun" aria-selected="false" onclick="selectOfficeAgent('arjun')">Arjun · Dev</button>
-          <button type="button" class="arch-tab agent-tab" data-agent="pooja" aria-selected="false" onclick="selectOfficeAgent('pooja')">Pooja · CRM</button>
-          <button type="button" class="arch-tab agent-tab" data-agent="kabir" aria-selected="false" onclick="selectOfficeAgent('kabir')">Kabir · Ops</button>
-          <button type="button" class="arch-tab agent-tab" data-agent="rhea" aria-selected="false" onclick="selectOfficeAgent('rhea')">Rhea · Success</button>
-          <button type="button" class="arch-tab agent-tab" data-agent="suraksha" aria-selected="false" onclick="selectOfficeAgent('suraksha')">Suraksha · Security</button>
+        <div class="arch-tabs" id="officeTabs" role="tablist" aria-label="AI director tabs">
+          <button type="button" class="arch-tab agent-tab selected" data-agent="vikram" role="tab" aria-selected="true" onclick="selectOfficeAgent('vikram')">Vikram · Sales</button>
+          <button type="button" class="arch-tab agent-tab" data-agent="aanya" role="tab" aria-selected="false" onclick="selectOfficeAgent('aanya')">Aanya · Media</button>
+          <button type="button" class="arch-tab agent-tab" data-agent="arjun" role="tab" aria-selected="false" onclick="selectOfficeAgent('arjun')">Arjun · Dev</button>
+          <button type="button" class="arch-tab agent-tab" data-agent="pooja" role="tab" aria-selected="false" onclick="selectOfficeAgent('pooja')">Pooja · CRM</button>
+          <button type="button" class="arch-tab agent-tab" data-agent="kabir" role="tab" aria-selected="false" onclick="selectOfficeAgent('kabir')">Kabir · Ops</button>
+          <button type="button" class="arch-tab agent-tab" data-agent="rhea" role="tab" aria-selected="false" onclick="selectOfficeAgent('rhea')">Rhea · Success</button>
+          <button type="button" class="arch-tab agent-tab" data-agent="suraksha" role="tab" aria-selected="false" onclick="selectOfficeAgent('suraksha')">Suraksha · Security</button>
         </div>
         <div class="card card-hover reveal" id="office-agent-display"></div>
 
@@ -402,15 +402,15 @@
         </div>
         <div class="sim-grid">
           <div class="card card-hover reveal">
-            <div class="arch-tabs" style="margin-bottom:.9rem">
-              <button type="button" class="arch-tab voffice-cat-btn selected" data-vcat="clinic" aria-selected="true" onclick="vofficeSetCategory('clinic')">🏥 Clinic</button>
-              <button type="button" class="arch-tab voffice-cat-btn" data-vcat="coaching" aria-selected="false" onclick="vofficeSetCategory('coaching')">🎓 Coaching</button>
-              <button type="button" class="arch-tab voffice-cat-btn" data-vcat="restaurant" aria-selected="false" onclick="vofficeSetCategory('restaurant')">🍽 Restaurant</button>
-              <button type="button" class="arch-tab voffice-cat-btn" data-vcat="realestate" aria-selected="false" onclick="vofficeSetCategory('realestate')">🏢 Real estate</button>
-              <button type="button" class="arch-tab voffice-cat-btn" data-vcat="software" aria-selected="false" onclick="vofficeSetCategory('software')">💻 Software</button>
-              <button type="button" class="arch-tab voffice-cat-btn" data-vcat="retail" aria-selected="false" onclick="vofficeSetCategory('retail')">🛍 Retail</button>
-              <button type="button" class="arch-tab voffice-cat-btn" data-vcat="security" aria-selected="false" onclick="vofficeSetCategory('security')">🛡 Security</button>
-              <button type="button" class="arch-tab voffice-cat-btn" data-vcat="starter" aria-selected="false" onclick="vofficeSetCategory('starter')">⚡ Starter</button>
+            <div class="arch-tabs" role="tablist" aria-label="Business categories" style="margin-bottom:.9rem">
+              <button type="button" class="arch-tab voffice-cat-btn selected" data-vcat="clinic" role="tab" aria-selected="true" onclick="vofficeSetCategory('clinic')">🏥 Clinic</button>
+              <button type="button" class="arch-tab voffice-cat-btn" data-vcat="coaching" role="tab" aria-selected="false" onclick="vofficeSetCategory('coaching')">🎓 Coaching</button>
+              <button type="button" class="arch-tab voffice-cat-btn" data-vcat="restaurant" role="tab" aria-selected="false" onclick="vofficeSetCategory('restaurant')">🍽 Restaurant</button>
+              <button type="button" class="arch-tab voffice-cat-btn" data-vcat="realestate" role="tab" aria-selected="false" onclick="vofficeSetCategory('realestate')">🏢 Real estate</button>
+              <button type="button" class="arch-tab voffice-cat-btn" data-vcat="software" role="tab" aria-selected="false" onclick="vofficeSetCategory('software')">💻 Software</button>
+              <button type="button" class="arch-tab voffice-cat-btn" data-vcat="retail" role="tab" aria-selected="false" onclick="vofficeSetCategory('retail')">🛍 Retail</button>
+              <button type="button" class="arch-tab voffice-cat-btn" data-vcat="security" role="tab" aria-selected="false" onclick="vofficeSetCategory('security')">🛡 Security</button>
+              <button type="button" class="arch-tab voffice-cat-btn" data-vcat="starter" role="tab" aria-selected="false" onclick="vofficeSetCategory('starter')">⚡ Starter</button>
             </div>
             <div class="grid-2" style="gap:.6rem">
               <label class="field" style="margin:0"><span>Business name</span><input id="voffice-biz-name" class="input" type="text" value="Kalinga Dental &amp; Cosmetic Clinic" /></label>
