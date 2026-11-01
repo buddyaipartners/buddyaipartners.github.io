@@ -84,7 +84,7 @@
         "name": "BUDDY AI PARTNERS",
         "url": "https://buddyaipartners.github.io/",
         "image": "https://buddyaipartners.github.io/images/og-cover.jpg",
-        "priceRange": "₹3,500 - ₹1.99L",
+        "priceRange": "₹2,999 - ₹1.99L",
         "address": { "@type": "PostalAddress", "addressLocality": "Bhubaneswar", "addressRegion": "Odisha", "postalCode": "751024", "addressCountry": "IN" },
         "areaServed": { "@type": "Country", "name": "India" },
         "openingHoursSpecification": {
@@ -99,7 +99,7 @@
           "@type": "OfferCatalog",
           "name": "AI Systems & Growth Engineering",
           "itemListElement": [
-            { "@type": "Offer", "priceCurrency": "INR", "price": "3500", "name": "Buddy AI Personal Assistant — Starter Pack (Launch Offer)", "description": "One-time guided install of a personal AI operating assistant on laptop or mobile." },
+            { "@type": "Offer", "priceCurrency": "INR", "price": "2999", "name": "Buddy AI Personal Assistant — Starter Pack", "description": "One-time guided install of a personal AI operating assistant on laptop or mobile." },
             { "@type": "Offer", "priceCurrency": "INR", "price": "24999", "name": "Lead Engine — Scraper & Calling SLA", "description": "Multi-sector lead ingress, Meta/Google ads, sub-5-minute calling queue and weekly telemetry." },
             { "@type": "Offer", "priceCurrency": "INR", "price": "49999", "name": "Autonomous Business CRM", "description": "Sovereign CRM pipeline with concierge, dedupe, multilingual WhatsApp delivery and live monitoring." },
             { "@type": "Offer", "priceCurrency": "INR", "price": "89999", "name": "Enterprise Software Swarm", "description": "Full custom web application plus autonomous office agents and security hardening." }
@@ -161,29 +161,16 @@
     [hidden] { display: none !important; }
     body {
       font-family: var(--font-body);
-      font-size: clamp(15px, 0.94rem + 0.2vw, 16.5px);
-      line-height: 1.72;
-      letter-spacing: .012em;
+      font-size: 15px;
+      line-height: 1.65;
+      letter-spacing: .01em;
       background: var(--obsidian);
       color: var(--body);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
     body.portal-open { overflow: hidden; }
-    #galaxyCanvas {
-      position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .48;
-      transition: opacity .4s ease;
-    }
-    .nebula {
-      position: fixed; inset: 0; pointer-events: none; z-index: -2;
-      background:
-        radial-gradient(circle at 18% 18%, rgba(56, 189, 248, .08) 0%, transparent 48%),
-        radial-gradient(circle at 82% 82%, rgba(212, 175, 55, .06) 0%, transparent 48%),
-        radial-gradient(circle at 50% 50%, rgba(14, 32, 60, .4) 0%, transparent 70%);
-      filter: blur(40px);
-    }
     img { max-width: 100%; display: block; }
-    p { max-width: 72ch; }
     a { color: var(--sky); text-decoration: none; }
     a:hover { color: var(--sky-soft); }
     button { font-family: inherit; cursor: pointer; }
@@ -198,18 +185,18 @@
     noscript + .cinematic { display: none !important; }
 
     /* ---------- Typography ---------- */
-    h1, h2, h3 { font-family: var(--font-display); color: var(--ink); font-weight: 600; line-height: 1.14; letter-spacing: .002em; text-wrap: balance; }
+    h1, h2, h3 { font-family: var(--font-display); color: var(--ink); font-weight: 600; line-height: 1.12; letter-spacing: .002em; text-wrap: balance; }
     .display-xl { font-family: var(--font-display); font-size: clamp(2.35rem, 6.2vw, 4.35rem); line-height: 1.05; letter-spacing: .001em; }
-    .display-l { font-family: var(--font-display); font-size: clamp(1.9rem, 4.4vw, 3.1rem); line-height: 1.1; }
-    .h3 { font-family: var(--font-display); font-size: clamp(1.28rem, 2.4vw, 1.7rem); line-height: 1.22; }
-    .h4 { font-family: var(--font-ui); font-size: 1rem; font-weight: 600; color: var(--ink); letter-spacing: .015em; line-height: 1.35; }
-    .gold-i { font-family: var(--font-display); font-style: italic; font-weight: 500; background: linear-gradient(120deg, #FFF5CC 0%, #F5D36B 35%, #D4AF37 75%, #AA820A 100%); -webkit-background-clip: text; background-clip: text; color: #D4AF37; -webkit-text-fill-color: transparent; filter: drop-shadow(0 2px 14px rgba(212, 175, 55, .25)); }
-    .lead { font-size: clamp(1.02rem, 1.7vw, 1.18rem); color: #E2E8F0; line-height: 1.72; max-width: 68ch; }
+    .display-l { font-family: var(--font-display); font-size: clamp(1.9rem, 4.4vw, 3.1rem); line-height: 1.08; }
+    .h3 { font-family: var(--font-display); font-size: clamp(1.28rem, 2.4vw, 1.7rem); line-height: 1.2; }
+    .h4 { font-family: var(--font-ui); font-size: .95rem; font-weight: 600; color: var(--ink); letter-spacing: .015em; }
+    .gold-i { font-family: var(--font-display); font-style: italic; font-weight: 500; background: linear-gradient(100deg, #FFFFFF 0%, #BFE3FF 30%, var(--sky) 60%, var(--sky-deep) 100%); -webkit-background-clip: text; background-clip: text; color: #9FD8FF; -webkit-text-fill-color: transparent; }
+    .lead { font-size: clamp(1rem, 1.6vw, 1.16rem); color: var(--body); line-height: 1.7; }
     .t-gold { color: var(--gold-soft); } .t-emerald { color: #34d399; } .t-crimson { color: #f28b82; }
     .t-mint { color: var(--mint); } .t-white { color: var(--ink); } .t-muted { color: var(--muted); }
     .mono { font-family: var(--font-mono); letter-spacing: .02em; }
-    .small { font-size: .84rem; line-height: 1.6; }
-    .xsmall { font-size: .74rem; line-height: 1.5; }
+    .small { font-size: .8rem; }
+    .xsmall { font-size: .72rem; }
     .center { text-align: center; }
 
     .eyebrow {
@@ -343,55 +330,14 @@
     /* ---------- Header ---------- */
     .site-header {
       position: sticky; top: 0; z-index: 70;
-      background: rgba(4, 10, 22, .88); backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(56, 189, 248, .14);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, .45);
+      background: rgba(4, 10, 22, .82); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
     }
-    .hdr-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: .9rem; padding-block: .65rem;
-    }
-    .brand {
-      display: flex; align-items: center; gap: .8rem; margin-right: auto;
-      text-decoration: none; cursor: pointer; background: none; border: 0; padding: 0;
-    }
-    .brand-avatar {
-      position: relative; width: 42px; height: 42px; border-radius: 50%;
-      padding: 2px; flex-shrink: 0;
-      background: linear-gradient(135deg, rgba(56, 189, 248, .85), rgba(29, 78, 216, .45), rgba(246, 226, 122, .7));
-      box-shadow: 0 0 18px rgba(56, 189, 248, .35);
-      display: flex; align-items: center; justify-content: center;
-      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
-    }
-    .brand:hover .brand-avatar {
-      transform: scale(1.06) rotate(3deg);
-      box-shadow: 0 0 24px rgba(56, 189, 248, .6);
-    }
-    .brand-avatar img {
-      width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;
-    }
-    .brand-live-dot {
-      position: absolute; bottom: -1px; right: -1px; width: 9px; height: 9px;
-      border-radius: 50%; background: #10B981; border: 2px solid #040A16;
-      box-shadow: 0 0 6px #10B981;
-    }
-    .brand-text {
-      display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 2px;
-    }
-    .brand-name {
-      font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
-      letter-spacing: .02em; color: #FFFFFF; line-height: 1.15;
-    }
-    .brand-name .gold-accent {
-      background: linear-gradient(135deg, #F6E27A 20%, #D4AF37 80%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .brand-sub {
-      font-family: var(--font-ui); font-size: .58rem; font-weight: 700;
-      letter-spacing: .16em; text-transform: uppercase; color: var(--sky-soft); line-height: 1;
-    }
-    .hdr-actions { display: flex; align-items: center; gap: .6rem; }
+    .hdr-inner { display: flex; align-items: center; gap: .8rem; padding-block: .65rem; }
+    .brand { display: flex; align-items: center; gap: .7rem; margin-right: auto; }
+    .brand img { width: 38px; height: 38px; }
+    .brand-name { font-family: var(--font-display); font-weight: 600; font-size: 1.02rem; color: var(--ink); line-height: 1.1; }
+    .brand-sub { font-family: var(--font-ui); font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
     .main-nav { display: none; align-items: center; gap: .15rem; background: rgba(8, 20, 39, .55); border: 1px solid var(--line); border-radius: 999px; padding: .3rem; }
     @media (min-width: 1120px) { .main-nav { display: flex; } }
     .nav-btn {
@@ -435,43 +381,37 @@
     .cinematic {
       position: fixed; inset: 0; z-index: 200;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center; padding: 1.6rem; gap: 1.1rem;
-      background: radial-gradient(circle at 50% 28%, #0d2247 0%, #061124 50%, #020610 90%);
+      text-align: center; padding: 1.6rem; gap: 1rem;
+      background: radial-gradient(120% 90% at 50% 0%, #0b1c38 0%, #040a16 58%);
       overflow: hidden; transition: opacity .65s cubic-bezier(.16, 1, .3, 1), transform .65s cubic-bezier(.16, 1, .3, 1);
     }
     .cinematic::before {
       content: ""; position: absolute; inset: 0;
       background:
-        radial-gradient(60% 50% at 50% 30%, rgba(56, 189, 248, .16), transparent 75%),
-        radial-gradient(40% 30% at 50% 52%, rgba(212, 175, 55, .08), transparent 70%);
+        radial-gradient(42% 34% at 50% 42%, rgba(212, 175, 55, .13), transparent 70%),
+        repeating-linear-gradient(0deg, transparent 0 3px, rgba(212, 175, 55, .025) 3px 4px);
       pointer-events: none;
     }
-    .portal-orb { position: relative; width: clamp(130px, 25vw, 184px); aspect-ratio: 1; display: grid; place-items: center; }
+    .portal-orb { position: relative; width: clamp(120px, 24vw, 178px); aspect-ratio: 1; display: grid; place-items: center; }
     .portal-orb::before, .portal-orb::after {
-      content: ""; position: absolute; inset: -14%; border-radius: 50%;
-      border: 1px solid rgba(56, 189, 248, .4);
-      box-shadow: 0 0 30px rgba(56, 189, 248, .25);
+      content: ""; position: absolute; inset: -18%; border-radius: 50%;
+      border: 1px solid var(--line-strong);
     }
-    .portal-orb::after { inset: -28%; border-style: dashed; border-color: rgba(212, 175, 55, .32); animation: spin 28s linear infinite; }
+    .portal-orb::after { inset: -34%; border-style: dashed; border-color: rgba(212, 175, 55, .22); animation: spin 26s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
-    .portal-orb img {
-      width: 84%; border-radius: 50%;
-      filter: drop-shadow(0 0 35px rgba(56, 189, 248, .65)) drop-shadow(0 15px 40px rgba(0, 0, 0, .85));
-      transition: transform .4s var(--ease);
-    }
-    .portal-orb:hover img { transform: scale(1.05); }
-    .portal-status { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .3em; color: var(--mint); text-transform: uppercase; text-shadow: 0 0 12px rgba(52, 211, 153, .4); }
-    .portal-copy { max-width: 38rem; }
-    .portal-title { font-family: var(--font-display); font-size: clamp(2.3rem, 6.5vw, 4.2rem); color: var(--ink); line-height: 1.1; }
+    .portal-orb img { width: 72%; filter: drop-shadow(0 12px 36px rgba(212, 175, 55, .3)); }
+    .portal-status { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .3em; color: var(--mint); text-transform: uppercase; }
+    .portal-copy { max-width: 34rem; }
+    .portal-title { font-family: var(--font-display); font-size: clamp(2.2rem, 6.5vw, 4rem); color: var(--ink); line-height: 1.1; }
     .portal-cta {
       display: inline-flex; align-items: center; gap: .7rem;
-      font-family: var(--font-ui); font-weight: 700; font-size: .84rem; letter-spacing: .18em; text-transform: uppercase;
-      color: #241a02; background: linear-gradient(180deg, #FCE07A, #EAB308 55%, #CA8A04);
-      padding: 1rem 2.2rem; border: 0; border-radius: 999px;
-      box-shadow: 0 14px 44px rgba(234, 179, 8, .35), inset 0 1px 0 rgba(255, 255, 255, .6);
+      font-family: var(--font-ui); font-weight: 700; font-size: .82rem; letter-spacing: .18em; text-transform: uppercase;
+      color: #241a02; background: linear-gradient(180deg, #E9CC6B, #D4AF37 55%, #B8952B);
+      padding: .95rem 2rem; border: 0; border-radius: 999px;
+      box-shadow: 0 14px 40px rgba(212, 175, 55, .3), inset 0 1px 0 rgba(255, 255, 255, .5);
       transition: transform .35s var(--ease), box-shadow .35s var(--ease);
     }
-    .portal-cta:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 18px 55px rgba(234, 179, 8, .5); }
+    .portal-cta:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 18px 50px rgba(212, 175, 55, .45); }
     .portal-hint { font-family: var(--font-mono); font-size: .66rem; letter-spacing: .24em; color: var(--muted); }
 
     /* ---------- Page views ---------- */
@@ -493,15 +433,13 @@
     .hero-copy .lead { margin-top: 1.1rem; max-width: 34rem; }
     .hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
     .trust-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.6rem; }
-    .trust-row .chip { transition: transform .25s var(--ease), border-color .25s ease, background-color .25s ease; }
-    .trust-row .chip:hover { transform: translateY(-2px); border-color: var(--line-strong); }
+    #galaxyCanvas { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .55; }
 
-    .hero-frame { position: relative; padding: clamp(.55rem, 1.4vw, .85rem); filter: drop-shadow(0 20px 50px rgba(4, 10, 22, .75)); }
+    .hero-frame { position: relative; padding: clamp(.55rem, 1.4vw, .85rem); }
     .hero-frame::before {
       content: ""; position: absolute; inset: 0; border-radius: 20px;
-      border: 1px solid rgba(56, 189, 248, .35);
-      background: linear-gradient(160deg, rgba(14, 32, 60, .6), rgba(4, 10, 22, .8));
-      box-shadow: 0 0 35px -5px rgba(56, 189, 248, .15), inset 0 1px 0 rgba(255, 255, 255, .1);
+      border: 1px solid var(--line-strong);
+      background: linear-gradient(160deg, rgba(14, 32, 60, .5), rgba(4, 10, 22, .65));
     }
     .hero-frame::after {
       content: ""; position: absolute; inset: 6px; border-radius: 15px;
@@ -546,104 +484,6 @@
     .cert-strip { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem .6rem; padding: .9rem 1.05rem; }
     .cert-strip .mini-tag { font-family: var(--font-ui); font-size: .68rem; font-weight: 600; letter-spacing: .05em; color: var(--sky-soft); border: 1px solid var(--line-strong); background: rgba(56, 189, 248, .07); border-radius: 999px; padding: .38rem .8rem; display: inline-flex; align-items: center; gap: .4rem; }
     .cert-strip .mini-tag::before { content: "✔"; color: var(--sky); font-size: .7rem; }
-
-    /* ---------- Verified credentials auto-carousel & 3D tilt ---------- */
-    .cert-controls {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: .8rem; margin-top: 1.2rem; margin-bottom: .6rem; flex-wrap: wrap;
-    }
-    .cert-mode-switches { display: inline-flex; gap: .45rem; }
-    .cert-mode-btn {
-      font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-      padding: .45rem .95rem; border-radius: 999px; border: 1px solid var(--line-strong); background: rgba(14, 32, 60, .6);
-      color: var(--body); transition: all .25s ease; cursor: pointer;
-    }
-    .cert-mode-btn:hover { border-color: var(--sky); color: #fff; }
-    .cert-mode-btn.active {
-      background: linear-gradient(135deg, #FCE07A, #EAB308); color: #1a1202; border-color: transparent;
-      box-shadow: 0 4px 18px rgba(234, 179, 8, .3);
-    }
-    .cert-nav-actions { display: inline-flex; align-items: center; gap: .6rem; }
-    .cert-arrow-btn {
-      width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line-strong);
-      background: rgba(8, 20, 42, .8); color: var(--ink); display: grid; place-items: center;
-      transition: all .25s ease; cursor: pointer; font-size: .85rem;
-    }
-    .cert-arrow-btn:hover { border-color: var(--sky); background: rgba(56, 189, 248, .2); color: #fff; }
-    .cert-dots { display: inline-flex; gap: .35rem; align-items: center; }
-    .cert-dot {
-      width: 8px; height: 8px; border-radius: 999px; background: rgba(255, 255, 255, .25);
-      border: 0; padding: 0; transition: all .3s ease; cursor: pointer;
-    }
-    .cert-dot.active { width: 22px; background: var(--sky); box-shadow: 0 0 10px var(--sky); }
-    .cert-pause-btn { font-size: .65rem; padding: .35rem .7rem; }
-
-    /* Carousel Mode on .cert-grid.carousel-active */
-    .cert-grid.carousel-active {
-      display: grid; grid-template-columns: 1fr; max-width: 46rem; margin-inline: auto;
-    }
-    .cert-grid.carousel-active .cert-card {
-      display: none;
-    }
-    .cert-grid.carousel-active .cert-card.active-cert {
-      display: flex; animation: certSlideIn .5s cubic-bezier(.16, 1, .3, 1);
-    }
-    @keyframes certSlideIn {
-      from { opacity: 0; transform: scale(.96) translateY(10px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    .cert-card {
-      transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s ease;
-    }
-    .cert-card:hover { transform: translateY(-4px); }
-    .cert-figure img { transition: transform .4s var(--ease); }
-    .cert-card:hover .cert-figure img { transform: scale(1.02); }
-
-    /* ---------- Intelligence & Dispatch Blog ---------- */
-    .blog-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.2rem; margin-bottom: 1.4rem; }
-    .blog-filter-btn {
-      font-family: var(--font-ui); font-size: .72rem; font-weight: 600; letter-spacing: .05em;
-      padding: .45rem .9rem; border-radius: 999px; border: 1px solid var(--line);
-      background: rgba(14, 32, 60, .45); color: var(--body); cursor: pointer; transition: all .25s ease;
-    }
-    .blog-filter-btn:hover { border-color: var(--line-strong); color: #fff; }
-    .blog-filter-btn.active { background: rgba(56, 189, 248, .15); border-color: var(--sky); color: var(--sky-soft); box-shadow: 0 0 15px rgba(56, 189, 248, .2); }
-    .blog-grid { display: grid; gap: 1.3rem; grid-template-columns: 1fr; }
-    @media (min-width: 768px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
-    .blog-card {
-      background: linear-gradient(165deg, rgba(14, 32, 60, .6), rgba(4, 10, 22, .85));
-      border: 1px solid var(--line); border-radius: 16px; padding: 1.4rem 1.45rem;
-      display: flex; flex-direction: column; justify-content: space-between; gap: .9rem;
-      transition: transform .3s var(--ease), border-color .3s ease, box-shadow .3s ease;
-    }
-    .blog-card:hover {
-      transform: translateY(-4px); border-color: var(--line-strong);
-      box-shadow: 0 18px 45px rgba(2, 6, 16, .6), 0 0 25px rgba(56, 189, 248, .12);
-    }
-    .blog-meta-row { display: flex; align-items: center; justify-content: space-between; gap: .6rem; }
-    .blog-tag {
-      font-family: var(--font-mono); font-size: .62rem; font-weight: 700; letter-spacing: .12em;
-      text-transform: uppercase; color: var(--sky); padding: .22rem .55rem;
-      border-radius: 6px; background: rgba(56, 189, 248, .12); border: 1px solid rgba(56, 189, 248, .25);
-    }
-    .blog-tag.gold { color: #fce07a; background: rgba(234, 179, 8, .12); border-color: rgba(234, 179, 8, .3); }
-    .blog-tag.emerald { color: #5fe3a1; background: rgba(16, 185, 129, .12); border-color: rgba(16, 185, 129, .3); }
-    .blog-time { font-family: var(--font-mono); font-size: .65rem; color: var(--muted); }
-    .blog-card h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--ink); line-height: 1.28; }
-    .blog-card p { font-size: .84rem; line-height: 1.6; color: var(--body); }
-    .blog-foot { display: flex; align-items: center; justify-content: space-between; padding-top: .6rem; border-top: 1px solid rgba(255, 255, 255, .06); }
-    .blog-author { font-size: .72rem; color: var(--muted); font-family: var(--font-ui); }
-    .blog-expand-btn {
-      font-family: var(--font-ui); font-size: .74rem; font-weight: 600; color: var(--sky-soft);
-      background: none; border: 0; display: inline-flex; align-items: center; gap: .3rem; cursor: pointer;
-    }
-    .blog-expand-btn:hover { color: #fff; }
-    .blog-drawer {
-      margin-top: .6rem; padding: 1rem 1.1rem; border-radius: 10px;
-      background: rgba(3, 7, 16, .7); border: 1px solid var(--line);
-      font-size: .8rem; line-height: 1.65; color: var(--body); display: none;
-    }
-    .blog-drawer.open { display: block; animation: pageIn .3s var(--ease); }
 
     /* ---------- Stats ---------- */
     .stat-band { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; grid-template-columns: 1fr; }
@@ -998,8 +838,7 @@
 
     /* ---------- Reveal ---------- */
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
-    .reveal.in-view,
-    .page-view.active .reveal { opacity: 1 !important; transform: none !important; }
+    .reveal.in-view { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
       .marquee-track { animation: none; }
@@ -1033,7 +872,6 @@
 
 <body class="portal-open">
   <div class="nebula" aria-hidden="true"></div>
-  <canvas id="galaxyCanvas" aria-hidden="true"></canvas>
   <!-- ======================= CINEMATIC ENTRY PORTAL ======================= -->
   <section id="digital-office-entry" class="cinematic" aria-label="Digital office entry">
     <div class="portal-orb">
@@ -1043,8 +881,7 @@
     <p class="chip chip-live" style="letter-spacing:.28em"><span class="dot"></span>BUDDY AI · DIGITAL OFFICE ACTIVE</p>
     <div class="portal-copy">
       <h1 class="portal-title">Welcome to our<br /><span class="gold-i">digital office.</span></h1>
-      <p class="lead" style="margin-top:.9rem">Autonomous AI agents, automated CRM workflows, and sovereign digital systems.</p>
-      <p class="small" style="color:var(--sky-soft);margin-top:.7rem;letter-spacing:.03em;font-weight:600">✦ Autonomous Coding · Multi-Agent Creation · Business Automation · Content Engine · 100% Free &amp; Sovereign</p>
+      <p class="lead" style="margin-top:.9rem">Sovereign real-estate pipelines, automated CRM workflows, and autonomous AI agents.</p>
     </div>
     <button type="button" class="portal-cta" onclick="enterOffice()">Initialize &amp; Enter Workspace</button>
     <p class="portal-hint" aria-hidden="true">PRESS ENTER OR SPACE TO INITIALIZE</p>
@@ -1056,15 +893,12 @@
   <header class="site-header no-print">
     <span id="scrollProgressBar" aria-hidden="true"></span>
     <div class="shell-wide hdr-inner">
-      <button type="button" class="brand" onclick="switchPage('home')" aria-label="BUDDY AI PARTNERS Home">
-        <div class="brand-avatar">
-          <img src="images/logo.svg" alt="BUDDY AI PARTNERS logo" />
-          <span class="brand-live-dot" title="Autonomous Systems Active"></span>
-        </div>
-        <div class="brand-text">
-          <span class="brand-name">BUDDY AI <span class="gold-accent">PARTNERS</span></span>
-          <span class="brand-sub">Autonomous AI &amp; Digital Growth</span>
-        </div>
+      <button type="button" class="brand" onclick="switchPage('home')" aria-label="Go to home" style="background:none;border:0">
+        <img src="images/logo.svg" alt="BUDDY AI PARTNERS logo" />
+        <span>
+          <span class="brand-name">BUDDY AI PARTNERS</span>
+          <span class="brand-sub">AI Automation &amp; Digital Growth</span>
+        </span>
       </button>
 
       <nav class="main-nav" aria-label="Main Navigation">
@@ -1074,15 +908,12 @@
         <button type="button" class="nav-btn" data-nav="services" onclick="switchPage('services')">Services</button>
         <button type="button" class="nav-btn" data-nav="portfolio" onclick="switchPage('portfolio')">Work</button>
         <button type="button" class="nav-btn" data-nav="stack" onclick="switchPage('stack')">Stack</button>
-        <button type="button" class="nav-btn" data-nav="blog" onclick="switchPage('blog')">Blog</button>
         <button type="button" class="nav-btn" data-nav="process" onclick="switchPage('process')">Process</button>
         <button type="button" class="nav-btn" data-nav="contact" onclick="switchPage('contact')">Contact</button>
       </nav>
 
-      <div class="hdr-actions">
-        <button type="button" class="hdr-buddy" aria-label="Open Buddy AI preview chat" onclick="switchPage('buddy')"><span class="dotw"></span> Try Buddy AI</button>
-        <button type="button" class="btn btn-gold btn-sm hide-m" onclick="switchPage('contact')">Start Project</button>
-      </div>
+      <button type="button" class="hdr-buddy" aria-label="Open Buddy AI preview chat" onclick="switchPage('buddy')"><span class="dotw"></span> Try Buddy AI</button>
+      <button type="button" class="btn btn-gold btn-sm hide-m" onclick="switchPage('contact')">Start Project</button>
 
       <nav id="mobileMenu" aria-label="Mobile Navigation" hidden class="mobile-menu">
         <button type="button" class="mnav-btn active" data-mnav="home" onclick="switchPage('home');closeMenu()">Home</button>
@@ -1091,7 +922,6 @@
         <button type="button" class="mnav-btn" data-mnav="services" onclick="switchPage('services');closeMenu()">Services</button>
         <button type="button" class="mnav-btn" data-mnav="portfolio" onclick="switchPage('portfolio');closeMenu()">Work &amp; Proof</button>
         <button type="button" class="mnav-btn" data-mnav="stack" onclick="switchPage('stack');closeMenu()">Tech Stack</button>
-        <button type="button" class="mnav-btn" data-mnav="blog" onclick="switchPage('blog');closeMenu()">📰 Blog &amp; Tech Updates</button>
         <button type="button" class="mnav-btn" data-mnav="process" onclick="switchPage('process');closeMenu()">Process</button>
         <button type="button" class="mnav-btn" data-mnav="buddy" onclick="switchPage('buddy');closeMenu()">✦ Try Buddy AI</button>
         <button type="button" class="mnav-btn" data-mnav="contact" onclick="switchPage('contact');closeMenu()">Pricing &amp; Contact</button>
@@ -1107,13 +937,14 @@
   <main>
   <!-- ========================== HOME ========================== -->
   <section id="page-home" class="page-view active">
+    <canvas id="galaxyCanvas" aria-hidden="true"></canvas>
 
     <div class="hero-band">
       <div class="shell hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Sovereign AI Systems · Bhubaneswar</p>
           <h1 class="display-xl" style="margin-top:1rem">Autonomous AI agents,<br />custom software &amp;<br /><span class="gold-i">enterprise CRM.</span></h1>
-          <p class="lead">Autonomous AI agents, automated CRM workflows, and bespoke business systems — engineered with the discipline of enterprise operations and the polish your clients feel.</p>
+          <p class="lead">Sovereign real-estate pipelines, automated CRM workflows, and autonomous AI agents — engineered with the discipline of enterprise operations and the polish your customers feel.</p>
           <div class="hero-ctas">
             <button type="button" class="btn btn-gold" onclick="switchPage('contact')">Start a Project</button>
             <button type="button" class="btn btn-glass" onclick="switchPage('digital-office')">Enter Digital Office</button>
@@ -1593,27 +1424,8 @@
           <h2 class="display-l">Certificates &amp; <span class="gold-i">proof of learning.</span></h2>
           <p class="lead" style="margin-top:.5rem">Industry certifications behind the delivery practice — each one verifiable with the credential ID shown.</p>
         </div>
-
-        <div class="cert-controls reveal">
-          <div class="cert-mode-switches" role="tablist" aria-label="Credentials display mode">
-            <button type="button" class="cert-mode-btn active" id="btnCertCarousel" onclick="setCertViewMode('carousel')">✦ Auto Showcase (3D)</button>
-            <button type="button" class="cert-mode-btn" id="btnCertGrid" onclick="setCertViewMode('grid')">Grid View (All 4)</button>
-          </div>
-          <div class="cert-nav-actions" id="certNavActions">
-            <button type="button" class="cert-arrow-btn" id="certPrevBtn" aria-label="Previous certificate" onclick="stepCert(-1)">←</button>
-            <div class="cert-dots" id="certDotsGroup" role="group" aria-label="Certificate slides">
-              <button type="button" class="cert-dot active" aria-label="Certificate 1" onclick="jumpCert(0)"></button>
-              <button type="button" class="cert-dot" aria-label="Certificate 2" onclick="jumpCert(1)"></button>
-              <button type="button" class="cert-dot" aria-label="Certificate 3" onclick="jumpCert(2)"></button>
-              <button type="button" class="cert-dot" aria-label="Certificate 4" onclick="jumpCert(3)"></button>
-            </div>
-            <button type="button" class="cert-arrow-btn" id="certNextBtn" aria-label="Next certificate" onclick="stepCert(1)">→</button>
-            <button type="button" class="ctrl cert-pause-btn" id="certAutoToggle" onclick="toggleCertAuto()">Pause</button>
-          </div>
-        </div>
-
-        <div class="cert-grid carousel-active reveal" id="credentialsGrid" style="margin-top:1.2rem">
-          <article class="card card-hover cert-card active-cert" data-cert-index="0">
+        <div class="cert-grid reveal" style="margin-top:1.2rem">
+          <article class="card card-hover cert-card">
             <figure class="cert-figure"><img src="images/certs/cert-knr-dme.jpg" alt="KNR Digital certificate of achievement — Google Digital Marketing &amp; E-commerce, presented to Rahul Kumar Dhal" width="1600" height="1066" loading="eager" decoding="async" /></figure>
             <div class="cert-cap">
               <span class="cert-issuer">KNR Digital · Internal</span>
@@ -1621,16 +1433,16 @@
               <small>Professional certificate track · issued Sep 2025</small>
             </div>
           </article>
-          <article class="card card-hover cert-card" data-cert-index="1">
-            <figure class="cert-figure"><img src="images/certs/cert-google-dme.webp" alt="Google Career Certificate — Google Digital Marketing &amp; E-commerce, earned by Rahul Kumar Dhal" width="1320" height="980" loading="eager" decoding="async" /></figure>
+          <article class="card card-hover cert-card">
+            <figure class="cert-figure"><img src="images/certs/cert-google-dme.webp" alt="Coursera professional certificate — Google Digital Marketing &amp; E-commerce, earned by Rahul Kumar Dhal" width="748" height="598" loading="eager" decoding="async" /></figure>
             <div class="cert-cap">
               <span class="cert-issuer">Google × Coursera</span>
               <b>Google Digital Marketing &amp; E-commerce Professional Certificate</b>
-              <small>7-course track · issued Sep 2025</small>
-              <span class="cert-verify">Credential RKD-GOOGLE-DME-2025 · Verified</span>
+              <small>7-course track · issued Jun 2023</small>
+              <a class="cert-verify" href="https://coursera.org/verify/professional-certs/AUSWGTVRY353" target="_blank" rel="noopener noreferrer">Verify on Coursera ↗</a>
             </div>
           </article>
-          <article class="card card-hover cert-card" data-cert-index="2">
+          <article class="card card-hover cert-card">
             <figure class="cert-figure"><img src="images/certs/cert-meta-dma.jpg" alt="Meta certified digital marketing associate certificate for Rahul Kumar Dhal" width="1600" height="1244" loading="eager" decoding="async" /></figure>
             <div class="cert-cap">
               <span class="cert-issuer">Meta</span>
@@ -1639,13 +1451,26 @@
               <a class="cert-verify" href="https://www.certiport.com/" target="_blank" rel="noopener noreferrer">Verify at certiport.com ↗</a>
             </div>
           </article>
-          <article class="card card-hover cert-card" data-cert-index="3">
-            <figure class="cert-figure"><img src="images/certs/cert-google-genai.jpg" alt="Google Cloud &amp; Google Skills Certificate of Completion — Generative AI Learning Achievement earned by Rahul Kumar Dhal" width="1080" height="713" loading="eager" decoding="async" style="cursor:zoom-in" onclick="window.open('images/certs/cert-google-genai.jpg','_blank')" /></figure>
-            <div class="cert-cap">
-              <span class="cert-issuer">Google Cloud × Google Skills</span>
-              <b>Google Cloud Generative AI Learning Achievement</b>
-              <small>8 learning paths · Gen AI Apps, Agents, Model Armor, Security &amp; Governance · signed by Thomas Kurian (CEO, Google Cloud) · issued Oct 1, 2026</small>
-              <a class="cert-verify" href="https://skills.google/credentials" target="_blank" rel="noopener noreferrer">Credential GCS-GAI-2026-1001-RKD · Verify on skills.google ↗</a>
+          <article class="card card-hover cert-card">
+            <div class="cert-sheet">
+              <div class="flex between iwrap">
+                <span class="big">8</span>
+                <span class="cert-issuer" style="color:var(--sky-soft)">Google Skills · Google Cloud</span>
+              </div>
+              <span class="cert-sheet-title">Generative AI Learning Achievement</span>
+              <p class="small" style="color:var(--body)">Eight completed Gen AI learning paths — agents, governance, security and applied deployment.</p>
+              <div class="path-chips">
+                <span>Gen AI Apps: Transform Your Work</span>
+                <span>Gen AI Agents: Transform Your Organization</span>
+                <span>Gen AI: Navigate the Landscape</span>
+                <span>Gen AI: Unlock Foundational Concepts</span>
+                <span>Gen AI: Beyond the Chatbot</span>
+                <span>Model Armor: Securing AI Deployments</span>
+                <span>Google Cloud Agent Governance &amp; Security</span>
+                <span>Secure Enterprise AI Agents</span>
+              </div>
+              <small class="cert-id">Credential GC5-GA-2026-1001-RKD · issued Oct 2026</small>
+              <a class="cert-verify" href="https://www.skills.google/credentials" target="_blank" rel="noopener noreferrer">Verify on skills.google ↗</a>
             </div>
           </article>
         </div>
@@ -1809,114 +1634,6 @@
         </div>
 
         <p class="stack-note reveal">Evidence note: case studies use anonymized operational patterns — no invented clients, metrics or certifications. Rough prototypes are labelled. Client identities in private case studies: demo on request only.</p>
-
-        <!-- ================= TECH & AI DISPATCH BLOG ================= -->
-        <div class="sec-head reveal" id="blog-dispatch" style="margin-top:3.5rem">
-          <p class="eyebrow">Intelligence &amp; Dispatch</p>
-          <h2 class="display-l">AI, Cybersecurity &amp; <span class="gold-i">Growth Field Notes.</span></h2>
-          <p class="lead" style="margin-top:.6rem">Technical breakdowns, open-source model benchmarks, prompt-injection defense, and CRM growth hacks — written from real production deployments.</p>
-        </div>
-
-        <div class="blog-filters reveal" role="tablist" aria-label="Dispatch categories">
-          <button type="button" class="blog-filter-btn active" data-blog-cat="all" onclick="filterBlogPosts('all')">All Dispatches (4)</button>
-          <button type="button" class="blog-filter-btn" data-blog-cat="growth" onclick="filterBlogPosts('growth')">✦ Growth &amp; Pricing Hacks</button>
-          <button type="button" class="blog-filter-btn" data-blog-cat="security" onclick="filterBlogPosts('security')">✦ Cybersecurity &amp; Defense</button>
-          <button type="button" class="blog-filter-btn" data-blog-cat="crm" onclick="filterBlogPosts('crm')">✦ Business CRM &amp; SLAs</button>
-          <button type="button" class="blog-filter-btn" data-blog-cat="agents" onclick="filterBlogPosts('agents')">✦ AI Agent Swarms</button>
-        </div>
-
-        <div class="blog-grid reveal">
-          <!-- Article 1: ₹3,500 Shift -->
-          <article class="blog-card" data-cat="growth">
-            <div>
-              <div class="blog-meta-row">
-                <span class="blog-tag gold">Free AI Blueprint</span>
-                <span class="blog-time">4 MIN READ · NOV 2026</span>
-              </div>
-              <h3 style="margin-top:.7rem">The ₹3,500 Sovereign Setup: Why Paying $20/mo to Closed Cloud AI is Obsolete</h3>
-              <p style="margin-top:.5rem">How Indian founders and developers are replacing ₹15,000/mo SaaS bills (ChatGPT Plus, Claude Pro, Canva, Otter) with sovereign local-first cascades (Ollama + Qwen 2.5 Coder + Gemini Flash). Zero recurring fees, zero message cutoffs, 100% private.</p>
-            </div>
-            <div>
-              <div class="blog-drawer" id="blogPost1">
-                <h5 style="color:var(--sky);margin-bottom:.4rem">The Sovereign Architecture</h5>
-                <p>Most commercial AI platforms lock users into $20/mo tiers with aggressive rate cutoffs. By cascading local Ollama models with fast zero-cost cloud relays (Gemini Flash &amp; Gemma 4), you achieve 0.8s response latency and unlimited daily requests without sending proprietary business data to foreign third-party clouds.</p>
-                <div style="margin-top:.6rem;display:flex;gap:.5rem">
-                  <a class="btn btn-gold btn-sm" href="#page-contact" onclick="selectServiceAndContact('Buddy AI Starter Pack (₹3,500 One-Time — Launch Offer)')">Get 1-on-1 Setup (₹3,500)</a>
-                </div>
-              </div>
-              <div class="blog-foot">
-                <span class="blog-author">By Rahul Kumar Dhal</span>
-                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('blogPost1', this)">Read dispatch →</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 2: Model Armor & Hacking Defense -->
-          <article class="blog-card" data-cat="security">
-            <div>
-              <div class="blog-meta-row">
-                <span class="blog-tag">Cybersecurity &amp; Defense</span>
-                <span class="blog-time">6 MIN READ · OCT 2026</span>
-              </div>
-              <h3 style="margin-top:.7rem">Model Armor &amp; Prompt Injection: Defending Customer-Facing AI Agents from Exploits</h3>
-              <p style="margin-top:.5rem">A hands-on teardown of indirect prompt injection, tool jailbreaking, and memory leaks in autonomous WhatsApp &amp; web CRM agents — and how to enforce strict deterministic guardrails before production.</p>
-            </div>
-            <div>
-              <div class="blog-drawer" id="blogPost2">
-                <h5 style="color:var(--sky);margin-bottom:.4rem">Deterministic Sanitization</h5>
-                <p>Never give an LLM raw SQL or unfettered terminal tool execution without an intermediate validator. We implement a dual-gate architecture: an inbound classifier scrubs adversarial tokens, while outbound responses pass through a strict JSON-schema policy filter to prevent prompt exfiltration.</p>
-              </div>
-              <div class="blog-foot">
-                <span class="blog-author">By Rahul Kumar Dhal</span>
-                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('blogPost2', this)">Read dispatch →</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 3: CRM & Calling SLA -->
-          <article class="blog-card" data-cat="crm">
-            <div>
-              <div class="blog-meta-row">
-                <span class="blog-tag emerald">Enterprise Automation</span>
-                <span class="blog-time">5 MIN READ · OCT 2026</span>
-              </div>
-              <h3 style="margin-top:.7rem">Zero-Leak Architecture: How We Automated 18,000+ Leads for KNR Integrity</h3>
-              <p style="margin-top:.5rem">Inside the sovereign n8n + Playwright + WhatsApp engine: 12-point dedupe, ORERA compliance verification, and 14-second bilingual brochure dispatch that saved ₹1.9L+ in operational overhead.</p>
-            </div>
-            <div>
-              <div class="blog-drawer" id="blogPost3">
-                <h5 style="color:var(--sky);margin-bottom:.4rem">Eliminating the Human Bottleneck</h5>
-                <p>Speed to lead determines conversion. When a buyer submits an inquiry, our webhook parses phone numbers, runs history dedupe, cross-references ORERA project numbers, and dispatches a personalized bilingual WhatsApp brochure in under 200 ms.</p>
-              </div>
-              <div class="blog-foot">
-                <span class="blog-author">By Rahul Kumar Dhal</span>
-                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('blogPost3', this)">Read dispatch →</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 4: AI Agent Swarms -->
-          <article class="blog-card" data-cat="agents">
-            <div>
-              <div class="blog-meta-row">
-                <span class="blog-tag">Agent Engineering</span>
-                <span class="blog-time">7 MIN READ · OCT 2026</span>
-              </div>
-              <h3 style="margin-top:.7rem">Engineering Autonomous Background Swarms for 24/7 Cloud Operations</h3>
-              <p style="margin-top:.5rem">How to deploy autonomous office daemons on Render or Oracle Cloud ARM that scan market trends, generate viral content, and dispatch leads even when your laptop is completely powered off.</p>
-            </div>
-            <div>
-              <div class="blog-drawer" id="blogPost4">
-                <h5 style="color:var(--sky);margin-bottom:.4rem">Decoupled Cloud Workers</h5>
-                <p>By pairing Supabase PostgreSQL with asynchronous FastAPI daemons and Baileys WhatsApp sockets, your company's digital office never sleeps. Even when you are offline, incoming inquiries are scored, qualified, and answered instantly.</p>
-              </div>
-              <div class="blog-foot">
-                <span class="blog-author">By Rahul Kumar Dhal</span>
-                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('blogPost4', this)">Read dispatch →</button>
-              </div>
-            </div>
-          </article>
-        </div>
       </div>
     </div>
   </section>
@@ -1948,7 +1665,7 @@
           <p class="eyebrow center">Searchable directory</p>
           <h2 class="display-l">AI ecosystem <span class="gold-i">directory.</span></h2>
         </div>
-        <div id="ecoDirectory" class="card" style="padding:clamp(1.1rem,2.4vw,1.6rem);opacity:1;visibility:visible;">
+        <div id="ecoDirectory" class="card reveal" style="padding:clamp(1.1rem,2.4vw,1.6rem)">
           <div style="display:flex;justify-content:space-between;align-items:center;gap:.8rem;flex-wrap:wrap;margin-bottom:.9rem">
             <p class="small t-muted">Logos via Simple Icons CDN (CC0 · trademarks with owners). Badges show usage in our work — no certifications claimed, no model rankings.</p>
             <p class="eco-count" id="ecoCount" aria-live="polite">104 of 104 shown</p>
@@ -2012,174 +1729,6 @@
     </div>
   </section>
 
-  <!-- ========================== BLOG & TECH INTELLIGENCE ========================== -->
-  <section id="page-blog" class="page-view">
-    <div class="sec">
-      <div class="shell">
-        <div class="sec-head reveal">
-          <p class="eyebrow">◈ FIELD INTELLIGENCE &amp; GLOBAL TECH DISPATCH</p>
-          <h1 class="display-l">Continuous Tech Updates &amp; <span class="gold-i">Global AI Intelligence.</span></h1>
-          <p class="lead" style="margin-top:.6rem">Autonomous agent blueprints, 2026 enterprise LLM cascades, PHP security remediation benchmarks, and sub-5-minute WhatsApp conversion funnels — published directly from our engineering desk in Bhubaneswar.</p>
-          
-          <!-- Live Telemetry Ticker -->
-          <div class="stack-metric-strip" style="margin-top:1.2rem;display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;background:rgba(4,10,22,0.7);padding:.8rem 1.2rem;border-radius:12px;border:1px solid rgba(56,189,248,0.2)">
-            <span class="chip chip-live"><span class="dot"></span>LIVE DISPATCH ACTIVE</span>
-            <span class="small t-muted">⚡ Gemini Flash-Lite &amp; Gemma 4 Active</span>
-            <span class="small t-muted">◈ WhatsApp Bridge Port 3006: Connected</span>
-            <span class="small" style="color:var(--gold-soft);font-weight:600">★ Pipeline Target: ₹1 Cr Conversion Engine</span>
-          </div>
-
-          <!-- Category Filters -->
-          <div class="blog-filters">
-            <button type="button" class="blog-filter-btn active" data-bcat="all" onclick="filterBlog('all')">All Intelligence</button>
-            <button type="button" class="blog-filter-btn" data-bcat="security" onclick="filterBlog('security')">PHP &amp; Security Audits</button>
-            <button type="button" class="blog-filter-btn" data-bcat="local" onclick="filterBlog('local')">Local Business &amp; ₹3,500 Pack</button>
-            <button type="button" class="blog-filter-btn" data-bcat="ai" onclick="filterBlog('ai')">Autonomous AI &amp; Agents</button>
-            <button type="button" class="blog-filter-btn" data-bcat="cloud" onclick="filterBlog('cloud')">Zero-Cost Cloud Infra</button>
-          </div>
-          <p id="blogCountText" class="xsmall t-muted">Showing 5 intelligence briefings</p>
-        </div>
-
-        <div class="blog-grid" style="margin-top:1.4rem">
-          <!-- Article 1: PHP Vulnerabilities & Modern Rebuilds -->
-          <article class="blog-card reveal" data-cat="security">
-            <div>
-              <div class="blog-meta-row">
-                <span class="blog-tag gold">SECURITY &amp; AUDIT</span>
-                <span class="blog-time">5 MIN READ · NOV 2026</span>
-              </div>
-              <h3 style="margin-top:.6rem">The 2026 PHP Security &amp; Speed Crisis: Why Indian MSMEs Lose 40% of Inbound Leads</h3>
-              <p style="margin-top:.5rem">An exhaustive audit of legacy PHP 7.x/8.x business portals across Odisha &amp; pan-India. Unescaped POST forms leak inquiries, while 4.8s mobile load times drive Google bounce rates above 65%. How Buddy AI executes a sovereign, zero-data-loss Next.js rebuild in 48 hours for ₹14,999.</p>
-            </div>
-            <div>
-              <div class="blog-foot">
-                <span class="blog-author">By Rahul Kumar Dhal · Lead Architect</span>
-                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('drawerPhp', this)">Read Briefing ↓</button>
-              </div>
-              <div id="drawerPhp" class="blog-drawer">
-                <h4 style="color:#F6E27A;margin-bottom:.4rem">Vulnerability Vector &amp; Edge Migration Blueprint</h4>
-                <p>1. <strong>Legacy Form Exposure:</strong> Contact forms built with raw PHP mailer scripts frequently lack CSRF tokens, basic sanitize filters, or rate-limiting, making them targets for automated bot spam and lead spoofing.</p>
-                <p>2. <strong>Mobile Conversion Penalty:</strong> Core Web Vitals heavily punish monolithic server-side rendering over Indian 4G/5G mobile networks. A 4-second delay drops booking conversion by 42%.</p>
-                <p>3. <strong>The 48-Hour Next.js Edge Cure:</strong> Buddy AI ports existing MySQL/Postgres databases into a headless API with a static edge frontend on Vercel/GitHub Pages + automated WhatsApp lead routing. Zero monthly hosting fees for the client.</p>
-                <div style="margin-top:.8rem">
-                  <a class="btn btn-gold btn-sm" href="https://wa.me/917328089908?text=Hi%20Rahul%21%20I%20read%20the%20PHP%20security%20audit%20article%20and%20want%20a%20free%20website%20security%20audit." target="_blank" rel="noopener noreferrer">Request a Free PHP Security &amp; Speed Audit →</a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 2: Zero Website Penalty for Local Clinics & Businesses -->
-          <article class="blog-card reveal" data-cat="local">
-            <div>
-              <div class="blog-meta-row">
-                <span class="blog-tag emerald">₹3,500 LAUNCH PACK</span>
-                <span class="blog-time">4 MIN READ · NOV 2026</span>
-              </div>
-              <h3 style="margin-top:.6rem">The High Cost of Zero Digital Presence: Why Local Clinics &amp; MSMEs Lose ₹3 Lakhs/Mo</h3>
-              <p style="margin-top:.5rem">Relying solely on Justdial or Google Maps listings forces business owners to share leads with 4 competitors simultaneously. How our ₹3,500 Launch Offer provides a verified Google presence, mobile PWA, and direct 1-tap WhatsApp consultation in 24 hours.</p>
-            </div>
-            <div>
-              <div class="blog-foot">
-                <span class="blog-author">By Rahul Kumar Dhal · Founder</span>
-                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('drawerNoWeb', this)">Read Briefing ↓</button>
-              </div>
-              <div id="drawerNoWeb" class="blog-drawer">
-                <h4 style="color:#5fe3a1;margin-bottom:.4rem">The Turnkey Local Authority Architecture</h4>
-                <p>1. <strong>The Aggregator Trap:</strong> When a prospective customer searches for a dental clinic, builder, or consultant, aggregator portals sell their inquiry as a shared lead to multiple vendors, sparking a margin-killing price war.</p>
-                <p>2. <strong>Direct Sovereign Ingress:</strong> Having your own domain and indexed website immediately routes 100% of high-intent searchers directly to your personal WhatsApp.</p>
-                <p>3. <strong>What ₹3,500 Delivers:</strong> Custom mobile-first responsive landing page, verified Google Business Profile schema, instant UPI QR payment gateway, and pre-configured WhatsApp lead concierge with zero monthly SaaS subscriptions.</p>
-                <div style="margin-top:.8rem">
-                  <a class="btn btn-gold btn-sm" href="https://wa.me/917328089908?text=Hi%20Rahul%21%20I%20want%20to%20claim%20the%20Buddy%20AI%20Starter%20Pack%20for%20my%20business%20at%20₹3,500." target="_blank" rel="noopener noreferrer">Claim ₹3,500 Launch Offer on WhatsApp →</a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 3: Autonomous Terminal Intelligence (ATI) vs Chatbots -->
-          <article class="blog-card reveal" data-cat="ai">
-            <div>
-              <div class="blog-meta-row">
-                <span class="blog-tag">AUTONOMOUS AGENTS</span>
-                <span class="blog-time">7 MIN READ · OCT 2026</span>
-              </div>
-              <h3 style="margin-top:.6rem">ATI vs Traditional Chatbots: Why Autonomous Multi-Agent Loops Close 42% More Deals</h3>
-              <p style="margin-top:.5rem">Moving beyond canned conversational chat. How Autonomous Terminal Intelligence (ATI) uses multi-turn tool calling, live CRM memory, and sub-minute response SLAs to manage 18,678 enterprise leads with zero lead leakage.</p>
-            </div>
-            <div>
-              <div class="blog-foot">
-                <span class="blog-author">By Rahul Kumar Dhal · Lead Architect</span>
-                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('drawerAti', this)">Read Briefing ↓</button>
-              </div>
-              <div id="drawerAti" class="blog-drawer">
-                <h4 style="color:#38BDF8;margin-bottom:.4rem">The ReAct Tool Execution Loop</h4>
-                <p>1. <strong>Why Standard Chatbots Fail:</strong> Basic chatbots only answer text. When a lead asks for inventory, pricing, or appointment booking, the bot hallucinates or tells them to call back.</p>
-                <p>2. <strong>Autonomous Action Execution:</strong> Buddy ATI actively checks live database availability, calculates personalized ROI, generates custom contracts, and logs the customer to the calling queue in under 120 seconds.</p>
-                <p>3. <strong>Proof of Work:</strong> Deployed live across KNR Integrity Real Estate Advisory, handling 60+ projects, ORERA title verification, and automated AC cab dispatch.</p>
-                <div style="margin-top:.8rem">
-                  <button type="button" class="btn btn-glass btn-sm" onclick="switchPage('buddy')">Test Buddy AI In Real Time →</button>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 4: Zero-Cost 24/7 Cloud Architecture -->
-          <article class="blog-card reveal" data-cat="cloud">
-            <div>
-              <div class="blog-meta-row">
-                <span class="blog-tag">CLOUD &amp; DOCKER</span>
-                <span class="blog-time">6 MIN READ · OCT 2026</span>
-              </div>
-              <h3 style="margin-top:.6rem">Bypassing Cloud Inflation: Deploying 24/7 AI Backends with Zero Monthly Hosting Bills</h3>
-              <p style="margin-top:.5rem">A battle-tested guide to avoiding cloud subscription traps like Render's $7/month database surprises. Running containerized FastAPI backends on Hugging Face Spaces (16GB RAM) + Supabase Edge for 100% free forever.</p>
-            </div>
-            <div>
-              <div class="blog-foot">
-                <span class="blog-author">By Rahul Kumar Dhal · Infrastructure Lead</span>
-                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('drawerCloud', this)">Read Briefing ↓</button>
-              </div>
-              <div id="drawerCloud" class="blog-drawer">
-                <h4 style="color:#BAE6FD;margin-bottom:.4rem">The Sovereign Free Stack Blueprint</h4>
-                <p>1. <strong>Hugging Face Spaces (Docker):</strong> 2 vCPU, 16GB RAM, persistent container, HTTPS endpoint — completely free with zero credit card requirements.</p>
-                <p>2. <strong>Supabase Edge (Free Tier):</strong> 500MB PostgreSQL database, instant REST APIs, WebSocket real-time subscriptions, and auth sessions.</p>
-                <p>3. <strong>Cloudflare Tunnel:</strong> Direct secure tunneling from your local workstation or edge server to a global CDN domain without opening router ports or paying for static IPs.</p>
-                <div style="margin-top:.8rem">
-                  <a class="btn btn-gold btn-sm" href="https://wa.me/917328089908?text=Hi%20Rahul%21%20I%20want%20to%20set%20up%20zero-cost%20cloud%20hosting%20for%20my%20AI%20system." target="_blank" rel="noopener noreferrer">Get Cloud Architecture Consultation →</a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 5: 1 Cr Revenue Pipeline Blueprint -->
-          <article class="blog-card reveal" data-cat="security">
-            <div>
-              <div class="blog-meta-row">
-                <span class="blog-tag gold">B2B REVENUE ENGINE</span>
-                <span class="blog-time">6 MIN READ · NOV 2026</span>
-              </div>
-              <h3 style="margin-top:.6rem">The Sub-5-Minute Lead Ingress Funnel: Targeting ₹1 Crore in Conversions with AI Triage</h3>
-              <p style="margin-top:.5rem">Field telemetry reveals that leads contacted within 5 minutes convert at 391% higher rates than those called after 30 minutes. How Playwright scrapers and WhatsApp triage turn raw B2B leads into high-ticket closures.</p>
-            </div>
-            <div>
-              <div class="blog-foot">
-                <span class="blog-author">By Rahul Kumar Dhal · Founder</span>
-                <button type="button" class="blog-expand-btn" onclick="toggleBlogDrawer('drawerFunnel', this)">Read Briefing ↓</button>
-              </div>
-              <div id="drawerFunnel" class="blog-drawer">
-                <h4 style="color:#F6E27A;margin-bottom:.4rem">The 4-Stage High-Ticket Closing Mechanism</h4>
-                <p>1. <strong>Deep Diagnostic Pre-Scoring:</strong> Never pitch blind. Buddy AI identifies whether a prospect has an insecure PHP site, no digital presence, or high-volume booking bottlenecks before sending a single message.</p>
-                <p>2. <strong>Personalized Value Outreach:</strong> We provide actionable value first — a free vulnerability report or mockup preview — demonstrating instant ROI.</p>
-                <p>3. <strong>Bilingual WhatsApp Qualification:</strong> Seamless Odia, Hindi, and English multi-turn conversations that answer objections, schedule founder demos, and take token deposits.</p>
-                <div style="margin-top:.8rem">
-                  <button type="button" class="btn btn-gold btn-sm" onclick="switchPage('contact')">Discuss Your Enterprise B2B Growth Move →</button>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ========================== CONTACT & PRICING ========================== -->
   <section id="page-contact" class="page-view">
     <div class="sec">
@@ -2203,7 +1752,7 @@
               <label class="field"><span>Service required</span>
                 <select id="clientService" name="clientService" class="select">
                   <option value="">Select a service…</option>
-                  <option value="Buddy AI Starter Pack (₹3,500 One-Time — Launch Offer)">Buddy AI Starter Pack (₹3,500 one-time launch offer)</option>
+                  <option value="Buddy AI Starter Pack (₹2,999 One-Time — Laptop/Mobile Setup)">Buddy AI Starter Pack (₹2,999 one-time)</option>
                   <option value="B2B &amp; Real Estate Lead Scraper &amp; Calling SLA (₹24,999/mo)">Lead Scraper &amp; Calling SLA (₹24,999/mo)</option>
                   <option value="Autonomous Business CRM &amp; Client Concierge (₹49,999 setup)">Autonomous Business CRM (₹49,999 setup)</option>
                   <option value="Enterprise Software &amp; Autonomous Swarm (₹89k-₹1.99L)">Enterprise Software Swarm (₹89k+)</option>
@@ -2258,47 +1807,56 @@
       </div>
     </div>
 
-    <div class="sec" style="padding-top:0">
+    <div class="sec" style="padding-top:2rem">
       <div class="shell" id="pricing">
-        <div class="sec-head center reveal">
-          <p class="eyebrow center">Packages</p>
+        <div class="sec-head center reveal" style="margin-bottom:2.5rem">
+          <p class="eyebrow center" style="margin-bottom:0.5rem">Enterprise Packages</p>
           <h2 class="display-l">Clear tiers. <span class="gold-i">Honest scope.</span></h2>
+          <p class="lead" style="max-width:640px;margin:0.6rem auto 0">Production-grade AI systems, custom CRM swarms, and high-velocity lead pipelines built for real revenue.</p>
         </div>
-        <div class="price-grid">
-          <article class="card card-hover spotlight-card price-card reveal" id="starter-pack-card"><span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span><span class="price-flag">Individual · 1-on-1</span>
-            <h3 class="price-name">Buddy AI Personal Starter</h3>
-            <p class="price-num">₹3,500 <small>one-time · launch offer</small></p>
-            <p class="price-desc">Early adopter access <s class="t-muted">₹6,999</s></p>
-            <div><p class="price-li">Rahul installs 1-on-1 on laptop (Mac/Win/Linux) or mobile</p><p class="price-li">Replaces 5+ paid AI apps with free local models</p><p class="price-li">Daily Reels scripts, posts, WhatsApp pitches &amp; research</p><p class="price-li">Zero monthly API bills — lifetime execution</p></div>
-            <div class="save-box"><span class="xsmall t-muted" style="letter-spacing:.14em;text-transform:uppercase">Est. annual savings</span><p class="v">₹1,29,552 / yr</p></div>
-            <a class="btn btn-emerald" href="#upi-payment-card" data-jump="upi-payment-card" onclick="return jumpToEl('upi-payment-card')">Pay via UPI →</a>
+        <div class="price-grid" style="align-items:stretch">
+          <article class="card card-hover spotlight-card price-card reveal" id="starter-pack-card" style="display:flex;flex-direction:column;justify-content:space-between"><span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span><span class="price-flag">Individual · 1-on-1</span>
+            <div>
+              <h3 class="price-name">Buddy AI Personal Starter</h3>
+              <p class="price-num">₹3,500 <span style="font-size:0.8rem;font-weight:500;color:var(--t-muted);display:block;margin-top:2px">one-time investment</span></p>
+              <p class="price-desc">Early adopter access <s class="t-muted">₹6,999</s></p>
+              <div><p class="price-li">Rahul installs 1-on-1 on laptop (Mac/Win/Linux) or mobile</p><p class="price-li">Replaces 5+ paid AI apps with high-speed open models</p><p class="price-li">Daily Reels scripts, posts, WhatsApp pitches &amp; research</p><p class="price-li">Zero monthly API bills — lifetime execution</p></div>
+              <div class="save-box"><span class="xsmall t-muted" style="letter-spacing:.14em;text-transform:uppercase">Est. annual savings</span><p class="v">₹1,29,552 / yr</p></div>
+            </div>
+            <a class="btn btn-emerald" style="width:100%;margin-top:1.2rem;text-align:center" href="#upi-payment-card" data-jump="upi-payment-card" onclick="return jumpToEl('upi-payment-card')">Get Starter Pack →</a>
           </article>
-          <article class="card card-hover spotlight-card price-card reveal" style="margin-top:1.4rem"><span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span><span class="price-flag solid-red">Featured</span>
-            <h3 class="price-name">Lead Engine — Scraper &amp; Calling SLA</h3>
-            <p class="price-num">₹24,999 <small>/ month</small></p>
-            <p class="price-desc">B2B · real estate · clinics</p>
-            <div><p class="price-li">Playwright multi-sector lead ingress + Meta/Google ads</p><p class="price-li">Sub-5-minute calling queue with SLA timers &amp; scripts</p><p class="price-li">Geo campaigns for Patia, Khandagiri &amp; pan-India</p><p class="price-li">Weekly pipeline telemetry: CPL, CAC, appointments</p></div>
-            <button type="button" class="btn btn-gold" onclick="selectServiceAndContact('B2B &amp; Real Estate Lead Scraper &amp; Calling SLA (₹24,999/mo)')">Select Lead Engine →</button>
+          <article class="card card-hover spotlight-card price-card reveal" style="display:flex;flex-direction:column;justify-content:space-between"><span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span><span class="price-flag solid-red">Featured</span>
+            <div>
+              <h3 class="price-name">Lead Engine — Scraper &amp; Calling SLA</h3>
+              <p class="price-num">₹24,999 <span style="font-size:0.8rem;font-weight:500;color:var(--t-muted);display:block;margin-top:2px">per month retainer</span></p>
+              <p class="price-desc">B2B · real estate · clinics</p>
+              <div><p class="price-li">Playwright multi-sector lead ingress + Meta/Google ads</p><p class="price-li">Sub-5-minute calling queue with SLA timers &amp; scripts</p><p class="price-li">Geo campaigns for Patia, Khandagiri &amp; pan-India</p><p class="price-li">Weekly pipeline telemetry: CPL, CAC, appointments</p></div>
+            </div>
+            <button type="button" class="btn btn-gold" style="width:100%;margin-top:1.2rem" onclick="selectServiceAndContact('B2B &amp; Real Estate Lead Scraper &amp; Calling SLA (₹24,999/mo)')">Select Lead Engine →</button>
           </article>
-          <article class="card card-hover spotlight-card price-card reveal" style="margin-top:1.4rem"><span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span><span class="price-flag">All businesses</span>
-            <h3 class="price-name">Autonomous Business CRM</h3>
-            <p class="price-num">₹49,999 <small>setup</small></p>
-            <p class="price-desc">Proven in real estate — adaptable to any workflow</p>
-            <div><p class="price-li">Sovereign 4-stage pipeline fit to your sales flow</p><p class="price-li">Client concierge: cab dispatch, bookings, demos</p><p class="price-li">12-point dedupe &amp; registry verification</p><p class="price-li">Odia/Hindi/English delivery + 1-on-1 staff training</p></div>
-            <button type="button" class="btn btn-gold" onclick="selectServiceAndContact('Autonomous Business CRM &amp; Client Concierge (₹49,999 setup)')">Deploy Business CRM →</button>
+          <article class="card card-hover spotlight-card price-card reveal" style="display:flex;flex-direction:column;justify-content:space-between"><span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span><span class="price-flag">All businesses</span>
+            <div>
+              <h3 class="price-name">Autonomous Business CRM</h3>
+              <p class="price-num">₹49,999 <span style="font-size:0.8rem;font-weight:500;color:var(--t-muted);display:block;margin-top:2px">one-time enterprise setup</span></p>
+              <p class="price-desc">Proven in real estate — adaptable to any workflow</p>
+              <div><p class="price-li">Sovereign 4-stage pipeline fit to your sales flow</p><p class="price-li">Client concierge: cab dispatch, bookings, demos</p><p class="price-li">12-point dedupe &amp; registry verification</p><p class="price-li">Odia/Hindi/English delivery + 1-on-1 staff training</p></div>
+            </div>
+            <button type="button" class="btn btn-gold" style="width:100%;margin-top:1.2rem" onclick="selectServiceAndContact('Autonomous Business CRM &amp; Client Concierge (₹49,999 setup)')">Deploy Business CRM →</button>
           </article>
-          <article class="card card-hover spotlight-card price-card reveal" style="margin-top:1.4rem"><span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span><span class="price-flag solid-violet">Enterprise scale</span>
-            <h3 class="price-name">Enterprise Software Swarm</h3>
-            <p class="price-num">₹89,999+ <small>build</small></p>
-            <p class="price-desc">Full custom web app + office agents + security</p>
-            <div><p class="price-li">React/Next.js frontend, FastAPI backend, PostgreSQL, Docker</p><p class="price-li">6 autonomous office agents on private servers</p><p class="price-li">OWASP/CVE review + SSL &amp; header fortification</p><p class="price-li">Zero SaaS lock-in — full IP transferred to you</p></div>
-            <button type="button" class="btn btn-gold" onclick="selectServiceAndContact('Enterprise Software &amp; Autonomous Swarm (₹89k-₹1.99L)')">Select Enterprise Swarm →</button>
+          <article class="card card-hover spotlight-card price-card reveal" style="display:flex;flex-direction:column;justify-content:space-between"><span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span><span class="price-flag solid-violet">Enterprise scale</span>
+            <div>
+              <h3 class="price-name">Enterprise Software Swarm</h3>
+              <p class="price-num">₹89,999+ <span style="font-size:0.8rem;font-weight:500;color:var(--t-muted);display:block;margin-top:2px">custom architecture build</span></p>
+              <p class="price-desc">Full custom web app + office agents + security</p>
+              <div><p class="price-li">React/Next.js frontend, FastAPI backend, PostgreSQL, Docker</p><p class="price-li">6 autonomous office agents on private servers</p><p class="price-li">OWASP/CVE review + SSL &amp; header fortification</p><p class="price-li">Zero SaaS lock-in — full IP transferred to you</p></div>
+            </div>
+            <button type="button" class="btn btn-gold" style="width:100%;margin-top:1.2rem" onclick="selectServiceAndContact('Enterprise Software &amp; Autonomous Swarm (₹89k-₹1.99L)')">Select Enterprise Swarm →</button>
           </article>
         </div>
 
         <div class="card reveal" style="margin-top:1.2rem">
           <div class="flex between wrap" style="gap:.8rem;margin-bottom:.8rem">
-            <div><p class="eyebrow">Never pay for AI apps again</p><p class="small t-muted" style="margin-top:.3rem">Included in the ₹3,500 Starter Pack — where a sensible free alternative exists.</p></div>
+            <div><p class="eyebrow">Never pay for AI apps again</p><p class="small t-muted" style="margin-top:.3rem">Included in the ₹2,999 Starter Pack — where a sensible free alternative exists.</p></div>
             <div class="save-box" style="min-width:190px"><p class="v">₹1,29,552 / yr saved</p></div>
           </div>
           <div style="overflow-x:auto">
@@ -2321,8 +1879,8 @@
     <div class="sec" style="padding-top:0">
       <div class="shell upi-grid">
         <div>
-          <div class="qr-frame"><img src="images/upi-qr.svg" alt="BHIM UPI QR code to pay ₹3,500 once for the Buddy AI Starter Pack" width="240" height="240" loading="eager" decoding="sync" /></div>
-          <p class="qr-cap">BHIM UPI · ₹3,500 Launch Offer</p>
+          <div class="qr-frame"><img src="images/upi-qr.svg" alt="BHIM UPI QR code to pay ₹2,999 once for the Buddy AI Starter Pack" width="240" height="240" loading="eager" decoding="sync" /></div>
+          <p class="qr-cap">BHIM UPI · ₹2,999 Starter Pack</p>
         </div>
         <div class="card card-hover reveal" id="upi-payment-card">
           <p class="eyebrow">Instant UPI payment</p>
@@ -2333,12 +1891,12 @@
             <span class="upi-id">rahulkumardhal@oksbi <button type="button" class="copy-btn" data-copy="rahulkumardhal@oksbi">Copy</button></span>
           </div>
           <div class="app-links">
-            <a class="btn btn-emerald btn-sm" href="upi://pay?pa=7328089908@upi&amp;pn=Rahul%20Kumar%20Dhal&amp;am=3500&amp;cu=INR&amp;tn=Buddy%20AI%20Starter%20Pack">⚡ Any UPI app</a>
+            <a class="btn btn-emerald btn-sm" href="upi://pay?pa=7328089908@upi&amp;pn=Rahul%20Kumar%20Dhal&amp;am=2999&amp;cu=INR&amp;tn=Buddy%20AI%20Starter%20Pack">⚡ Any UPI app</a>
             <a class="btn btn-glass btn-sm" href="https://pay.google.com/payments/u/0/#home" target="_blank" rel="noopener noreferrer">GPay</a>
             <a class="btn btn-glass btn-sm" href="https://www.phonepe.com/app" target="_blank" rel="noopener noreferrer">PhonePe</a>
             <a class="btn btn-glass btn-sm" href="https://paytm.com" target="_blank" rel="noopener noreferrer">Paytm</a>
           </div>
-          <a class="btn btn-crimson" style="margin-top:1rem" data-wa="Hi Rahul! I have completed the UPI payment of ₹3,500 for the Buddy AI Starter Pack. Here is my screenshot. Please schedule my installation call." href="https://wa.me/917328089908?text=Hi%20Rahul%21%20I%20have%20completed%20the%20UPI%20payment%20of%20%E2%82%B93%2C500%20for%20the%20Buddy%20AI%20Starter%20Pack.%20Here%20is%20my%20screenshot.%20Please%20schedule%20my%20installation%20call." target="_blank" rel="noopener noreferrer">Send payment screenshot →</a>
+          <a class="btn btn-crimson" style="margin-top:1rem" data-wa="Hi Rahul! I have completed the UPI payment of ₹2,999 for the Buddy AI Starter Pack. Here is my screenshot. Please schedule my installation call." href="https://wa.me/917328089908?text=Hi%20Rahul%21%20I%20have%20completed%20the%20UPI%20payment%20of%20%E2%82%B92%2C999%20for%20the%20Buddy%20AI%20Starter%20Pack.%20Here%20is%20my%20screenshot.%20Please%20schedule%20my%20installation%20call." target="_blank" rel="noopener noreferrer">Send payment screenshot →</a>
         </div>
       </div>
     </div>
@@ -2670,7 +2228,7 @@
           <span class="foot-link" style="color:var(--muted);cursor:default">Patia Infocity, Bhubaneswar, Odisha</span>
         </div>
         <div class="flex wrap" style="gap:.4rem;margin-top:1rem">
-          <span class="chip gold"><span class="dot"></span>Starter pack ₹3,500</span>
+          <span class="chip gold"><span class="dot"></span>Starter pack ₹2,999</span>
           <span class="chip"><span class="dot"></span>Client: knrintegrity.com</span>
         </div>
       </div>
@@ -2692,7 +2250,7 @@
       <div class="bp-actions">
         <button type="button" class="bp-act" onclick="chooseBuddyPath('Custom CRM & Lead Operations','Leads from different channels are getting missed; my team needs one pipeline with calling queues and follow-up reminders.')">Leads get lost between chats &amp; sheets</button>
         <button type="button" class="bp-act" onclick="chooseBuddyPath('AI Workflow Automation (Python / n8n)','Manual copy-paste of listings/inquiries delays follow-ups; I need intake to flow straight into the CRM with dedupe.')">Manual copy-paste slows follow-ups</button>
-        <button type="button" class="bp-act" onclick="chooseBuddyPath('Buddy AI Starter Pack (₹3,500 One-Time — Launch Offer)','I want a personal AI operating assistant installed 1-on-1 on my laptop or mobile.')">I want my own AI assistant</button>
+        <button type="button" class="bp-act" onclick="chooseBuddyPath('Buddy AI Starter Pack (₹2,999 One-Time — Laptop/Mobile Setup)','I want a personal AI operating assistant installed 1-on-1 on my laptop or mobile.')">I want my own AI assistant</button>
       </div>
       <button type="button" class="btn btn-gold btn-sm" onclick="switchPage('buddy');toggleBuddyGuide(false)" style="width:100%">Open full chat →</button>
     </div>
@@ -2754,20 +2312,15 @@
       } catch (e) {}
       return false;
     }
-    function switchPage(pageId, pushToHistory) {
-      if (pushToHistory === undefined) pushToHistory = true;
+    function switchPage(pageId) {
       try { playCyberSfx('nav'); } catch (e) {}
       try {
         document.querySelectorAll('.page-view').forEach(function (p) { p.classList.remove('active'); });
       } catch (e) {}
       var target = document.getElementById('page-' + pageId);
-      if (target) {
-        target.classList.add('active');
-        try { target.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in-view'); }); } catch (e) {}
-      }
+      if (target) target.classList.add('active');
       if (pageId === 'buddy') { try { baiStart(); } catch (e) {} }
       if (pageId === 'digital-office') { try { vofficeInit(); } catch (e) {} }
-      if (pageId === 'stack') { try { ecoRender(); ovRender(); } catch (e) {} }
       try {
         document.querySelectorAll('.nav-btn').forEach(function (btn) {
           var active = btn.getAttribute('data-nav') === pageId;
@@ -2780,11 +2333,7 @@
       } catch (e) {}
       try {
         if (window.location.hash !== '#' + pageId && window.location.hash !== '#page-' + pageId) {
-          if (pushToHistory) {
-            history.pushState({ pageId: pageId }, '', '#' + pageId);
-          } else {
-            history.replaceState({ pageId: pageId }, '', '#' + pageId);
-          }
+          history.replaceState(null, null, '#' + pageId);
         }
       } catch (e) {}
       var rm = false;
@@ -2794,48 +2343,16 @@
     function handleHashNav() {
       var h = (window.location.hash || '').replace(/^#page-|^#/, '').trim();
       if (!h) return;
-      if (document.getElementById('page-' + h)) { switchPage(h, false); return; }
+      if (document.getElementById('page-' + h)) { switchPage(h); return; }
       if (ANCHOR_PAGE[h]) {
-        switchPage(ANCHOR_PAGE[h], false);
+        switchPage(ANCHOR_PAGE[h]);
         setTimeout(function () { jumpToEl(h); }, 60);
       }
     }
     try {
       window.addEventListener('hashchange', handleHashNav);
-      window.addEventListener('popstate', function (e) {
-        var h = (window.location.hash || '').replace(/^#page-|^#/, '').trim() || 'home';
-        switchPage(h, false);
-      });
       window.addEventListener('DOMContentLoaded', handleHashNav);
     } catch (e) {}
-
-    /* ---------- Blog & Field Intelligence Controller ---------- */
-    function filterBlog(cat) {
-      try { playCyberSfx('click'); } catch (e) {}
-      document.querySelectorAll('.blog-filter-btn').forEach(function (b) {
-        b.classList.toggle('active', b.getAttribute('data-bcat') === cat);
-      });
-      var cards = document.querySelectorAll('.blog-card');
-      var visible = 0;
-      cards.forEach(function (c) {
-        var match = cat === 'all' || c.getAttribute('data-cat') === cat;
-        c.style.display = match ? 'flex' : 'none';
-        if (match) visible++;
-      });
-      var countEl = document.getElementById('blogCountText');
-      if (countEl) countEl.textContent = 'Showing ' + visible + ' intelligence briefings';
-    }
-
-    function toggleBlogDrawer(drawerId, btn) {
-      try { playCyberSfx('nav'); } catch (e) {}
-      var drawer = document.getElementById(drawerId);
-      if (!drawer) return;
-      var isOpen = drawer.style.display === 'block';
-      drawer.style.display = isOpen ? 'none' : 'block';
-      if (btn) {
-        btn.innerHTML = isOpen ? 'Read Briefing ↓' : 'Hide Briefing ↑';
-      }
-    }
 
     /* ---------- 2. Digital office stations ---------- */
     const VOFFICE_STATIONS = {
@@ -2988,7 +2505,7 @@
         defaultName: "Solo Creator & Founder OS",
         tag: "INDIVIDUAL STARTER BLUEPRINT",
         title: "Buddy AI Personal Operating Assistant",
-        cost: "₹3,500 one-time (Launch Offer)",
+        cost: "₹2,999 one-time (Lifetime Access)",
         features: "1-on-1 guided install on laptop/mobile by Rahul, replaces 5+ paid AI subscriptions, vertical Reels/video scriptwriter, unlimited neural inference.",
         roi: "Saves ₹1,29,552 / year on SaaS fees, 100% free models with zero recurring monthly bills."
       }
@@ -3085,34 +2602,6 @@
       window.addEventListener('hashchange', handleHashNav);
       window.addEventListener('DOMContentLoaded', handleHashNav);
     } catch (e) {}
-
-    /* ---------- Blog & Field Intelligence Controller ---------- */
-    function filterBlog(cat) {
-      try { playCyberSfx('click'); } catch (e) {}
-      document.querySelectorAll('.blog-filter-btn').forEach(function (b) {
-        b.classList.toggle('active', b.getAttribute('data-bcat') === cat);
-      });
-      var cards = document.querySelectorAll('.blog-card');
-      var visible = 0;
-      cards.forEach(function (c) {
-        var match = cat === 'all' || c.getAttribute('data-cat') === cat;
-        c.style.display = match ? 'flex' : 'none';
-        if (match) visible++;
-      });
-      var countEl = document.getElementById('blogCountText');
-      if (countEl) countEl.textContent = 'Showing ' + visible + ' intelligence briefings';
-    }
-
-    function toggleBlogDrawer(drawerId, btn) {
-      try { playCyberSfx('nav'); } catch (e) {}
-      var drawer = document.getElementById(drawerId);
-      if (!drawer) return;
-      var isOpen = drawer.style.display === 'block';
-      drawer.style.display = isOpen ? 'none' : 'block';
-      if (btn) {
-        btn.innerHTML = isOpen ? 'Read Briefing ↓' : 'Hide Briefing ↑';
-      }
-    }
 
     /* ---------- 4. Hero capabilities carousel ---------- */
     var slides = [
@@ -3585,24 +3074,7 @@
     function baiMsg(txt, who) {
       try {
         var l = baiLogEl(); if (!l) return;
-        var msgEl = document.createElement('div');
-        msgEl.className = 'bai-msg ' + (who === 'user' ? 'bai-user' : 'bai-bot');
-        if (who === 'user') {
-          msgEl.textContent = txt;
-        } else {
-          var cleanHtml = String(txt)
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/&lt;b&gt;(.*?)&lt;\/b&gt;/g, '<b>$1</b>')
-            .replace(/&lt;i&gt;(.*?)&lt;\/i&gt;/g, '<i>$1</i>')
-            .replace(/&lt;strong&gt;(.*?)&lt;\/strong&gt;/g, '<strong>$1</strong>')
-            .replace(/&lt;br\s*\/?&gt;/g, '<br/>')
-            .replace(/&lt;a href="(https?:\/\/[^"]+)"(.*?)&gt;(.*?)&lt;\/a&gt;/g, '<a href="$1" target="_blank" rel="noopener noreferrer">$3</a>');
-          msgEl.innerHTML = cleanHtml;
-        }
-        l.appendChild(msgEl);
+        l.innerHTML += '<div class="bai-msg ' + (who === 'user' ? 'bai-user' : 'bai-bot') + '">' + txt + '</div>';
         baiScroll();
       } catch (e) {}
     }
@@ -3633,46 +3105,6 @@
       }
       baiMsg(txt, 'bot');
       baiChips(chips || []);
-    }
-    async function baiLive(txt) {
-      baiTyping();
-      var endpoints = [
-        'http://127.0.0.1:8787/api/company/buddy-chat',
-        'https://rahuldhal800-buddy-ai-partners-core.hf.space/api/chat'
-      ];
-      if (BAI.endpoint) endpoints.unshift(BAI.endpoint);
-
-      var answered = false;
-      for (var i = 0; i < endpoints.length; i++) {
-        var ep = endpoints[i];
-        try {
-          var controller = new AbortController();
-          var timeoutId = setTimeout(function () { controller.abort(); }, 6000);
-          var res = await fetch(ep, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: txt, history: [] }),
-            signal: controller.signal
-          });
-          clearTimeout(timeoutId);
-          if (res.ok) {
-            var data = await res.json();
-            var reply = data.reply || data.response || (data.data && data.data[0]) || '';
-            if (reply) {
-              var tEl = baiEl('baiTyping'); if (tEl && tEl.parentNode) tEl.remove();
-              baiMsg(reply, 'bot');
-              var pill = baiEl('baiModePill');
-              if (pill) pill.innerHTML = '<span class="dot"></span>Live AI Connected';
-              answered = true;
-              break;
-            }
-          }
-        } catch (err) {}
-      }
-      if (!answered) {
-        var tEl2 = baiEl('baiTyping'); if (tEl2 && tEl2.parentNode) tEl2.remove();
-        baiBot('Noted: “' + txt + '”. I am processing your brief. Rahul and our automated pipeline will review this. You can tap below or connect on WhatsApp for an immediate 1-on-1 installation.', ['More qualified leads', 'CRM & follow-ups', 'Website / software', 'Talk to Rahul']);
-      }
     }
     function baiBriefRender() {
       try {
@@ -3718,14 +3150,16 @@
       var inp = baiEl('baiInput'); if (!inp) return;
       var txt = (inp.value || '').trim(); if (!txt) return;
       inp.value = '';
-      baiMsg(txt, 'user');
+      baiMsg(txt.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'), 'user');
       if (BAI.awaitingName) {
         BAI.name = txt; BAI.awaitingName = false; baiBriefRender();
         baiBot('Thanks, ' + txt + '. Which channel should the brief go through?', ['WhatsApp', 'Telegram', 'Instagram']);
         BAI.step = 3;
         return;
       }
-      baiLive(txt);
+      if (BAI.endpoint) { baiLive(txt); return; }
+      baiBot('Noted: “' + txt + '”. In live mode (n8n connected) I answer free-flow questions and search the web. In this preview I log your words and keep the guided flow — tap an option below or keep typing.', ['Restart the preview']);
+      BAI.step = -1;
     }
     function baiAdvance(label) {
       if (label === 'Restart the preview') { baiReset(); return; }
@@ -3995,154 +3429,6 @@
       } catch (e) {}
     }
 
-    /* ---------- 22. Verified credentials auto-carousel & 3D tilt ---------- */
-    var certCurrentIdx = 0;
-    var certAutoTimer = null;
-    var certIsAutoPlaying = true;
-    var certMode = 'carousel';
-
-    function setCertViewMode(mode) {
-      certMode = mode;
-      var grid = document.getElementById('credentialsGrid');
-      var btnC = document.getElementById('btnCertCarousel');
-      var btnG = document.getElementById('btnCertGrid');
-      var nav = document.getElementById('certNavActions');
-      if (!grid) return;
-      if (mode === 'grid') {
-        grid.classList.remove('carousel-active');
-        if (btnC) btnC.classList.remove('active');
-        if (btnG) btnG.classList.add('active');
-        if (nav) nav.style.opacity = '0.35';
-        stopCertAuto();
-      } else {
-        grid.classList.add('carousel-active');
-        if (btnC) btnC.classList.add('active');
-        if (btnG) btnG.classList.remove('active');
-        if (nav) nav.style.opacity = '1';
-        renderCertSlide(certCurrentIdx);
-        if (certIsAutoPlaying) startCertAuto();
-      }
-    }
-
-    function renderCertSlide(idx) {
-      var cards = document.querySelectorAll('#credentialsGrid .cert-card');
-      var dots = document.querySelectorAll('#certDotsGroup .cert-dot');
-      if (!cards.length) return;
-      certCurrentIdx = (idx + cards.length) % cards.length;
-      cards.forEach(function (c, i) {
-        if (i === certCurrentIdx) {
-          c.classList.add('active-cert');
-        } else {
-          c.classList.remove('active-cert');
-        }
-      });
-      dots.forEach(function (d, i) {
-        if (i === certCurrentIdx) {
-          d.classList.add('active');
-        } else {
-          d.classList.remove('active');
-        }
-      });
-    }
-
-    function stepCert(delta) {
-      renderCertSlide(certCurrentIdx + delta);
-      if (certIsAutoPlaying) {
-        stopCertAuto();
-        startCertAuto();
-      }
-    }
-
-    function jumpCert(idx) {
-      renderCertSlide(idx);
-      if (certIsAutoPlaying) {
-        stopCertAuto();
-        startCertAuto();
-      }
-    }
-
-    function startCertAuto() {
-      stopCertAuto();
-      certAutoTimer = setInterval(function () {
-        if (certMode === 'carousel' && certIsAutoPlaying) {
-          stepCert(1);
-        }
-      }, 4500);
-    }
-
-    function stopCertAuto() {
-      if (certAutoTimer) {
-        clearInterval(certAutoTimer);
-        certAutoTimer = null;
-      }
-    }
-
-    function toggleCertAuto() {
-      certIsAutoPlaying = !certIsAutoPlaying;
-      var btn = document.getElementById('certAutoToggle');
-      if (btn) {
-        btn.textContent = certIsAutoPlaying ? 'Pause' : 'Play';
-        btn.setAttribute('aria-pressed', String(!certIsAutoPlaying));
-      }
-      if (certIsAutoPlaying) {
-        startCertAuto();
-      } else {
-        stopCertAuto();
-      }
-    }
-
-    function initCertShowcase() {
-      try {
-        renderCertSlide(0);
-        startCertAuto();
-        document.querySelectorAll('#credentialsGrid .cert-card').forEach(function (card) {
-          card.addEventListener('mousemove', function (e) {
-            var rect = card.getBoundingClientRect();
-            var x = e.clientX - rect.left - rect.width / 2;
-            var y = e.clientY - rect.top - rect.height / 2;
-            var rotateX = -(y / rect.height) * 10;
-            var rotateY = (x / rect.width) * 10;
-            card.style.transform = 'perspective(900px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) translateY(-4px)';
-          });
-          card.addEventListener('mouseleave', function () {
-            card.style.transform = '';
-          });
-        });
-      } catch (e) {}
-    }
-
-    /* ---------- 23. Tech & AI Dispatch Blog ---------- */
-    function filterBlogPosts(cat, btn) {
-      try {
-        document.querySelectorAll('.blog-filter-btn').forEach(function (b) { b.classList.remove('active'); });
-        if (btn) btn.classList.add('active');
-        var cards = document.querySelectorAll('.blog-card');
-        cards.forEach(function (card) {
-          var cCat = card.getAttribute('data-cat');
-          if (cat === 'all' || cCat === cat) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      } catch (e) {}
-    }
-
-    function toggleBlogDrawer(drawerId, btn) {
-      try {
-        var drawer = document.getElementById(drawerId);
-        if (!drawer) return;
-        var isOpen = drawer.classList.contains('open');
-        if (isOpen) {
-          drawer.classList.remove('open');
-          if (btn) btn.textContent = 'Read dispatch →';
-        } else {
-          drawer.classList.add('open');
-          if (btn) btn.textContent = 'Close dispatch ✕';
-        }
-      } catch (e) {}
-    }
-
     /* ---------- 21. Boot ---------- */
     function initApp() {
       try { renderSlide(0); } catch (e) {}
@@ -4206,7 +3492,6 @@
       try { wireLabFilter(); } catch (e) {}
       try { initReveals(); } catch (e) {}
       try { wireCopyButtons(); } catch (e) {}
-      try { initCertShowcase(); } catch (e) {}
     }
     try {
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initApp);
