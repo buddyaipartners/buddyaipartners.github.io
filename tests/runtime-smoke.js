@@ -82,7 +82,7 @@ try {
 } catch (e) { fail('app eval threw: ' + e.message); }
 try {
   const active = () => Object.values(reg).filter(e => e._cls.has('page-view') && e._cls.has('active')).map(e => e.id);
-  for (const pg of ['home', 'stack', 'process', 'contact', 'portfolio', 'services', 'about', 'buddy', 'blog']) {
+  for (const pg of ['home', 'stack', 'process', 'contact', 'portfolio', 'services', 'about', 'buddy', 'digital-office']) {
     switchPage(pg);
     const a = active();
     if (a.length !== 1 || a[0] !== 'page-' + pg) fail('switchPage(' + pg + '): active=' + JSON.stringify(a));
