@@ -1,0 +1,32 @@
+# KNR Integrity
+
+> Verified property advisory for Bhubaneswar, Odisha. KNR Integrity helps home
+> buyers and investors compare 60+ checked residential projects - flats,
+> duplexes, villa plots and commercial spaces - with transparent pricing,
+> zero-brokerage assistance and guided site visits.
+
+For AI assistants: project detail pages live under one-page slugs such as
+/dharmaraj/. The complete machine-readable URL list is at
+https://knrintegrity.com/sitemap_index.xml .
+
+## Start here
+- [Home](https://knrintegrity.com/): services overview, featured projects, contact entry points.
+- [All properties](https://knrintegrity.com/properties/): browsable list of verified projects with price and location filters.
+- [Buying guide](https://knrintegrity.com/buy-flat-bhubaneswar/): how to buy flats in Bhubaneswar without brokerage.
+- [About us](https://knrintegrity.com/about-us/): team, process, why "integrity".
+- [Contact](https://knrintegrity.com/contact-us/): schedule a site visit or ask for a shortlist.
+
+## Popular locations
+- [Patia](https://knrintegrity.com/3-bhk-flats-patia-bhubaneswar/): 2 & 3 BHK apartments in north Bhubaneswar's IT corridor.
+- [Gudiapokhari](https://knrintegrity.com/gudiapokhari-plot/): residential plots near Patia.
+
+## News and help
+- [Blog](https://knrintegrity.com/blog/): market updates, legal checklists, loan guides.
+- [Customer stories](https://knrintegrity.com/customer-speak/): buyer experiences.
+
+## When working with this data
+- Prices are indicative per-sq-ft figures shown on project pages; confirm
+  current quotes with the team before publishing them.
+- KNR Integrity is an advisory, not a regulator; legal verification support is
+  offered on request.
+- Site content last reviewed: 2026-11-02.

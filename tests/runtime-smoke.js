@@ -29,6 +29,7 @@ function makeEl(tag, id, cls) {
   el.querySelector = () => makeEl('div', null, ''); el.querySelectorAll = () => [];
   el.focus = () => {}; el.scrollIntoView = () => {};
   el.getContext = () => null;
+  el.parentNode = { insertBefore: () => {}, appendChild: () => {}, removeChild: () => {} };
   return el;
 }
 const reg = {};
@@ -54,6 +55,8 @@ global.removeEventListener = () => {};
 global.document = {
   hidden: false, head: makeEl('head', null, ''),
   getElementById: (id) => reg[id] || (reg[id] = makeEl('div', id, '')),
+  getElementsByTagName: (tag) => [makeEl(tag, null, '')],
+  createElement: (tag) => makeEl(tag, null, ''),
   querySelectorAll: (sel) => {
     if (sel[0] === '#') { const el = reg[sel.slice(1)]; return el ? [el] : []; }
     if (sel === '.page-view') return Object.values(reg).filter(e => e._cls.has('page-view'));
@@ -82,12 +85,13 @@ try {
 } catch (e) { fail('app eval threw: ' + e.message); }
 try {
   const active = () => Object.values(reg).filter(e => e._cls.has('page-view') && e._cls.has('active')).map(e => e.id);
-  for (const pg of ['home', 'stack', 'process', 'contact', 'portfolio', 'services', 'about', 'buddy', 'digital-office']) {
+  const pgs = ['home', 'stack', 'process', 'contact', 'pricing', 'blog', 'portfolio', 'services', 'about', 'buddy', 'digital-office'];
+  for (const pg of pgs) {
     switchPage(pg);
     const a = active();
     if (a.length !== 1 || a[0] !== 'page-' + pg) fail('switchPage(' + pg + '): active=' + JSON.stringify(a));
   }
-  console.log('navigation isolation: 9/9 single-active OK');
+  console.log(`navigation isolation: ${pgs.length}/${pgs.length} single-active OK`);
   const cards = () => (reg['ecoSections'].innerHTML.match(/eco-card/g) || []).length;
   const n1 = cards();
   switchPage('home'); switchPage('stack'); switchPage('stack');

@@ -27,7 +27,7 @@ PAGES = {
     "pricing": {
         "title": "Transparent Pricing & Rapid Modernization Packages | BUDDY AI PARTNERS",
         "desc": "Explore transparent pricing for AI automation, Next.js web modernizations (₹14,999 - ₹24,999), custom enterprise CRMs, and autonomous lead engines with zero hidden fees.",
-        "target_page_id": "page-contact",
+        "target_page_id": "page-pricing",
         "canonical": "https://buddyaipartners.github.io/pricing/"
     },
     "digital-office": {

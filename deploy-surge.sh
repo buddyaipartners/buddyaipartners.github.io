@@ -28,9 +28,16 @@ python3 "$ROOT/tests/site-preflight.py"
 rm -rf "$DIST"
 mkdir -p "$DIST/images" "$DIST/public/images"
 cp "$ROOT/index.html" "$DIST/index.html"
-cp -r "$ROOT/public/images/." "$DIST/images/"
-# Backward-compatible alias for previously published /public/images/... URLs.
-cp -r "$ROOT/public/images/." "$DIST/public/images/"
+
+# Sync all images and assets from images/ and public/images/
+[ ! -d "$ROOT/images" ] || cp -r "$ROOT/images/." "$DIST/images/"
+[ ! -d "$ROOT/public/images" ] || cp -r "$ROOT/public/images/." "$DIST/images/"
+cp -r "$DIST/images/." "$DIST/public/images/"
+[ ! -d "$ROOT/images" ] || cp -r "$ROOT/images/." "$ROOT/public/images/"
+
+[ ! -f "$ROOT/favicon.ico" ] || cp "$ROOT/favicon.ico" "$DIST/favicon.ico"
+[ ! -f "$ROOT/logo.png" ] || cp "$ROOT/logo.png" "$DIST/logo.png"
+[ ! -f "$ROOT/site.webmanifest" ] || cp "$ROOT/site.webmanifest" "$DIST/site.webmanifest"
 [ ! -f "$ROOT/robots.txt" ] || cp "$ROOT/robots.txt" "$DIST/robots.txt"
 [ ! -f "$ROOT/sitemap.xml" ] || cp "$ROOT/sitemap.xml" "$DIST/sitemap.xml"
 [ ! -f "$ROOT/404.html" ] || cp "$ROOT/404.html" "$DIST/404.html"

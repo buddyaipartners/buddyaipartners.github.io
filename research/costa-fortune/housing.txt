@@ -1,0 +1,35 @@
+ALERT
+Request Blocked
+
+Our security system detected suspicious activity. Your request was temporarily blocked to protect users and system integrity. We apologize for any inconvenience.
+
+Block Reference ID
+0.2c3cd717.1793649868.ea8a787
+
+Save this ID when contacting support.
+
+Real Client IP
+202.142.113.65
+
+Save this IP when contacting support.
+
+Need Help?
+Contact Support
+
+If you believe this is an error, contact our support team with your Reference ID and details.
+
+Contact Support
+Common Causes
+Unusual network activity
+Rapid browsing
+Use of bots or scrapers
+Suspicious VPNs/proxies
+Failed login attempts
+Accessing restricted areas
+Next Steps
+Wait a few minutes, typically 10 minutes
+Clear cookies/cache
+Use another browser/device
+Disable extensions
+Disconnect VPN
+© 2025 Housing.com | Protecting our users

@@ -132,7 +132,7 @@
           "@type": "OfferCatalog",
           "name": "AI Systems & Growth Engineering",
           "itemListElement": [
-            { "@type": "Offer", "priceCurrency": "INR", "price": "2999", "name": "Buddy AI Personal Assistant — Starter Pack", "description": "One-time guided install of a personal AI operating assistant on laptop or mobile." },
+            { "@type": "Offer", "priceCurrency": "INR", "price": "3500", "name": "Buddy AI Personal Assistant — Starter Pack", "description": "One-time guided install of a personal AI operating assistant on laptop or mobile." },
             { "@type": "Offer", "priceCurrency": "INR", "price": "24999", "name": "Lead Engine — Scraper & Calling SLA", "description": "Multi-sector lead ingress, Meta/Google ads, sub-5-minute calling queue and weekly telemetry." },
             { "@type": "Offer", "priceCurrency": "INR", "price": "49999", "name": "Autonomous Business CRM", "description": "Sovereign CRM pipeline with concierge, dedupe, multilingual WhatsApp delivery and live monitoring." },
             { "@type": "Offer", "priceCurrency": "INR", "price": "89999", "name": "Enterprise Software Swarm", "description": "Full custom web application plus autonomous office agents and security hardening." }
@@ -408,6 +408,9 @@
       border-bottom: 1px solid var(--line); padding: .9rem clamp(1rem, 5vw, 2.2rem) 1.3rem;
       display: grid; grid-template-columns: 1fr 1fr; gap: .55rem;
       box-shadow: 0 30px 60px rgba(2, 6, 16, .7);
+    }
+    .mobile-menu[hidden] {
+      display: none !important;
     }
     .mnav-btn {
       text-align: left; font-family: var(--font-ui); font-size: .82rem; font-weight: 600;
@@ -1161,6 +1164,9 @@
       box-shadow: 0 32px 64px rgba(2, 6, 16, 0.95), 0 0 30px rgba(56, 189, 248, 0.12) !important;
       animation: menuIn .22s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
+    .mobile-menu[hidden] {
+      display: none !important;
+    }
     .mnav-btn {
       text-align: left !important;
       font-family: var(--font-ui) !important;
@@ -1471,6 +1477,8 @@
         <button type="button" class="mnav-btn" data-mnav="services" onclick="switchPage('services');closeMenu()">⚡ AI Automation Services</button>
         <button type="button" class="mnav-btn" data-mnav="pricing" onclick="switchPage('pricing');closeMenu()">💰 Pricing &amp; Packages (WhatsApp, Email &amp; CRM)</button>
         <button type="button" class="mnav-btn" data-mnav="portfolio" onclick="switchPage('portfolio');closeMenu()">💼 Production Work &amp; Proof</button>
+        <button type="button" class="mnav-btn" data-mnav="stack" onclick="switchPage('stack');closeMenu()">🛠️ Tech Stack &amp; Tools</button>
+        <button type="button" class="mnav-btn" data-mnav="process" onclick="switchPage('process');closeMenu()">⚙️ 4-Phase Delivery Process</button>
         <button type="button" class="mnav-btn" data-mnav="about" onclick="switchPage('about');closeMenu()">👤 About &amp; Founder</button>
         <button type="button" class="mnav-btn" data-mnav="buddy" onclick="switchPage('buddy');closeMenu()">✦ Try Buddy AI Assistant</button>
         <button type="button" class="mnav-btn" data-mnav="contact" onclick="switchPage('contact');closeMenu()">📞 Book Strategy Call</button>
@@ -2280,7 +2288,7 @@
   </section>
 
   <!-- ========================== CONTACT & PRICING ========================== -->
-  <section id="page-contact" class="page-view active">
+  <section id="page-contact" class="page-view">
     <div class="sec">
       <div class="shell">
         <div class="sec-head reveal">
@@ -2350,7 +2358,10 @@
         </div>
       </div>
     </div>
+  </section>
 
+  <!-- ========================== PRICING ========================== -->
+  <section id="page-pricing" class="page-view active">
     <div class="sec" style="padding-top:2rem">
       <div class="shell" id="pricing">
         <div class="sec-head center reveal" style="margin-bottom:2.5rem">
@@ -2496,7 +2507,7 @@
             <span class="upi-id">rahulkumardhal@oksbi <button type="button" class="copy-btn" data-copy="rahulkumardhal@oksbi">Copy</button></span>
           </div>
           <div class="app-links">
-            <a class="btn btn-emerald btn-sm" href="upi://pay?pa=7328089908@upi&amp;pn=Rahul%20Kumar%20Dhal&amp;am=2999&amp;cu=INR&amp;tn=Buddy%20AI%20Starter%20Pack">⚡ Any UPI app</a>
+            <a class="btn btn-emerald btn-sm" href="upi://pay?pa=7328089908@upi&amp;pn=Rahul%20Kumar%20Dhal&amp;am=3500&amp;cu=INR&amp;tn=Buddy%20AI%20Starter%20Pack">⚡ Any UPI app</a>
             <a class="btn btn-glass btn-sm" href="https://pay.google.com/payments/u/0/#home" target="_blank" rel="noopener noreferrer">GPay</a>
             <a class="btn btn-glass btn-sm" href="https://www.phonepe.com/app" target="_blank" rel="noopener noreferrer">PhonePe</a>
             <a class="btn btn-glass btn-sm" href="https://paytm.com" target="_blank" rel="noopener noreferrer">Paytm</a>
@@ -4353,23 +4364,7 @@
       });
     }
 
-    // Extended switchPage handler for pricing and blog
-    var _originalSwitchPage = window.switchPage;
-    window.switchPage = function(pageId) {
-      if (pageId === 'pricing') {
-        _originalSwitchPage('home');
-        setTimeout(function() {
-          var el = document.getElementById('pricing') || document.getElementById('pricing-packages-grid') || document.getElementById('starter-pack-card');
-          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
-        return;
-      }
-      if (pageId === 'blog') {
-        _originalSwitchPage('blog');
-        return;
-      }
-      _originalSwitchPage(pageId);
-    };
+
   </script>
 
 </body>

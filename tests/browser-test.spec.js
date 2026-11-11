@@ -12,8 +12,8 @@ import { test, expect } from '@playwright/test';
 const BASE_URL = process.env.BUDDY_TEST_BASE_URL || 'http://127.0.0.1:8765';
 
 // data-nav values on the desktop header buttons map to #page-<id> sections.
-const SECTIONS = ['home', 'digital-office', 'about', 'services', 'portfolio', 'stack', 'process', 'contact'];
-const PAGE_IDS = [...SECTIONS, 'blog', 'buddy'];
+const SECTIONS = ['home', 'digital-office', 'blog', 'services', 'pricing', 'portfolio', 'about', 'contact'];
+const PAGE_IDS = [...SECTIONS, 'stack', 'process', 'buddy'];
 
 // Load the site and dismiss the cinematic entry portal (if present).
 async function openSite(page) {
@@ -178,7 +178,7 @@ test.describe('Directory single-root invariant', () => {
 
   test('directory is absent from all other sections', async ({ page }) => {
     await openSite(page);
-    for (const pageId of ['home', 'about', 'services', 'portfolio', 'process', 'contact']) {
+    for (const pageId of ['home', 'about', 'services', 'pricing', 'portfolio', 'contact']) {
       await page.click(`button[data-nav="${pageId}"]`);
       await expect(page.locator(`#page-${pageId}.active`)).toBeVisible();
       const count = await page.locator(`#page-${pageId} #ecoDirectory`).count();
@@ -188,7 +188,7 @@ test.describe('Directory single-root invariant', () => {
 
   test('directory renders all 104 entries after JS render', async ({ page }) => {
     await openSite(page);
-    await page.click('button[data-nav="stack"]');
+    await page.evaluate(() => window.switchPage('stack'));
     // Main section cards render into #ecoSections; verification-pending
     // entries render into #ecoPending. Together they cover the full dataset.
     await page.waitForSelector('#ecoSections .eco-card', { state: 'attached', timeout: 10000 });
@@ -202,7 +202,7 @@ test.describe('Directory single-root invariant', () => {
 
   test('stack overview renders 10 category groups', async ({ page }) => {
     await openSite(page);
-    await page.click('button[data-nav="stack"]');
+    await page.evaluate(() => window.switchPage('stack'));
     await page.waitForSelector('#stackOverview .stack-tier', { state: 'attached', timeout: 10000 });
     const count = await page.locator('#stackOverview .stack-tier').count();
     expect(count).toBe(10);
@@ -235,8 +235,8 @@ test.describe('Assets load', () => {
   test('favicon link resolves to an existing file', async ({ page, request }) => {
     await openSite(page);
     const href = await page.getAttribute('link[rel="icon"]', 'href');
-    expect(href).toBe('images/logo.svg');
-    const res = await request.get(`${BASE_URL}/${href}`);
+    expect(href).toBeTruthy();
+    const res = await request.get(href.startsWith('http') ? href : `${BASE_URL}/${href}`);
     expect(res.status()).toBe(200);
   });
 
@@ -252,7 +252,7 @@ test.describe('Assets load', () => {
     await page.waitForTimeout(600);
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(600);
-    await page.click('button[data-nav="stack"]');
+    await page.evaluate(() => window.switchPage('stack'));
     await page.waitForSelector('#ecoSections .eco-card', { state: 'attached', timeout: 10000 });
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(800);

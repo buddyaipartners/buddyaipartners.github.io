@@ -1,0 +1,21 @@
+# Rendered brochure pages — regenerable from sai-harmony-brochure.pdf
+page-*.png
+
+# Scraped ORERA Angular bundles — not source material
+orera-main.js
+orera-scripts.js
+orera.html
+
+# Raw blocked-response captures
+99acres.html
+housing.html
+gsearch.html
+bing.html
+sh-crest.html
+
+# KNR re-audit — raw captures and image assets
+knr-reaudit/*.html
+knr-reaudit/*.jpg
+knr-reaudit/*.webp
+knr-reaudit/*.png
+knr-reaudit/*.xml
