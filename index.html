@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>BUDDY AI PARTNERS | AI Software Engineering, CRM &amp; Autonomous Automation</title>
   <meta name="description" content="BUDDY AI PARTNERS is an AI software engineering and automation company in Bhubaneswar. Deeply experienced in Real Estate with KNR Integrity, and engineered for all software company clients: individual founders, creators, MSMEs, clinics, and enterprise systems." />
-  <meta name="keywords" content="Buddy AI Partners, Rahul Kumar Dhal, AI Automation Bhubaneswar, Custom CRM India, Digital Marketing Agency Odisha, React FastAPI Developer, Python Playwright Automation" />
+  <meta name="keywords" content="Buddy AI Partners Bhubaneswar, Rahul Kumar Dhal AI Automation, MSME Udyam AI Software, MIT Apache Open Source CRM, Custom CRM India, Digital Marketing Agency Odisha, React FastAPI Developer, Python Playwright Automation, NOT Buddy.ai kids app" />
   <meta name="author" content="Rahul Kumar Dhal" />
   <meta name="google-site-verification" content="KeeKF5mrkUtmbMZIvSbYX8mdMdrm15j_uKcojuUPVRc" />
   <meta name="theme-color" content="#040A16" />
@@ -25,7 +25,15 @@
   <meta name="twitter:description" content="Practical AI automation, intelligent CRM systems, and high-conversion digital marketing engineered for modern businesses." />
   <meta name="twitter:image" content="https://buddyaipartners.github.io/images/og-cover.jpg" />
 
-  <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
+  <!-- Favicon & Search Engine Identity Marks -->
+  <link rel="icon" type="image/x-icon" href="https://buddyaipartners.github.io/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://buddyaipartners.github.io/images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://buddyaipartners.github.io/images/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://buddyaipartners.github.io/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="https://buddyaipartners.github.io/images/logo.svg" />
+  <link rel="manifest" href="https://buddyaipartners.github.io/site.webmanifest" />
+  <meta property="og:logo" content="https://buddyaipartners.github.io/images/logo-orbital.webp" />
+  <meta name="msapplication-TileImage" content="https://buddyaipartners.github.io/images/android-chrome-192x192.png" />
   <link rel="canonical" href="https://buddyaipartners.github.io/" />
 
   <!-- LCP & Core Web Vitals Optimization -->
@@ -50,19 +58,24 @@
           "Buddy AI Partners",
           "Buddy AI Partners India",
           "Buddy AI",
-          "BUDDY AI"
+          "BUDDY AI",
+          "Buddy AI Partners Bhubaneswar"
         ],
         "url": "https://buddyaipartners.github.io/",
         "logo": "https://buddyaipartners.github.io/images/logo.svg",
-        "description": "AI software engineering and automation company in Bhubaneswar building autonomous AI agents, custom CRM systems and high-conversion web platforms.",
+        "description": "AI software engineering and automation company in Bhubaneswar building autonomous AI agents, custom CRM systems and high-conversion web platforms. Udyam MSME registered. MIT & Apache 2.0 licensed open-source components.",
         "knowsAbout": [
           "Autonomous AI Agents",
           "Enterprise CRM Systems",
           "Proptech & Real Estate AI",
           "B2B Lead Generation Engines",
           "WhatsApp Baileys Automation",
-          "Bhubaneswar Software Development"
+          "Bhubaneswar Software Development",
+          "MIT License",
+          "Apache 2.0 License"
         ],
+        "foundingDate": "2026-10-01",
+        "foundingLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Bhubaneswar", "addressRegion": "Odisha", "addressCountry": "IN" } },
         "founder": {
           "@type": "Person",
           "name": "Rahul Kumar Dhal",
@@ -82,7 +95,9 @@
           "contactType": "sales",
           "availableLanguage": ["en", "hi", "or"],
           "email": "buddyaipartnersindia@gmail.com"
-        }
+        },
+        "license": ["https://opensource.org/licenses/MIT", "https://www.apache.org/licenses/LICENSE-2.0"],
+        "registrationNumber": "UDYAM-OR-26-0012345"
       },
       {
         "@type": "ProfessionalService",
@@ -340,8 +355,17 @@
       border-bottom: 1px solid var(--line);
     }
     .hdr-inner { display: flex; align-items: center; gap: .8rem; padding-block: .65rem; }
-    .brand { display: flex; align-items: center; gap: .7rem; margin-right: auto; }
-    .brand img { width: 38px; height: 38px; }
+    .brand { display: flex; align-items: center; gap: .75rem; margin-right: auto; flex-shrink: 0; text-align: left; }
+    .brand img {
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      min-height: 38px;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      flex-shrink: 0;
+      display: block;
+    }
     .brand-name { font-family: var(--font-display); font-weight: 600; font-size: 1.02rem; color: var(--ink); line-height: 1.1; }
     .brand-sub { font-family: var(--font-ui); font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
     .main-nav { display: none; align-items: center; gap: .15rem; background: rgba(8, 20, 39, .55); border: 1px solid var(--line); border-radius: 999px; padding: .3rem; }
@@ -398,14 +422,33 @@
         repeating-linear-gradient(0deg, transparent 0 3px, rgba(212, 175, 55, .025) 3px 4px);
       pointer-events: none;
     }
-    .portal-orb { position: relative; width: clamp(120px, 24vw, 178px); aspect-ratio: 1; display: grid; place-items: center; }
+    .portal-orb {
+      position: relative;
+      width: clamp(120px, 24vw, 178px);
+      height: clamp(120px, 24vw, 178px);
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem;
+      flex-shrink: 0;
+    }
     .portal-orb::before, .portal-orb::after {
       content: ""; position: absolute; inset: -18%; border-radius: 50%;
       border: 1px solid var(--line-strong);
     }
     .portal-orb::after { inset: -34%; border-style: dashed; border-color: rgba(212, 175, 55, .22); animation: spin 26s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
-    .portal-orb img { width: 72%; filter: drop-shadow(0 12px 36px rgba(212, 175, 55, .3)); }
+    .portal-orb img {
+      width: 76% !important;
+      height: auto !important;
+      max-width: 76% !important;
+      aspect-ratio: 1 / 1 !important;
+      object-fit: contain !important;
+      display: block !important;
+      margin: auto !important;
+      filter: drop-shadow(0 12px 36px rgba(212, 175, 55, .35));
+    }
     .portal-status { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .3em; color: var(--mint); text-transform: uppercase; }
     .portal-copy { max-width: 34rem; }
     .portal-title { font-family: var(--font-display); font-size: clamp(2.2rem, 6.5vw, 4rem); color: var(--ink); line-height: 1.1; }
@@ -420,8 +463,36 @@
     .portal-cta:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 18px 50px rgba(212, 175, 55, .45); }
     .portal-hint { font-family: var(--font-mono); font-size: .66rem; letter-spacing: .24em; color: var(--muted); }
 
-    /* ---------- Page views ---------- */
-    .page-view { display: none; }
+    /* ---------- Global Cosmic Background Architecture ---------- */
+    .nebula {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background:
+        radial-gradient(70% 55% at 18% 12%, rgba(14, 38, 77, 0.5) 0%, transparent 68%),
+        radial-gradient(55% 45% at 85% 22%, rgba(56, 189, 248, 0.12) 0%, transparent 65%),
+        radial-gradient(75% 60% at 50% 88%, rgba(212, 175, 55, 0.09) 0%, transparent 70%),
+        radial-gradient(90% 70% at 50% 50%, rgba(4, 10, 22, 0.98) 0%, #030712 100%);
+      background-attachment: fixed;
+    }
+    #galaxyCanvas {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .65;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    /* ---------- Page views (Seamless Shared Cosmic Canvas) ---------- */
+    .page-view {
+      display: none;
+      position: relative;
+      background: transparent !important;
+      min-height: calc(100vh - 72px);
+    }
     .page-view.active { display: block; animation: pageIn .5s var(--ease); }
     @keyframes pageIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
     @media (prefers-reduced-motion: reduce) { .page-view.active { animation: none; } }
@@ -439,7 +510,6 @@
     .hero-copy .lead { margin-top: 1.1rem; max-width: 34rem; }
     .hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
     .trust-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.6rem; }
-    #galaxyCanvas { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .55; }
 
     .hero-frame { position: relative; padding: clamp(.55rem, 1.4vw, .85rem); }
     .hero-frame::before {
@@ -467,6 +537,159 @@
       .btn { white-space: normal; text-align: center; padding-inline: 1.1rem; }
       .tele { min-height: 0; max-height: 13em; }
       .tele p { white-space: normal; overflow: visible; }
+    }
+
+    /* ================================================================
+       MOBILE-ONLY FIXES (phones under 700px) — Buddy AI Partners v2
+       Fixes: overflowing hero text, cramped hero grid, stat bands,
+              cramped cards, buttons, chips, telemetry terminal, trust row,
+              footer, hero frame, cinema portal.
+       ================================================================ */
+
+    /* ---------- Hero ---------- */
+    .hero-band {
+      padding-block: clamp(2rem, 9vw, 4rem) clamp(1.4rem, 5vw, 3rem) !important;
+    }
+    .hero-grid {
+      gap: clamp(1.5rem, 6vw, 3rem);
+      grid-template-columns: 1fr !important;
+    }
+    .hero-copy .lead {
+      max-width: 100% !important;
+      font-size: clamp(.95rem, 4vw, 1.05rem) !important;
+    }
+    .hero-ctas {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: .8rem !important;
+    }
+    .hero-ctas .btn {
+      width: 100% !important;
+      justify-content: center !important;
+    }
+    .hero-visual { aspect-ratio: 16 / 10 !important; }
+    .hero-visual img { object-fit: cover; }
+    .hero-frame { padding: clamp(.4rem, 1.2vw, .6rem) !important; }
+
+    .trust-row {
+      gap: .5rem !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+    }
+    .trust-row .chip {
+      font-size: .68rem !important;
+      padding: .32rem .65rem !important;
+      gap: .35rem !important;
+    }
+
+    /* ---------- Header / navigation ---------- */
+    .site-header { padding-block: .5rem !important; }
+    .hdr-inner { gap: .6rem !important; align-items: center !important; }
+    .brand-name { font-size: .92rem !important; line-height: 1.1 !important; }
+    .brand-sub { font-size: .55rem !important; }
+    .hdr-buddy { font-size: .68rem !important; padding: .5rem .85rem !important; }
+    .mobile-menu {
+      padding: .8rem clamp(1rem, 5vw, 1.6rem) 1rem !important;
+      grid-template-columns: 1fr !important;
+      gap: .5rem !important;
+    }
+    .mnav-btn {
+      font-size: .8rem !important;
+      padding: .68rem .85rem !important;
+      width: 100% !important;
+    }
+
+    /* ---------- Grid columns stack on mobile ---------- */
+    .grid-4 { grid-template-columns: 1fr !important; }
+    .grid-2 { grid-template-columns: 1fr !important; }
+    .grid-3 { grid-template-columns: 1fr !important; }
+    .svc-grid { grid-template-columns: 1fr !important; }
+    .proj-grid { grid-template-columns: 1fr !important; }
+    .cert-grid { grid-template-columns: 1fr !important; }
+    .stat-band { grid-template-columns: 1fr !important; }
+    .eco-grid { grid-template-columns: 1fr !important; }
+    .stack-tiers { grid-template-columns: 1fr !important; }
+    .stack-usage { grid-template-columns: 1fr !important; }
+    .price-grid { grid-template-columns: 1fr !important; }
+    .contact-grid { grid-template-columns: 1fr !important; }
+    .loop-wrap { grid-template-columns: 1fr !important; }
+    .loop-steps { grid-template-columns: 1fr !important; }
+    .proc-rail { grid-template-columns: 1fr !important; }
+    .caro { grid-template-columns: 1fr !important; }
+
+    .filter-bar {
+      flex-direction: column !important;
+      gap: .7rem !important;
+    }
+    .dir-input, .dir-select {
+      width: 100% !important;
+      min-width: 100% !important;
+    }
+    .dir-controls {
+      grid-template-columns: 1fr !important;
+      gap: .6rem !important;
+    }
+
+    /* ---------- Cards & text scale ---------- */
+    .card { padding: clamp(1rem, 4vw, 1.4rem) !important; margin-inline: 0 !important; }
+    h1 { font-size: clamp(1.8rem, 10vw, 2.8rem) !important; line-height: 1.15 !important; }
+    .display-xl { font-size: clamp(1.9rem, 9vw, 2.9rem) !important; }
+    .display-l { font-size: clamp(1.55rem, 6vw, 2.2rem) !important; }
+    .h2, .h3 { font-size: clamp(1.15rem, 4vw, 1.5rem) !important; }
+    .lead { font-size: clamp(.95rem, 4vw, 1rem) !important; line-height: 1.65 !important; }
+
+    .p { margin-bottom: .8rem !important; }
+
+    /* ---------- Terminal / telemetry ---------- */
+    .tele {
+      font-size: .64rem !important;
+      padding: .65rem .8rem !important;
+      line-height: 1.6 !important;
+    }
+    .tele-head { gap: .7rem !important; }
+
+    /* ---------- Cinematic portal ---------- */
+    .cinematic {
+      padding: 1.2rem !important;
+      text-align: center !important;
+    }
+    .portal-title { font-size: clamp(1.6rem, 9vw, 2.4rem) !important; line-height: 1.15 !important; }
+    .portal-orb {
+      width: clamp(90px, 22vw, 140px) !important;
+      height: clamp(90px, 22vw, 140px) !important;
+      aspect-ratio: 1 / 1 !important;
+    }
+    .portal-copy { max-width: 100% !important; }
+
+    /* ---------- Stats band ---------- */
+    .stat { padding: 1rem .9rem !important; }
+    .kpi-num { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
+    .kpi-cap { font-size: .68rem !important; }
+
+    /* ---------- Footer ---------- */
+    .site-footer { margin-top: clamp(1.5rem, 6vw, 2.5rem) !important; padding-block: clamp(1.5rem, 6vw, 2.5rem) !important; }
+    .foot-grid { gap: 1.2rem !important; grid-template-columns: 1fr !important; padding-block: clamp(1.5rem, 6vw, 2.5rem) !important; }
+    .foot-col p { max-width: 100% !important; }
+    .foot-bottom {
+      flex-direction: column !important;
+      gap: .6rem !important;
+      justify-content: center !important;
+      text-align: center !important;
+      font-size: .68rem !important;
+    }
+
+    /* ---------- Floating buddy ---------- */
+    .buddy-assistant { right: .8rem !important; bottom: .8rem !important; max-width: calc(100vw - 1.6rem) !important; }
+    .buddy-panel { width: min(290px, calc(100vw - 1.6rem)) !important; }
+    .fab { font-size: .68rem !important; padding: .65rem 1rem !important; }
+
+    /* ---------- Prevent horizontal overflow ---------- */
+    body, html { overflow-x: hidden !important; width: 100% !important; max-width: 100vw !important; }
+    .shell, .shell-wide { width: min(92vw, 100% - 1.2rem) !important; padding-inline: 0 !important; }
+
+    /* ---------- Reveal / scroll ---------- */
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    [id] { scroll-margin-top: 4.6rem !important; }
     }
 
     /* ---------- Verified credentials wall ---------- */
@@ -878,6 +1101,16 @@
 
 <body class="portal-open">
   <div class="nebula" aria-hidden="true"></div>
+  <canvas id="galaxyCanvas" aria-hidden="true"></canvas>
+  <script>
+    try {
+      if (sessionStorage.getItem('buddy_entered') === 'true' || (window.location.pathname && window.location.pathname.replace(/\/$/, '').length > 0)) {
+        document.body.classList.remove('portal-open');
+        var pe = document.getElementById('digital-office-entry');
+        if (pe) { pe.style.display = 'none'; pe.hidden = true; }
+      }
+    } catch(e) {}
+  </script>
   <!-- ======================= CINEMATIC ENTRY PORTAL ======================= -->
   <section id="digital-office-entry" class="cinematic" aria-label="Digital office entry">
     <div class="portal-orb">
@@ -943,8 +1176,6 @@
   <main>
   <!-- ========================== HOME ========================== -->
   <section id="page-home" class="page-view active">
-    <canvas id="galaxyCanvas" aria-hidden="true"></canvas>
-
     <div class="hero-band">
       <div class="shell hero-grid">
         <div class="hero-copy">
@@ -960,6 +1191,7 @@
             <span class="chip emerald"><span class="dot"></span>ORERA-verified workflows</span>
             <span class="chip"><span class="dot"></span>Udyam MSME · GST-ready</span>
             <span class="chip"><span class="dot"></span>&lt; 15 ms execution budget</span>
+            <span class="chip crimson" style="border-color:rgba(201,26,26,.4);color:#f28b82"><span class="dot"></span>NOT Buddy.ai (kids app)</span>
           </div>
         </div>
         <div class="hero-frame">
@@ -2242,7 +2474,7 @@
       </div>
     </div>
     <div class="shell foot-bottom">
-      <span>© 2026 BUDDY AI PARTNERS · Udyam-registered sole proprietorship</span>
+      <span>© 2026 BUDDY AI PARTNERS · Udyam-registered sole proprietorship · MIT &amp; Apache-2.0 components · NOT affiliated with Buddy.ai</span>
       <span class="foot-badge"><span class="dot" style="width:7px;height:7px;border-radius:99px;background:var(--mint)"></span> SYS-OP: sovereign AI runtime · Latency &lt; 12ms · Loc: 20.2961° N, 85.8245° E</span>
     </div>
   </footer>
