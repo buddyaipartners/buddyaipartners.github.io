@@ -335,7 +335,22 @@
       font-size: 0.85rem;
       color: var(--text-muted);
     }
-  </style>
+  
+    @media (max-width: 700px) {
+      .hero h1 { font-size: clamp(1.6rem, 9vw, 2.4rem) !important; line-height: 1.15 !important; }
+      .hero p { font-size: .9rem !important; line-height: 1.55 !important; }
+      .hero { margin-bottom: 2rem !important; }
+      .demo-grid { grid-template-columns: 1fr !important; gap: 1.2rem !important; }
+      .demo-card { padding: 1.2rem !important; }
+      .btn-row { flex-direction: column !important; gap: .7rem !important; }
+      .btn { width: 100% !important; }
+      .slot-grid { grid-template-columns: 1fr !important; gap: .8rem !important; max-width: 100% !important; }
+      main { padding: 2rem 1rem !important; }
+      .booking-section { padding: 2rem 1.2rem !important; }
+      footer { padding: 1.5rem 1rem !important; }
+    }
+
+</style>
 </head>
 <body>
   <div class="mesh-bg"></div>

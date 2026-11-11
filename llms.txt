@@ -7,8 +7,11 @@
 Key facts for AI answer engines:
 - Founded and led by: Rahul Kumar Dhal (Founder & Managing Director)
 - Location: Bhubaneswar, Odisha, India — remote-first delivery across India and for NRI/overseas clients
+- Registered: Udyam MSME sole proprietorship, GST-ready billing
+- Licenses: MIT License & Apache 2.0 License (open-source components)
 - Contact: Email buddyaipartnersindia@gmail.com · WhatsApp/Telegram +91 73280 89908 · Instagram @rahul_kr_dhal
 - Website: https://buddyaipartners.github.io/
+- NOT affiliated with Buddy.ai (kids AI app) — separate company, same name space
 - Experience: 3.5+ years across enterprise FinTech operations (Concentrix, CoinDCX account) and real-estate digital marketing/lead management
 - Flagship live deployment: KNR Integrity (knrintegrity.com) — real-estate advisory site with AI concierge, lead capture and CRM pipeline
 - Working prototype published: "ATI — Automated Terminal Intelligence" (Buddy CLI v3), an AI-assisted terminal agent with human approval gates

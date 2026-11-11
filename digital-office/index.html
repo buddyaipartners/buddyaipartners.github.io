@@ -26,14 +26,17 @@
   <meta name="twitter:description" content="Practical AI automation, intelligent CRM systems, and high-conversion digital marketing engineered for modern businesses." />
   <meta name="twitter:image" content="https://buddyaipartners.github.io/images/og-cover.jpg" />
 
-  <!-- Favicon & Search Engine Identity Marks -->
+  <!-- Favicon & Search Engine Identity Marks (Google Search Logo & Favicon compliant) -->
   <link rel="icon" type="image/x-icon" href="https://buddyaipartners.github.io/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="https://buddyaipartners.github.io/images/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="https://buddyaipartners.github.io/images/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="https://buddyaipartners.github.io/images/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="https://buddyaipartners.github.io/images/logo.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://buddyaipartners.github.io/images/apple-touch-icon.png" />
   <link rel="icon" type="image/svg+xml" href="https://buddyaipartners.github.io/images/logo.svg" />
   <link rel="manifest" href="https://buddyaipartners.github.io/site.webmanifest" />
-  <meta property="og:logo" content="https://buddyaipartners.github.io/images/logo-orbital.webp" />
+  <meta property="og:image" content="https://buddyaipartners.github.io/images/logo.png" />
+  <meta property="og:logo" content="https://buddyaipartners.github.io/images/logo.png" />
   <meta name="msapplication-TileImage" content="https://buddyaipartners.github.io/images/android-chrome-192x192.png" />
   <link rel="canonical" href="https://buddyaipartners.github.io/digital-office/" />
 
@@ -63,7 +66,8 @@
           "Buddy AI Partners Bhubaneswar"
         ],
         "url": "https://buddyaipartners.github.io/",
-        "logo": "https://buddyaipartners.github.io/images/logo.svg",
+        "logo": "https://buddyaipartners.github.io/images/logo.png",
+        "image": "https://buddyaipartners.github.io/images/logo.png",
         "description": "AI software engineering and automation company in Bhubaneswar building autonomous AI agents, custom CRM systems and high-conversion web platforms. Udyam MSME registered. MIT & Apache 2.0 licensed open-source components.",
         "knowsAbout": [
           "Autonomous AI Agents",
@@ -1097,6 +1101,300 @@
 
     /* Print */
     @media print { .site-header, .buddy-assistant, .cinematic, #galaxyCanvas, .progress-track { display: none !important; } .page-view { display: block !important; } }
+  
+    /* ========== RESPONSIVE HEADER & MOBILE HAMBURGER BUTTON FIX ========== */
+    .menu-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 44px !important;
+      height: 44px !important;
+      min-width: 44px !important;
+      min-height: 44px !important;
+      border-radius: 12px !important;
+      border: 1.5px solid rgba(56, 189, 248, 0.5) !important;
+      background: rgba(8, 20, 39, 0.88) !important;
+      color: #ffffff !important;
+      cursor: pointer !important;
+      flex-shrink: 0 !important;
+      margin-left: auto !important;
+      z-index: 120 !important;
+      transition: all .2s ease !important;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+    }
+    .menu-btn:hover, .menu-btn:focus-visible {
+      border-color: var(--sky) !important;
+      background: rgba(56, 189, 248, 0.2) !important;
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.4) !important;
+      transform: translateY(-1px) !important;
+    }
+    .menu-btn svg { width: 22px !important; height: 22px !important; stroke: #ffffff !important; }
+    @media (min-width: 1120px) {
+      .menu-btn { display: none !important; }
+    }
+    @media (max-width: 600px) {
+      .brand-sub { display: none !important; }
+      .hdr-buddy { display: none !important; }
+      .hdr-inner { gap: .5rem !important; }
+    }
+    .mobile-menu {
+      position: absolute !important;
+      left: 0 !important;
+      right: 0 !important;
+      top: 100% !important;
+      z-index: 150 !important;
+      background: rgba(6, 13, 28, 0.98) !important;
+      backdrop-filter: blur(24px) !important;
+      -webkit-backdrop-filter: blur(24px) !important;
+      border-bottom: 2px solid rgba(56, 189, 248, 0.3) !important;
+      padding: 1rem clamp(1rem, 5vw, 2rem) 1.5rem !important;
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+      gap: .65rem !important;
+      box-shadow: 0 32px 64px rgba(2, 6, 16, 0.95), 0 0 30px rgba(56, 189, 248, 0.12) !important;
+      animation: menuIn .22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .mnav-btn {
+      text-align: left !important;
+      font-family: var(--font-ui) !important;
+      font-size: .84rem !important;
+      font-weight: 600 !important;
+      color: var(--body) !important;
+      background: #0b1a33 !important;
+      border: 1px solid var(--line) !important;
+      border-radius: 12px !important;
+      padding: .75rem 1rem !important;
+      transition: all .2s ease !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: .6rem !important;
+    }
+    .mnav-btn:hover {
+      color: var(--sky-soft) !important;
+      border-color: var(--sky) !important;
+      background: rgba(56, 189, 248, 0.12) !important;
+      transform: translateX(3px) !important;
+    }
+    .mnav-btn.active {
+      background: linear-gradient(180deg, #4FD3FF, var(--sky) 55%, var(--sky-deep)) !important;
+      color: #04131f !important;
+      border-color: transparent !important;
+      font-weight: 700 !important;
+    }
+
+    /* ========== PRICE CARDS: UNCLIPPED HIGHLIGHT BADGES ========== */
+    .price-grid {
+      overflow: visible !important;
+      display: grid !important;
+      gap: 1.25rem !important;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)) !important;
+      align-items: stretch !important;
+    }
+    .price-card {
+      overflow: visible !important;
+      position: relative !important;
+      padding: 2.2rem 1.4rem 1.4rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+    }
+    .price-card.spotlight-card {
+      overflow: visible !important;
+    }
+    .price-card .price-flag {
+      position: absolute !important;
+      top: -12px !important;
+      right: 1.2rem !important;
+      transform: none !important;
+      z-index: 25 !important;
+      font-family: var(--font-ui) !important;
+      font-size: .62rem !important;
+      font-weight: 800 !important;
+      letter-spacing: .12em !important;
+      text-transform: uppercase !important;
+      padding: .35rem .85rem !important;
+      border-radius: 999px !important;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 14px rgba(212, 175, 55, 0.4) !important;
+    }
+    .price-card .price-flag.solid-gold {
+      background: linear-gradient(180deg, #FFE27A, #D4AF37 55%, #AA820A) !important;
+      color: #0d0a00 !important;
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5) !important;
+    }
+    .price-card .price-flag.solid-cyan {
+      background: linear-gradient(180deg, #67e8f9, #06b6d4) !important;
+      color: #032533 !important;
+      box-shadow: 0 6px 20px rgba(6, 182, 212, 0.45) !important;
+    }
+    .price-card .price-flag.solid-emerald {
+      background: linear-gradient(180deg, #34d399, #059669) !important;
+      color: #022013 !important;
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45) !important;
+    }
+    .price-card .price-flag.solid-violet {
+      background: linear-gradient(180deg, #a78bfa, #7c3aed) !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 20px rgba(124, 58, 237, 0.45) !important;
+    }
+    .price-card .price-li {
+      margin-bottom: .45rem !important;
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: .6rem !important;
+      font-size: .78rem !important;
+      line-height: 1.45 !important;
+      color: var(--body) !important;
+    }
+    .price-card .price-li::before {
+      content: "✓" !important;
+      color: var(--gold) !important;
+      font-weight: 800 !important;
+      flex-shrink: 0 !important;
+      font-size: .88rem !important;
+    }
+
+    /* ========== BLOG ENGINE STYLING ========== */
+    .blog-hero {
+      padding-block: clamp(2rem, 6vw, 4rem) 1.5rem;
+      text-align: center;
+    }
+    .blog-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      justify-content: center;
+      margin: 1.5rem 0 2rem;
+    }
+    .blog-filter-btn {
+      font-family: var(--font-ui);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .45rem .95rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(11, 26, 51, 0.6);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+    .blog-filter-btn:hover, .blog-filter-btn.active {
+      color: #ffffff;
+      border-color: var(--sky);
+      background: rgba(56, 189, 248, 0.18);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+    }
+    .blog-grid {
+      display: grid;
+      gap: 1.4rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    .blog-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 18px;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      transition: all .35s var(--ease);
+      position: relative;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--line-strong);
+      box-shadow: 0 20px 48px rgba(2, 6, 16, 0.7), 0 0 24px rgba(56, 189, 248, 0.1);
+    }
+    .blog-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-family: var(--font-ui);
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .28rem .7rem;
+      border-radius: 999px;
+      width: fit-content;
+      margin-bottom: .8rem;
+    }
+    .blog-badge.re { background: rgba(212, 175, 55, 0.15); color: var(--gold-soft); border: 1px solid rgba(212, 175, 55, 0.35); }
+    .blog-badge.wa { background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.35); }
+    .blog-badge.em { background: rgba(56, 189, 248, 0.15); color: var(--sky-soft); border: 1px solid rgba(56, 189, 248, 0.35); }
+    .blog-badge.db { background: rgba(167, 139, 250, 0.15); color: #c4b5fd; border: 1px solid rgba(167, 139, 250, 0.35); }
+    .blog-title {
+      font-family: var(--font-display);
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.35;
+      margin-bottom: .6rem;
+    }
+    .blog-excerpt {
+      font-size: .82rem;
+      color: var(--body);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+      flex-grow: 1;
+    }
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: .72rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: .8rem;
+      margin-top: .6rem;
+    }
+    .blog-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      background: rgba(3, 7, 18, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+      animation: modalFadeIn .25s ease-out;
+    }
+    .blog-modal-content {
+      background: #081427;
+      border: 1px solid var(--line-strong);
+      border-radius: 20px;
+      max-width: 820px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: clamp(1.4rem, 4vw, 2.4rem);
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.8), 0 0 32px rgba(56, 189, 248, 0.15);
+      position: relative;
+    }
+    .blog-modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: #0d1e38;
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all .2s;
+    }
+    .blog-modal-close:hover {
+      background: var(--crimson);
+      border-color: var(--crimson);
+    }
+
   </style>
 </head>
 
@@ -1144,11 +1442,11 @@
       <nav class="main-nav" aria-label="Main Navigation">
         <button type="button" class="nav-btn active" data-nav="home" onclick="switchPage('home')" aria-current="page">Home</button>
         <button type="button" class="nav-btn" data-nav="digital-office" onclick="switchPage('digital-office')">Office</button>
-        <button type="button" class="nav-btn" data-nav="about" onclick="switchPage('about')">About</button>
+        <button type="button" class="nav-btn" data-nav="blog" onclick="switchPage('blog')">Blog</button>
         <button type="button" class="nav-btn" data-nav="services" onclick="switchPage('services')">Services</button>
+        <button type="button" class="nav-btn" data-nav="pricing" onclick="switchPage('pricing')">Pricing</button>
         <button type="button" class="nav-btn" data-nav="portfolio" onclick="switchPage('portfolio')">Work</button>
-        <button type="button" class="nav-btn" data-nav="stack" onclick="switchPage('stack')">Stack</button>
-        <button type="button" class="nav-btn" data-nav="process" onclick="switchPage('process')">Process</button>
+        <button type="button" class="nav-btn" data-nav="about" onclick="switchPage('about')">About</button>
         <button type="button" class="nav-btn" data-nav="contact" onclick="switchPage('contact')">Contact</button>
       </nav>
 
@@ -1156,20 +1454,20 @@
       <button type="button" class="btn btn-gold btn-sm hide-m" onclick="switchPage('contact')">Start Project</button>
 
       <nav id="mobileMenu" aria-label="Mobile Navigation" hidden class="mobile-menu">
-        <button type="button" class="mnav-btn active" data-mnav="home" onclick="switchPage('home');closeMenu()">Home</button>
+        <button type="button" class="mnav-btn active" data-mnav="home" onclick="switchPage('home');closeMenu()">🏠 Home</button>
         <button type="button" class="mnav-btn" data-mnav="digital-office" onclick="switchPage('digital-office');closeMenu()">🏢 Digital Office (Virtual HQ)</button>
-        <button type="button" class="mnav-btn" data-mnav="about" onclick="switchPage('about');closeMenu()">About &amp; Founder</button>
-        <button type="button" class="mnav-btn" data-mnav="services" onclick="switchPage('services');closeMenu()">Services</button>
-        <button type="button" class="mnav-btn" data-mnav="portfolio" onclick="switchPage('portfolio');closeMenu()">Work &amp; Proof</button>
-        <button type="button" class="mnav-btn" data-mnav="stack" onclick="switchPage('stack');closeMenu()">Tech Stack</button>
-        <button type="button" class="mnav-btn" data-mnav="process" onclick="switchPage('process');closeMenu()">Process</button>
-        <button type="button" class="mnav-btn" data-mnav="buddy" onclick="switchPage('buddy');closeMenu()">✦ Try Buddy AI</button>
-        <button type="button" class="mnav-btn" data-mnav="contact" onclick="switchPage('contact');closeMenu()">Pricing &amp; Contact</button>
+        <button type="button" class="mnav-btn" data-mnav="blog" onclick="switchPage('blog');closeMenu()">📰 Tech &amp; AI Intelligence Blog</button>
+        <button type="button" class="mnav-btn" data-mnav="services" onclick="switchPage('services');closeMenu()">⚡ AI Automation Services</button>
+        <button type="button" class="mnav-btn" data-mnav="pricing" onclick="switchPage('pricing');closeMenu()">💰 Pricing &amp; Packages (WhatsApp, Email &amp; CRM)</button>
+        <button type="button" class="mnav-btn" data-mnav="portfolio" onclick="switchPage('portfolio');closeMenu()">💼 Production Work &amp; Proof</button>
+        <button type="button" class="mnav-btn" data-mnav="about" onclick="switchPage('about');closeMenu()">👤 About &amp; Founder</button>
+        <button type="button" class="mnav-btn" data-mnav="buddy" onclick="switchPage('buddy');closeMenu()">✦ Try Buddy AI Assistant</button>
+        <button type="button" class="mnav-btn" data-mnav="contact" onclick="switchPage('contact');closeMenu()">📞 Book Strategy Call</button>
       </nav>
 
-      <button type="button" id="menuBtn" class="menu-btn" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">
-        <svg id="menuIcoOpen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h12"/></svg>
-        <svg id="menuIcoClose" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="hidden"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      <button type="button" id="menuBtn" class="menu-btn" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleMenu()">
+        <svg id="menuIcoOpen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg id="menuIcoClose" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="hidden"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
     </div>
   </header>
@@ -1992,24 +2290,18 @@
               </div>
               <label class="field"><span>Service required</span>
                 <select id="clientService" name="clientService" class="select">
-                  <option value="">Select a service…</option>
-                  <option value="Buddy AI Starter Pack (₹2,999 One-Time — Laptop/Mobile Setup)">Buddy AI Starter Pack (₹2,999 one-time)</option>
-                  <option value="B2B &amp; Real Estate Lead Scraper &amp; Calling SLA (₹24,999/mo)">Lead Scraper &amp; Calling SLA (₹24,999/mo)</option>
+                  <option value="">Select a package or service…</option>
+                  <option value="Sovereign Lead Database &amp; AI CRM Platform (₹1.5L Setup + ₹40k/mo for Real Estate CPs &amp; Agencies)">⭐ Sovereign Lead Database &amp; AI CRM (₹1.5L Setup + ₹40k/mo)</option>
+                  <option value="AI WhatsApp Automation Engine (₹15,000 Setup)">AI WhatsApp Automation Engine (₹15,000 Setup)</option>
+                  <option value="AI Email Automation &amp; Anti-Spam Outreach (₹15,000 Setup)">AI Email Automation &amp; Anti-Spam Outreach (₹15,000 Setup)</option>
+                  <option value="Buddy AI Starter Pack (₹3,500 One-Time — Laptop/Mobile Setup)">Buddy AI Personal Starter Pack (₹3,500 One-Time)</option>
+                  <option value="B2B &amp; Real Estate Lead Scraper &amp; Calling SLA (₹24,999/mo)">B2B &amp; Real Estate Lead Scraper &amp; Calling SLA (₹24,999/mo)</option>
                   <option value="Autonomous Business CRM &amp; Client Concierge (₹49,999 setup)">Autonomous Business CRM (₹49,999 setup)</option>
-                  <option value="Enterprise Software &amp; Autonomous Swarm (₹89k-₹1.99L)">Enterprise Software Swarm (₹89k+)</option>
-                  <option value="Healthcare &amp; Dental Clinic AI Appointment Engine (₹14,999)">Healthcare AI Appointment Engine (₹14,999)</option>
-                  <option value="PHP2Shell Security Patch Review &amp; Hardening (₹34,999)">PHP2Shell Security Review (₹34,999)</option>
-                  <option value="Custom AI Agent Creation">Custom AI Agent Creation</option>
-                  <option value="AI for Business Setup">AI for Business Setup</option>
-                  <option value="Custom CRM &amp; Lead Operations">Custom CRM &amp; Lead Operations</option>
-                  <option value="AI Workflow Automation (Python / n8n)">AI Workflow Automation (Python / n8n)</option>
-                  <option value="Websites &amp; Conversion Funnels">Websites &amp; Conversion Funnels</option>
-                  <option value="Social Media Automation">Social Media Automation</option>
-                  <option value="AI Content, Voice &amp; Video">AI Content, Voice &amp; Video</option>
-                  <option value="Deployment &amp; Infrastructure Support">Deployment &amp; Infrastructure Support</option>
-                  <option value="Performance Marketing Retainer (₹15k-₹25k/mo)">Performance Marketing Retainer (₹15k-₹25k/mo)</option>
-                  <option value="Custom System Build (₹30k-₹50k range)">Custom System Build (₹30k-₹50k range)</option>
-                  <option value="NRI / Overseas Business Operations">NRI / Overseas Business Operations</option>
+                  <option value="Enterprise Software &amp; Autonomous Swarm (₹89k-₹1.99L)">Enterprise Software &amp; Autonomous Swarm (₹89k-₹1.99L)</option>
+                  <option value="Healthcare &amp; Dental Clinic AI Appointment Engine (₹14,999)">Healthcare &amp; Dental Clinic AI Engine (₹14,999)</option>
+                  <option value="PHP2Shell Security Patch Review &amp; Hardening (₹34,999)">Security Review &amp; Hardening (₹34,999)</option>
+                  <option value="Custom AI Agent Creation &amp; Workflow Automation">Custom AI Agent &amp; Workflow Automation</option>
+                  <option value="NRI / Overseas Real Estate &amp; Business Operations">NRI / Overseas Business Operations</option>
                 </select>
               </label>
               <label class="field"><span>Project brief / goal *</span><textarea id="clientGoal" name="clientGoal" class="textarea" placeholder="Where are leads, follow-ups or delivery getting stuck? Minimum 10 characters." required minlength="10"></textarea></label>
@@ -2055,41 +2347,102 @@
           <h2 class="display-l">Clear tiers. <span class="gold-i">Honest scope.</span></h2>
           <p class="lead" style="max-width:640px;margin:0.6rem auto 0">Production-grade AI systems, custom CRM swarms, and high-velocity lead pipelines built for real revenue.</p>
         </div>
-        <div class="price-grid" style="align-items:stretch">
-          <article class="card card-hover spotlight-card price-card reveal" id="starter-pack-card" style="display:flex;flex-direction:column;justify-content:space-between"><span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span><span class="price-flag">Individual · 1-on-1</span>
+        <div class="price-grid" id="pricing-packages-grid">
+          <!-- TIER 1: Buddy AI Personal Starter -->
+          <article class="card card-hover spotlight-card price-card reveal" id="starter-pack-card">
+            <span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span>
+            <span class="price-flag">Personal · 1-on-1 Setup</span>
             <div>
               <h3 class="price-name">Buddy AI Personal Starter</h3>
-              <p class="price-num">₹3,500 <span style="font-size:0.8rem;font-weight:500;color:var(--t-muted);display:block;margin-top:2px">one-time investment</span></p>
-              <p class="price-desc">Early adopter access <s class="t-muted">₹6,999</s></p>
-              <div><p class="price-li">Rahul installs 1-on-1 on laptop (Mac/Win/Linux) or mobile</p><p class="price-li">Replaces 5+ paid AI apps with high-speed open models</p><p class="price-li">Daily Reels scripts, posts, WhatsApp pitches &amp; research</p><p class="price-li">Zero monthly API bills — lifetime execution</p></div>
-              <div class="save-box"><span class="xsmall t-muted" style="letter-spacing:.14em;text-transform:uppercase">Est. annual savings</span><p class="v">₹1,29,552 / yr</p></div>
+              <p class="price-num">₹3,500 <span style="font-size:0.8rem;font-weight:500;color:var(--t-muted);display:block;margin-top:2px">one-time lifetime setup</span></p>
+              <p class="price-desc">Guided install on laptop (Mac/Win/Linux) or mobile</p>
+              <div style="margin-top:.8rem">
+                <p class="price-li">Founder Rahul Kumar Dhal installs 1-on-1 on your machine</p>
+                <p class="price-li">Replaces 5+ paid subscriptions with lightning-fast open models</p>
+                <p class="price-li">Daily viral Reels scripts, LinkedIn posts &amp; research pipelines</p>
+                <p class="price-li">Zero monthly API fees — perpetual local/private execution</p>
+              </div>
+              <div class="save-box" style="margin-top:.8rem"><span class="xsmall t-muted" style="letter-spacing:.14em;text-transform:uppercase">Annual SaaS Savings</span><p class="v">₹1,29,552 / yr</p></div>
             </div>
-            <a class="btn btn-emerald" style="width:100%;margin-top:1.2rem;text-align:center" href="#upi-payment-card" data-jump="upi-payment-card" onclick="return jumpToEl('upi-payment-card')">Get Starter Pack →</a>
+            <a class="btn btn-emerald" style="width:100%;margin-top:1.2rem;text-align:center" href="#upi-payment-card" data-jump="upi-payment-card" onclick="return jumpToEl('upi-payment-card')">Get Starter Pack (₹3,500) →</a>
           </article>
-          <article class="card card-hover spotlight-card price-card reveal" style="display:flex;flex-direction:column;justify-content:space-between"><span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span><span class="price-flag solid-red">Featured</span>
+
+          <!-- TIER 2: AI WhatsApp Automation -->
+          <article class="card card-hover spotlight-card price-card reveal">
+            <span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span>
+            <span class="price-flag solid-emerald">WhatsApp AI · 48h Delivery</span>
             <div>
-              <h3 class="price-name">Lead Engine — Scraper &amp; Calling SLA</h3>
-              <p class="price-num">₹24,999 <span style="font-size:0.8rem;font-weight:500;color:var(--t-muted);display:block;margin-top:2px">per month retainer</span></p>
-              <p class="price-desc">B2B · real estate · clinics</p>
-              <div><p class="price-li">Playwright multi-sector lead ingress + Meta/Google ads</p><p class="price-li">Sub-5-minute calling queue with SLA timers &amp; scripts</p><p class="price-li">Geo campaigns for Patia, Khandagiri &amp; pan-India</p><p class="price-li">Weekly pipeline telemetry: CPL, CAC, appointments</p></div>
+              <h3 class="price-name">AI WhatsApp Automation Engine</h3>
+              <p class="price-num">₹15,000 <span style="font-size:0.8rem;font-weight:500;color:var(--t-muted);display:block;margin-top:2px">one-time full deployment</span></p>
+              <p class="price-desc">Automated sales qualification &amp; instant brochure delivery</p>
+              <div style="margin-top:.8rem">
+                <p class="price-li">Baileys / WhatsApp API multi-turn AI qualification bot</p>
+                <p class="price-li">Instant PDF brochure, floor-plan &amp; property link delivery</p>
+                <p class="price-li">Sub-90-second response SLA with conversational context memory</p>
+                <p class="price-li">High-intent buyer alert pinged straight to founder phone</p>
+                <p class="price-li">Auto-syncs leads to CRM / Google Sheets with deduplication</p>
+              </div>
             </div>
-            <button type="button" class="btn btn-gold" style="width:100%;margin-top:1.2rem" onclick="selectServiceAndContact('B2B &amp; Real Estate Lead Scraper &amp; Calling SLA (₹24,999/mo)')">Select Lead Engine →</button>
+            <button type="button" class="btn btn-gold" style="width:100%;margin-top:1.2rem" onclick="selectServiceAndContact('AI WhatsApp Automation Engine (₹15,000 Setup)')">Deploy WhatsApp AI (₹15,000) →</button>
           </article>
-          <article class="card card-hover spotlight-card price-card reveal" style="display:flex;flex-direction:column;justify-content:space-between"><span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span><span class="price-flag">All businesses</span>
+
+          <!-- TIER 3: AI Email Automation & Anti-Spam -->
+          <article class="card card-hover spotlight-card price-card reveal">
+            <span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span>
+            <span class="price-flag solid-cyan">Email AI · 0% Spam Guarantee</span>
             <div>
-              <h3 class="price-name">Autonomous Business CRM</h3>
-              <p class="price-num">₹49,999 <span style="font-size:0.8rem;font-weight:500;color:var(--t-muted);display:block;margin-top:2px">one-time enterprise setup</span></p>
-              <p class="price-desc">Proven in real estate — adaptable to any workflow</p>
-              <div><p class="price-li">Sovereign 4-stage pipeline fit to your sales flow</p><p class="price-li">Client concierge: cab dispatch, bookings, demos</p><p class="price-li">12-point dedupe &amp; registry verification</p><p class="price-li">Odia/Hindi/English delivery + 1-on-1 staff training</p></div>
+              <h3 class="price-name">AI Email Outreach &amp; Auto-Responder</h3>
+              <p class="price-num">₹15,000 <span style="font-size:0.8rem;font-weight:500;color:var(--t-muted);display:block;margin-top:2px">one-time setup &amp; mailbox warming</span></p>
+              <p class="price-desc">Hyper-personalized cold outreach + automated inbound triage</p>
+              <div style="margin-top:.8rem">
+                <p class="price-li">Complete DNS authentication: SPF, DKIM, DMARC &amp; return-path</p>
+                <p class="price-li">14-day automated mailbox warming protocol (bypasses Gmail/Outlook spam filters)</p>
+                <p class="price-li">Dynamic per-prospect AI synthesis (zero repetitive template footprints)</p>
+                <p class="price-li">Inbound email classification &amp; auto-response draft generation</p>
+                <p class="price-li">Real-time alerts on replies &amp; automated follow-up sequences</p>
+              </div>
             </div>
-            <button type="button" class="btn btn-gold" style="width:100%;margin-top:1.2rem" onclick="selectServiceAndContact('Autonomous Business CRM &amp; Client Concierge (₹49,999 setup)')">Deploy Business CRM →</button>
+            <button type="button" class="btn btn-gold" style="width:100%;margin-top:1.2rem" onclick="selectServiceAndContact('AI Email Automation &amp; Anti-Spam Outreach (₹15,000 Setup)')">Deploy Email AI (₹15,000) →</button>
           </article>
-          <article class="card card-hover spotlight-card price-card reveal" style="display:flex;flex-direction:column;justify-content:space-between"><span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span><span class="price-flag solid-violet">Enterprise scale</span>
+
+          <!-- TIER 4: FLAGSHIP SOVEREIGN LEAD DATABASE (Real Estate CPs & Agencies) -->
+          <article class="card card-hover spotlight-card price-card reveal" style="border: 1.5px solid var(--gold); background: radial-gradient(120% 90% at 50% 0%, rgba(212, 175, 55, 0.12) 0%, #060e1d 65%);">
+            <span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span>
+            <span class="price-flag solid-gold">⭐ FLAGSHIP · 90-DAY COMPLETE SETUP</span>
             <div>
-              <h3 class="price-name">Enterprise Software Swarm</h3>
-              <p class="price-num">₹89,999+ <span style="font-size:0.8rem;font-weight:500;color:var(--t-muted);display:block;margin-top:2px">custom architecture build</span></p>
-              <p class="price-desc">Full custom web app + office agents + security</p>
-              <div><p class="price-li">React/Next.js frontend, FastAPI backend, PostgreSQL, Docker</p><p class="price-li">6 autonomous office agents on private servers</p><p class="price-li">OWASP/CVE review + SSL &amp; header fortification</p><p class="price-li">Zero SaaS lock-in — full IP transferred to you</p></div>
+              <h3 class="price-name" style="color:var(--gold-soft)">Sovereign Lead Database &amp; AI CRM</h3>
+              <p class="price-num">₹1,50,000 <span style="font-size:0.8rem;font-weight:500;color:var(--t-muted);display:block;margin-top:2px">initial 90-day comprehensive buildout</span></p>
+              <div style="margin: .4rem 0 .6rem; padding: .4rem .7rem; background: rgba(212, 175, 55, 0.12); border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.3);">
+                <span style="font-weight:700;color:var(--gold);font-size:0.95rem">+ ₹40,000 / month</span>
+                <span style="font-size:0.75rem;color:var(--muted);display:block">live monitoring, database upkeep &amp; SLA support</span>
+              </div>
+              <p class="price-desc" style="color:#ffffff;font-weight:600">Tailored for Real Estate Channel Partners (CP), Top Brokers &amp; Marketing Companies</p>
+              <p class="small" style="color:var(--sky-soft);margin-top:.4rem;font-style:italic">"Setup your company foundation for the AI era. Unify all your leads in one private database you own forever."</p>
+              <div style="margin-top:.8rem">
+                <p class="price-li">Centralize 100% of leads: Meta Ads, Google Ads, MagicBricks, 99acres, WhatsApp, Website &amp; Walk-ins</p>
+                <p class="price-li">100% Private Sovereign Database (PostgreSQL / SQLite) with zero platform lock-in</p>
+                <p class="price-li">90-Day phased setup: historical data migration, staff training &amp; workflow mapping</p>
+                <p class="price-li">Real-time executive monitoring: sub-5-minute calling queue &amp; agent conversion analytics</p>
+                <p class="price-li">Automated lead deduplication, phone verification &amp; 24/7 server health watch</p>
+              </div>
+            </div>
+            <button type="button" class="btn btn-crimson" style="width:100%;margin-top:1.2rem;font-weight:700;box-shadow:0 8px 24px rgba(212, 175, 55, 0.3)" onclick="selectServiceAndContact('Sovereign Lead Database &amp; AI CRM Platform (₹1.5L Setup + ₹40k/mo for Real Estate CPs &amp; Agencies)')">Build Sovereign Lead Database →</button>
+          </article>
+
+          <!-- TIER 5: Enterprise Custom Software Swarm -->
+          <article class="card card-hover spotlight-card price-card reveal">
+            <span class="corner-tick tl"></span><span class="corner-tick tr"></span><span class="corner-tick bl"></span><span class="corner-tick br"></span>
+            <span class="price-flag solid-violet">Custom Enterprise Build</span>
+            <div>
+              <h3 class="price-name">Enterprise Software &amp; AI Swarm</h3>
+              <p class="price-num">₹89,999 - ₹1.99L <span style="font-size:0.8rem;font-weight:500;color:var(--t-muted);display:block;margin-top:2px">complete bespoke system</span></p>
+              <p class="price-desc">Full custom web application + autonomous office agents + private cloud</p>
+              <div style="margin-top:.8rem">
+                <p class="price-li">Modern Next.js/React frontend, FastAPI backend, PostgreSQL &amp; Docker</p>
+                <p class="price-li">6 specialized autonomous office agents operating on private cloud infrastructure</p>
+                <p class="price-li">OWASP/CVE security audit review + SSL fortification &amp; automated backups</p>
+                <p class="price-li">Full intellectual property &amp; source code handover with zero SaaS lock-in</p>
+              </div>
             </div>
             <button type="button" class="btn btn-gold" style="width:100%;margin-top:1.2rem" onclick="selectServiceAndContact('Enterprise Software &amp; Autonomous Swarm (₹89k-₹1.99L)')">Select Enterprise Swarm →</button>
           </article>
@@ -2097,7 +2450,7 @@
 
         <div class="card reveal" style="margin-top:1.2rem">
           <div class="flex between wrap" style="gap:.8rem;margin-bottom:.8rem">
-            <div><p class="eyebrow">Never pay for AI apps again</p><p class="small t-muted" style="margin-top:.3rem">Included in the ₹2,999 Starter Pack — where a sensible free alternative exists.</p></div>
+            <div><p class="eyebrow">Never pay for AI apps again</p><p class="small t-muted" style="margin-top:.3rem">Included in the ₹3,500 Starter Pack — where a sensible free alternative exists.</p></div>
             <div class="save-box" style="min-width:190px"><p class="v">₹1,29,552 / yr saved</p></div>
           </div>
           <div style="overflow-x:auto">
@@ -2120,8 +2473,8 @@
     <div class="sec" style="padding-top:0">
       <div class="shell upi-grid">
         <div>
-          <div class="qr-frame"><img src="images/upi-qr.svg" alt="BHIM UPI QR code to pay ₹2,999 once for the Buddy AI Starter Pack" width="240" height="240" loading="eager" decoding="sync" /></div>
-          <p class="qr-cap">BHIM UPI · ₹2,999 Starter Pack</p>
+          <div class="qr-frame"><img src="images/upi-qr.svg" alt="BHIM UPI QR code to pay ₹3,500 once for the Buddy AI Starter Pack" width="240" height="240" loading="eager" decoding="sync" /></div>
+          <p class="qr-cap">BHIM UPI · ₹3,500 Starter Pack</p>
         </div>
         <div class="card card-hover reveal" id="upi-payment-card">
           <p class="eyebrow">Instant UPI payment</p>
@@ -2137,7 +2490,7 @@
             <a class="btn btn-glass btn-sm" href="https://www.phonepe.com/app" target="_blank" rel="noopener noreferrer">PhonePe</a>
             <a class="btn btn-glass btn-sm" href="https://paytm.com" target="_blank" rel="noopener noreferrer">Paytm</a>
           </div>
-          <a class="btn btn-crimson" style="margin-top:1rem" data-wa="Hi Rahul! I have completed the UPI payment of ₹2,999 for the Buddy AI Starter Pack. Here is my screenshot. Please schedule my installation call." href="https://wa.me/917328089908?text=Hi%20Rahul%21%20I%20have%20completed%20the%20UPI%20payment%20of%20%E2%82%B92%2C999%20for%20the%20Buddy%20AI%20Starter%20Pack.%20Here%20is%20my%20screenshot.%20Please%20schedule%20my%20installation%20call." target="_blank" rel="noopener noreferrer">Send payment screenshot →</a>
+          <a class="btn btn-crimson" style="margin-top:1rem" data-wa="Hi Rahul! I have completed the UPI payment of ₹3,500 for the Buddy AI Starter Pack. Here is my screenshot. Please schedule my installation call." href="https://wa.me/917328089908?text=Hi%20Rahul%21%20I%20have%20completed%20the%20UPI%20payment%20of%20%E2%82%B93%2C500%20for%20the%20Buddy%20AI%20Starter%20Pack.%20Here%20is%20my%20screenshot.%20Please%20schedule%20my%20installation%20call." target="_blank" rel="noopener noreferrer">Send payment screenshot →</a>
         </div>
       </div>
     </div>
@@ -2421,6 +2774,107 @@
 
         <div class="center" style="margin-top:2rem">
           <a class="btn btn-crimson" data-wa="Hi Rahul! I explored the Digital Office and want to discuss deploying Buddy AI for my business." href="https://wa.me/917328089908?text=Hi%20Rahul%21%20I%20explored%20the%20Digital%20Office%20and%20want%20to%20discuss%20deploying%20Buddy%20AI%20for%20my%20business." target="_blank" rel="noopener noreferrer">Schedule a tour with Rahul</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============================= DEDICATED BLOG VIEW ============================= -->
+  <section id="page-blog" class="page-view">
+    <div class="sec">
+      <div class="shell">
+        <div class="blog-hero reveal">
+          <p class="eyebrow center">Autonomous Intelligence &amp; Proptech Engineering</p>
+          <h1 class="display-l">Tech, AI &amp; <span class="gold-i">Growth Intelligence.</span></h1>
+          <p class="lead" style="max-width:740px;margin:.6rem auto 0">Battle-tested architectural breakdowns, WhatsApp conversion metrics, sovereign CRM blueprints, and anti-spam protocols engineered in Bhubaneswar for high-growth enterprises.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="blog-filter-bar reveal">
+          <button type="button" class="blog-filter-btn active" onclick="filterBlogCategory('all')">All Intelligence (4)</button>
+          <button type="button" class="blog-filter-btn" onclick="filterBlogCategory('realestate')">Real Estate AI &amp; CRM</button>
+          <button type="button" class="blog-filter-btn" onclick="filterBlogCategory('whatsapp')">WhatsApp Automation</button>
+          <button type="button" class="blog-filter-btn" onclick="filterBlogCategory('email')">Email Anti-Spam</button>
+          <button type="button" class="blog-filter-btn" onclick="filterBlogCategory('sovereign')">Sovereign Databases</button>
+        </div>
+
+        <!-- Articles Grid -->
+        <div class="blog-grid" id="blogArticlesGrid">
+          <!-- ARTICLE 1 -->
+          <article class="blog-card reveal" data-category="realestate sovereign">
+            <div>
+              <span class="blog-badge re">⭐ Real Estate Proptech</span>
+              <h2 class="blog-title">Why Real Estate CPs in 2026 Need Their Own Sovereign AI Lead Database</h2>
+              <p class="blog-excerpt">Relying on rented property portals and manual spreadsheets causes Indian Channel Partners to lose 40%+ of their ad pipeline. Discover the 90-day technical blueprint to unify, own, and autonomously qualify 100% of your buyer leads.</p>
+            </div>
+            <div>
+              <div class="blog-meta">
+                <span>By Rahul Kumar Dhal · 8 min read</span>
+                <span class="small t-muted">Updated Nov 2026</span>
+              </div>
+              <button type="button" class="btn btn-gold btn-sm" style="width:100%;margin-top:.8rem" onclick="openBlogArticle('re-database')">Read Full Blueprint →</button>
+            </div>
+          </article>
+
+          <!-- ARTICLE 2 -->
+          <article class="blog-card reveal" data-category="whatsapp">
+            <div>
+              <span class="blog-badge wa">💬 Conversational AI</span>
+              <h2 class="blog-title">WhatsApp Automation vs. Cold Calling: Why AI Responders Convert 4.8x Higher</h2>
+              <p class="blog-excerpt">Cold calling pickup rates in Tier-1 &amp; Tier-2 cities have crashed below 8%. Meanwhile, automated WhatsApp qualification with Baileys streaming achieves an 84% open rate and 38% response rate within 90 seconds.</p>
+            </div>
+            <div>
+              <div class="blog-meta">
+                <span>By Rahul Kumar Dhal · 6 min read</span>
+                <span class="small t-muted">Updated Nov 2026</span>
+              </div>
+              <button type="button" class="btn btn-gold btn-sm" style="width:100%;margin-top:.8rem" onclick="openBlogArticle('whatsapp-automation')">Read Full Playbook →</button>
+            </div>
+          </article>
+
+          <!-- ARTICLE 3 -->
+          <article class="blog-card reveal" data-category="email">
+            <div>
+              <span class="blog-badge em">✉️ Inbox Infrastructure</span>
+              <h2 class="blog-title">How We Solved Gmail &amp; Outlook Spam Triggers: The Modern AI Email Protocol</h2>
+              <p class="blog-excerpt">Google and Yahoo bulk sender mandates destroyed template cold email blasts. Here is the DNS authentication architecture (SPF/DKIM/DMARC), warming protocol, and dynamic AI copy synthesis for 99.4% inbox placement.</p>
+            </div>
+            <div>
+              <div class="blog-meta">
+                <span>By Rahul Kumar Dhal · 7 min read</span>
+                <span class="small t-muted">Updated Nov 2026</span>
+              </div>
+              <button type="button" class="btn btn-gold btn-sm" style="width:100%;margin-top:.8rem" onclick="openBlogArticle('email-deliverability')">Read Technical Guide →</button>
+            </div>
+          </article>
+
+          <!-- ARTICLE 4 -->
+          <article class="blog-card reveal" data-category="sovereign">
+            <div>
+              <span class="blog-badge db">🏢 Autonomous Operations</span>
+              <h2 class="blog-title">Inside the Digital Office: How 7 Autonomous AI Agents Run Company Telemetry</h2>
+              <p class="blog-excerpt">An architectural teardown of Kabir, Vikram, Aanya, and Pooja — our private AI swarm that runs CRM deduplication, ad spend tracking, and client triage 24/7 with zero human burnout.</p>
+            </div>
+            <div>
+              <div class="blog-meta">
+                <span>By Rahul Kumar Dhal · 5 min read</span>
+                <span class="small t-muted">Updated Nov 2026</span>
+              </div>
+              <button type="button" class="btn btn-gold btn-sm" style="width:100%;margin-top:.8rem" onclick="openBlogArticle('digital-office-arch')">Explore Architecture →</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Lead Capture CTA inside Blog -->
+        <div class="card reveal" style="margin-top:2.4rem;text-align:center;background:radial-gradient(120% 90% at 50% 0%, rgba(56, 189, 248, 0.1) 0%, #060e1d 75%);border:1px solid rgba(56, 189, 248, 0.3)">
+          <p class="eyebrow center">Proprietary AI Engineering</p>
+          <h3 class="h3" style="font-size:1.4rem;margin-top:.4rem">Want These Systems Deployed in Your Business?</h3>
+          <p class="lead" style="max-width:580px;margin:.5rem auto 1.2rem">Whether you need the ₹15k WhatsApp Automation, ₹15k Email Engine, or the 90-Day Sovereign Lead Database, let's build your AI foundation today.</p>
+          <div class="flex center wrap" style="gap:.8rem">
+            <button type="button" class="btn btn-crimson" onclick="switchPage('contact')">Schedule 10-Min Strategy Call →</button>
+            <a class="btn btn-glass" href="https://wa.me/917328089908?text=Hi%20Rahul!%20I%20read%20your%20blog%20and%20want%20to%20discuss%20deploying%20Buddy%20AI%20for%20my%20company." target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+          </div>
         </div>
       </div>
     </div>
@@ -3742,6 +4196,169 @@
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initApp);
       else initApp();
     } catch (e) { try { initApp(); } catch (e2) {} }
+  </script>
+
+
+  <!-- ============================= BLOG ARTICLE READER MODAL ============================= -->
+  <div id="blogArticleModal" class="blog-modal" hidden role="dialog" aria-modal="true" aria-labelledby="modalArticleTitle">
+    <div class="blog-modal-content">
+      <button type="button" class="blog-modal-close" onclick="closeBlogModal()" aria-label="Close article reader">✕</button>
+      <div id="modalArticleBadge" class="blog-badge re">Category</div>
+      <h2 id="modalArticleTitle" class="display-l" style="font-size:clamp(1.3rem, 3.5vw, 1.8rem);line-height:1.2;margin:.5rem 0 .8rem">Article Title</h2>
+      <div class="blog-meta" style="margin-bottom:1.4rem;padding-bottom:.8rem">
+        <span id="modalArticleAuthor">By Rahul Kumar Dhal · Founder &amp; Managing Director</span>
+        <span id="modalArticleDate">Updated Nov 2026</span>
+      </div>
+      <div id="modalArticleBody" style="font-size:.92rem;line-height:1.75;color:var(--ink)">
+        <!-- Dynamic Article Content Injected via JS -->
+      </div>
+      <div style="margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem">
+        <a id="modalWhatsAppShare" class="btn btn-emerald btn-sm" href="#" target="_blank" rel="noopener noreferrer">Share on WhatsApp →</a>
+        <button type="button" class="btn btn-crimson btn-sm" onclick="closeBlogModal();switchPage('contact')">Deploy This System in My Company →</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Blog articles data store
+    var BLOG_ARTICLES = {
+      're-database': {
+        category: 'Real Estate Proptech',
+        badgeClass: 're',
+        title: 'Why Real Estate Channel Partners in 2026 Need Their Own Sovereign AI Lead Database',
+        author: 'Rahul Kumar Dhal · Google Certified AI Architect',
+        date: 'November 2026',
+        body: '<p class="lead" style="color:var(--sky-soft)">The most dangerous mistake Indian Real Estate Channel Partners and marketing agencies make in 2026 is spending lakhs on Meta and Google Ads without owning a sovereign, centralized lead database.</p>' +
+              '<h3 style="color:#FFE27A;margin:1.4rem 0 .5rem">1. The Rented Aggregator Trap</h3>' +
+              '<p>When you rely solely on external property portals (MagicBricks, 99acres) or fragmented CSV spreadsheets scattered across your sales reps phones, you do not own your buyer graph. Portals can double their subscription fees overnight, and sales agents frequently leave with unencrypted lead sheets.</p>' +
+              '<h3 style="color:#FFE27A;margin:1.4rem 0 .5rem">2. The Sub-5-Minute Calling &amp; WhatsApp SLA</h3>' +
+              '<p>Real estate telemetry proves that reaching out to an inbound ad lead within 5 minutes results in a <strong>21x higher site visit conversion rate</strong> compared to calling after 30 minutes. Our Sovereign Database automatically ingests leads via webhooks, checks 12-point deduplication, and initiates a multi-turn WhatsApp qualification bot in less than 90 seconds.</p>' +
+              '<h3 style="color:#FFE27A;margin:1.4rem 0 .5rem">3. The 90-Day Complete Setup Architecture</h3>' +
+              '<p>Buddy AI Partners provides a complete 90-day foundation rollout (₹1.5 Lakh initial setup + ₹40,000/mo live monitoring):</p>' +
+              '<ul style="padding-left:1.4rem;margin:1rem 0">' +
+              '<li><strong>Days 1-30:</strong> Unified Ingress — Connecting Meta Ads, Google Ads, website forms, and WhatsApp webhooks into private SQLite/PostgreSQL storage.</li>' +
+              '<li><strong>Days 31-60:</strong> AI Qualification &amp; Deduplication Engine — Automated buyer budget filtering, brochure delivery, and agent attribution.</li>' +
+              '<li><strong>Days 61-90:</strong> Executive Telemetry Dashboard &amp; Staff Training — 1-on-1 team onboarding, live conversion monitoring, and autonomous daily reporting.</li>' +
+              '</ul>' +
+              '<p>Establish your company foundation for the AI era today and take total ownership of your revenue pipeline.</p>'
+      },
+      'whatsapp-automation': {
+        category: 'WhatsApp AI Automation',
+        badgeClass: 'wa',
+        title: 'WhatsApp Automation vs. Traditional Cold Calling: The AI Sales Playbook',
+        author: 'Rahul Kumar Dhal · Managing Director',
+        date: 'November 2026',
+        body: '<p class="lead" style="color:var(--sky-soft)">Cold calling pickup rates across India have plummeted below 8% due to Truecaller spam tagging and caller exhaustion. Meanwhile, intelligent WhatsApp automation delivers an unmatched 84% open rate.</p>' +
+              '<h3 style="color:#34d399;margin:1.4rem 0 .5rem">1. The Death of Unsolicited Outbound Calls</h3>' +
+              '<p>High-net-worth property buyers and busy business owners reject unfamiliar phone numbers. But when they fill out an inquiry and receive an immediate, professional WhatsApp greeting containing high-res floor plans, architectural 3D walkthroughs, and brochure downloads, trust is established instantly.</p>' +
+              '<h3 style="color:#34d399;margin:1.4rem 0 .5rem">2. Multilingual Context Memory (Odia, Hindi &amp; English)</h3>' +
+              '<p>Unlike rigid button-only chatbots, our Baileys socket AI engine understands natural language. If a client writes in colloquial Odia or Hindi inquiring about 3BHK pricing at Patia or Khandagiri, Buddy AI responds fluently with exact pricing schedules, RERA sanction verification, and booking procedures.</p>' +
+              '<h3 style="color:#34d399;margin:1.4rem 0 .5rem">3. Automated Escalation to Founder</h3>' +
+              '<p>The moment an AI conversation flags high intent (e.g. "I want to visit the site tomorrow at 4 PM"), the agent pings the founder or senior broker on WhatsApp with the complete transcript and client contact details.</p>'
+      },
+      'email-deliverability': {
+        category: 'Email Infrastructure',
+        badgeClass: 'em',
+        title: 'How We Solved Gmail &amp; Outlook Spam Triggers: The Modern AI Email Protocol',
+        author: 'Rahul Kumar Dhal · Systems Architect',
+        date: 'November 2026',
+        body: '<p class="lead" style="color:var(--sky-soft)">Sending repetitive email templates from unauthenticated domains is the quickest way to have your domain blacklisted by Google Postmaster and Microsoft SmartScreen. Here is the modern zero-spam engineering protocol.</p>' +
+              '<h3 style="color:#38bdf8;margin:1.4rem 0 .5rem">1. Ironclad DNS Configuration (SPF, DKIM, DMARC)</h3>' +
+              '<p>Every outreach domain must possess strict TXT records: SPF specifying authorized IP ranges, 2048-bit DKIM cryptographic signing keys, and DMARC set to p=reject with automated XML feedback reports to catch spoofing attempts.</p>' +
+              '<h3 style="color:#38bdf8;margin:1.4rem 0 .5rem">2. 14-Day Mailbox Warming Protocol</h3>' +
+              '<p>Never blast 500 emails on day one. We implement automated peer-to-peer warming that ramps sending from 5 to 50 emails daily over two weeks, generating genuine positive engagement signals (reads, replies, and marking as non-spam).</p>' +
+              '<h3 style="color:#38bdf8;margin:1.4rem 0 .5rem">3. Dynamic Per-Recipient AI Copy Generation</h3>' +
+              '<p>Spam filters analyze email bodies for identical byte sequences. Buddy AI uses local LLMs to generate distinct phrasing, greetings, and subject lines for every single recipient based on their website and industry focus, completely eliminating template spam fingerprints.</p>'
+      },
+      'digital-office-arch': {
+        category: 'Autonomous Operations',
+        badgeClass: 'db',
+        title: 'Inside the Digital Office: How 7 Autonomous AI Agents Run Company Telemetry',
+        author: 'Rahul Kumar Dhal · Founder',
+        date: 'November 2026',
+        body: '<p class="lead" style="color:var(--sky-soft)">The modern enterprise does not need bloated management layers to monitor sales operations. Specialized, autonomous AI directors provide 24/7 visibility with zero latency.</p>' +
+              '<h3 style="color:#c4b5fd;margin:1.4rem 0 .5rem">1. The Swarm Roster</h3>' +
+              '<p>Our digital headquarters is powered by specialized agents: <strong>Kabir</strong> (Executive Orchestrator), <strong>Vikram</strong> (Pipeline Hunter), <strong>Aanya</strong> (Media Engine), <strong>Arjun</strong> (Systems Architect), <strong>Pooja</strong> (SLA &amp; CRM Sentinel), <strong>Rhea</strong> (Client Concierge), and <strong>Suraksha</strong> (Cyber Defense).</p>' +
+              '<h3 style="color:#c4b5fd;margin:1.4rem 0 .5rem">2. Real-Time Telemetry &amp; Error Self-Healing</h3>' +
+              '<p>If a webhook fails or an API quota is reached, Kabir automatically re-routes traffic through secondary open-source fallbacks. Telemetry is streamed to the live dashboard with sub-second accuracy.</p>'
+      }
+    };
+
+    function openBlogArticle(articleKey) {
+      try { playCyberSfx('click'); } catch (e) {}
+      var art = BLOG_ARTICLES[articleKey];
+      if (!art) return;
+      var modal = document.getElementById('blogArticleModal');
+      var badge = document.getElementById('modalArticleBadge');
+      var title = document.getElementById('modalArticleTitle');
+      var author = document.getElementById('modalArticleAuthor');
+      var date = document.getElementById('modalArticleDate');
+      var body = document.getElementById('modalArticleBody');
+      var waShare = document.getElementById('modalWhatsAppShare');
+
+      if (badge) {
+        badge.textContent = art.category;
+        badge.className = 'blog-badge ' + art.badgeClass;
+      }
+      if (title) title.textContent = art.title;
+      if (author) author.textContent = art.author;
+      if (date) date.textContent = art.date;
+      if (body) body.innerHTML = art.body;
+      if (waShare) {
+        var shareTxt = encodeURIComponent('Read this AI engineering blueprint by Buddy AI Partners: ' + art.title + ' -> https://buddyaipartners.github.io/blog/');
+        waShare.href = 'https://wa.me/?text=' + shareTxt;
+      }
+      if (modal) {
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeBlogModal() {
+      var modal = document.getElementById('blogArticleModal');
+      if (modal) {
+        modal.hidden = true;
+        document.body.style.overflow = '';
+      }
+    }
+
+    function filterBlogCategory(cat) {
+      try { playCyberSfx('click'); } catch (e) {}
+      var btns = document.querySelectorAll('.blog-filter-btn');
+      btns.forEach(function (b) { b.classList.remove('active'); });
+      var activeBtn = Array.from(btns).find(function (b) {
+        return (cat === 'all' && b.textContent.includes('All')) || b.getAttribute('onclick').includes(cat);
+      });
+      if (activeBtn) activeBtn.classList.add('active');
+
+      var cards = document.querySelectorAll('#blogArticlesGrid .blog-card');
+      cards.forEach(function (card) {
+        if (cat === 'all') {
+          card.style.display = 'flex';
+        } else {
+          var cardCats = card.getAttribute('data-category') || '';
+          card.style.display = cardCats.includes(cat) ? 'flex' : 'none';
+        }
+      });
+    }
+
+    // Extended switchPage handler for pricing and blog
+    var _originalSwitchPage = window.switchPage;
+    window.switchPage = function(pageId) {
+      if (pageId === 'pricing') {
+        _originalSwitchPage('home');
+        setTimeout(function() {
+          var el = document.getElementById('pricing') || document.getElementById('pricing-packages-grid') || document.getElementById('starter-pack-card');
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+        return;
+      }
+      if (pageId === 'blog') {
+        _originalSwitchPage('blog');
+        return;
+      }
+      _originalSwitchPage(pageId);
+    };
   </script>
 
 </body>

@@ -7,3 +7,5 @@ node_modules/
 # Playwright artifacts
 tests/results/
 test-results/
+cf-*.cjs
+update_site_v3.py
