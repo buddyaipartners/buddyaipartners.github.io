@@ -744,27 +744,29 @@
     .slide-progress { height: 3px; background: rgba(56, 189, 248, .15); border-radius: 99px; overflow: hidden; margin-top: .85rem; }
     #slideProgress { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--sky), var(--gold-light)); }
 
-    /* Work Preview Frame */
+    /* Work Preview Frame & Smooth Web Scroll Animation */
     .caro-preview-frame {
       margin-top: 0.85rem;
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
-      border: 1px solid rgba(56, 189, 248, 0.25);
+      border: 1px solid rgba(56, 189, 248, 0.3);
       background: rgba(3, 7, 16, 0.95);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
       position: relative;
     }
     .caro-browser-bar {
       display: flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 12px;
-      background: rgba(11, 23, 48, 0.9);
-      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+      padding: 7px 12px;
+      background: rgba(11, 23, 48, 0.95);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.18);
+      position: relative;
+      z-index: 2;
     }
     .caro-browser-dot {
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       display: inline-block;
     }
@@ -773,20 +775,75 @@
     .caro-browser-dot.green { background: #34d399; }
     .caro-browser-url {
       font-family: var(--font-mono);
-      font-size: 10px;
-      color: rgba(148, 163, 184, 0.85);
+      font-size: 10.5px;
+      color: rgba(148, 163, 184, 0.9);
       margin-left: 6px;
       letter-spacing: 0.02em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    .caro-work-img {
-      width: 100%;
-      height: clamp(170px, 22vw, 220px);
-      object-fit: cover;
+    .caro-viewport {
+      position: relative;
+      height: clamp(190px, 24vw, 240px);
+      overflow: hidden;
+      background: #030712;
       display: block;
-      transition: transform 0.4s ease;
+      cursor: pointer;
     }
-    .caro-preview-frame:hover .caro-work-img {
-      transform: scale(1.02);
+    .caro-scroll-track {
+      width: 100%;
+      will-change: transform;
+      animation: caroWebScroll 5.8s cubic-bezier(0.42, 0, 0.25, 1) infinite alternate;
+    }
+    .caro-viewport:hover .caro-scroll-track {
+      animation-play-state: paused;
+    }
+    .caro-work-scroll-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+    }
+    @keyframes caroWebScroll {
+      0% { transform: translateY(0%); }
+      18% { transform: translateY(0%); }
+      75% { transform: translateY(-44%); }
+      100% { transform: translateY(-44%); }
+    }
+    .caro-scroll-badge {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      z-index: 4;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(3, 7, 18, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38BDF8;
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      backdrop-filter: blur(6px);
+      pointer-events: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+    .caro-scroll-badge .pulse-green {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 8px #10B981;
+      display: inline-block;
+      animation: pulseDot 2s infinite ease-in-out;
+    }
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.35); opacity: 0.6; }
     }
 
     /* ---------- The Loop (engine phases) ---------- */
@@ -1603,6 +1660,8 @@
                 <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 2: Costa Furtune" onclick="setSlide(1)"></button>
                 <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 3: Club Costa Fantacy" onclick="setSlide(2)"></button>
                 <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 4: Custom CRM Dashboard" onclick="setSlide(3)"></button>
+                <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 5: Buddy AI Sales Agent" onclick="setSlide(4)"></button>
+                <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 6: Growth Automation Suite" onclick="setSlide(5)"></button>
               </div>
               <div class="slide-progress" aria-hidden="true"><span id="slideProgress"></span></div>
             </div>
@@ -3373,9 +3432,9 @@
     /* ---------- 4. Hero Capabilities & Client Work Showcase Carousel ---------- */
     var slides = [
       {
-        tag: "FEATURED WORK 01 / 04 • KNR INTEGRITY",
-        badge: "KNR INTEGRITY",
-        title: "KNR Integrity Real Estate Platform",
+        tag: "FEATURED WORK 01 / 06 • KNR INTEGRITY",
+        badge: "KNR INTEGRITY PLATFORM",
+        title: "KNR Integrity Luxury Property Marketplace",
         desc: "High-conversion luxury property portal featuring 60+ indexed ORERA projects, interactive township walkthroughs, live ground telemetry, and automated WhatsApp triage.",
         metric: "60+ ORERA Projects · Live Web Portal",
         image: "images/work/knr-integrity-platform.webp",
@@ -3385,8 +3444,8 @@
         linkAction: "switchPage('portfolio')"
       },
       {
-        tag: "FEATURED WORK 02 / 04 • COSTA FURTUNE",
-        badge: "COSTA FURTUNE",
+        tag: "FEATURED WORK 02 / 06 • COSTA FURTUNE",
+        badge: "COSTA FURTUNE TOWNSHIP",
         title: "Costa Furtune Master Township Platform",
         desc: "Architectural web platform for Sai Harmony's 3-phase master township in Bhubaneswar. Featuring 4K drone cinematography, interactive CAD blueprints, and gated brochure downloads.",
         metric: "4.5-Acre Master Township · Live Platform",
@@ -3397,7 +3456,7 @@
         external: true
       },
       {
-        tag: "FEATURED WORK 03 / 04 • CLUB FANTACY",
+        tag: "FEATURED WORK 03 / 06 • CLUB FANTACY",
         badge: "CLUB COSTA FANTACY",
         title: "Club Costa Fantacy Dedicated Platform",
         desc: "Vertical G+3 lifestyle clubhouse experience crowned with a 4th floor open-to-sky party terrace, 20 certified brochure indulgences, and statutory architectural schedules.",
@@ -3409,20 +3468,44 @@
         external: true
       },
       {
-        tag: "FEATURED WORK 04 / 04 • CUSTOM CRM",
+        tag: "FEATURED WORK 04 / 06 • KNR CRM OPS",
         badge: "CUSTOM CRM DASHBOARD",
         title: "Real Estate Lead & Operations CRM",
         desc: "Centralize buyer inquiries, automated WhatsApp webhooks, daily calling queues, GST billing, and sub-second lead routing inside a clean, role-based dashboard.",
         metric: "Zero Lead Leakage · Sub-Second Routing",
-        image: "images/work/knr-crm-operations.svg",
+        image: "images/work/knr-crm-operations.webp",
         url: "digital-office/",
         displayUrl: "buddyaipartners.github.io/digital-office · Lead OS",
         cta: "View Architecture &rarr;",
         linkAction: "switchPage('services')"
+      },
+      {
+        tag: "FEATURED WORK 05 / 06 • BUDDY AI AGENT",
+        badge: "BUILT BY RAHUL · LIVE DEMO",
+        title: "Autonomous Real Estate AI Sales Operator",
+        desc: "Proprietary 24/7 sales agent architected and coded by Rahul / Buddy AI Partners. Sub-800ms natural voice/chat triage, ORERA legal verification, and instant WhatsApp brochure dispatch.",
+        metric: "<800ms Latency · 24/7 Zero Missed Leads",
+        image: "images/work/buddy-ai-sales-agent.webp",
+        url: "#buddy",
+        displayUrl: "buddyaipartners.github.io · Autonomous AI Sandbox",
+        cta: "Launch Live Interactive Demo ⚡",
+        linkAction: "switchPage('buddy')"
+      },
+      {
+        tag: "FEATURED WORK 06 / 06 • GROWTH ENGINE",
+        badge: "ENTERPRISE AUTOMATION",
+        title: "Multi-Channel AI Growth & Pipeline Infrastructure",
+        desc: "End-to-end digital acquisition engine connecting Meta ads conversion API, automated n8n webhooks, AI lead qualification, and instant sales director notifications.",
+        metric: "4.8x Ad ROAS · 100% Pipeline Velocity",
+        image: "images/work/enterprise-growth-engine.webp",
+        url: "#services",
+        displayUrl: "buddyaipartners.github.io · Growth Automation OS",
+        cta: "Explore Architecture &rarr;",
+        linkAction: "switchPage('services')"
       }
     ];
     let currentSlide = 0;
-    var slideDuration = 4500;
+    var slideDuration = 5800;
     var slideTimer = null;
     var isCaroHovered = false;
 
@@ -3459,8 +3542,11 @@
               '<span class="caro-browser-dot green"></span>' +
               '<span class="caro-browser-url">' + s.displayUrl + '</span>' +
             '</div>' +
-            '<a ' + actionAttr + ' style="display:block;overflow:hidden;" aria-label="' + s.title + '">' +
-              '<img src="' + s.image + '" alt="' + s.title + '" class="caro-work-img" loading="eager" decoding="async" />' +
+            '<a ' + actionAttr + ' class="caro-viewport" aria-label="' + s.title + '">' +
+              '<div class="caro-scroll-track">' +
+                '<img src="' + s.image + '" alt="' + s.title + '" class="caro-work-scroll-img" loading="eager" decoding="async" />' +
+              '</div>' +
+              '<span class="caro-scroll-badge"><span class="pulse-green"></span> ⚡ AUTO-SCROLL PREVIEW</span>' +
             '</a>' +
           '</div>' +
           '<div style="margin-top:0.9rem;padding:.75rem .9rem;border-radius:12px;border:1px solid var(--line);background:rgba(3,7,16,.65);display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap">' +
@@ -3470,6 +3556,14 @@
 
         container.style.opacity = '1';
         container.style.transform = 'translateY(0)';
+
+        // Trigger CSS scroll animation fresh on every card change
+        var track = container.querySelector('.caro-scroll-track');
+        if (track) {
+          track.style.animation = 'none';
+          void track.offsetWidth;
+          track.style.animation = 'caroWebScroll ' + (slideDuration / 1000) + 's cubic-bezier(0.42, 0, 0.25, 1) infinite alternate';
+        }
       }, 150);
 
       try {
