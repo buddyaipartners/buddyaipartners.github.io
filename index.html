@@ -736,13 +736,58 @@
     .kpi-cap { margin-top: .45rem; font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
 
     /* ---------- Capability carousel ---------- */
-    .caro { display: grid; gap: 1rem; grid-template-columns: 1fr; align-items: stretch; }
-    @media (min-width: 900px) { .caro { grid-template-columns: .9fr 1.1fr; } }
-    .caro-steps { display: flex; gap: .4rem; margin-top: 1rem; }
-    .slide-dot { height: 3px; border-radius: 99px; background: rgba(212, 175, 55, .25); border: 0; padding: 0; transition: background-color .4s, width .4s var(--ease); width: 8px; cursor: pointer; }
-    .slide-dot.on { width: 30px; background: var(--sky); }
-    .slide-progress { height: 2px; background: rgba(212, 175, 55, .2); border-radius: 99px; overflow: hidden; margin-top: .8rem; }
-    #slideProgress { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--sky-deep), var(--sky-soft)); transition: width 6s linear; }
+    .caro { display: grid; gap: 1.2rem; grid-template-columns: 1fr; align-items: stretch; }
+    @media (min-width: 900px) { .caro { grid-template-columns: .82fr 1.18fr; } }
+    .caro-steps { display: flex; gap: .45rem; margin-top: 1rem; }
+    .slide-dot { height: 4px; border-radius: 99px; background: rgba(56, 189, 248, .2); border: 0; padding: 0; transition: background-color .4s, width .4s var(--ease); width: 10px; cursor: pointer; }
+    .slide-dot.on { width: 32px; background: linear-gradient(90deg, var(--sky-deep), var(--sky-soft)); }
+    .slide-progress { height: 3px; background: rgba(56, 189, 248, .15); border-radius: 99px; overflow: hidden; margin-top: .85rem; }
+    #slideProgress { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--sky), var(--gold-light)); }
+
+    /* Work Preview Frame */
+    .caro-preview-frame {
+      margin-top: 0.85rem;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      background: rgba(3, 7, 16, 0.95);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+    .caro-browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: rgba(11, 23, 48, 0.9);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+    }
+    .caro-browser-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .caro-browser-dot.red { background: #fb7185; }
+    .caro-browser-dot.yellow { background: #fbbf24; }
+    .caro-browser-dot.green { background: #34d399; }
+    .caro-browser-url {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: rgba(148, 163, 184, 0.85);
+      margin-left: 6px;
+      letter-spacing: 0.02em;
+    }
+    .caro-work-img {
+      width: 100%;
+      height: clamp(170px, 22vw, 220px);
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .caro-preview-frame:hover .caro-work-img {
+      transform: scale(1.02);
+    }
 
     /* ---------- The Loop (engine phases) ---------- */
     .loop-wrap { display: grid; gap: 1.4rem; grid-template-columns: 1fr; }
@@ -1546,15 +1591,21 @@
     <div class="sec" style="padding-top:0">
       <div class="shell">
         <div class="caro card card-hover reveal" id="heroCarouselCard">
-          <div style="padding:clamp(1.15rem,2.6vw,1.7rem)">
-            <p class="eyebrow" id="carouselTag">CORE CAPABILITY 01 / 03 • CRM SYSTEMS</p>
-            <p class="small" style="margin-top:1rem;color:var(--muted)">Three disciplines, one operating system for growth. The console auto-cycles — or drive it yourself.</p>
-            <div class="caro-steps" id="caroDots" role="tablist" aria-label="Capability switcher">
-              <button type="button" class="slide-dot on" role="tab" aria-selected="true" aria-label="Capability 1"></button>
-              <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Capability 2"></button>
-              <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Capability 3"></button>
+          <div style="padding:clamp(1.15rem,2.6vw,1.7rem);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+              <p class="eyebrow" id="carouselTag">FEATURED WORK 01 / 04 • KNR INTEGRITY</p>
+              <h3 style="font-family:var(--font-display);font-size:clamp(1.2rem,2.2vw,1.55rem);color:var(--ink);margin:0.75rem 0 0.5rem;font-weight:600;line-height:1.25;">Client Deployments &amp; Live Systems</h3>
+              <p class="small" style="color:var(--muted);line-height:1.65;">Production web platforms &amp; automation engines engineered by Buddy AI Partners — from luxury real estate portals to custom CRM infrastructure. The showcase auto-cycles continuously.</p>
             </div>
-            <div class="slide-progress" aria-hidden="true"><span id="slideProgress"></span></div>
+            <div style="margin-top:1.4rem;">
+              <div class="caro-steps" id="caroDots" role="tablist" aria-label="Work showcase switcher">
+                <button type="button" class="slide-dot on" role="tab" aria-selected="true" aria-label="Work 1: KNR Integrity" onclick="setSlide(0)"></button>
+                <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 2: Costa Furtune" onclick="setSlide(1)"></button>
+                <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 3: Club Costa Fantacy" onclick="setSlide(2)"></button>
+                <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 4: Custom CRM Dashboard" onclick="setSlide(3)"></button>
+              </div>
+              <div class="slide-progress" aria-hidden="true"><span id="slideProgress"></span></div>
+            </div>
           </div>
           <div style="padding:clamp(1.15rem,2.6vw,1.7rem);border-left:1px solid var(--line)" id="heroCarousel"></div>
         </div>
@@ -3319,28 +3370,55 @@
       window.addEventListener('DOMContentLoaded', handleHashNav);
     } catch (e) {}
 
-    /* ---------- 4. Hero capabilities carousel ---------- */
+    /* ---------- 4. Hero Capabilities & Client Work Showcase Carousel ---------- */
     var slides = [
       {
-        tag: "CORE CAPABILITY 01 / 03 • CRM SYSTEMS",
-        title: "Custom Business CRM Architecture",
-        desc: "Centralize inquiries, daily calling queues, team follow-ups, booking records and GST-ready billing inside a clean, role-based dashboard.",
-        metric: "Tailored for Real Estate & Service Teams",
-        badge: "CUSTOM CRM"
+        tag: "FEATURED WORK 01 / 04 • KNR INTEGRITY",
+        badge: "KNR INTEGRITY",
+        title: "KNR Integrity Real Estate Platform",
+        desc: "High-conversion luxury property portal featuring 60+ indexed ORERA projects, interactive township walkthroughs, live ground telemetry, and automated WhatsApp triage.",
+        metric: "60+ ORERA Projects · Live Web Portal",
+        image: "images/work/knr-integrity-platform.webp",
+        url: "https://knrintegrity.com",
+        displayUrl: "knrintegrity.com · Premier Real Estate Advisory",
+        cta: "Explore Case Study &rarr;",
+        linkAction: "switchPage('portfolio')"
       },
       {
-        tag: "CORE CAPABILITY 02 / 03 • WORKFLOW AUTOMATION",
-        title: "Python Playwright & n8n Pipelines",
-        desc: "Automate repetitive lead extraction, webhook routing and instant WhatsApp follow-up messages so your team focuses on closing deals.",
-        metric: "Automated JSON Webhook Integration",
-        badge: "AI & AUTOMATION"
+        tag: "FEATURED WORK 02 / 04 • COSTA FURTUNE",
+        badge: "COSTA FURTUNE",
+        title: "Costa Furtune Master Township Platform",
+        desc: "Architectural web platform for Sai Harmony's 3-phase master township in Bhubaneswar. Featuring 4K drone cinematography, interactive CAD blueprints, and gated brochure downloads.",
+        metric: "4.5-Acre Master Township · Live Platform",
+        image: "images/work/costa-furtune-township.webp",
+        url: "https://buddyaipartners.github.io/costa-furtune/",
+        displayUrl: "buddyaipartners.github.io/costa-furtune",
+        cta: "Visit Live Website &nearr;",
+        external: true
       },
       {
-        tag: "CORE CAPABILITY 03 / 03 • DIGITAL GROWTH",
-        title: "Meta & Google Performance Funnels",
-        desc: "Targeted ad campaigns, promotional property videos and fast React landing pages built to capture high-intent buyer inquiries.",
-        metric: "Bhubaneswar & Pan-India Campaigns",
-        badge: "DIGITAL MARKETING"
+        tag: "FEATURED WORK 03 / 04 • CLUB FANTACY",
+        badge: "CLUB COSTA FANTACY",
+        title: "Club Costa Fantacy Dedicated Platform",
+        desc: "Vertical G+3 lifestyle clubhouse experience crowned with a 4th floor open-to-sky party terrace, 20 certified brochure indulgences, and statutory architectural schedules.",
+        metric: "G+3 Vertical Clubhouse · Construction Ready",
+        image: "images/work/club-costa-fantacy.webp",
+        url: "https://buddyaipartners.github.io/costa-furtune/clubhouse.html",
+        displayUrl: "buddyaipartners.github.io/costa-furtune/clubhouse.html",
+        cta: "Visit Club Platform &nearr;",
+        external: true
+      },
+      {
+        tag: "FEATURED WORK 04 / 04 • CUSTOM CRM",
+        badge: "CUSTOM CRM DASHBOARD",
+        title: "Real Estate Lead & Operations CRM",
+        desc: "Centralize buyer inquiries, automated WhatsApp webhooks, daily calling queues, GST billing, and sub-second lead routing inside a clean, role-based dashboard.",
+        metric: "Zero Lead Leakage · Sub-Second Routing",
+        image: "images/work/knr-crm-operations.svg",
+        url: "digital-office/",
+        displayUrl: "buddyaipartners.github.io/digital-office · Lead OS",
+        cta: "View Architecture &rarr;",
+        linkAction: "switchPage('services')"
       }
     ];
     let currentSlide = 0;
@@ -3363,16 +3441,31 @@
       container.style.transition = 'opacity 0.22s ease, transform 0.22s ease';
 
       setTimeout(function () {
+        var actionAttr = s.external
+          ? 'href="' + s.url + '" target="_blank" rel="noopener"'
+          : 'href="#' + (s.linkAction ? 'portfolio' : 'services') + '" onclick="' + s.linkAction + '; return false;"';
+
         container.innerHTML =
-          '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:0.75rem;">' +
+          '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:0.5rem;">' +
             '<span class="chip gold"><span class="dot"></span>' + s.badge + '</span>' +
             '<span class="mono xsmall" style="color:var(--sky-soft);opacity:0.85;">0' + (index + 1) + ' / 0' + slides.length + '</span>' +
           '</div>' +
-          '<h2 style="margin-top:.2rem;font-family:var(--font-display);font-size:clamp(1.3rem,2.6vw,1.8rem);color:var(--ink);font-weight:600;line-height:1.25;">' + s.title + '</h2>' +
-          '<p class="small" style="margin-top:.5rem;line-height:1.6;color:var(--body);">' + s.desc + '</p>' +
-          '<div style="margin-top:1.2rem;padding:.8rem .9rem;border-radius:12px;border:1px solid var(--line);background:rgba(3,7,16,.65);display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap">' +
+          '<h3 style="margin-top:.2rem;font-family:var(--font-display);font-size:clamp(1.2rem,2.2vw,1.6rem);color:var(--ink);font-weight:600;line-height:1.25;">' + s.title + '</h3>' +
+          '<p class="small" style="margin-top:.35rem;line-height:1.6;color:var(--body);">' + s.desc + '</p>' +
+          '<div class="caro-preview-frame">' +
+            '<div class="caro-browser-bar">' +
+              '<span class="caro-browser-dot red"></span>' +
+              '<span class="caro-browser-dot yellow"></span>' +
+              '<span class="caro-browser-dot green"></span>' +
+              '<span class="caro-browser-url">' + s.displayUrl + '</span>' +
+            '</div>' +
+            '<a ' + actionAttr + ' style="display:block;overflow:hidden;" aria-label="' + s.title + '">' +
+              '<img src="' + s.image + '" alt="' + s.title + '" class="caro-work-img" loading="eager" decoding="async" />' +
+            '</a>' +
+          '</div>' +
+          '<div style="margin-top:0.9rem;padding:.75rem .9rem;border-radius:12px;border:1px solid var(--line);background:rgba(3,7,16,.65);display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap">' +
             '<span class="mono xsmall" style="color:var(--mint);display:flex;align-items:center;gap:6px;"><span style="color:var(--gold);">◆</span> ' + s.metric + '</span>' +
-            '<button type="button" onclick="switchPage(\'services\')" class="link-arrow" style="background:none;border:0;cursor:pointer;color:var(--sky-soft);font-weight:600;">Details &rarr;</button>' +
+            '<a ' + actionAttr + ' class="link-arrow" style="background:none;border:0;cursor:pointer;color:var(--sky-soft);font-weight:600;text-decoration:none;">' + s.cta + '</a>' +
           '</div>';
 
         container.style.opacity = '1';
@@ -3380,13 +3473,15 @@
       }, 150);
 
       try {
-        document.querySelectorAll('.slide-dot').forEach(function (d, i) {
+        var dots = document.querySelectorAll('.slide-dot');
+        dots.forEach(function (d, i) {
           var on = i === index;
           d.classList.toggle('on', on);
           d.setAttribute('aria-selected', String(on));
         });
       } catch (e) {}
 
+      // Keep slide progress continuous
       var prog = document.getElementById('slideProgress');
       if (prog) {
         prog.style.transition = 'none';
@@ -3405,16 +3500,14 @@
     function startSlideTimer() {
       if (slideTimer) clearInterval(slideTimer);
       slideTimer = setInterval(function () {
-        if (!isCaroHovered) {
-          nextSlide();
-        }
+        nextSlide();
       }, slideDuration);
     }
 
     function setSlide(idx) {
       currentSlide = idx;
       renderSlide(currentSlide);
-      startSlideTimer(); // Reset the 6s interval on manual dot tap
+      startSlideTimer(); // Reset the 6s interval on tap to keep continuous
     }
 
     /* ---------- 5. Validated contact & WhatsApp flow ---------- */
