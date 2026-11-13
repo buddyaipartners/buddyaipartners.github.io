@@ -3344,21 +3344,41 @@
       }
     ];
     let currentSlide = 0;
+    var slideDuration = 6000;
+    var slideTimer = null;
+    var isCaroHovered = false;
+
     function renderSlide(index) {
       var s = slides[index];
       if (!s) return;
       var tagEl = document.getElementById('carouselTag');
       var container = document.getElementById('heroCarousel');
       if (!tagEl || !container) return;
+
       tagEl.textContent = s.tag;
-      container.innerHTML =
-        '<span class="chip gold"><span class="dot"></span>' + s.badge + '</span>' +
-        '<h2 style="margin-top:.9rem;font-family:var(--font-display);font-size:clamp(1.3rem,2.6vw,1.8rem);color:var(--ink);font-weight:600">' + s.title + '</h2>' +
-        '<p class="small" style="margin-top:.5rem;line-height:1.6">' + s.desc + '</p>' +
-        '<div style="margin-top:1.2rem;padding:.8rem .9rem;border-radius:12px;border:1px solid var(--line);background:rgba(3,7,16,.55);display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap">' +
-        '<span class="mono xsmall" style="color:var(--mint)">◆ ' + s.metric + '</span>' +
-        '<button type="button" onclick="switchPage(\'services\')" class="link-arrow" style="background:none;border:0">Details</button>' +
-        '</div>';
+
+      // Smooth modern transition
+      container.style.opacity = '0';
+      container.style.transform = 'translateY(6px)';
+      container.style.transition = 'opacity 0.22s ease, transform 0.22s ease';
+
+      setTimeout(function () {
+        container.innerHTML =
+          '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:0.75rem;">' +
+            '<span class="chip gold"><span class="dot"></span>' + s.badge + '</span>' +
+            '<span class="mono xsmall" style="color:var(--sky-soft);opacity:0.85;">0' + (index + 1) + ' / 0' + slides.length + '</span>' +
+          '</div>' +
+          '<h2 style="margin-top:.2rem;font-family:var(--font-display);font-size:clamp(1.3rem,2.6vw,1.8rem);color:var(--ink);font-weight:600;line-height:1.25;">' + s.title + '</h2>' +
+          '<p class="small" style="margin-top:.5rem;line-height:1.6;color:var(--body);">' + s.desc + '</p>' +
+          '<div style="margin-top:1.2rem;padding:.8rem .9rem;border-radius:12px;border:1px solid var(--line);background:rgba(3,7,16,.65);display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap">' +
+            '<span class="mono xsmall" style="color:var(--mint);display:flex;align-items:center;gap:6px;"><span style="color:var(--gold);">◆</span> ' + s.metric + '</span>' +
+            '<button type="button" onclick="switchPage(\'services\')" class="link-arrow" style="background:none;border:0;cursor:pointer;color:var(--sky-soft);font-weight:600;">Details &rarr;</button>' +
+          '</div>';
+
+        container.style.opacity = '1';
+        container.style.transform = 'translateY(0)';
+      }, 150);
+
       try {
         document.querySelectorAll('.slide-dot').forEach(function (d, i) {
           var on = i === index;
@@ -3366,13 +3386,36 @@
           d.setAttribute('aria-selected', String(on));
         });
       } catch (e) {}
+
       var prog = document.getElementById('slideProgress');
       if (prog) {
+        prog.style.transition = 'none';
         prog.style.width = '0%';
-        setTimeout(function () { prog.style.width = '100%'; }, 40);
+        void prog.offsetWidth; // Force CSS reflow
+        prog.style.transition = 'width ' + (slideDuration / 1000) + 's linear';
+        prog.style.width = '100%';
       }
     }
-    function setSlide(idx) { currentSlide = idx; renderSlide(currentSlide); }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      renderSlide(currentSlide);
+    }
+
+    function startSlideTimer() {
+      if (slideTimer) clearInterval(slideTimer);
+      slideTimer = setInterval(function () {
+        if (!isCaroHovered) {
+          nextSlide();
+        }
+      }, slideDuration);
+    }
+
+    function setSlide(idx) {
+      currentSlide = idx;
+      renderSlide(currentSlide);
+      startSlideTimer(); // Reset the 6s interval on manual dot tap
+    }
 
     /* ---------- 5. Validated contact & WhatsApp flow ---------- */
     function buildBriefMessage() {
@@ -4151,7 +4194,15 @@
 
     /* ---------- 21. Boot ---------- */
     function initApp() {
-      try { renderSlide(0); } catch (e) {}
+      try {
+        renderSlide(0);
+        startSlideTimer();
+        var caroCard = document.getElementById('heroCarouselCard');
+        if (caroCard) {
+          caroCard.addEventListener('mouseenter', function () { isCaroHovered = true; });
+          caroCard.addEventListener('mouseleave', function () { isCaroHovered = false; });
+        }
+      } catch (e) {}
       try {
         document.querySelectorAll('.slide-dot').forEach(function (d, i) { d.addEventListener('click', function () { setSlide(i); }); });
       } catch (e) {}
