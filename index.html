@@ -4,16 +4,25 @@
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='&l'?'&l='+l:'';j.async=true;j.src=
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','layer','GTM-5M6VDMFZ');</script>
+  })(window,document,'script','dataLayer','GTM-5786D7BS');</script>
   <!-- End Google Tag Manager -->
+
+  <!-- Global Site Tag & DataLayer Engine -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-5786D7BS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>BUDDY AI PARTNERS | AI Software Engineering, CRM &amp; Autonomous Automation</title>
   <meta name="description" content="BUDDY AI PARTNERS is an AI software engineering and automation company in Bhubaneswar. Deeply experienced in Real Estate with KNR Integrity, and engineered for all software company clients: individual founders, creators, MSMEs, clinics, and enterprise systems." />
   <meta name="keywords" content="Buddy AI Partners Bhubaneswar, Rahul Kumar Dhal AI Automation, MSME Udyam AI Software, MIT Apache Open Source CRM, Custom CRM India, Digital Marketing Agency Odisha, React FastAPI Developer, Python Playwright Automation, NOT Buddy.ai kids app" />
   <meta name="author" content="Rahul Kumar Dhal" />
+  <meta name="google-site-verification" content="Sm7JOBVB1XgilVUoDI4M9qd9hUyyRUmbRml3opM5rM0" />
   <meta name="google-site-verification" content="KeeKF5mrkUtmbMZIvSbYX8mdMdrm15j_uKcojuUPVRc" />
   <meta name="theme-color" content="#040A16" />
 
@@ -1516,7 +1525,7 @@
 
 <body class="portal-open">
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5M6VDMFZ"
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5786D7BS"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <div class="nebula" aria-hidden="true"></div>
@@ -3183,6 +3192,24 @@
       return false;
     }
     function switchPage(pageId) {
+      try {
+        if (typeof gtag === 'function') {
+          gtag('event', 'page_view', {
+            page_title: 'BUDDY AI PARTNERS · ' + pageId,
+            page_path: '/' + pageId
+          });
+          gtag('event', 'switch_page', {
+            event_category: 'navigation',
+            page_id: pageId
+          });
+        }
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event: 'virtual_page_view',
+            virtual_page: pageId
+          });
+        }
+      } catch (e) {}
       try { playCyberSfx('nav'); } catch (e) {}
       try {
         document.querySelectorAll('.page-view').forEach(function (p) { p.classList.remove('active'); });
@@ -3681,6 +3708,23 @@
         showFeedback('Enter your name (2+ chars), a valid phone (8-15 digits), and a brief of at least 10 characters before sending.', true);
         return;
       }
+      try {
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', {
+            event_category: 'lead_generation',
+            event_label: brief.service || 'general_inquiry',
+            method: 'whatsapp_brief',
+            service_name: brief.service || 'unspecified'
+          });
+        }
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event: 'generate_lead',
+            form_id: 'contact_brief_form',
+            service_name: brief.service || 'unspecified'
+          });
+        }
+      } catch (err) {}
       var cleanNumber = String(WHATSAPP_NUMBER).replace(/[^0-9]/g, '');
       var waUrl = cleanNumber
         ? 'https://wa.me/' + cleanNumber + '?text=' + encodeURIComponent(brief.text)
@@ -3696,6 +3740,21 @@
         showFeedback('Please complete name, valid phone and a 10+ character brief first — nothing was copied or discarded.', true);
         return;
       }
+      try {
+        if (typeof gtag === 'function') {
+          gtag('event', 'copy_brief', {
+            event_category: 'engagement',
+            event_label: brief.service || 'general_inquiry'
+          });
+        }
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event: 'copy_brief',
+            form_id: 'contact_brief_form',
+            service_name: brief.service || 'unspecified'
+          });
+        }
+      } catch (err) {}
       try {
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(brief.text).then(function () {
@@ -4683,5 +4742,88 @@
     });
   </script>
 
+  <!-- BUDDY AI PARTNERS Interaction & Conversion Measurement Engine -->
+  <script>
+  (function() {
+    function trackEvent(name, params) {
+      if (typeof gtag === 'function') {
+        gtag('event', name, params);
+      }
+      if (window.dataLayer) {
+        var dlPayload = Object.assign({ event: name }, params);
+        window.dataLayer.push(dlPayload);
+      }
+    }
+
+    // 1. Global Link & Button Click Measurement
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a, button');
+      if (!link) return;
+
+      var href = (link.getAttribute('href') || '').trim();
+      var text = (link.innerText || link.getAttribute('aria-label') || link.title || '').trim().substring(0, 80);
+
+      // WhatsApp Clicks
+      if (href.includes('wa.me') || href.includes('whatsapp.com')) {
+        trackEvent('contact_whatsapp', {
+          event_category: 'contact',
+          event_label: text || 'WhatsApp Chat',
+          link_url: href
+        });
+      }
+      // Phone Call Clicks
+      else if (href.startsWith('tel:')) {
+        trackEvent('contact_call', {
+          event_category: 'contact',
+          event_label: text || href,
+          phone_number: href.replace('tel:', '')
+        });
+      }
+      // Email Clicks
+      else if (href.startsWith('mailto:')) {
+        trackEvent('contact_email', {
+          event_category: 'contact',
+          event_label: text || href,
+          email_address: href.replace('mailto:', '')
+        });
+      }
+      // Live Client Demos & Case Studies (KNR Integrity, Costa Furtune, GitHub)
+      else if (href.includes('knrintegrity.com') || href.includes('saiharmony.com') || href.includes('github.com')) {
+        trackEvent('view_case_study', {
+          event_category: 'portfolio',
+          event_label: text || href,
+          destination_url: href
+        });
+      }
+      // Credential Verification Links (Coursera, Google Skills, Certiport)
+      else if (href.includes('coursera.org') || href.includes('skills.google') || href.includes('certiport.com')) {
+        trackEvent('verify_credential', {
+          event_category: 'credentials',
+          event_label: text || href,
+          credential_url: href
+        });
+      }
+      // CTA & Action Buttons
+      else if (text.toLowerCase().includes('book') || text.toLowerCase().includes('demo') || text.toLowerCase().includes('start') || text.toLowerCase().includes('explore') || text.toLowerCase().includes('send brief')) {
+        trackEvent('cta_click', {
+          event_category: 'conversion_intent',
+          event_label: text,
+          link_url: href
+        });
+      }
+    }, true);
+
+    // 2. Global Form Submission Catch-All
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      var formId = form.id || 'contact_form';
+      trackEvent('form_submit', {
+        event_category: 'form_submission',
+        form_id: formId,
+        page_location: window.location.href
+      });
+    }, true);
+  })();
+  </script>
 </body>
 </html>
