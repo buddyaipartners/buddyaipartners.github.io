@@ -708,17 +708,19 @@
     }
 
     /* ---------- Verified credentials wall ---------- */
-    .cert-grid { display: grid; gap: 1.1rem; grid-template-columns: repeat(2, 1fr); }
+    .cert-grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(2, 1fr); }
     @media (max-width: 760px) { .cert-grid { grid-template-columns: 1fr; } }
-    .cert-card { display: flex; flex-direction: column; gap: .75rem; }
-    .cert-figure { background: #fff; border-radius: 14px; padding: .7rem .7rem .8rem; box-shadow: 0 20px 44px rgba(2, 6, 16, .5); }
-    .cert-figure img { width: 100%; height: auto; border-radius: 8px; display: block; }
-    .cert-cap { display: flex; flex-direction: column; gap: .25rem; padding-inline: .2rem; }
-    .cert-issuer { font-family: var(--font-mono); font-size: .6rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--sky); }
-    .cert-cap b { font-family: var(--font-ui); font-size: .95rem; font-weight: 700; color: var(--ink); letter-spacing: .01em; line-height: 1.35; }
-    .cert-cap small { font-size: .74rem; color: var(--muted); }
-    .cert-verify { font-family: var(--font-ui); font-size: .74rem; font-weight: 600; color: var(--sky-soft); display: inline-flex; align-items: center; gap: .35rem; }
-    .cert-verify:hover { color: var(--ink); }
+    .cert-card { display: flex; flex-direction: column; gap: .75rem; background: rgba(8, 16, 32, 0.65); border: 1px solid var(--line); border-radius: 16px; padding: .85rem; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .cert-card:hover { transform: translateY(-3px); border-color: rgba(56, 189, 248, 0.4); box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45); }
+    .cert-figure { background: #FFFFFF; border-radius: 12px; padding: .65rem; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35); overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 220px; cursor: zoom-in; }
+    .cert-figure img { width: 100%; height: auto; max-height: 260px; object-fit: contain; border-radius: 6px; display: block; transition: transform .25s ease; }
+    .cert-figure:hover img { transform: scale(1.02); }
+    .cert-cap { display: flex; flex-direction: column; gap: .25rem; padding-inline: .2rem; margin-top: .2rem; }
+    .cert-issuer { font-family: var(--font-mono); font-size: .62rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--sky); }
+    .cert-cap b { font-family: var(--font-ui); font-size: .96rem; font-weight: 700; color: var(--ink); letter-spacing: .01em; line-height: 1.35; }
+    .cert-cap small { font-size: .75rem; color: var(--muted); }
+    .cert-verify { font-family: var(--font-ui); font-size: .75rem; font-weight: 600; color: var(--sky-soft); display: inline-flex; align-items: center; gap: .35rem; margin-top: .15rem; }
+    .cert-verify:hover { color: var(--ink); text-decoration: underline; }
     .cert-sheet { border: 1px solid var(--line-strong); border-radius: 14px; background: linear-gradient(160deg, rgba(56, 189, 248, .10), rgba(4, 10, 22, .7)); padding: 1.1rem 1.15rem; display: flex; flex-direction: column; gap: .6rem; flex: 1; }
     .cert-sheet .big { font-family: var(--font-ui); font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 700; color: var(--sky-soft); line-height: 1; }
     .cert-sheet-title { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; color: var(--ink); }
@@ -737,13 +739,115 @@
     .kpi-cap { margin-top: .45rem; font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
 
     /* ---------- Capability carousel ---------- */
-    .caro { display: grid; gap: 1rem; grid-template-columns: 1fr; align-items: stretch; }
-    @media (min-width: 900px) { .caro { grid-template-columns: .9fr 1.1fr; } }
-    .caro-steps { display: flex; gap: .4rem; margin-top: 1rem; }
-    .slide-dot { height: 3px; border-radius: 99px; background: rgba(212, 175, 55, .25); border: 0; padding: 0; transition: background-color .4s, width .4s var(--ease); width: 8px; cursor: pointer; }
-    .slide-dot.on { width: 30px; background: var(--sky); }
-    .slide-progress { height: 2px; background: rgba(212, 175, 55, .2); border-radius: 99px; overflow: hidden; margin-top: .8rem; }
-    #slideProgress { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--sky-deep), var(--sky-soft)); transition: width 6s linear; }
+    .caro { display: grid; gap: 1.2rem; grid-template-columns: 1fr; align-items: stretch; }
+    @media (min-width: 900px) { .caro { grid-template-columns: .82fr 1.18fr; } }
+    .caro-steps { display: flex; gap: .45rem; margin-top: 1rem; }
+    .slide-dot { height: 4px; border-radius: 99px; background: rgba(56, 189, 248, .2); border: 0; padding: 0; transition: background-color .4s, width .4s var(--ease); width: 10px; cursor: pointer; }
+    .slide-dot.on { width: 32px; background: linear-gradient(90deg, var(--sky-deep), var(--sky-soft)); }
+    .slide-progress { height: 3px; background: rgba(56, 189, 248, .15); border-radius: 99px; overflow: hidden; margin-top: .85rem; }
+    #slideProgress { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--sky), var(--gold-light)); }
+
+    /* Work Preview Frame & Smooth Web Scroll Animation */
+    .caro-preview-frame {
+      margin-top: 0.85rem;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      background: rgba(3, 7, 16, 0.95);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+    .caro-browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      background: rgba(11, 23, 48, 0.95);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.18);
+      position: relative;
+      z-index: 2;
+    }
+    .caro-browser-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .caro-browser-dot.red { background: #fb7185; }
+    .caro-browser-dot.yellow { background: #fbbf24; }
+    .caro-browser-dot.green { background: #34d399; }
+    .caro-browser-url {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: rgba(148, 163, 184, 0.9);
+      margin-left: 6px;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .caro-viewport {
+      position: relative;
+      height: clamp(190px, 24vw, 240px);
+      overflow: hidden;
+      background: #030712;
+      display: block;
+      cursor: pointer;
+    }
+    .caro-scroll-track {
+      width: 100%;
+      will-change: transform;
+      animation: caroWebScroll 5.8s cubic-bezier(0.42, 0, 0.25, 1) infinite alternate;
+    }
+    .caro-viewport:hover .caro-scroll-track {
+      animation-play-state: paused;
+    }
+    .caro-work-scroll-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+    }
+    @keyframes caroWebScroll {
+      0% { transform: translateY(0%); }
+      18% { transform: translateY(0%); }
+      75% { transform: translateY(-44%); }
+      100% { transform: translateY(-44%); }
+    }
+    .caro-scroll-badge {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      z-index: 4;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(3, 7, 18, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38BDF8;
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      backdrop-filter: blur(6px);
+      pointer-events: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+    .caro-scroll-badge .pulse-green {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 8px #10B981;
+      display: inline-block;
+      animation: pulseDot 2s infinite ease-in-out;
+    }
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.35); opacity: 0.6; }
+    }
 
     /* ---------- The Loop (engine phases) ---------- */
     .loop-wrap { display: grid; gap: 1.4rem; grid-template-columns: 1fr; }
@@ -1547,15 +1651,23 @@
     <div class="sec" style="padding-top:0">
       <div class="shell">
         <div class="caro card card-hover reveal" id="heroCarouselCard">
-          <div style="padding:clamp(1.15rem,2.6vw,1.7rem)">
-            <p class="eyebrow" id="carouselTag">CORE CAPABILITY 01 / 03 • CRM SYSTEMS</p>
-            <p class="small" style="margin-top:1rem;color:var(--muted)">Three disciplines, one operating system for growth. The console auto-cycles — or drive it yourself.</p>
-            <div class="caro-steps" id="caroDots" role="tablist" aria-label="Capability switcher">
-              <button type="button" class="slide-dot on" role="tab" aria-selected="true" aria-label="Capability 1"></button>
-              <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Capability 2"></button>
-              <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Capability 3"></button>
+          <div style="padding:clamp(1.15rem,2.6vw,1.7rem);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+              <p class="eyebrow" id="carouselTag">FEATURED WORK 01 / 04 • KNR INTEGRITY</p>
+              <h3 style="font-family:var(--font-display);font-size:clamp(1.2rem,2.2vw,1.55rem);color:var(--ink);margin:0.75rem 0 0.5rem;font-weight:600;line-height:1.25;">Client Deployments &amp; Live Systems</h3>
+              <p class="small" style="color:var(--muted);line-height:1.65;">Production web platforms &amp; automation engines engineered by Buddy AI Partners — from luxury real estate portals to custom CRM infrastructure. The showcase auto-cycles continuously.</p>
             </div>
-            <div class="slide-progress" aria-hidden="true"><span id="slideProgress"></span></div>
+            <div style="margin-top:1.4rem;">
+              <div class="caro-steps" id="caroDots" role="tablist" aria-label="Work showcase switcher">
+                <button type="button" class="slide-dot on" role="tab" aria-selected="true" aria-label="Work 1: KNR Integrity" onclick="setSlide(0)"></button>
+                <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 2: Costa Furtune" onclick="setSlide(1)"></button>
+                <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 3: Club Costa Fantacy" onclick="setSlide(2)"></button>
+                <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 4: Custom CRM Dashboard" onclick="setSlide(3)"></button>
+                <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 5: Buddy AI Sales Agent" onclick="setSlide(4)"></button>
+                <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 6: Growth Automation Suite" onclick="setSlide(5)"></button>
+              </div>
+              <div class="slide-progress" aria-hidden="true"><span id="slideProgress"></span></div>
+            </div>
           </div>
           <div style="padding:clamp(1.15rem,2.6vw,1.7rem);border-left:1px solid var(--line)" id="heroCarousel"></div>
         </div>
@@ -1984,40 +2096,72 @@
         </div>
         <div class="cert-grid reveal" style="margin-top:1.2rem">
           <article class="card card-hover cert-card">
-            <figure class="cert-figure"><img src="images/certs/cert-knr-dme.jpg" alt="KNR Digital certificate of achievement — Google Digital Marketing &amp; E-commerce, presented to Rahul Kumar Dhal" width="1600" height="1066" loading="eager" decoding="async" /></figure>
+            <figure class="cert-figure" onclick="openCertModal('images/certs/cert-knr-dme.jpg', 'KNR Digital Certificate of Achievement — Google Digital Marketing &amp; E-commerce')">
+              <img src="images/certs/cert-knr-dme.jpg" alt="KNR Digital certificate of achievement — Google Digital Marketing &amp; E-commerce, presented to Rahul Kumar Dhal" width="1600" height="1066" loading="eager" decoding="async" />
+            </figure>
             <div class="cert-cap">
-              <span class="cert-issuer">KNR Digital · Internal</span>
+              <span class="cert-issuer">KNR Digital · Internal Verification</span>
               <b>Certificate of Achievement — Google Digital Marketing &amp; E-commerce</b>
-              <small>Professional certificate track · issued Sep 2025</small>
+              <small>Professional certificate track · issued Jun 2023</small>
             </div>
           </article>
           <article class="card card-hover cert-card">
-            <figure class="cert-figure"><img src="images/certs/cert-google-dme.webp" alt="Coursera professional certificate — Google Digital Marketing &amp; E-commerce, earned by Rahul Kumar Dhal" width="748" height="598" loading="eager" decoding="async" /></figure>
+            <figure class="cert-figure" onclick="openCertModal('images/certs/cert-google-dme.webp', 'Coursera &amp; Google Digital Marketing &amp; E-commerce Professional Certificate')">
+              <img src="images/certs/cert-google-dme.webp" alt="Coursera professional certificate — Google Digital Marketing &amp; E-commerce, earned by Rahul Kumar Dhal" width="748" height="598" loading="eager" decoding="async" />
+            </figure>
             <div class="cert-cap">
               <span class="cert-issuer">Google × Coursera</span>
               <b>Google Digital Marketing &amp; E-commerce Professional Certificate</b>
-              <small>7-course track · issued Jun 2023</small>
+              <small>7-course comprehensive track · issued Jun 18, 2023</small>
               <a class="cert-verify" href="https://coursera.org/verify/professional-certs/AUSWGTVRY353" target="_blank" rel="noopener noreferrer">Verify on Coursera ↗</a>
             </div>
           </article>
           <article class="card card-hover cert-card">
-            <figure class="cert-figure"><img src="images/certs/cert-meta-dma.jpg" alt="Meta certified digital marketing associate certificate for Rahul Kumar Dhal" width="1600" height="1244" loading="eager" decoding="async" /></figure>
+            <figure class="cert-figure" onclick="openCertModal('images/certs/cert-meta-dma.jpg', 'Meta Certified Digital Marketing Associate Certificate')">
+              <img src="images/certs/cert-meta-dma.jpg" alt="Meta certified digital marketing associate certificate for Rahul Kumar Dhal" width="1600" height="1244" loading="eager" decoding="async" />
+            </figure>
             <div class="cert-cap">
-              <span class="cert-issuer">Meta</span>
+              <span class="cert-issuer">Meta Certified</span>
               <b>Meta Certified Digital Marketing Associate</b>
-              <small>Credential wCES3-487X · issued Sep 2025</small>
+              <small>Credential wCES3-487X · issued Sep 2024</small>
               <a class="cert-verify" href="https://www.certiport.com/" target="_blank" rel="noopener noreferrer">Verify at certiport.com ↗</a>
             </div>
           </article>
           <article class="card card-hover cert-card">
-            <div class="cert-sheet">
-              <div class="flex between iwrap">
-                <span class="big">8</span>
-                <span class="cert-issuer" style="color:var(--sky-soft)">Google Skills · Google Cloud</span>
+            <figure class="cert-figure" onclick="openCertModal('images/certs/cert-google-genai.webp', 'Google Skills &amp; Google Cloud Generative AI Learning Achievement Certificate')">
+              <img src="images/certs/cert-google-genai.webp" alt="Google Cloud Generative AI Learning Achievement Certificate for Rahul Kumar Dhal" width="663" height="438" loading="lazy" decoding="async" />
+            </figure>
+            <div class="cert-cap">
+              <span class="cert-issuer">Google Skills · Google Cloud</span>
+              <b>Google Cloud Generative AI Learning Achievement</b>
+              <small>Credential GC5-GA-2026-1001-RKD · issued Oct 1, 2026</small>
+              <a class="cert-verify" href="https://www.skills.google/credentials" target="_blank" rel="noopener noreferrer">Verify on skills.google ↗</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Google Cloud 11-Badge Verified Learning Suite -->
+        <div class="card card-hover reveal" style="margin-top:1.4rem;border:1px solid rgba(56,189,248,0.22);background:linear-gradient(160deg, rgba(14,32,60,0.5), rgba(4,10,22,0.85));padding:1.4rem 1.3rem;">
+          <div class="flex between wrap" style="gap:.8rem;align-items:flex-start">
+            <div>
+              <div class="flex wrap" style="gap:.45rem;align-items:center">
+                <span class="chip sky"><span class="dot"></span>11 Verified Completions</span>
+                <span class="chip gold"><span class="dot"></span>Google Skills &amp; Cloud</span>
               </div>
-              <span class="cert-sheet-title">Generative AI Learning Achievement</span>
-              <p class="small" style="color:var(--body)">Eight completed Gen AI learning paths — agents, governance, security and applied deployment.</p>
-              <div class="path-chips">
+              <h3 class="h3" style="margin-top:.6rem;font-size:clamp(1.15rem, 2.5vw, 1.4rem);color:var(--ink)">Google Cloud Generative AI &amp; Data Analytics Suite</h3>
+              <p class="small" style="color:var(--body);margin-top:.3rem;max-width:760px">Official completions earned by Rahul Kumar Dhal through Google Skills (Google Cloud program). Verifiable on <a href="https://www.skills.google/profile/badges?credential_type=skill_badge" target="_blank" rel="noopener noreferrer" style="color:var(--sky-soft);text-decoration:underline">skills.google profile</a>.</p>
+            </div>
+            <a class="btn btn-sm btn-ghost" href="https://www.skills.google/credentials" target="_blank" rel="noopener noreferrer" style="font-size:.78rem">Verify on skills.google ↗</a>
+          </div>
+
+          <!-- 2 Stream breakdown: Gen AI (8) and Data Analytics (3) -->
+          <div class="grid-2" style="gap:1rem;margin-top:1.2rem">
+            <div style="background:rgba(2,6,16,0.5);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1rem;">
+              <div class="flex between" style="margin-bottom:.65rem">
+                <span style="font-family:var(--font-mono);font-size:.65rem;font-weight:700;color:var(--sky);letter-spacing:.1em;text-transform:uppercase">8 Gen AI Learning Paths · Oct 2026</span>
+                <span style="font-size:.7rem;color:var(--muted)">Thomas Kurian Signed</span>
+              </div>
+              <div class="path-chips" style="margin-top:.4rem">
                 <span>Gen AI Apps: Transform Your Work</span>
                 <span>Gen AI Agents: Transform Your Organization</span>
                 <span>Gen AI: Navigate the Landscape</span>
@@ -2027,10 +2171,20 @@
                 <span>Google Cloud Agent Governance &amp; Security</span>
                 <span>Secure Enterprise AI Agents</span>
               </div>
-              <small class="cert-id">Credential GC5-GA-2026-1001-RKD · issued Oct 2026</small>
-              <a class="cert-verify" href="https://www.skills.google/credentials" target="_blank" rel="noopener noreferrer">Verify on skills.google ↗</a>
             </div>
-          </article>
+
+            <div style="background:rgba(2,6,16,0.5);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1rem;">
+              <div class="flex between" style="margin-bottom:.65rem">
+                <span style="font-family:var(--font-mono);font-size:.65rem;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase">3 Data Analytics Tracks · Nov 2026</span>
+                <span style="font-size:.7rem;color:var(--muted)">Google Cloud Certified Track</span>
+              </div>
+              <div class="path-chips" style="margin-top:.4rem">
+                <span>Introduction to Data Analytics in Google Cloud <em style="color:var(--gold);font-style:normal;font-size:.65rem;margin-left:.25rem">(Course 1 · Nov 2)</em></span>
+                <span>Data Management &amp; Storage in the Cloud <em style="color:var(--gold);font-style:normal;font-size:.65rem;margin-left:.25rem">(Course 2 · Nov 7)</em></span>
+                <span>Data Transformation in the Cloud <em style="color:var(--gold);font-style:normal;font-size:.65rem;margin-left:.25rem">(Course 3 · Nov 13)</em></span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="center" style="margin-top:1.8rem">
@@ -3320,60 +3474,180 @@
       window.addEventListener('DOMContentLoaded', handleHashNav);
     } catch (e) {}
 
-    /* ---------- 4. Hero capabilities carousel ---------- */
+    /* ---------- 4. Hero Capabilities & Client Work Showcase Carousel ---------- */
     var slides = [
       {
-        tag: "CORE CAPABILITY 01 / 03 • CRM SYSTEMS",
-        title: "Custom Business CRM Architecture",
-        desc: "Centralize inquiries, daily calling queues, team follow-ups, booking records and GST-ready billing inside a clean, role-based dashboard.",
-        metric: "Tailored for Real Estate & Service Teams",
-        badge: "CUSTOM CRM"
+        tag: "FEATURED WORK 01 / 06 • KNR INTEGRITY",
+        badge: "KNR INTEGRITY PLATFORM",
+        title: "KNR Integrity Luxury Property Marketplace",
+        desc: "High-conversion luxury property portal featuring 60+ indexed ORERA projects, interactive township walkthroughs, live ground telemetry, and automated WhatsApp triage.",
+        metric: "60+ ORERA Projects · Live Web Portal",
+        image: "images/work/knr-integrity-platform.webp",
+        url: "https://knrintegrity.com",
+        displayUrl: "knrintegrity.com · Premier Real Estate Advisory",
+        cta: "Explore Case Study &rarr;",
+        linkAction: "switchPage('portfolio')"
       },
       {
-        tag: "CORE CAPABILITY 02 / 03 • WORKFLOW AUTOMATION",
-        title: "Python Playwright & n8n Pipelines",
-        desc: "Automate repetitive lead extraction, webhook routing and instant WhatsApp follow-up messages so your team focuses on closing deals.",
-        metric: "Automated JSON Webhook Integration",
-        badge: "AI & AUTOMATION"
+        tag: "FEATURED WORK 02 / 06 • COSTA FURTUNE",
+        badge: "COSTA FURTUNE TOWNSHIP",
+        title: "Costa Furtune Master Township Platform",
+        desc: "Architectural web platform for Sai Harmony's 3-phase master township in Bhubaneswar. Featuring 4K drone cinematography, interactive CAD blueprints, and gated brochure downloads.",
+        metric: "4.5-Acre Master Township · Live Platform",
+        image: "images/work/costa-furtune-township.webp",
+        url: "https://buddyaipartners.github.io/costa-furtune/",
+        displayUrl: "buddyaipartners.github.io/costa-furtune",
+        cta: "Visit Live Website &nearr;",
+        external: true
       },
       {
-        tag: "CORE CAPABILITY 03 / 03 • DIGITAL GROWTH",
-        title: "Meta & Google Performance Funnels",
-        desc: "Targeted ad campaigns, promotional property videos and fast React landing pages built to capture high-intent buyer inquiries.",
-        metric: "Bhubaneswar & Pan-India Campaigns",
-        badge: "DIGITAL MARKETING"
+        tag: "FEATURED WORK 03 / 06 • CLUB FANTACY",
+        badge: "CLUB COSTA FANTACY",
+        title: "Club Costa Fantacy Dedicated Platform",
+        desc: "Vertical G+3 lifestyle clubhouse experience crowned with a 4th floor open-to-sky party terrace, 20 certified brochure indulgences, and statutory architectural schedules.",
+        metric: "G+3 Vertical Clubhouse · Construction Ready",
+        image: "images/work/club-costa-fantacy.webp",
+        url: "https://buddyaipartners.github.io/costa-furtune/clubhouse.html",
+        displayUrl: "buddyaipartners.github.io/costa-furtune/clubhouse.html",
+        cta: "Visit Club Platform &nearr;",
+        external: true
+      },
+      {
+        tag: "FEATURED WORK 04 / 06 • KNR CRM OPS",
+        badge: "CUSTOM CRM DASHBOARD",
+        title: "Real Estate Lead & Operations CRM",
+        desc: "Centralize buyer inquiries, automated WhatsApp webhooks, daily calling queues, GST billing, and sub-second lead routing inside a clean, role-based dashboard.",
+        metric: "Zero Lead Leakage · Sub-Second Routing",
+        image: "images/work/knr-crm-operations.webp",
+        url: "digital-office/",
+        displayUrl: "buddyaipartners.github.io/digital-office · Lead OS",
+        cta: "View Architecture &rarr;",
+        linkAction: "switchPage('services')"
+      },
+      {
+        tag: "FEATURED WORK 05 / 06 • BUDDY AI AGENT",
+        badge: "BUILT BY RAHUL · LIVE DEMO",
+        title: "Autonomous Real Estate AI Sales Operator",
+        desc: "Proprietary 24/7 sales agent architected and coded by Rahul / Buddy AI Partners. Sub-800ms natural voice/chat triage, ORERA legal verification, and instant WhatsApp brochure dispatch.",
+        metric: "<800ms Latency · 24/7 Zero Missed Leads",
+        image: "images/work/buddy-ai-sales-agent.webp",
+        url: "#buddy",
+        displayUrl: "buddyaipartners.github.io · Autonomous AI Sandbox",
+        cta: "Launch Live Interactive Demo ⚡",
+        linkAction: "switchPage('buddy')"
+      },
+      {
+        tag: "FEATURED WORK 06 / 06 • GROWTH ENGINE",
+        badge: "ENTERPRISE AUTOMATION",
+        title: "Multi-Channel AI Growth & Pipeline Infrastructure",
+        desc: "End-to-end digital acquisition engine connecting Meta ads conversion API, automated n8n webhooks, AI lead qualification, and instant sales director notifications.",
+        metric: "4.8x Ad ROAS · 100% Pipeline Velocity",
+        image: "images/work/enterprise-growth-engine.webp",
+        url: "#services",
+        displayUrl: "buddyaipartners.github.io · Growth Automation OS",
+        cta: "Explore Architecture &rarr;",
+        linkAction: "switchPage('services')"
       }
     ];
     let currentSlide = 0;
+    var slideDuration = 5800;
+    var slideTimer = null;
+    var isCaroHovered = false;
+
     function renderSlide(index) {
       var s = slides[index];
       if (!s) return;
       var tagEl = document.getElementById('carouselTag');
       var container = document.getElementById('heroCarousel');
       if (!tagEl || !container) return;
+
       tagEl.textContent = s.tag;
-      container.innerHTML =
-        '<span class="chip gold"><span class="dot"></span>' + s.badge + '</span>' +
-        '<h2 style="margin-top:.9rem;font-family:var(--font-display);font-size:clamp(1.3rem,2.6vw,1.8rem);color:var(--ink);font-weight:600">' + s.title + '</h2>' +
-        '<p class="small" style="margin-top:.5rem;line-height:1.6">' + s.desc + '</p>' +
-        '<div style="margin-top:1.2rem;padding:.8rem .9rem;border-radius:12px;border:1px solid var(--line);background:rgba(3,7,16,.55);display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap">' +
-        '<span class="mono xsmall" style="color:var(--mint)">◆ ' + s.metric + '</span>' +
-        '<button type="button" onclick="switchPage(\'services\')" class="link-arrow" style="background:none;border:0">Details</button>' +
-        '</div>';
+
+      // Smooth modern transition
+      container.style.opacity = '0';
+      container.style.transform = 'translateY(6px)';
+      container.style.transition = 'opacity 0.22s ease, transform 0.22s ease';
+
+      setTimeout(function () {
+        var actionAttr = s.external
+          ? 'href="' + s.url + '" target="_blank" rel="noopener"'
+          : 'href="#' + (s.linkAction ? 'portfolio' : 'services') + '" onclick="' + s.linkAction + '; return false;"';
+
+        container.innerHTML =
+          '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:0.5rem;">' +
+            '<span class="chip gold"><span class="dot"></span>' + s.badge + '</span>' +
+            '<span class="mono xsmall" style="color:var(--sky-soft);opacity:0.85;">0' + (index + 1) + ' / 0' + slides.length + '</span>' +
+          '</div>' +
+          '<h3 style="margin-top:.2rem;font-family:var(--font-display);font-size:clamp(1.2rem,2.2vw,1.6rem);color:var(--ink);font-weight:600;line-height:1.25;">' + s.title + '</h3>' +
+          '<p class="small" style="margin-top:.35rem;line-height:1.6;color:var(--body);">' + s.desc + '</p>' +
+          '<div class="caro-preview-frame">' +
+            '<div class="caro-browser-bar">' +
+              '<span class="caro-browser-dot red"></span>' +
+              '<span class="caro-browser-dot yellow"></span>' +
+              '<span class="caro-browser-dot green"></span>' +
+              '<span class="caro-browser-url">' + s.displayUrl + '</span>' +
+            '</div>' +
+            '<a ' + actionAttr + ' class="caro-viewport" aria-label="' + s.title + '">' +
+              '<div class="caro-scroll-track">' +
+                '<img src="' + s.image + '" alt="' + s.title + '" class="caro-work-scroll-img" loading="eager" decoding="async" />' +
+              '</div>' +
+              '<span class="caro-scroll-badge"><span class="pulse-green"></span> ⚡ AUTO-SCROLL PREVIEW</span>' +
+            '</a>' +
+          '</div>' +
+          '<div style="margin-top:0.9rem;padding:.75rem .9rem;border-radius:12px;border:1px solid var(--line);background:rgba(3,7,16,.65);display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap">' +
+            '<span class="mono xsmall" style="color:var(--mint);display:flex;align-items:center;gap:6px;"><span style="color:var(--gold);">◆</span> ' + s.metric + '</span>' +
+            '<a ' + actionAttr + ' class="link-arrow" style="background:none;border:0;cursor:pointer;color:var(--sky-soft);font-weight:600;text-decoration:none;">' + s.cta + '</a>' +
+          '</div>';
+
+        container.style.opacity = '1';
+        container.style.transform = 'translateY(0)';
+
+        // Trigger CSS scroll animation fresh on every card change
+        var track = container.querySelector('.caro-scroll-track');
+        if (track) {
+          track.style.animation = 'none';
+          void track.offsetWidth;
+          track.style.animation = 'caroWebScroll ' + (slideDuration / 1000) + 's cubic-bezier(0.42, 0, 0.25, 1) infinite alternate';
+        }
+      }, 150);
+
       try {
-        document.querySelectorAll('.slide-dot').forEach(function (d, i) {
+        var dots = document.querySelectorAll('.slide-dot');
+        dots.forEach(function (d, i) {
           var on = i === index;
           d.classList.toggle('on', on);
           d.setAttribute('aria-selected', String(on));
         });
       } catch (e) {}
+
+      // Keep slide progress continuous
       var prog = document.getElementById('slideProgress');
       if (prog) {
+        prog.style.transition = 'none';
         prog.style.width = '0%';
-        setTimeout(function () { prog.style.width = '100%'; }, 40);
+        void prog.offsetWidth; // Force CSS reflow
+        prog.style.transition = 'width ' + (slideDuration / 1000) + 's linear';
+        prog.style.width = '100%';
       }
     }
-    function setSlide(idx) { currentSlide = idx; renderSlide(currentSlide); }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      renderSlide(currentSlide);
+    }
+
+    function startSlideTimer() {
+      if (slideTimer) clearInterval(slideTimer);
+      slideTimer = setInterval(function () {
+        nextSlide();
+      }, slideDuration);
+    }
+
+    function setSlide(idx) {
+      currentSlide = idx;
+      renderSlide(currentSlide);
+      startSlideTimer(); // Reset the 6s interval on tap to keep continuous
+    }
 
     /* ---------- 5. Validated contact & WhatsApp flow ---------- */
     function buildBriefMessage() {
@@ -4152,7 +4426,15 @@
 
     /* ---------- 21. Boot ---------- */
     function initApp() {
-      try { renderSlide(0); } catch (e) {}
+      try {
+        renderSlide(0);
+        startSlideTimer();
+        var caroCard = document.getElementById('heroCarouselCard');
+        if (caroCard) {
+          caroCard.addEventListener('mouseenter', function () { isCaroHovered = true; });
+          caroCard.addEventListener('mouseleave', function () { isCaroHovered = false; });
+        }
+      } catch (e) {}
       try {
         document.querySelectorAll('.slide-dot').forEach(function (d, i) { d.addEventListener('click', function () { setSlide(i); }); });
       } catch (e) {}
@@ -4238,6 +4520,18 @@
         <a id="modalWhatsAppShare" class="btn btn-emerald btn-sm" href="#" target="_blank" rel="noopener noreferrer">Share on WhatsApp →</a>
         <button type="button" class="btn btn-crimson btn-sm" onclick="closeBlogModal();switchPage('contact')">Deploy This System in My Company →</button>
       </div>
+    </div>
+  </div>
+
+  <!-- ============================= CERTIFICATE LIGHTBOX MODAL ============================= -->
+  <div id="certLightboxModal" class="blog-modal" hidden role="dialog" aria-modal="true" aria-labelledby="certLightboxTitle" onclick="if(event.target===this)closeCertModal()">
+    <div class="blog-modal-content" style="max-width:880px;background:#060C1B;border:1px solid rgba(56,189,248,0.35);text-align:center;padding:1.4rem;box-shadow:0 24px 60px rgba(0,0,0,0.85);">
+      <button type="button" class="blog-modal-close" onclick="closeCertModal()" aria-label="Close certificate preview">✕</button>
+      <h3 id="certLightboxTitle" class="h3" style="font-size:1.1rem;color:var(--ink);margin-bottom:.8rem">Verified Certificate Inspection</h3>
+      <div style="background:#FFF;border-radius:10px;padding:.6rem;display:inline-block;box-shadow:0 16px 40px rgba(0,0,0,0.7);max-width:100%">
+        <img id="certLightboxImg" src="" alt="Verified credential high-resolution inspection preview" style="max-width:100%;max-height:75vh;height:auto;border-radius:6px;display:block;" />
+      </div>
+      <p class="small" style="color:var(--muted);margin-top:.8rem">Official credential issued to Rahul Kumar Dhal · Press Esc or click outside to dismiss.</p>
     </div>
   </div>
 
@@ -4364,7 +4658,30 @@
       });
     }
 
+    function openCertModal(src, title) {
+      try { if (typeof playCyberSfx === 'function') playCyberSfx('click'); } catch (e) {}
+      var modal = document.getElementById('certLightboxModal');
+      var img = document.getElementById('certLightboxImg');
+      var titleEl = document.getElementById('certLightboxTitle');
+      if (img) img.src = src;
+      if (titleEl && title) titleEl.textContent = title;
+      if (modal) {
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+      }
+    }
 
+    function closeCertModal() {
+      var modal = document.getElementById('certLightboxModal');
+      if (modal) {
+        modal.hidden = true;
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeCertModal();
+    });
   </script>
 
 </body>
