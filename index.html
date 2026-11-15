@@ -1496,6 +1496,8 @@
     .blog-badge.wa { background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.35); }
     .blog-badge.em { background: rgba(56, 189, 248, 0.15); color: var(--sky-soft); border: 1px solid rgba(56, 189, 248, 0.35); }
     .blog-badge.db { background: rgba(167, 139, 250, 0.15); color: #c4b5fd; border: 1px solid rgba(167, 139, 250, 0.35); }
+    .blog-badge.gpu { background: rgba(118, 185, 0, 0.15); color: #76b900; border: 1px solid rgba(118, 185, 0, 0.35); }
+    .blog-badge.web { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.35); }
     .blog-title {
       font-family: var(--font-display);
       font-size: 1.18rem;
@@ -3023,7 +3025,9 @@
 
         <!-- Filter Bar -->
         <div class="blog-filter-bar reveal">
-          <button type="button" class="blog-filter-btn active" onclick="filterBlogCategory('all')">All Intelligence (4)</button>
+          <button type="button" class="blog-filter-btn active" onclick="filterBlogCategory('all')">All Intelligence (6)</button>
+          <button type="button" class="blog-filter-btn" onclick="filterBlogCategory('gpu')">⚡ AI &amp; GPUs</button>
+          <button type="button" class="blog-filter-btn" onclick="filterBlogCategory('web')">🌐 Web Architecture</button>
           <button type="button" class="blog-filter-btn" onclick="filterBlogCategory('realestate')">Real Estate AI &amp; CRM</button>
           <button type="button" class="blog-filter-btn" onclick="filterBlogCategory('whatsapp')">WhatsApp Automation</button>
           <button type="button" class="blog-filter-btn" onclick="filterBlogCategory('email')">Email Anti-Spam</button>
@@ -3032,6 +3036,37 @@
 
         <!-- Articles Grid -->
         <div class="blog-grid" id="blogArticlesGrid">
+          <!-- ARTICLE 0: GPU & AI (JENSEN HUANG PARADIGM) -->
+          <article class="blog-card reveal" data-category="gpu sovereign">
+            <div>
+              <span class="blog-badge gpu">⚡ AI &amp; GPU Infrastructure</span>
+              <h2 class="blog-title">What is a GPU and Why Is It the Engine of Modern AI? The Jensen Huang &amp; NVIDIA Paradigm Explained</h2>
+              <p class="blog-excerpt">Why did CPUs fail at deep learning? How did Jensen Huang's 2006 CUDA gamble turn a 3D gaming chip company into a .5T AI powerhouse? Discover the mechanics of parallel computing, matrix multiplication, and Tensor Cores powering modern intelligence.</p>
+            </div>
+            <div>
+              <div class="blog-meta">
+                <span>By Rahul Kumar Dhal · 9 min read</span>
+                <span class="small t-muted">November 2026</span>
+              </div>
+              <button type="button" class="btn btn-gold btn-sm" style="width:100%;margin-top:.8rem" onclick="openBlogArticle('gpu-ai-architecture')">Read Full Analysis →</button>
+            </div>
+          </article>
+
+          <!-- ARTICLE 00: NEXT.JS VS WORDPRESS -->
+          <article class="blog-card reveal" data-category="web">
+            <div>
+              <span class="blog-badge web">🌐 Web Architecture &amp; SEO</span>
+              <h2 class="blog-title">Next.js vs. WordPress in 2026: Why High-Growth Indian Businesses Are Leaving Legacy CMS for 10x Speed &amp; Google SEO</h2>
+              <p class="blog-excerpt">Tired of 4-second loading times, plugin bloat, and sinking Google rankings? Discover how modern static-rendered Next.js architectures score 100/100 Core Web Vitals, crush bounce rates, and outrank competitors in Google search.</p>
+            </div>
+            <div>
+              <div class="blog-meta">
+                <span>By Rahul Kumar Dhal · 7 min read</span>
+                <span class="small t-muted">November 2026</span>
+              </div>
+              <button type="button" class="btn btn-gold btn-sm" style="width:100%;margin-top:.8rem" onclick="openBlogArticle('nextjs-vs-wordpress')">Read Full Guide →</button>
+            </div>
+          </article>
           <!-- ARTICLE 1 -->
           <article class="blog-card reveal" data-category="realestate sovereign">
             <div>
@@ -4643,6 +4678,49 @@
   <script>
     // Blog articles data store
     var BLOG_ARTICLES = {
+      'gpu-ai-architecture': {
+        category: 'AI & GPU Infrastructure',
+        badgeClass: 'gpu',
+        title: 'What is a GPU and Why Is It the Engine of Modern AI? The Jensen Huang & NVIDIA Paradigm Explained',
+        author: 'Rahul Kumar Dhal · Google Certified AI Architect',
+        date: 'November 2026',
+        body: '<p class="lead" style="color:var(--sky-soft)">Artificial Intelligence is not code running on general-purpose computers. AI is massive mathematical transformation running across thousands of micro-cores working in unison. At the heart of this revolution is the GPU (Graphics Processing Unit) — and the vision of NVIDIA Founder Jensen Huang.</p>' +
+              '<h3 style="color:#76b900;margin:1.4rem 0 .5rem">1. CPU vs. GPU: Sequential Precision vs. Massive Parallelism</h3>' +
+              '<p>A modern CPU (Central Processing Unit) from Intel or AMD has 8 to 64 high-speed cores designed to execute complex, linear tasks one after another — like a brilliant mathematician solving an intricate equation step-by-step.</p>' +
+              '<p>A GPU (Graphics Processing Unit), by contrast, has <strong>10,000 to 18,000 smaller cores</strong> designed to perform simple arithmetic calculations simultaneously — like a stadium of 15,000 students doing basic multiplication at the exact same second.</p>' +
+              '<p>Graphics rendering originally required calculating the color and lighting of 8 million pixels 60 times a second. But in the 2010s, computer scientists made a historic breakthrough: <em>the mathematics required to render 3D pixels is identical to the matrix multiplication required to train artificial neural networks.</em></p>' +
+              '<h3 style="color:#76b900;margin:1.4rem 0 .5rem">2. The 2006 CUDA Gamble That Built a .5 Trillion Empire</h3>' +
+              '<p>In 2006, Jensen Huang made a bold bet that wall-street analysts ridiculed: he invested billions of dollars to build <strong>CUDA</strong> (Compute Unified Device Architecture). CUDA allowed developers to write C/C++ and Python code that ran directly on GPU cores for general computing.</p>' +
+              '<p>When AlexNet won the ImageNet competition in 2012 by training on two consumer NVIDIA GeForce GTX 580 GPUs, it shattered CPU-based AI benchmarks. Overnight, AI stopped being a software problem and became a GPU acceleration problem.</p>' +
+              '<h3 style="color:#76b900;margin:1.4rem 0 .5rem">3. Inside Tensor Cores and High-Bandwidth Memory (HBM)</h3>' +
+              '<p>Modern AI GPUs (such as the H100, H200, and the new Blackwell B200) contain specialized silicon called <strong>Tensor Cores</strong>. These cores calculate 4x4 matrix multiplications in a single clock cycle using reduced precision (FP8 and FP16), slashing power consumption while delivering petaflops of compute.</p>' +
+              '<p>Crucially, LLMs like GPT-4, Claude, and Llama 3 are memory-bandwidth bound. Modern GPUs use <strong>HBM3e (High-Bandwidth Memory)</strong> capable of streaming 8 terabytes per second directly to the compute dies, eliminating memory bottlenecks.</p>' +
+              '<h3 style="color:#76b900;margin:1.4rem 0 .5rem">4. Training vs. Inference: Why Businesses Care in 2026</h3>' +
+              '<p><strong>AI Training</strong> requires clusters of thousands of high-end GPUs (e.g. 24,000 H100s) crunching trillions of tokens for months at millions of dollars in electricity.</p>' +
+              '<p><strong>AI Inference</strong> is running the trained model to answer a customer question in under 800 milliseconds. Today, optimized engines like vLLM, TensorRT-LLM, and quantized local models allow Indian businesses to run private, secure AI agents on dedicated local GPUs or specialized inference endpoints (like Groq and LPUs) at a fraction of cloud API costs.</p>' +
+              '<h3 style="color:#76b900;margin:1.4rem 0 .5rem">5. The Future: Sovereign AI for Indian Enterprises</h3>' +
+              '<p>As Jensen Huang frequently emphasizes, every nation and every enterprise will eventually own its own <em>AI Factory</em>. Relying entirely on foreign cloud APIs risks data sovereignty, latency spikes, and subscription price hikes. At Buddy AI Partners, we design sovereign AI systems that give Indian enterprises full ownership of their data, models, and execution layer.</p>'
+      },
+      'nextjs-vs-wordpress': {
+        category: 'Web Architecture & SEO',
+        badgeClass: 'web',
+        title: 'Next.js vs. WordPress in 2026: Why Modern Indian Businesses Are Leaving Legacy CMS for 10x Speed & Google SEO',
+        author: 'Rahul Kumar Dhal · Systems Architect',
+        date: 'November 2026',
+        body: '<p class="lead" style="color:var(--sky-soft)">In 2026, website speed is no longer just a luxury — it is a direct Google ranking factor and conversion driver. Yet millions of Indian businesses remain trapped on outdated, sluggish WordPress websites.</p>' +
+              '<h3 style="color:#38bdf8;margin:1.4rem 0 .5rem">1. The Hidden Cost of WordPress Plugins &amp; MySQL Bloat</h3>' +
+              '<p>WordPress was created in 2003 as a personal blogging tool. To turn it into a modern business portal, companies install 25+ plugins (Elementor, WooCommerce, SEO tools, caching plugins). Every page load executes hundreds of unoptimized SQL queries, dragging mobile load times past 4.2 seconds.</p>' +
+              '<p>According to Google data, <strong>53% of mobile visitors abandon a website that takes longer than 3 seconds to load</strong>.</p>' +
+              '<h3 style="color:#38bdf8;margin:1.4rem 0 .5rem">2. The Next.js Advantage: Pre-Rendered, Sub-Second Performance</h3>' +
+              '<p>Next.js compiles pages at build time into pure HTML, CSS, and edge-cached JavaScript. When a customer taps your link from a Meta ad or Google search, the page loads in <strong>under 350 milliseconds</strong> — virtually instantaneous.</p>' +
+              '<ul style="padding-left:1.4rem;margin:1rem 0">' +
+              '<li><strong>Zero Database Latency:</strong> Content is served directly from global Edge CDNs.</li>' +
+              '<li><strong>100/100 Core Web Vitals:</strong> Perfect scores on Largest Contentful Paint (LCP) and Cumulative Layout Shift (CLS) give you an immediate organic ranking advantage in Google Search.</li>' +
+              '<li><strong>Zero Plugin Vulnerabilities:</strong> No PHP backend for hackers to exploit, drastically reducing security maintenance costs.</li>' +
+              '</ul>' +
+              '<h3 style="color:#38bdf8;margin:1.4rem 0 .5rem">3. Seamless Modernization for Indian Enterprises</h3>' +
+              '<p>Buddy AI Partners specializes in migrating legacy WordPress and Wix sites to lightweight, ultra-modern Next.js platforms in 7 to 14 days, preserving all existing SEO equity while dramatically multiplying lead conversion rates.</p>'
+      },
       're-database': {
         category: 'Real Estate Proptech',
         badgeClass: 're',

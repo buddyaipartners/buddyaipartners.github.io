@@ -16,6 +16,8 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    gtag('config', 'GTM-5786D7BS');
+    gtag('config', 'G-222739543');
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -639,7 +641,40 @@
     .loop-wrap { grid-template-columns: 1fr !important; }
     .loop-steps { grid-template-columns: 1fr !important; }
     .proc-rail { grid-template-columns: 1fr !important; }
-    .caro { grid-template-columns: 1fr !important; }
+    .caro { grid-template-columns: 1fr !important; gap: 0 !important; }
+    #heroCarouselCard { padding: 0 !important; overflow: hidden; }
+    #heroCarouselCard > div:first-child { padding: clamp(1rem, 4vw, 1.4rem) !important; }
+    #heroCarousel {
+      border-left: 0 !important;
+      border-top: 1px solid var(--line) !important;
+      padding: clamp(1rem, 4vw, 1.4rem) !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .caro-preview-frame {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .caro-viewport {
+      height: clamp(165px, 46vw, 215px) !important;
+    }
+    .caro-browser-bar {
+      padding: 6px 10px !important;
+    }
+    .caro-browser-url {
+      font-size: 10px !important;
+      max-width: calc(100vw - 110px) !important;
+    }
+    .caro-steps {
+      flex-wrap: wrap !important;
+      gap: 0.35rem !important;
+    }
+    .caro-meta-pill {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 0.5rem !important;
+    }
 
     .filter-bar {
       flex-direction: column !important;
@@ -748,8 +783,20 @@
     .kpi-cap { margin-top: .45rem; font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
 
     /* ---------- Capability carousel ---------- */
-    .caro { display: grid; gap: 1.2rem; grid-template-columns: 1fr; align-items: stretch; }
-    @media (min-width: 900px) { .caro { grid-template-columns: .82fr 1.18fr; } }
+    .caro { display: grid; gap: 0; grid-template-columns: 1fr; align-items: stretch; }
+    @media (min-width: 900px) { .caro { grid-template-columns: .82fr 1.18fr; gap: 1.2rem; } }
+    #heroCarousel {
+      padding: clamp(1.15rem, 2.6vw, 1.7rem);
+      border-top: 1px solid var(--line);
+      width: 100%;
+      box-sizing: border-box;
+    }
+    @media (min-width: 900px) {
+      #heroCarousel {
+        border-top: none;
+        border-left: 1px solid var(--line);
+      }
+    }
     .caro-steps { display: flex; gap: .45rem; margin-top: 1rem; }
     .slide-dot { height: 4px; border-radius: 99px; background: rgba(56, 189, 248, .2); border: 0; padding: 0; transition: background-color .4s, width .4s var(--ease); width: 10px; cursor: pointer; }
     .slide-dot.on { width: 32px; background: linear-gradient(90deg, var(--sky-deep), var(--sky-soft)); }
@@ -1450,6 +1497,8 @@
     .blog-badge.wa { background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.35); }
     .blog-badge.em { background: rgba(56, 189, 248, 0.15); color: var(--sky-soft); border: 1px solid rgba(56, 189, 248, 0.35); }
     .blog-badge.db { background: rgba(167, 139, 250, 0.15); color: #c4b5fd; border: 1px solid rgba(167, 139, 250, 0.35); }
+    .blog-badge.gpu { background: rgba(118, 185, 0, 0.15); color: #76b900; border: 1px solid rgba(118, 185, 0, 0.35); }
+    .blog-badge.web { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.35); }
     .blog-title {
       font-family: var(--font-display);
       font-size: 1.18rem;
@@ -1669,7 +1718,7 @@
             <div style="margin-top:1.4rem;">
               <div class="caro-steps" id="caroDots" role="tablist" aria-label="Work showcase switcher">
                 <button type="button" class="slide-dot on" role="tab" aria-selected="true" aria-label="Work 1: KNR Integrity" onclick="setSlide(0)"></button>
-                <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 2: Costa Furtune" onclick="setSlide(1)"></button>
+                <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 2: Costa Fortune" onclick="setSlide(1)"></button>
                 <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 3: Club Costa Fantacy" onclick="setSlide(2)"></button>
                 <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 4: Custom CRM Dashboard" onclick="setSlide(3)"></button>
                 <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 5: Buddy AI Sales Agent" onclick="setSlide(4)"></button>
@@ -1678,7 +1727,7 @@
               <div class="slide-progress" aria-hidden="true"><span id="slideProgress"></span></div>
             </div>
           </div>
-          <div style="padding:clamp(1.15rem,2.6vw,1.7rem);border-left:1px solid var(--line)" id="heroCarousel"></div>
+          <div id="heroCarousel"></div>
         </div>
       </div>
     </div>
@@ -2977,7 +3026,9 @@
 
         <!-- Filter Bar -->
         <div class="blog-filter-bar reveal">
-          <button type="button" class="blog-filter-btn active" onclick="filterBlogCategory('all')">All Intelligence (4)</button>
+          <button type="button" class="blog-filter-btn active" onclick="filterBlogCategory('all')">All Intelligence (6)</button>
+          <button type="button" class="blog-filter-btn" onclick="filterBlogCategory('gpu')">⚡ AI &amp; GPUs</button>
+          <button type="button" class="blog-filter-btn" onclick="filterBlogCategory('web')">🌐 Web Architecture</button>
           <button type="button" class="blog-filter-btn" onclick="filterBlogCategory('realestate')">Real Estate AI &amp; CRM</button>
           <button type="button" class="blog-filter-btn" onclick="filterBlogCategory('whatsapp')">WhatsApp Automation</button>
           <button type="button" class="blog-filter-btn" onclick="filterBlogCategory('email')">Email Anti-Spam</button>
@@ -2986,6 +3037,37 @@
 
         <!-- Articles Grid -->
         <div class="blog-grid" id="blogArticlesGrid">
+          <!-- ARTICLE 0: GPU & AI (JENSEN HUANG PARADIGM) -->
+          <article class="blog-card reveal" data-category="gpu sovereign">
+            <div>
+              <span class="blog-badge gpu">⚡ AI &amp; GPU Infrastructure</span>
+              <h2 class="blog-title">What is a GPU and Why Is It the Engine of Modern AI? The Jensen Huang &amp; NVIDIA Paradigm Explained</h2>
+              <p class="blog-excerpt">Why did CPUs fail at deep learning? How did Jensen Huang's 2006 CUDA gamble turn a 3D gaming chip company into a .5T AI powerhouse? Discover the mechanics of parallel computing, matrix multiplication, and Tensor Cores powering modern intelligence.</p>
+            </div>
+            <div>
+              <div class="blog-meta">
+                <span>By Rahul Kumar Dhal · 9 min read</span>
+                <span class="small t-muted">November 2026</span>
+              </div>
+              <button type="button" class="btn btn-gold btn-sm" style="width:100%;margin-top:.8rem" onclick="openBlogArticle('gpu-ai-architecture')">Read Full Analysis →</button>
+            </div>
+          </article>
+
+          <!-- ARTICLE 00: NEXT.JS VS WORDPRESS -->
+          <article class="blog-card reveal" data-category="web">
+            <div>
+              <span class="blog-badge web">🌐 Web Architecture &amp; SEO</span>
+              <h2 class="blog-title">Next.js vs. WordPress in 2026: Why High-Growth Indian Businesses Are Leaving Legacy CMS for 10x Speed &amp; Google SEO</h2>
+              <p class="blog-excerpt">Tired of 4-second loading times, plugin bloat, and sinking Google rankings? Discover how modern static-rendered Next.js architectures score 100/100 Core Web Vitals, crush bounce rates, and outrank competitors in Google search.</p>
+            </div>
+            <div>
+              <div class="blog-meta">
+                <span>By Rahul Kumar Dhal · 7 min read</span>
+                <span class="small t-muted">November 2026</span>
+              </div>
+              <button type="button" class="btn btn-gold btn-sm" style="width:100%;margin-top:.8rem" onclick="openBlogArticle('nextjs-vs-wordpress')">Read Full Guide →</button>
+            </div>
+          </article>
           <!-- ARTICLE 1 -->
           <article class="blog-card reveal" data-category="realestate sovereign">
             <div>
@@ -3516,14 +3598,14 @@
         linkAction: "switchPage('portfolio')"
       },
       {
-        tag: "FEATURED WORK 02 / 06 • COSTA FURTUNE",
-        badge: "COSTA FURTUNE TOWNSHIP",
-        title: "Costa Furtune Master Township Platform",
+        tag: "FEATURED WORK 02 / 06 • COSTA FORTUNE",
+        badge: "COSTA FORTUNE TOWNSHIP",
+        title: "Costa Fortune Master Township Platform",
         desc: "Architectural web platform for Sai Harmony's 3-phase master township in Bhubaneswar. Featuring 4K drone cinematography, interactive CAD blueprints, and gated brochure downloads.",
         metric: "4.5-Acre Master Township · Live Platform",
         image: "images/work/costa-furtune-township.webp",
-        url: "https://buddyaipartners.github.io/costa-furtune/",
-        displayUrl: "buddyaipartners.github.io/costa-furtune",
+        url: "https://www.saiharmony.com/",
+        displayUrl: "saiharmony.com · Costa Fortune Master Township",
         cta: "Visit Live Website &nearr;",
         external: true
       },
@@ -3534,8 +3616,8 @@
         desc: "Vertical G+3 lifestyle clubhouse experience crowned with a 4th floor open-to-sky party terrace, 20 certified brochure indulgences, and statutory architectural schedules.",
         metric: "G+3 Vertical Clubhouse · Construction Ready",
         image: "images/work/club-costa-fantacy.webp",
-        url: "https://buddyaipartners.github.io/costa-furtune/clubhouse.html",
-        displayUrl: "buddyaipartners.github.io/costa-furtune/clubhouse.html",
+        url: "https://www.saiharmony.com/clubhouse.html",
+        displayUrl: "saiharmony.com/clubhouse.html · Club Fantacy",
         cta: "Visit Club Platform &nearr;",
         external: true
       },
@@ -3621,7 +3703,7 @@
               '<span class="caro-scroll-badge"><span class="pulse-green"></span> ⚡ AUTO-SCROLL PREVIEW</span>' +
             '</a>' +
           '</div>' +
-          '<div style="margin-top:0.9rem;padding:.75rem .9rem;border-radius:12px;border:1px solid var(--line);background:rgba(3,7,16,.65);display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap">' +
+          '<div class="caro-meta-pill" style="margin-top:0.9rem;padding:.75rem .9rem;border-radius:12px;border:1px solid var(--line);background:rgba(3,7,16,.65);display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap">' +
             '<span class="mono xsmall" style="color:var(--mint);display:flex;align-items:center;gap:6px;"><span style="color:var(--gold);">◆</span> ' + s.metric + '</span>' +
             '<a ' + actionAttr + ' class="link-arrow" style="background:none;border:0;cursor:pointer;color:var(--sky-soft);font-weight:600;text-decoration:none;">' + s.cta + '</a>' +
           '</div>';
@@ -4597,6 +4679,49 @@
   <script>
     // Blog articles data store
     var BLOG_ARTICLES = {
+      'gpu-ai-architecture': {
+        category: 'AI & GPU Infrastructure',
+        badgeClass: 'gpu',
+        title: 'What is a GPU and Why Is It the Engine of Modern AI? The Jensen Huang & NVIDIA Paradigm Explained',
+        author: 'Rahul Kumar Dhal · Google Certified AI Architect',
+        date: 'November 2026',
+        body: '<p class="lead" style="color:var(--sky-soft)">Artificial Intelligence is not code running on general-purpose computers. AI is massive mathematical transformation running across thousands of micro-cores working in unison. At the heart of this revolution is the GPU (Graphics Processing Unit) — and the vision of NVIDIA Founder Jensen Huang.</p>' +
+              '<h3 style="color:#76b900;margin:1.4rem 0 .5rem">1. CPU vs. GPU: Sequential Precision vs. Massive Parallelism</h3>' +
+              '<p>A modern CPU (Central Processing Unit) from Intel or AMD has 8 to 64 high-speed cores designed to execute complex, linear tasks one after another — like a brilliant mathematician solving an intricate equation step-by-step.</p>' +
+              '<p>A GPU (Graphics Processing Unit), by contrast, has <strong>10,000 to 18,000 smaller cores</strong> designed to perform simple arithmetic calculations simultaneously — like a stadium of 15,000 students doing basic multiplication at the exact same second.</p>' +
+              '<p>Graphics rendering originally required calculating the color and lighting of 8 million pixels 60 times a second. But in the 2010s, computer scientists made a historic breakthrough: <em>the mathematics required to render 3D pixels is identical to the matrix multiplication required to train artificial neural networks.</em></p>' +
+              '<h3 style="color:#76b900;margin:1.4rem 0 .5rem">2. The 2006 CUDA Gamble That Built a .5 Trillion Empire</h3>' +
+              '<p>In 2006, Jensen Huang made a bold bet that wall-street analysts ridiculed: he invested billions of dollars to build <strong>CUDA</strong> (Compute Unified Device Architecture). CUDA allowed developers to write C/C++ and Python code that ran directly on GPU cores for general computing.</p>' +
+              '<p>When AlexNet won the ImageNet competition in 2012 by training on two consumer NVIDIA GeForce GTX 580 GPUs, it shattered CPU-based AI benchmarks. Overnight, AI stopped being a software problem and became a GPU acceleration problem.</p>' +
+              '<h3 style="color:#76b900;margin:1.4rem 0 .5rem">3. Inside Tensor Cores and High-Bandwidth Memory (HBM)</h3>' +
+              '<p>Modern AI GPUs (such as the H100, H200, and the new Blackwell B200) contain specialized silicon called <strong>Tensor Cores</strong>. These cores calculate 4x4 matrix multiplications in a single clock cycle using reduced precision (FP8 and FP16), slashing power consumption while delivering petaflops of compute.</p>' +
+              '<p>Crucially, LLMs like GPT-4, Claude, and Llama 3 are memory-bandwidth bound. Modern GPUs use <strong>HBM3e (High-Bandwidth Memory)</strong> capable of streaming 8 terabytes per second directly to the compute dies, eliminating memory bottlenecks.</p>' +
+              '<h3 style="color:#76b900;margin:1.4rem 0 .5rem">4. Training vs. Inference: Why Businesses Care in 2026</h3>' +
+              '<p><strong>AI Training</strong> requires clusters of thousands of high-end GPUs (e.g. 24,000 H100s) crunching trillions of tokens for months at millions of dollars in electricity.</p>' +
+              '<p><strong>AI Inference</strong> is running the trained model to answer a customer question in under 800 milliseconds. Today, optimized engines like vLLM, TensorRT-LLM, and quantized local models allow Indian businesses to run private, secure AI agents on dedicated local GPUs or specialized inference endpoints (like Groq and LPUs) at a fraction of cloud API costs.</p>' +
+              '<h3 style="color:#76b900;margin:1.4rem 0 .5rem">5. The Future: Sovereign AI for Indian Enterprises</h3>' +
+              '<p>As Jensen Huang frequently emphasizes, every nation and every enterprise will eventually own its own <em>AI Factory</em>. Relying entirely on foreign cloud APIs risks data sovereignty, latency spikes, and subscription price hikes. At Buddy AI Partners, we design sovereign AI systems that give Indian enterprises full ownership of their data, models, and execution layer.</p>'
+      },
+      'nextjs-vs-wordpress': {
+        category: 'Web Architecture & SEO',
+        badgeClass: 'web',
+        title: 'Next.js vs. WordPress in 2026: Why Modern Indian Businesses Are Leaving Legacy CMS for 10x Speed & Google SEO',
+        author: 'Rahul Kumar Dhal · Systems Architect',
+        date: 'November 2026',
+        body: '<p class="lead" style="color:var(--sky-soft)">In 2026, website speed is no longer just a luxury — it is a direct Google ranking factor and conversion driver. Yet millions of Indian businesses remain trapped on outdated, sluggish WordPress websites.</p>' +
+              '<h3 style="color:#38bdf8;margin:1.4rem 0 .5rem">1. The Hidden Cost of WordPress Plugins &amp; MySQL Bloat</h3>' +
+              '<p>WordPress was created in 2003 as a personal blogging tool. To turn it into a modern business portal, companies install 25+ plugins (Elementor, WooCommerce, SEO tools, caching plugins). Every page load executes hundreds of unoptimized SQL queries, dragging mobile load times past 4.2 seconds.</p>' +
+              '<p>According to Google data, <strong>53% of mobile visitors abandon a website that takes longer than 3 seconds to load</strong>.</p>' +
+              '<h3 style="color:#38bdf8;margin:1.4rem 0 .5rem">2. The Next.js Advantage: Pre-Rendered, Sub-Second Performance</h3>' +
+              '<p>Next.js compiles pages at build time into pure HTML, CSS, and edge-cached JavaScript. When a customer taps your link from a Meta ad or Google search, the page loads in <strong>under 350 milliseconds</strong> — virtually instantaneous.</p>' +
+              '<ul style="padding-left:1.4rem;margin:1rem 0">' +
+              '<li><strong>Zero Database Latency:</strong> Content is served directly from global Edge CDNs.</li>' +
+              '<li><strong>100/100 Core Web Vitals:</strong> Perfect scores on Largest Contentful Paint (LCP) and Cumulative Layout Shift (CLS) give you an immediate organic ranking advantage in Google Search.</li>' +
+              '<li><strong>Zero Plugin Vulnerabilities:</strong> No PHP backend for hackers to exploit, drastically reducing security maintenance costs.</li>' +
+              '</ul>' +
+              '<h3 style="color:#38bdf8;margin:1.4rem 0 .5rem">3. Seamless Modernization for Indian Enterprises</h3>' +
+              '<p>Buddy AI Partners specializes in migrating legacy WordPress and Wix sites to lightweight, ultra-modern Next.js platforms in 7 to 14 days, preserving all existing SEO equity while dramatically multiplying lead conversion rates.</p>'
+      },
       're-database': {
         category: 'Real Estate Proptech',
         badgeClass: 're',
