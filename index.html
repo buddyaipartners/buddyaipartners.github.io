@@ -15,6 +15,8 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    gtag('config', 'GTM-5786D7BS');
+    gtag('config', 'G-222739543');
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -638,7 +640,40 @@
     .loop-wrap { grid-template-columns: 1fr !important; }
     .loop-steps { grid-template-columns: 1fr !important; }
     .proc-rail { grid-template-columns: 1fr !important; }
-    .caro { grid-template-columns: 1fr !important; }
+    .caro { grid-template-columns: 1fr !important; gap: 0 !important; }
+    #heroCarouselCard { padding: 0 !important; overflow: hidden; }
+    #heroCarouselCard > div:first-child { padding: clamp(1rem, 4vw, 1.4rem) !important; }
+    #heroCarousel {
+      border-left: 0 !important;
+      border-top: 1px solid var(--line) !important;
+      padding: clamp(1rem, 4vw, 1.4rem) !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .caro-preview-frame {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .caro-viewport {
+      height: clamp(165px, 46vw, 215px) !important;
+    }
+    .caro-browser-bar {
+      padding: 6px 10px !important;
+    }
+    .caro-browser-url {
+      font-size: 10px !important;
+      max-width: calc(100vw - 110px) !important;
+    }
+    .caro-steps {
+      flex-wrap: wrap !important;
+      gap: 0.35rem !important;
+    }
+    .caro-meta-pill {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 0.5rem !important;
+    }
 
     .filter-bar {
       flex-direction: column !important;
@@ -747,8 +782,20 @@
     .kpi-cap { margin-top: .45rem; font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
 
     /* ---------- Capability carousel ---------- */
-    .caro { display: grid; gap: 1.2rem; grid-template-columns: 1fr; align-items: stretch; }
-    @media (min-width: 900px) { .caro { grid-template-columns: .82fr 1.18fr; } }
+    .caro { display: grid; gap: 0; grid-template-columns: 1fr; align-items: stretch; }
+    @media (min-width: 900px) { .caro { grid-template-columns: .82fr 1.18fr; gap: 1.2rem; } }
+    #heroCarousel {
+      padding: clamp(1.15rem, 2.6vw, 1.7rem);
+      border-top: 1px solid var(--line);
+      width: 100%;
+      box-sizing: border-box;
+    }
+    @media (min-width: 900px) {
+      #heroCarousel {
+        border-top: none;
+        border-left: 1px solid var(--line);
+      }
+    }
     .caro-steps { display: flex; gap: .45rem; margin-top: 1rem; }
     .slide-dot { height: 4px; border-radius: 99px; background: rgba(56, 189, 248, .2); border: 0; padding: 0; transition: background-color .4s, width .4s var(--ease); width: 10px; cursor: pointer; }
     .slide-dot.on { width: 32px; background: linear-gradient(90deg, var(--sky-deep), var(--sky-soft)); }
@@ -1668,7 +1715,7 @@
             <div style="margin-top:1.4rem;">
               <div class="caro-steps" id="caroDots" role="tablist" aria-label="Work showcase switcher">
                 <button type="button" class="slide-dot on" role="tab" aria-selected="true" aria-label="Work 1: KNR Integrity" onclick="setSlide(0)"></button>
-                <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 2: Costa Furtune" onclick="setSlide(1)"></button>
+                <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 2: Costa Fortune" onclick="setSlide(1)"></button>
                 <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 3: Club Costa Fantacy" onclick="setSlide(2)"></button>
                 <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 4: Custom CRM Dashboard" onclick="setSlide(3)"></button>
                 <button type="button" class="slide-dot" role="tab" aria-selected="false" aria-label="Work 5: Buddy AI Sales Agent" onclick="setSlide(4)"></button>
@@ -1677,7 +1724,7 @@
               <div class="slide-progress" aria-hidden="true"><span id="slideProgress"></span></div>
             </div>
           </div>
-          <div style="padding:clamp(1.15rem,2.6vw,1.7rem);border-left:1px solid var(--line)" id="heroCarousel"></div>
+          <div id="heroCarousel"></div>
         </div>
       </div>
     </div>
@@ -3515,14 +3562,14 @@
         linkAction: "switchPage('portfolio')"
       },
       {
-        tag: "FEATURED WORK 02 / 06 • COSTA FURTUNE",
-        badge: "COSTA FURTUNE TOWNSHIP",
-        title: "Costa Furtune Master Township Platform",
+        tag: "FEATURED WORK 02 / 06 • COSTA FORTUNE",
+        badge: "COSTA FORTUNE TOWNSHIP",
+        title: "Costa Fortune Master Township Platform",
         desc: "Architectural web platform for Sai Harmony's 3-phase master township in Bhubaneswar. Featuring 4K drone cinematography, interactive CAD blueprints, and gated brochure downloads.",
         metric: "4.5-Acre Master Township · Live Platform",
         image: "images/work/costa-furtune-township.webp",
-        url: "https://buddyaipartners.github.io/costa-furtune/",
-        displayUrl: "buddyaipartners.github.io/costa-furtune",
+        url: "https://www.saiharmony.com/",
+        displayUrl: "saiharmony.com · Costa Fortune Master Township",
         cta: "Visit Live Website &nearr;",
         external: true
       },
@@ -3533,8 +3580,8 @@
         desc: "Vertical G+3 lifestyle clubhouse experience crowned with a 4th floor open-to-sky party terrace, 20 certified brochure indulgences, and statutory architectural schedules.",
         metric: "G+3 Vertical Clubhouse · Construction Ready",
         image: "images/work/club-costa-fantacy.webp",
-        url: "https://buddyaipartners.github.io/costa-furtune/clubhouse.html",
-        displayUrl: "buddyaipartners.github.io/costa-furtune/clubhouse.html",
+        url: "https://www.saiharmony.com/clubhouse.html",
+        displayUrl: "saiharmony.com/clubhouse.html · Club Fantacy",
         cta: "Visit Club Platform &nearr;",
         external: true
       },
@@ -3620,7 +3667,7 @@
               '<span class="caro-scroll-badge"><span class="pulse-green"></span> ⚡ AUTO-SCROLL PREVIEW</span>' +
             '</a>' +
           '</div>' +
-          '<div style="margin-top:0.9rem;padding:.75rem .9rem;border-radius:12px;border:1px solid var(--line);background:rgba(3,7,16,.65);display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap">' +
+          '<div class="caro-meta-pill" style="margin-top:0.9rem;padding:.75rem .9rem;border-radius:12px;border:1px solid var(--line);background:rgba(3,7,16,.65);display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap">' +
             '<span class="mono xsmall" style="color:var(--mint);display:flex;align-items:center;gap:6px;"><span style="color:var(--gold);">◆</span> ' + s.metric + '</span>' +
             '<a ' + actionAttr + ' class="link-arrow" style="background:none;border:0;cursor:pointer;color:var(--sky-soft);font-weight:600;text-decoration:none;">' + s.cta + '</a>' +
           '</div>';
