@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Buddy AI Operating App & Autonomous Business OS | BUDDY AI PARTNERS</title>
+  <meta name="description" content="Deploy Buddy — the sovereign autonomous AI operator for sales qualification, WhatsApp triage, and CRM lead capture. The flagship commercial AI operating app for modern enterprises." />
+  <meta name="keywords" content="Buddy AI App, Autonomous Business OS, WhatsApp AI Bot, Real Estate AI Agent, Clinic AI Receptionist, CRM Lead Engine, Bhubaneswar Software" />
+  <link rel="canonical" href="https://buddyaipartners.github.io/app/" />
+  
+  <!-- PWA & Mobile Web App Manifest -->
+  <link rel="manifest" href="../site.webmanifest" />
+  <meta name="theme-color" content="#040A16" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #030712;
+      --bg-card: rgba(10, 18, 36, 0.75);
+      --bg-card-hover: rgba(16, 28, 54, 0.85);
+      --line: rgba(255, 255, 255, 0.08);
+      --line-strong: rgba(0, 240, 255, 0.25);
+      --cyan: #00F0FF;
+      --gold: #D4AF37;
+      --gold-hover: #E5C358;
+      --green: #25D366;
+      --crimson: #E63946;
+      --ink: #FFFFFF;
+      --muted: #94A3B8;
+      --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-display: 'Playfair Display', serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    body {
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(212, 175, 55, 0.04) 0%, transparent 40%);
+      color: var(--ink);
+      font-family: var(--font-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Top Navigation Bar */
+    header.app-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.5rem;
+      background: rgba(3, 7, 18, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .brand-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit; }
+    .brand-logo { width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--line-strong); }
+    .brand-title { font-size: 1.05rem; font-weight: 800; letter-spacing: -0.01em; display: flex; align-items: center; gap: 0.4rem; }
+    .brand-badge { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; background: rgba(0, 240, 255, 0.12); color: var(--cyan); padding: 0.2rem 0.5rem; border-radius: 6px; letter-spacing: 0.05em; }
+    
+    .header-controls { display: flex; align-items: center; gap: 0.75rem; }
+    .live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); display: inline-block; animation: pulse 2s infinite; }
+    .status-pill { display: flex; align-items: center; gap: 0.45rem; font-size: 0.75rem; color: var(--muted); background: rgba(255, 255, 255, 0.04); padding: 0.35rem 0.75rem; border-radius: 20px; border: 1px solid var(--line); }
+    
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; font-family: var(--font-main); font-size: 0.82rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 10px; cursor: pointer; transition: all 0.2s ease; border: none; text-decoration: none; }
+    .btn-gold { background: linear-gradient(135deg, #D4AF37, #B38F24); color: #020610; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25); }
+    .btn-gold:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); }
+    .btn-cyan { background: rgba(0, 240, 255, 0.12); color: var(--cyan); border: 1px solid rgba(0, 240, 255, 0.3); }
+    .btn-cyan:hover { background: rgba(0, 240, 255, 0.2); border-color: var(--cyan); }
+    .btn-wa { background: #25D366; color: #011307; font-weight: 700; }
+    .btn-wa:hover { background: #22BF5B; transform: translateY(-1px); }
+
+    /* Navigation Tabs */
+    .app-nav { display: flex; gap: 0.5rem; padding: 0.6rem 1.5rem; background: rgba(5, 10, 24, 0.6); border-bottom: 1px solid var(--line); overflow-x: auto; }
+    .nav-tab { background: transparent; color: var(--muted); border: 1px solid transparent; padding: 0.45rem 0.9rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.2s; white-space: nowrap; display: flex; align-items: center; gap: 0.4rem; }
+    .nav-tab:hover { color: var(--ink); background: rgba(255, 255, 255, 0.04); }
+    .nav-tab.active { background: rgba(0, 240, 255, 0.1); color: var(--cyan); border-color: rgba(0, 240, 255, 0.25); }
+
+    /* Main Container Split View */
+    .app-main { flex: 1; display: grid; grid-template-columns: 1fr 380px; gap: 1.5rem; padding: 1.5rem; max-width: 1560px; margin: 0 auto; width: 100%; }
+    @media (max-width: 1024px) {
+      .app-main { grid-template-columns: 1fr; }
+    }
+
+    /* Left Console: Chat & Simulator */
+    .console-pane { display: flex; flex-direction: column; background: var(--bg-card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; backdrop-filter: blur(20px); min-height: 600px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+    
+    .console-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, 0.02); }
+    .operator-profile { display: flex; align-items: center; gap: 0.75rem; }
+    .operator-avatar { width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, #00F0FF, #D4AF37); padding: 2px; }
+    .operator-avatar img { width: 100%; height: 100%; border-radius: 10px; background: #030712; }
+    .operator-info h3 { font-size: 0.95rem; font-weight: 700; color: var(--ink); }
+    .operator-info p { font-size: 0.75rem; color: var(--muted); }
+    
+    /* Preset Selector */
+    .preset-selector { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .preset-chip { font-size: 0.72rem; padding: 0.35rem 0.7rem; border-radius: 8px; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line); color: var(--muted); cursor: pointer; transition: all 0.2s; }
+    .preset-chip:hover { border-color: var(--line-strong); color: var(--ink); }
+    .preset-chip.active { background: rgba(212, 175, 55, 0.15); border-color: var(--gold); color: var(--gold); font-weight: 600; }
+
+    /* Chat Messages Box */
+    .chat-body { flex: 1; padding: 1.25rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem; max-height: 520px; }
+    .chat-bubble { max-width: 82%; padding: 0.85rem 1.15rem; border-radius: 16px; font-size: 0.88rem; line-height: 1.55; position: relative; word-break: break-word; }
+    .chat-bubble.bot { align-self: flex-start; background: rgba(16, 28, 54, 0.7); border: 1px solid var(--line); color: #E2E8F0; border-bottom-left-radius: 4px; }
+    .chat-bubble.user { align-self: flex-end; background: linear-gradient(135deg, #007799, #005577); color: #FFFFFF; border-bottom-right-radius: 4px; }
+    
+    .quick-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
+    .quick-chip { font-size: 0.75rem; background: rgba(0, 240, 255, 0.08); border: 1px solid rgba(0, 240, 255, 0.25); color: var(--cyan); padding: 0.4rem 0.8rem; border-radius: 20px; cursor: pointer; transition: all 0.2s; }
+    .quick-chip:hover { background: rgba(0, 240, 255, 0.18); transform: translateY(-1px); }
+
+    /* Input Bar */
+    .console-input-bar { display: flex; gap: 0.6rem; padding: 1rem 1.25rem; border-top: 1px solid var(--line); background: rgba(255, 255, 255, 0.02); }
+    .console-input { flex: 1; background: rgba(0, 0, 0, 0.4); border: 1px solid var(--line); border-radius: 12px; padding: 0.75rem 1rem; color: var(--ink); font-family: var(--font-main); font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
+    .console-input:focus { border-color: var(--cyan); box-shadow: 0 0 12px rgba(0, 240, 255, 0.2); }
+
+    /* Right Sidebar: Deal Dossier & CRM Pipeline */
+    .sidebar-pane { display: flex; flex-direction: column; gap: 1.25rem; }
+    
+    .card { background: var(--bg-card); border: 1px solid var(--line); border-radius: 18px; padding: 1.25rem; backdrop-filter: blur(20px); }
+    .card-title { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold); display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+    
+    .dossier-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .dossier-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    .dossier-label { color: var(--muted); font-size: 0.78rem; }
+    .dossier-val { font-weight: 600; color: var(--ink); text-align: right; }
+    .dossier-val.empty { color: #64748B; font-weight: 400; font-style: italic; }
+    .dossier-val.highlight { color: var(--cyan); font-family: var(--font-mono); }
+
+    /* Pricing & Commercial Packages */
+    .tier-card { border: 1px solid var(--line); border-radius: 12px; padding: 1rem; margin-top: 0.75rem; background: rgba(255, 255, 255, 0.02); transition: all 0.2s; }
+    .tier-card:hover { border-color: var(--gold); transform: translateY(-2px); background: rgba(212, 175, 55, 0.05); }
+    .tier-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.4rem; }
+    .tier-name { font-size: 0.85rem; font-weight: 700; color: var(--ink); }
+    .tier-price { font-size: 1.1rem; font-weight: 800; color: var(--gold); font-family: var(--font-mono); }
+    .tier-desc { font-size: 0.75rem; color: var(--muted); line-height: 1.45; margin-bottom: 0.6rem; }
+
+    /* ROI Calculator Slider */
+    .calc-slider { width: 100%; margin: 0.6rem 0; accent-color: var(--cyan); }
+    .calc-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.8rem; }
+    .metric-box { background: rgba(0, 0, 0, 0.3); border: 1px solid var(--line); border-radius: 10px; padding: 0.75rem; text-align: center; }
+    .metric-val { font-size: 1.2rem; font-weight: 800; color: var(--green); font-family: var(--font-mono); }
+    .metric-label { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; margin-top: 0.2rem; }
+
+    @keyframes pulse {
+      0% { opacity: 0.6; transform: scale(0.95); }
+      50% { opacity: 1; transform: scale(1.1); }
+      100% { opacity: 0.6; transform: scale(0.95); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Application Header -->
+  <header class="app-header">
+    <a href="../" class="brand-wrap">
+      <img src="../images/logo-orbital.webp" alt="Buddy AI Partners logo" class="brand-logo" />
+      <div>
+        <div class="brand-title">BUDDY AI <span class="brand-badge">Autonomous OS</span></div>
+      </div>
+    </a>
+
+    <div class="header-controls">
+      <div class="status-pill">
+        <span class="live-dot"></span>
+        <span>Operator Active · Sub-1s SLA</span>
+      </div>
+      <button type="button" class="btn btn-cyan hide-sm" onclick="installAppPrompt()">
+        📥 Install App
+      </button>
+      <a href="https://wa.me/917328089908?text=Hello%20Rahul,%20I%20am%20using%20the%20Buddy%20AI%20Operating%20App%20and%20want%20to%20deploy%20it%20for%20my%20business." target="_blank" class="btn btn-gold">
+        Deploy for Business →
+      </a>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="app-nav">
+    <button class="nav-tab active" onclick="switchTab('chat')">💬 Live Operator Chat</button>
+    <button class="nav-tab" onclick="switchTab('calculator')">📊 Lead ROI Calculator</button>
+    <button class="nav-tab" onclick="switchTab('store')">💎 Commercial Packages</button>
+    <button class="nav-tab" onclick="switchTab('pipeline')">⚡ Inbound Pipeline SLA</button>
+  </nav>
+
+  <!-- Main View -->
+  <main class="app-main">
+
+    <!-- Tab 1: Live Operator Chat -->
+    <section id="view-chat" class="console-pane">
+      <div class="console-header">
+        <div class="operator-profile">
+          <div class="operator-avatar">
+            <img src="../images/logo-orbital.webp" alt="Buddy Avatar" />
+          </div>
+          <div class="operator-info">
+            <h3>Buddy — Sovereign Enterprise Concierge</h3>
+            <p>Multilingual: English, Hindi & Odia · Real-Time Deal Extraction</p>
+          </div>
+        </div>
+
+        <!-- Industry Presets -->
+        <div class="preset-selector">
+          <button class="preset-chip active" onclick="setPreset('realestate')">🏢 Real Estate</button>
+          <button class="preset-chip" onclick="setPreset('healthcare')">🩺 Clinic & Lab</button>
+          <button class="preset-chip" onclick="setPreset('b2b')">💼 B2B & Agency</button>
+          <button class="preset-chip" onclick="setPreset('msme')">🛍️ Retail & MSME</button>
+        </div>
+      </div>
+
+      <div class="chat-body" id="chatLog">
+        <div class="chat-bubble bot">
+          Namaskar! 👋 I am <strong>Buddy</strong>, your autonomous business operator. I handle lead qualification, book appointments, answer pricing questions, and dispatch prefilled client briefs to WhatsApp 24/7.
+          <br><br>
+          Select an industry preset above or ask me anything below:
+        </div>
+        
+        <div class="quick-actions" id="quickActions">
+          <span class="quick-chip" onclick="sendQuick('How much does it cost to automate my sales on WhatsApp?')">💰 Pricing & Deployment Cost</span>
+          <span class="quick-chip" onclick="sendQuick('Can you book an appointment and qualify budget?')">📅 Test Lead Qualification</span>
+          <span class="quick-chip" onclick="sendQuick('Do you support clinics, doctors, and diagnostics?')">🩺 Clinic Booking Demo</span>
+          <span class="quick-chip" onclick="sendQuick('I want Buddy deployed for my real estate agency.')">🏢 Real Estate Concierge</span>
+        </div>
+      </div>
+
+      <div class="console-input-bar">
+        <input type="text" id="userInput" class="console-input" placeholder="Type your inquiry or business requirement…" onkeydown="if(event.key==='Enter') sendMessage()" />
+        <button type="button" class="btn btn-cyan" onclick="sendMessage()">Send ➤</button>
+      </div>
+    </section>
+
+    <!-- Tab 2: ROI Calculator (Hidden by default) -->
+    <section id="view-calculator" class="console-pane" style="display:none; padding:2rem;">
+      <h2 style="font-size:1.4rem; margin-bottom:0.5rem; color:var(--cyan);">Autonomous Business ROI Calculator</h2>
+      <p style="color:var(--muted); font-size:0.85rem; margin-bottom:1.5rem;">Estimate how much revenue your business loses due to slow response times, and what Buddy AI recovers automatically.</p>
+
+      <div style="margin-bottom:1.25rem;">
+        <label style="font-size:0.85rem; color:var(--ink);">Monthly Inbound Inquiries: <strong id="lblLeads" style="color:var(--cyan)">120 leads</strong></label>
+        <input type="range" class="calc-slider" id="sliderLeads" min="20" max="1000" step="10" value="120" oninput="updateROI()" />
+      </div>
+
+      <div style="margin-bottom:1.25rem;">
+        <label style="font-size:0.85rem; color:var(--ink);">Average Deal / Order Value (₹): <strong id="lblDeal" style="color:var(--gold)">₹25,000</strong></label>
+        <input type="range" class="calc-slider" id="sliderDeal" min="1000" max="200000" step="1000" value="25000" oninput="updateROI()" />
+      </div>
+
+      <div style="margin-bottom:1.5rem;">
+        <label style="font-size:0.85rem; color:var(--ink);">Current Team Response Time: <strong id="lblTime" style="color:var(--crimson)">4 Hours</strong></label>
+        <input type="range" class="calc-slider" id="sliderTime" min="1" max="24" step="1" value="4" oninput="updateROI()" />
+      </div>
+
+      <div class="calc-metrics">
+        <div class="metric-box">
+          <div class="metric-val" id="metricLost" style="color:var(--crimson)">₹6,00,000</div>
+          <div class="metric-label">Estimated Lost Sales / Year</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-val" id="metricRecovered">₹4,50,000</div>
+          <div class="metric-label">Recovered with Buddy AI (Sub-2s)</div>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem; text-align:center;">
+        <a id="btnClaimROI" href="https://wa.me/917328089908?text=Hello%20Rahul,%20I%20calculated%20my%20ROI%20and%20want%20to%20recover%20lost%20revenue." target="_blank" class="btn btn-gold" style="padding:0.75rem 2rem; font-size:0.95rem;">
+          Recover This Revenue on WhatsApp →
+        </a>
+      </div>
+    </section>
+
+    <!-- Tab 3: Commercial Packages (Hidden by default) -->
+    <section id="view-store" class="console-pane" style="display:none; padding:1.5rem;">
+      <h2 style="font-size:1.3rem; margin-bottom:0.4rem; color:var(--gold);">Commercial Software Packages</h2>
+      <p style="color:var(--muted); font-size:0.82rem; margin-bottom:1rem;">Deploy verified, production-ready AI software into your business in 24 to 72 hours.</p>
+
+      <div class="tier-card">
+        <div class="tier-header">
+          <div class="tier-name">1. Personal Assistant Starter</div>
+          <div class="tier-price">₹3,500</div>
+        </div>
+        <div class="tier-desc">One-time setup of autonomous AI assistant on laptop or mobile. Local offline memory, WhatsApp drafting, and daily scheduling.</div>
+        <a href="https://wa.me/917328089908?text=I%20want%20to%20order%20the%20Starter%20Pack%20(₹3,500)" target="_blank" class="btn btn-cyan btn-sm">Order Starter Pack</a>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-header">
+          <div class="tier-name">2. Lead Engine + Scraper</div>
+          <div class="tier-price">₹24,999</div>
+        </div>
+        <div class="tier-desc">Multi-channel lead scraper (Google Maps + B2B directories), auto-qualification, and sub-5-minute calling queue.</div>
+        <a href="https://wa.me/917328089908?text=I%20want%20to%20order%20the%20Lead%20Engine%20(₹24,999)" target="_blank" class="btn btn-gold btn-sm">Deploy Lead Engine</a>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-header">
+          <div class="tier-name">3. Autonomous Business CRM</div>
+          <div class="tier-price">₹49,999</div>
+        </div>
+        <div class="tier-desc">Full sovereign CRM pipeline with AI WhatsApp concierge, automated lead triage, stage management, and live telemetry.</div>
+        <a href="https://wa.me/917328089908?text=I%20want%20to%20order%20the%20Autonomous%20CRM%20(₹49,999)" target="_blank" class="btn btn-gold btn-sm">Deploy CRM System</a>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-header">
+          <div class="tier-name">4. Enterprise Software Swarm</div>
+          <div class="tier-price">₹89,999</div>
+        </div>
+        <div class="tier-desc">Custom web application + 7 autonomous office agents, private data sovereignty, and dedicated 24/7 cloud server.</div>
+        <a href="https://wa.me/917328089908?text=I%20want%20to%20order%20the%20Enterprise%20Swarm%20(₹89,999)" target="_blank" class="btn btn-wa btn-sm">Deploy Enterprise Swarm</a>
+      </div>
+    </section>
+
+    <!-- Tab 4: Inbound Pipeline SLA (Hidden by default) -->
+    <section id="view-pipeline" class="console-pane" style="display:none; padding:2rem;">
+      <h2 style="font-size:1.3rem; margin-bottom:0.5rem; color:var(--cyan);">Autonomous 4-Stage Lead Pipeline</h2>
+      <p style="color:var(--muted); font-size:0.85rem; margin-bottom:1.5rem;">How Buddy AI captures, qualifies, and closes leads without human delay.</p>
+
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        <div class="card" style="border-left:4px solid var(--cyan);">
+          <h4 style="font-size:0.9rem; color:var(--cyan);">STAGE 01 · INGESTION (&lt;2s)</h4>
+          <p style="font-size:0.8rem; color:var(--muted); margin-top:0.3rem;">Inbound inquiry from Website, WhatsApp, Meta Ad or Google Search triggers instant greeting in user's native language (Odia/Hindi/English).</p>
+        </div>
+        <div class="card" style="border-left:4px solid var(--gold);">
+          <h4 style="font-size:0.9rem; color:var(--gold);">STAGE 02 · INTENT & BUDGET SCORING</h4>
+          <p style="font-size:0.8rem; color:var(--muted); margin-top:0.3rem;">AI asks 3 smart diagnostic questions. Extracts budget range, project/treatment type, and purchase timeline.</p>
+        </div>
+        <div class="card" style="border-left:4px solid var(--green);">
+          <h4 style="font-size:0.9rem; color:var(--green);">STAGE 03 · CALENDAR & WHATSAPP HANDOFF</h4>
+          <p style="font-size:0.8rem; color:var(--muted); margin-top:0.3rem;">Books confirmed slot. Structured Deal Dossier is automatically delivered to the business owner's personal WhatsApp.</p>
+        </div>
+        <div class="card" style="border-left:4px solid #A855F7;">
+          <h4 style="font-size:0.9rem; color:#A855F7;">STAGE 04 · 48-HOUR AUTO-NUDGE</h4>
+          <p style="font-size:0.8rem; color:var(--muted); margin-top:0.3rem;">If lead hasn't completed booking, Buddy AI sends courteous follow-up with floor plans or diagnostic checklist before they cool down.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Sidebar: Deal Dossier & Actions -->
+    <aside class="sidebar-pane">
+      <div class="card">
+        <div class="card-title">
+          <span>Active Deal Dossier</span>
+          <span style="color:var(--cyan); font-size:0.7rem; font-family:var(--font-mono);">AUTO-PARSED</span>
+        </div>
+
+        <div class="dossier-list">
+          <div class="dossier-row">
+            <span class="dossier-label">Industry / Sector</span>
+            <span class="dossier-val highlight" id="briefSector">Real Estate</span>
+          </div>
+          <div class="dossier-row">
+            <span class="dossier-label">Primary Goal</span>
+            <span class="dossier-val" id="briefGoal">Lead Qualification</span>
+          </div>
+          <div class="dossier-row">
+            <span class="dossier-label">Budget Tier</span>
+            <span class="dossier-val highlight" id="briefBudget">₹24,999 - ₹49,999</span>
+          </div>
+          <div class="dossier-row">
+            <span class="dossier-label">Implementation Timeline</span>
+            <span class="dossier-val" id="briefTimeline">Immediate (&lt;72h)</span>
+          </div>
+          <div class="dossier-row">
+            <span class="dossier-label">Client Name</span>
+            <span class="dossier-val empty" id="briefName">Pending…</span>
+          </div>
+          <div class="dossier-row">
+            <span class="dossier-label">Phone / WhatsApp</span>
+            <span class="dossier-val empty" id="briefPhone">Pending…</span>
+          </div>
+        </div>
+
+        <div style="margin-top:1.25rem; display:flex; flex-direction:column; gap:0.6rem;">
+          <a id="btnSendBrief" href="https://wa.me/917328089908?text=Hello%20Rahul,%20here%20is%20my%20Buddy%20AI%20Deal%20Dossier." target="_blank" class="btn btn-wa" style="width:100%;">
+            📲 Send Brief to WhatsApp
+          </a>
+          <button type="button" class="btn btn-cyan" onclick="copyBrief()" style="width:100%;">
+            📋 Copy Structured Dossier
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Contact & Founder Guarantee -->
+      <div class="card">
+        <div class="card-title">
+          <span>Sovereignty Guarantee</span>
+          <span style="color:var(--gold);">100% PRIVATE</span>
+        </div>
+        <p style="font-size:0.78rem; color:var(--muted); line-height:1.55;">
+          Unlike SaaS platforms that lock your client data, Buddy AI installs directly onto your servers, laptop, or private cloud. You own the code, the database, and the pipeline.
+        </p>
+        <div style="margin-top:0.8rem; font-size:0.75rem; color:var(--gold);">
+          ✦ Direct Founder SLA: Rahul Kumar Dhal (+91 73280 89908)
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <script>
+    // State
+    const DOSSIER = {
+      sector: 'Real Estate',
+      goal: 'Lead Qualification',
+      budget: '₹24,999 - ₹49,999',
+      timeline: 'Immediate (<72h)',
+      name: '',
+      phone: ''
+    };
+
+    const PRESETS = {
+      realestate: {
+        sector: 'Real Estate & Construction',
+        goal: 'Instant ORERA & Site-Visit Booking',
+        welcome: "Namaskar! 🏢 Welcome to Costa Furtune / Real Estate Concierge mode. I share verified ORERA details (MP/19/2024/01244), floor plans, and schedule VIP site visits on the Chandaka-Kantabada corridor.",
+        chips: [
+          'Show 3 BHK Crestview Pricing',
+          'Book a VIP site visit for this Sunday',
+          'Check ORERA & Bank Loan approvals'
+        ]
+      },
+      healthcare: {
+        sector: 'Diagnostics & Healthcare',
+        goal: 'Clinical OPD & MRI Slot Scheduling',
+        welcome: "Namaskar! 🩺 Welcome to TruScan Diagnostics Concierge. I schedule 1.5T MRI, CT Scans, and Blood Tests, verify prescriptions, and provide 4-hour fasting guidelines.",
+        chips: [
+          'Book MRI Brain Scan for tomorrow',
+          'OPD Doctor consultation timings',
+          'Home sample blood collection'
+        ]
+      },
+      b2b: {
+        sector: 'B2B & IT Services',
+        goal: 'Custom Software & CRM Engineering',
+        welcome: "Welcome to B2B Engineering mode. We architect Next.js web applications, sovereign PostgreSQL CRM engines, and autonomous Python scrapers.",
+        chips: [
+          'How much for an autonomous CRM?',
+          'What is your 48-hour delivery SLA?',
+          'Can you integrate WhatsApp Baileys API?'
+        ]
+      },
+      msme: {
+        sector: 'Retail & MSME Shop',
+        goal: 'Automated Catalog & Order Ingress',
+        welcome: "Hello! 🛍️ Welcome to MSME Shop Assistant. I take orders, verify stock availability, and share UPI QR payment links 24/7.",
+        chips: [
+          'Take product order on WhatsApp',
+          'Send UPI QR payment link',
+          'Track my parcel delivery status'
+        ]
+      }
+    };
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+      event.target.classList.add('active');
+
+      document.getElementById('view-chat').style.display = (tabId === 'chat') ? 'flex' : 'none';
+      document.getElementById('view-calculator').style.display = (tabId === 'calculator') ? 'block' : 'none';
+      document.getElementById('view-store').style.display = (tabId === 'store') ? 'block' : 'none';
+      document.getElementById('view-pipeline').style.display = (tabId === 'pipeline') ? 'block' : 'none';
+    }
+
+    function setPreset(key) {
+      document.querySelectorAll('.preset-chip').forEach(c => c.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const p = PRESETS[key];
+      DOSSIER.sector = p.sector;
+      DOSSIER.goal = p.goal;
+      updateDossierUI();
+
+      appendBotMessage(p.welcome);
+      updateQuickChips(p.chips);
+    }
+
+    function updateDossierUI() {
+      document.getElementById('briefSector').innerText = DOSSIER.sector;
+      document.getElementById('briefGoal').innerText = DOSSIER.goal;
+      document.getElementById('briefBudget').innerText = DOSSIER.budget;
+      document.getElementById('briefTimeline').innerText = DOSSIER.timeline;
+
+      const nameEl = document.getElementById('briefName');
+      nameEl.innerText = DOSSIER.name || 'Pending…';
+      nameEl.className = DOSSIER.name ? 'dossier-val' : 'dossier-val empty';
+
+      const phoneEl = document.getElementById('briefPhone');
+      phoneEl.innerText = DOSSIER.phone || 'Pending…';
+      phoneEl.className = DOSSIER.phone ? 'dossier-val highlight' : 'dossier-val empty';
+
+      // Update WhatsApp link
+      const text = `*New Lead Dossier — Buddy AI App*%0A` +
+        `• *Sector:* ${encodeURIComponent(DOSSIER.sector)}%0A` +
+        `• *Goal:* ${encodeURIComponent(DOSSIER.goal)}%0A` +
+        `• *Budget:* ${encodeURIComponent(DOSSIER.budget)}%0A` +
+        `• *Timeline:* ${encodeURIComponent(DOSSIER.timeline)}%0A` +
+        (DOSSIER.name ? `• *Name:* ${encodeURIComponent(DOSSIER.name)}%0A` : '') +
+        (DOSSIER.phone ? `• *Contact:* ${encodeURIComponent(DOSSIER.phone)}%0A` : '');
+      
+      document.getElementById('btnSendBrief').href = `https://wa.me/917328089908?text=${text}`;
+    }
+
+    function updateQuickChips(chips) {
+      const container = document.getElementById('quickActions');
+      container.innerHTML = '';
+      chips.forEach(c => {
+        const span = document.createElement('span');
+        span.className = 'quick-chip';
+        span.innerText = c;
+        span.onclick = () => sendQuick(c);
+        container.appendChild(span);
+      });
+    }
+
+    function appendUserMessage(text) {
+      const log = document.getElementById('chatLog');
+      const div = document.createElement('div');
+      div.className = 'chat-bubble user';
+      div.innerText = text;
+      log.appendChild(div);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function appendBotMessage(html) {
+      const log = document.getElementById('chatLog');
+      const div = document.createElement('div');
+      div.className = 'chat-bubble bot';
+      div.innerHTML = html;
+      log.appendChild(div);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function sendQuick(text) {
+      appendUserMessage(text);
+      processAIResponse(text);
+    }
+
+    function sendMessage() {
+      const inp = document.getElementById('userInput');
+      const val = inp.value.trim();
+      if (!val) return;
+      inp.value = '';
+      appendUserMessage(val);
+      processAIResponse(val);
+    }
+
+    // Conversational Intelligence Engine
+    function processAIResponse(userInput) {
+      const lower = userInput.toLowerCase();
+      
+      // Phone extraction
+      const phoneMatch = userInput.match(/(?:\+91|0)?[6-9]\d{9}/);
+      if (phoneMatch) {
+        DOSSIER.phone = phoneMatch[0];
+        updateDossierUI();
+      }
+
+      // Budget extraction
+      if (lower.includes('3500') || lower.includes('3,500') || lower.includes('starter')) {
+        DOSSIER.budget = '₹3,500 (Starter)';
+      } else if (lower.includes('25000') || lower.includes('25k') || lower.includes('lead engine')) {
+        DOSSIER.budget = '₹24,999 (Lead Engine)';
+      } else if (lower.includes('50000') || lower.includes('50k') || lower.includes('crm')) {
+        DOSSIER.budget = '₹49,999 (Autonomous CRM)';
+      } else if (lower.includes('90000') || lower.includes('enterprise') || lower.includes('swarm')) {
+        DOSSIER.budget = '₹89,999 (Enterprise Swarm)';
+      }
+      updateDossierUI();
+
+      // Intelligent Context Responses
+      setTimeout(() => {
+        if (lower.includes('price') || lower.includes('cost') || lower.includes('how much') || lower.includes('package')) {
+          appendBotMessage(
+            "We have 4 transparent commercial packages:<br><br>" +
+            "• <strong>Starter Pack:</strong> ₹3,500 (Personal AI Assistant on Laptop/Mobile)<br>" +
+            "• <strong>Lead Engine:</strong> ₹24,999 (Multi-source scraper + sub-5-min calling queue)<br>" +
+            "• <strong>Autonomous CRM:</strong> ₹49,999 (Full sovereign WhatsApp CRM pipeline)<br>" +
+            "• <strong>Enterprise Swarm:</strong> ₹89,999 (Full custom software + 7 AI agents)<br><br>" +
+            "Which tier fits your business scale best?"
+          );
+        } else if (lower.includes('clinic') || lower.includes('doctor') || lower.includes('mri') || lower.includes('truscan')) {
+          DOSSIER.sector = 'Diagnostics & Healthcare';
+          DOSSIER.goal = 'Clinic OPD & Lab Booking';
+          updateDossierUI();
+          appendBotMessage(
+            "For clinics and hospitals, Buddy connects directly to your WhatsApp number. When a patient messages, it verifies doctor OPD slots, gives pre-test preparation instructions (e.g. 4-hour fasting for blood or MRI), and confirms the booking instantly.<br><br>" +
+            "Would you like to deploy this for your clinic in Bhubaneswar?"
+          );
+        } else if (lower.includes('real estate') || lower.includes('crestview') || lower.includes('costa') || lower.includes('flat')) {
+          DOSSIER.sector = 'Real Estate & Builders';
+          DOSSIER.goal = 'ORERA Check & VIP Site Visit';
+          updateDossierUI();
+          appendBotMessage(
+            "For Real Estate, Costa Fortune Crestview 3 BHK apartments start at ₹34.20 Lakhs on Chandaka-Kantabada Road. 100% ORERA Approved (MP/19/2024/01244) with SBI/HDFC pre-sanctioned loans.<br><br>" +
+            "Please share your <strong>Name and Phone Number</strong> to receive the floor plan brochure on WhatsApp."
+          );
+        } else if (phoneMatch) {
+          appendBotMessage(
+            `Thank you! I have registered your phone number <strong>${phoneMatch[0]}</strong> in the active deal dossier. Founder Rahul Kumar Dhal has been alerted and will share the verified system handover within 2 hours.`
+          );
+        } else {
+          appendBotMessage(
+            "Understood. I have logged that requirement into your deal dossier. Our sovereign systems are deployed with zero recurring lock-in — you own your data 100%.<br><br>" +
+            "Would you like to review the commercial deployment terms or send this brief directly to WhatsApp?"
+          );
+        }
+      }, 400);
+    }
+
+    // ROI Calculator Function
+    function updateROI() {
+      const leads = parseInt(document.getElementById('sliderLeads').value);
+      const deal = parseInt(document.getElementById('sliderDeal').value);
+      const hours = parseInt(document.getElementById('sliderTime').value);
+
+      document.getElementById('lblLeads').innerText = `${leads} leads`;
+      document.getElementById('lblDeal').innerText = `₹${deal.toLocaleString('en-IN')}`;
+      document.getElementById('lblTime').innerText = `${hours} Hours`;
+
+      // Slow response drops conversion from 12% to 2%
+      const lostDeals = Math.round(leads * 0.10 * 12);
+      const lostRevenue = lostDeals * deal;
+      const recoveredRevenue = Math.round(lostRevenue * 0.75);
+
+      document.getElementById('metricLost').innerText = `₹${lostRevenue.toLocaleString('en-IN')}`;
+      document.getElementById('metricRecovered').innerText = `₹${recoveredRevenue.toLocaleString('en-IN')}`;
+    }
+
+    function copyBrief() {
+      const text = `BUDDY AI DEAL DOSSIER\n` +
+        `Sector: ${DOSSIER.sector}\n` +
+        `Goal: ${DOSSIER.goal}\n` +
+        `Budget: ${DOSSIER.budget}\n` +
+        `Timeline: ${DOSSIER.timeline}\n` +
+        `Name: ${DOSSIER.name || 'N/A'}\n` +
+        `Contact: ${DOSSIER.phone || 'N/A'}\n`;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("✅ Deal Dossier copied to clipboard!");
+      });
+    }
+
+    function installAppPrompt() {
+      alert("📲 To install Buddy AI on Android/iPhone:\n1. Tap your browser's Share/Menu icon\n2. Select 'Add to Home Screen'\n3. Launch Buddy AI as a standalone native app!");
+    }
+  </script>
+</body>
+</html>

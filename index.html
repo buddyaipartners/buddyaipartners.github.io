@@ -1631,10 +1631,12 @@
         <button type="button" class="nav-btn" data-nav="contact" onclick="switchPage('contact')">Contact</button>
       </nav>
 
-      <button type="button" class="hdr-buddy" aria-label="Try Buddy AI - Open preview chat" onclick="switchPage('buddy')"><span class="dotw"></span> Try Buddy AI</button>
+      <a href="app/" class="hdr-buddy" style="background:rgba(0,240,255,0.12);border:1px solid rgba(0,240,255,0.35);color:var(--cyan);text-decoration:none;display:inline-flex;align-items:center;gap:.45rem;" aria-label="Launch Buddy App"><span class="dot" style="background:var(--cyan);box-shadow:0 0 8px var(--cyan);"></span> Launch Buddy App</a>
+      <button type="button" class="hdr-buddy" aria-label="Try Buddy AI - Open preview chat" onclick="switchPage('buddy')"><span class="dotw"></span> Quick Chat</button>
       <button type="button" class="btn btn-gold btn-sm hide-m" onclick="switchPage('contact')">Start Project</button>
 
       <nav id="mobileMenu" aria-label="Mobile Navigation" hidden class="mobile-menu">
+        <a href="app/" class="mnav-btn" style="color:var(--cyan);font-weight:700;border:1px solid rgba(0,240,255,0.3);background:rgba(0,240,255,0.08);">🚀 Launch Buddy App (Sovereign OS)</a>
         <button type="button" class="mnav-btn active" data-mnav="home" onclick="switchPage('home');closeMenu()">🏠 Home</button>
         <button type="button" class="mnav-btn" data-mnav="digital-office" onclick="switchPage('digital-office');closeMenu()">🏢 Digital Office (Virtual HQ)</button>
         <button type="button" class="mnav-btn" data-mnav="blog" onclick="switchPage('blog');closeMenu()">📰 Tech &amp; AI Intelligence Blog</button>
@@ -2805,6 +2807,11 @@
           <p class="eyebrow">Sovereign digital being · autonomous lead operator</p>
           <h1 class="display-l">Meet <span class="gold-i">Buddy.</span></h1>
           <p class="lead" style="margin-top:.6rem">The same operator loop we deploy for clients: research, qualify, prepare the brief, hand it over — with a human always in the loop.</p>
+          <div style="margin-top:1.2rem;">
+            <a href="app/" class="btn btn-gold" style="box-shadow:0 0 25px rgba(212,175,55,0.4);">
+              🚀 Launch Standalone Buddy Operating App (PWA) →
+            </a>
+          </div>
         </div>
         <div class="grid-2" style="grid-template-columns:1fr;grid-template-areas:'noref'" >
           <div class="grid-2" style="align-items:start;gap:1.2rem" >
