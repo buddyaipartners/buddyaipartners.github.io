@@ -46,7 +46,7 @@ cp -r "$DIST/images/." "$DIST/public/images/"
 [ ! -f "$ROOT/googleb8ea7c1bfd32f1e7.html" ] || cp "$ROOT/googleb8ea7c1bfd32f1e7.html" "$DIST/googleb8ea7c1bfd32f1e7.html"
 
 # Copy crawlable sub-page routes into dist
-for sub in services demo pricing digital-office portfolio blog about contact; do
+for sub in services demo pricing digital-office portfolio blog about contact app; do
   if [ -d "$ROOT/$sub" ]; then
     mkdir -p "$DIST/$sub"
     cp -r "$ROOT/$sub/." "$DIST/$sub/"

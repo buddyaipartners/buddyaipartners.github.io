@@ -42,12 +42,12 @@ def local_paths(ref: str, base: Path, mode: str):
         return []
     if mode == "dist":
         # The built tree must resolve the reference directly from its root.
-        out = [base / ref]
+        out = [base / ref, base / ref / "index.html"]
         if ref.startswith("public/images/"):
             out.append(base / ref[len("public/"):])
         return out
     # source mode: mirror the mapping the build applies
-    out = [base / ref]
+    out = [base / ref, base / ref / "index.html"]
     if ref.startswith("images/"):
         out.append(base / "public" / ref)
     if ref.startswith("public/"):
