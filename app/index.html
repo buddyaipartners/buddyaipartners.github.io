@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Buddy AI Operating App & Autonomous Business OS | BUDDY AI PARTNERS</title>
-  <meta name="description" content="Deploy Buddy — the sovereign autonomous AI operator for sales qualification, WhatsApp triage, and CRM lead capture. The flagship commercial AI operating app for modern enterprises." />
-  <meta name="keywords" content="Buddy AI App, Autonomous Business OS, WhatsApp AI Bot, Real Estate AI Agent, Clinic AI Receptionist, CRM Lead Engine, Bhubaneswar Software" />
+  <title>Buddy AI Operating App & Autonomous Business OS | Free AI Automations & API Hub</title>
+  <meta name="description" content="Deploy Buddy — the sovereign autonomous AI business operating app. Connect your own free Gemini/Groq APIs, automate WhatsApp & devices, follow practical zero-cost AI masterclasses, and capture leads 24/7." />
+  <meta name="keywords" content="Buddy AI App, Free AI Automation, Free Gemini API, Free Groq API, Device Automation, WhatsApp Bot, Real Estate AI Agent, Clinic AI Receptionist, Termux AI, Bhubaneswar Software" />
   <link rel="canonical" href="https://buddyaipartners.github.io/app/" />
   
   <!-- PWA & Mobile Web App Manifest -->
@@ -18,7 +18,7 @@
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
@@ -27,11 +27,12 @@
       --bg-card: rgba(10, 18, 36, 0.75);
       --bg-card-hover: rgba(16, 28, 54, 0.85);
       --line: rgba(255, 255, 255, 0.08);
-      --line-strong: rgba(0, 240, 255, 0.25);
+      --line-strong: rgba(0, 240, 255, 0.3);
       --cyan: #00F0FF;
       --gold: #D4AF37;
       --gold-hover: #E5C358;
       --green: #25D366;
+      --purple: #A855F7;
       --crimson: #E63946;
       --ink: #FFFFFF;
       --muted: #94A3B8;
@@ -44,8 +45,8 @@
     body {
       background-color: var(--bg);
       background-image: 
-        radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.04) 0%, transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(212, 175, 55, 0.04) 0%, transparent 40%);
+        radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
       color: var(--ink);
       font-family: var(--font-main);
       min-height: 100vh;
@@ -60,7 +61,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 0.85rem 1.5rem;
-      background: rgba(3, 7, 18, 0.85);
+      background: rgba(3, 7, 18, 0.88);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--line);
       position: sticky;
@@ -81,14 +82,17 @@
     .btn-gold:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); }
     .btn-cyan { background: rgba(0, 240, 255, 0.12); color: var(--cyan); border: 1px solid rgba(0, 240, 255, 0.3); }
     .btn-cyan:hover { background: rgba(0, 240, 255, 0.2); border-color: var(--cyan); }
+    .btn-purple { background: rgba(168, 85, 247, 0.15); color: #C084FC; border: 1px solid rgba(168, 85, 247, 0.3); }
+    .btn-purple:hover { background: rgba(168, 85, 247, 0.25); border-color: #C084FC; }
     .btn-wa { background: #25D366; color: #011307; font-weight: 700; }
     .btn-wa:hover { background: #22BF5B; transform: translateY(-1px); }
 
     /* Navigation Tabs */
-    .app-nav { display: flex; gap: 0.5rem; padding: 0.6rem 1.5rem; background: rgba(5, 10, 24, 0.6); border-bottom: 1px solid var(--line); overflow-x: auto; }
-    .nav-tab { background: transparent; color: var(--muted); border: 1px solid transparent; padding: 0.45rem 0.9rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.2s; white-space: nowrap; display: flex; align-items: center; gap: 0.4rem; }
+    .app-nav { display: flex; gap: 0.5rem; padding: 0.65rem 1.5rem; background: rgba(5, 10, 24, 0.7); border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none; }
+    .app-nav::-webkit-scrollbar { display: none; }
+    .nav-tab { background: transparent; color: var(--muted); border: 1px solid transparent; padding: 0.45rem 0.95rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.2s; white-space: nowrap; display: flex; align-items: center; gap: 0.4rem; }
     .nav-tab:hover { color: var(--ink); background: rgba(255, 255, 255, 0.04); }
-    .nav-tab.active { background: rgba(0, 240, 255, 0.1); color: var(--cyan); border-color: rgba(0, 240, 255, 0.25); }
+    .nav-tab.active { background: rgba(0, 240, 255, 0.12); color: var(--cyan); border-color: rgba(0, 240, 255, 0.3); }
 
     /* Main Container Split View */
     .app-main { flex: 1; display: grid; grid-template-columns: 1fr 380px; gap: 1.5rem; padding: 1.5rem; max-width: 1560px; margin: 0 auto; width: 100%; }
@@ -96,8 +100,8 @@
       .app-main { grid-template-columns: 1fr; }
     }
 
-    /* Left Console: Chat & Simulator */
-    .console-pane { display: flex; flex-direction: column; background: var(--bg-card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; backdrop-filter: blur(20px); min-height: 600px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+    /* Left Console: Content Panes */
+    .console-pane { display: flex; flex-direction: column; background: var(--bg-card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; backdrop-filter: blur(20px); min-height: 620px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
     
     .console-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, 0.02); }
     .operator-profile { display: flex; align-items: center; gap: 0.75rem; }
@@ -114,7 +118,7 @@
 
     /* Chat Messages Box */
     .chat-body { flex: 1; padding: 1.25rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem; max-height: 520px; }
-    .chat-bubble { max-width: 82%; padding: 0.85rem 1.15rem; border-radius: 16px; font-size: 0.88rem; line-height: 1.55; position: relative; word-break: break-word; }
+    .chat-bubble { max-width: 84%; padding: 0.85rem 1.15rem; border-radius: 16px; font-size: 0.88rem; line-height: 1.55; position: relative; word-break: break-word; }
     .chat-bubble.bot { align-self: flex-start; background: rgba(16, 28, 54, 0.7); border: 1px solid var(--line); color: #E2E8F0; border-bottom-left-radius: 4px; }
     .chat-bubble.user { align-self: flex-end; background: linear-gradient(135deg, #007799, #005577); color: #FFFFFF; border-bottom-right-radius: 4px; }
     
@@ -139,6 +143,20 @@
     .dossier-val { font-weight: 600; color: var(--ink); text-align: right; }
     .dossier-val.empty { color: #64748B; font-weight: 400; font-style: italic; }
     .dossier-val.highlight { color: var(--cyan); font-family: var(--font-mono); }
+
+    /* Step-by-Step Training Guides */
+    .guide-card { border: 1px solid var(--line); border-radius: 14px; padding: 1.2rem; margin-bottom: 1rem; background: rgba(255, 255, 255, 0.02); }
+    .guide-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; }
+    .guide-step { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--cyan); letter-spacing: 0.08em; }
+    .guide-title { font-size: 1.05rem; font-weight: 700; color: var(--ink); }
+    .guide-body { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin: 0.6rem 0; }
+    .code-box { background: rgba(0, 0, 0, 0.6); border: 1px solid var(--line); border-radius: 8px; padding: 0.75rem 1rem; font-family: var(--font-mono); font-size: 0.78rem; color: #38BDF8; margin: 0.5rem 0; word-break: break-all; overflow-x: auto; }
+
+    /* API Connector Box */
+    .api-box { background: rgba(0, 240, 255, 0.03); border: 1px solid var(--line-strong); border-radius: 14px; padding: 1.25rem; margin-bottom: 1.2rem; }
+    .api-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+    .api-input { width: 100%; background: rgba(0, 0, 0, 0.5); border: 1px solid var(--line); border-radius: 8px; padding: 0.7rem 0.9rem; color: var(--ink); font-family: var(--font-mono); font-size: 0.82rem; margin-bottom: 0.75rem; outline: none; }
+    .api-input:focus { border-color: var(--cyan); }
 
     /* Pricing & Commercial Packages */
     .tier-card { border: 1px solid var(--line); border-radius: 12px; padding: 1rem; margin-top: 0.75rem; background: rgba(255, 255, 255, 0.02); transition: all 0.2s; }
@@ -169,17 +187,17 @@
     <a href="../" class="brand-wrap">
       <img src="../images/logo-orbital.webp" alt="Buddy AI Partners logo" class="brand-logo" />
       <div>
-        <div class="brand-title">BUDDY AI <span class="brand-badge">Autonomous OS</span></div>
+        <div class="brand-title">BUDDY AI <span class="brand-badge">Sovereign OS v3.0</span></div>
       </div>
     </a>
 
     <div class="header-controls">
       <div class="status-pill">
         <span class="live-dot"></span>
-        <span>Operator Active · Sub-1s SLA</span>
+        <span id="activeModelLabel">Sovereign Mode · Sub-1s SLA</span>
       </div>
       <button type="button" class="btn btn-cyan hide-sm" onclick="installAppPrompt()">
-        📥 Install App
+        📥 Install App (PWA)
       </button>
       <a href="https://wa.me/917328089908?text=Hello%20Rahul,%20I%20am%20using%20the%20Buddy%20AI%20Operating%20App%20and%20want%20to%20deploy%20it%20for%20my%20business." target="_blank" class="btn btn-gold">
         Deploy for Business →
@@ -189,10 +207,12 @@
 
   <!-- Navigation Tabs -->
   <nav class="app-nav">
-    <button class="nav-tab active" onclick="switchTab('chat')">💬 Live Operator Chat</button>
+    <button class="nav-tab active" onclick="switchTab('chat')">💬 Autonomous AI Operator</button>
+    <button class="nav-tab" onclick="switchTab('free-api')">🔑 Connect Your Free API</button>
+    <button class="nav-tab" onclick="switchTab('device-automation')">📱 Device & WhatsApp Automation</button>
+    <button class="nav-tab" onclick="switchTab('training')">🎓 Practical AI Masterclass</button>
     <button class="nav-tab" onclick="switchTab('calculator')">📊 Lead ROI Calculator</button>
     <button class="nav-tab" onclick="switchTab('store')">💎 Commercial Packages</button>
-    <button class="nav-tab" onclick="switchTab('pipeline')">⚡ Inbound Pipeline SLA</button>
   </nav>
 
   <!-- Main View -->
@@ -206,8 +226,8 @@
             <img src="../images/logo-orbital.webp" alt="Buddy Avatar" />
           </div>
           <div class="operator-info">
-            <h3>Buddy — Sovereign Enterprise Concierge</h3>
-            <p>Multilingual: English, Hindi & Odia · Real-Time Deal Extraction</p>
+            <h3 id="operatorNameHeader">Buddy — Autonomous Enterprise Concierge</h3>
+            <p id="operatorSubheader">Multilingual: English, Hindi & Odia · Real-Time Deal Extraction</p>
           </div>
         </div>
 
@@ -224,26 +244,182 @@
         <div class="chat-bubble bot">
           Namaskar! 👋 I am <strong>Buddy</strong>, your autonomous business operator. I handle lead qualification, book appointments, answer pricing questions, and dispatch prefilled client briefs to WhatsApp 24/7.
           <br><br>
-          Select an industry preset above or ask me anything below:
+          💡 <em>Pro Tip:</em> You can connect your own <strong>100% Free Gemini or Groq API Key</strong> in the <strong>"Connect Your Free API"</strong> tab to run unmetered live AI with zero cost!
         </div>
         
         <div class="quick-actions" id="quickActions">
-          <span class="quick-chip" onclick="sendQuick('How much does it cost to automate my sales on WhatsApp?')">💰 Pricing & Deployment Cost</span>
-          <span class="quick-chip" onclick="sendQuick('Can you book an appointment and qualify budget?')">📅 Test Lead Qualification</span>
-          <span class="quick-chip" onclick="sendQuick('Do you support clinics, doctors, and diagnostics?')">🩺 Clinic Booking Demo</span>
-          <span class="quick-chip" onclick="sendQuick('I want Buddy deployed for my real estate agency.')">🏢 Real Estate Concierge</span>
+          <span class="quick-chip" onclick="sendQuick('How can I automate my business tasks for free using my phone?')">📱 Free Device & Phone Automation</span>
+          <span class="quick-chip" onclick="sendQuick('How to get a 100% free Google Gemini or Groq API key?')">🔑 How to get Free APIs</span>
+          <span class="quick-chip" onclick="sendQuick('How much does it cost to deploy an autonomous WhatsApp bot?')">💰 Pricing & Deployment Cost</span>
+          <span class="quick-chip" onclick="sendQuick('Show me the clinic booking demo for TruScan Diagnostics')">🩺 Clinic Booking Demo</span>
         </div>
       </div>
 
       <div class="console-input-bar">
-        <input type="text" id="userInput" class="console-input" placeholder="Type your inquiry or business requirement…" onkeydown="if(event.key==='Enter') sendMessage()" />
+        <input type="text" id="userInput" class="console-input" placeholder="Type your message or ask how to automate your business…" onkeydown="if(event.key==='Enter') sendMessage()" />
         <button type="button" class="btn btn-cyan" onclick="sendMessage()">Send ➤</button>
       </div>
     </section>
 
-    <!-- Tab 2: ROI Calculator (Hidden by default) -->
-    <section id="view-calculator" class="console-pane" style="display:none; padding:2rem;">
-      <h2 style="font-size:1.4rem; margin-bottom:0.5rem; color:var(--cyan);">Autonomous Business ROI Calculator</h2>
+    <!-- Tab 2: Free API Setup & Validator -->
+    <section id="view-free-api" class="console-pane" style="display:none; padding:1.75rem; overflow-y:auto;">
+      <h2 style="font-size:1.35rem; margin-bottom:0.4rem; color:var(--cyan);">Connect Your Own 100% Free AI APIs</h2>
+      <p style="color:var(--muted); font-size:0.85rem; margin-bottom:1.5rem;">Never pay monthly fees. Run Buddy AI directly using free official APIs provided by Google and Groq with zero credit card required.</p>
+
+      <!-- Provider 1: Google Gemini -->
+      <div class="api-box">
+        <div class="api-header">
+          <div>
+            <h3 style="font-size:1rem; color:var(--ink);">1. Google Gemini 2.0 Flash API (Recommended)</h3>
+            <p style="font-size:0.75rem; color:var(--muted); margin-top:0.2rem;">Free Allowance: 15 Requests/minute & 1,000,000 tokens/day · Free forever</p>
+          </div>
+          <a href="https://aistudio.google.com/app/apikey" target="_blank" class="btn btn-cyan btn-sm">Get Free Key ↗</a>
+        </div>
+        
+        <p style="font-size:0.78rem; color:var(--muted); margin-bottom:0.75rem;">
+          <strong>Step-by-step:</strong> Go to <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:var(--cyan)">aistudio.google.com</a> &rarr; Sign in with your Google Account &rarr; Click <em>"Create API Key"</em> &rarr; Copy and paste below:
+        </p>
+        <input type="password" id="geminiApiKey" class="api-input" placeholder="Paste your Google Gemini API Key (starts with AIzaSy…)" />
+        <button type="button" class="btn btn-gold btn-sm" onclick="saveApiKey('gemini')">⚡ Activate Free Gemini Engine</button>
+      </div>
+
+      <!-- Provider 2: Groq Cloud -->
+      <div class="api-box">
+        <div class="api-header">
+          <div>
+            <h3 style="font-size:1rem; color:var(--ink);">2. Groq Cloud (Ultra-Fast Llama 3.3 70B)</h3>
+            <p style="font-size:0.75rem; color:var(--muted); margin-top:0.2rem;">Free Allowance: 30 Requests/minute at 500 tokens/sec · Instant response</p>
+          </div>
+          <a href="https://console.groq.com/keys" target="_blank" class="btn btn-purple btn-sm">Get Groq Key ↗</a>
+        </div>
+        
+        <p style="font-size:0.78rem; color:var(--muted); margin-bottom:0.75rem;">
+          <strong>Step-by-step:</strong> Go to <a href="https://console.groq.com/keys" target="_blank" style="color:#C084FC">console.groq.com</a> &rarr; Sign up with Google &rarr; Click <em>"Create API Key"</em> &rarr; Copy and paste below:
+        </p>
+        <input type="password" id="groqApiKey" class="api-input" placeholder="Paste your Groq API Key (starts with gsk_…)" />
+        <button type="button" class="btn btn-purple btn-sm" onclick="saveApiKey('groq')">⚡ Activate Free Groq Engine</button>
+      </div>
+
+      <!-- Provider 3: Local Offline Ollama -->
+      <div class="api-box">
+        <div class="api-header">
+          <div>
+            <h3 style="font-size:1rem; color:var(--ink);">3. Local Ollama (100% Offline & Private)</h3>
+            <p style="font-size:0.75rem; color:var(--muted); margin-top:0.2rem;">Runs locally on your Mac / PC / Android Termux · Zero internet required</p>
+          </div>
+          <span class="btn btn-sm" style="background:rgba(255,255,255,0.05); color:var(--green);">100% Private</span>
+        </div>
+        <div class="code-box">curl -fsSL https://ollama.com/install.sh | sh && ollama run qwen2.5-coder:1.5b</div>
+        <button type="button" class="btn btn-cyan btn-sm" onclick="saveApiKey('ollama')" style="margin-top:0.4rem;">Connect Local Ollama (:11434)</button>
+      </div>
+    </section>
+
+    <!-- Tab 3: Device Automation Hub -->
+    <section id="view-device-automation" class="console-pane" style="display:none; padding:1.75rem; overflow-y:auto;">
+      <h2 style="font-size:1.35rem; margin-bottom:0.4rem; color:var(--cyan);">Connect Your Devices & Automate Tasks</h2>
+      <p style="color:var(--muted); font-size:0.85rem; margin-bottom:1.5rem;">Turn your existing smartphone or laptop into an autonomous 24/7 business server without paying for cloud hosting.</p>
+
+      <!-- Device 1: WhatsApp Automation -->
+      <div class="guide-card">
+        <div class="guide-header">
+          <span class="guide-step">Device Module 01</span>
+          <span style="color:var(--green); font-size:0.75rem; font-weight:700;">● ZERO META FEES</span>
+        </div>
+        <h3 class="guide-title">WhatsApp Socket Bridge (Phone or Laptop)</h3>
+        <p class="guide-body">
+          Connect your WhatsApp using Baileys socket automation. It runs on your local machine or an old Android phone, scans your QR code once, and automatically replies to incoming leads with zero message fees.
+        </p>
+        <div class="code-box">git clone https://github.com/buddyaipartners/whatsapp-bridge && npm install && npm start</div>
+        <p class="guide-body">
+          ✅ Automatically greets in &lt;2 seconds<br>
+          ✅ Answers FAQs, shares project brochures & PDF floor plans<br>
+          ✅ Delivers qualified deal summaries directly to your personal phone
+        </p>
+      </div>
+
+      <!-- Device 2: Android Phone Server (Termux) -->
+      <div class="guide-card">
+        <div class="guide-header">
+          <span class="guide-step">Device Module 02</span>
+          <span style="color:var(--gold); font-size:0.75rem; font-weight:700;">● FREE MOBILE SERVER</span>
+        </div>
+        <h3 class="guide-title">24/7 Mobile Server via Android Termux</h3>
+        <p class="guide-body">
+          Have an old Android phone lying in a drawer? Plug it in with WiFi and turn it into a dedicated 24/7 autonomous business server.
+        </p>
+        <div class="code-box">pkg update && pkg install python git nodejs -y && git clone https://github.com/buddyaipartners/buddy-mobile-agent</div>
+        <p class="guide-body">
+          Runs 24/7 on 5W power. Replaces $20/month cloud servers completely.
+        </p>
+      </div>
+
+      <!-- Device 3: Desktop Task Runner -->
+      <div class="guide-card">
+        <div class="guide-header">
+          <span class="guide-step">Device Module 03</span>
+          <span style="color:var(--cyan); font-size:0.75rem; font-weight:700;">● MAC / PC AUTOPILOT</span>
+        </div>
+        <h3 class="guide-title">Desktop Task Runner (Python & Launchd)</h3>
+        <p class="guide-body">
+          Automates file sorting, daily lead scraping from Google Maps, and sending evening accounting reports to WhatsApp automatically.
+        </p>
+        <div class="code-box">crontab -e  # Add: 0 9 * * * python3 /path/to/daily_lead_scraper.py</div>
+      </div>
+    </section>
+
+    <!-- Tab 4: Practical AI Masterclass & Guides -->
+    <section id="view-training" class="console-pane" style="display:none; padding:1.75rem; overflow-y:auto;">
+      <h2 style="font-size:1.35rem; margin-bottom:0.4rem; color:var(--gold);">Practical Zero-Cost AI Masterclasses</h2>
+      <p style="color:var(--muted); font-size:0.85rem; margin-bottom:1.5rem;">Actionable, step-by-step technical blueprints for building and scaling real-world AI automations.</p>
+
+      <!-- Masterclass 1: Free AI Video -->
+      <div class="guide-card">
+        <div class="guide-header">
+          <span class="guide-step">Masterclass 01</span>
+          <span style="color:var(--gold); font-size:0.75rem; font-weight:700;">₹0 / MONTH</span>
+        </div>
+        <h3 class="guide-title">Generate 30 Viral AI Reels/Month for ₹0</h3>
+        <p class="guide-body">
+          <strong>Step 1:</strong> Go to <a href="https://klingai.com" target="_blank" style="color:var(--gold)">Kling AI</a> &rarr; Click daily check-in to get <strong>66 free credits daily</strong> (gives 6 to 10 cinematic video clips every day).<br>
+          <strong>Step 2:</strong> Go to <a href="https://hailuoai.video" target="_blank" style="color:var(--cyan)">Hailuo AI (MiniMax)</a> for photorealistic human motion.<br>
+          <strong>Step 3:</strong> Record voice using your phone mic or free Microsoft Neural Voice.<br>
+          <strong>Step 4:</strong> Import clips into CapCut Desktop &rarr; Click <em>Text &rarr; Auto Captions</em> &rarr; select yellow/gold bouncing text &rarr; Export 4K with zero watermark!
+        </p>
+      </div>
+
+      <!-- Masterclass 2: Google Maps B2B Lead Harvester -->
+      <div class="guide-card">
+        <div class="guide-header">
+          <span class="guide-step">Masterclass 02</span>
+          <span style="color:var(--cyan); font-size:0.75rem; font-weight:700;">LEAD HARVESTING</span>
+        </div>
+        <h3 class="guide-title">Harvest 500 Verified Local Business Leads Daily</h3>
+        <p class="guide-body">
+          How to scrape verified phone numbers of clinics, real estate builders, fitness centers, and retail shops in your city without paid software.<br>
+          Uses Playwright Python to extract Business Name, Address, Google Rating, and Direct Phone Numbers straight into a CSV for CRM ingestion.
+        </p>
+        <div class="code-box">pip install playwright && python3 -m playwright install chromium</div>
+      </div>
+
+      <!-- Masterclass 3: Real Estate / Clinic WhatsApp Concierge -->
+      <div class="guide-card">
+        <div class="guide-header">
+          <span class="guide-step">Masterclass 03</span>
+          <span style="color:var(--green); font-size:0.75rem; font-weight:700;">CONVERSION BOT</span>
+        </div>
+        <h3 class="guide-title">Building a High-Conversion WhatsApp Concierge</h3>
+        <p class="guide-body">
+          The 3-stage triage script that qualifies buyers before you spend 1 minute on the phone:<br>
+          1. <em>Greeting & Location Preference:</em> "Are you looking in Patia Infocity or Chandaka Corridor?"<br>
+          2. <em>Budget Range Verification:</em> "Our 3 BHK units start at ₹34.20 Lakhs. Is your budget comfortable with this?"<br>
+          3. <em>Site Visit Slot Confirmation:</em> "I have 2 VIP site visit slots this Saturday: 11 AM and 3 PM. Which works best?"
+        </p>
+      </div>
+    </section>
+
+    <!-- Tab 5: ROI Calculator -->
+    <section id="view-calculator" class="console-pane" style="display:none; padding:1.75rem; overflow-y:auto;">
+      <h2 style="font-size:1.35rem; margin-bottom:0.4rem; color:var(--cyan);">Autonomous Business ROI Calculator</h2>
       <p style="color:var(--muted); font-size:0.85rem; margin-bottom:1.5rem;">Estimate how much revenue your business loses due to slow response times, and what Buddy AI recovers automatically.</p>
 
       <div style="margin-bottom:1.25rem;">
@@ -279,9 +455,9 @@
       </div>
     </section>
 
-    <!-- Tab 3: Commercial Packages (Hidden by default) -->
-    <section id="view-store" class="console-pane" style="display:none; padding:1.5rem;">
-      <h2 style="font-size:1.3rem; margin-bottom:0.4rem; color:var(--gold);">Commercial Software Packages</h2>
+    <!-- Tab 6: Commercial Packages -->
+    <section id="view-store" class="console-pane" style="display:none; padding:1.75rem; overflow-y:auto;">
+      <h2 style="font-size:1.35rem; margin-bottom:0.4rem; color:var(--gold);">Commercial Software Packages</h2>
       <p style="color:var(--muted); font-size:0.82rem; margin-bottom:1rem;">Deploy verified, production-ready AI software into your business in 24 to 72 hours.</p>
 
       <div class="tier-card">
@@ -318,31 +494,6 @@
         </div>
         <div class="tier-desc">Custom web application + 7 autonomous office agents, private data sovereignty, and dedicated 24/7 cloud server.</div>
         <a href="https://wa.me/917328089908?text=I%20want%20to%20order%20the%20Enterprise%20Swarm%20(₹89,999)" target="_blank" class="btn btn-wa btn-sm">Deploy Enterprise Swarm</a>
-      </div>
-    </section>
-
-    <!-- Tab 4: Inbound Pipeline SLA (Hidden by default) -->
-    <section id="view-pipeline" class="console-pane" style="display:none; padding:2rem;">
-      <h2 style="font-size:1.3rem; margin-bottom:0.5rem; color:var(--cyan);">Autonomous 4-Stage Lead Pipeline</h2>
-      <p style="color:var(--muted); font-size:0.85rem; margin-bottom:1.5rem;">How Buddy AI captures, qualifies, and closes leads without human delay.</p>
-
-      <div style="display:flex; flex-direction:column; gap:1rem;">
-        <div class="card" style="border-left:4px solid var(--cyan);">
-          <h4 style="font-size:0.9rem; color:var(--cyan);">STAGE 01 · INGESTION (&lt;2s)</h4>
-          <p style="font-size:0.8rem; color:var(--muted); margin-top:0.3rem;">Inbound inquiry from Website, WhatsApp, Meta Ad or Google Search triggers instant greeting in user's native language (Odia/Hindi/English).</p>
-        </div>
-        <div class="card" style="border-left:4px solid var(--gold);">
-          <h4 style="font-size:0.9rem; color:var(--gold);">STAGE 02 · INTENT & BUDGET SCORING</h4>
-          <p style="font-size:0.8rem; color:var(--muted); margin-top:0.3rem;">AI asks 3 smart diagnostic questions. Extracts budget range, project/treatment type, and purchase timeline.</p>
-        </div>
-        <div class="card" style="border-left:4px solid var(--green);">
-          <h4 style="font-size:0.9rem; color:var(--green);">STAGE 03 · CALENDAR & WHATSAPP HANDOFF</h4>
-          <p style="font-size:0.8rem; color:var(--muted); margin-top:0.3rem;">Books confirmed slot. Structured Deal Dossier is automatically delivered to the business owner's personal WhatsApp.</p>
-        </div>
-        <div class="card" style="border-left:4px solid #A855F7;">
-          <h4 style="font-size:0.9rem; color:#A855F7;">STAGE 04 · 48-HOUR AUTO-NUDGE</h4>
-          <p style="font-size:0.8rem; color:var(--muted); margin-top:0.3rem;">If lead hasn't completed booking, Buddy AI sends courteous follow-up with floor plans or diagnostic checklist before they cool down.</p>
-        </div>
       </div>
     </section>
 
@@ -462,14 +613,52 @@
       }
     };
 
+    // Active User Config
+    let ACTIVE_PROVIDER = localStorage.getItem('buddy_api_provider') || 'sovereign';
+    let USER_API_KEY = localStorage.getItem('buddy_api_key') || '';
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (ACTIVE_PROVIDER !== 'sovereign' && USER_API_KEY) {
+        document.getElementById('activeModelLabel').innerText = `Active Model: ${ACTIVE_PROVIDER.toUpperCase()} (Connected)`;
+        document.getElementById('activeModelLabel').style.color = '#00F0FF';
+      }
+    });
+
+    function saveApiKey(provider) {
+      let key = '';
+      if (provider === 'gemini') {
+        key = document.getElementById('geminiApiKey').value.trim();
+        if (!key) return alert("Please paste a valid Gemini API key!");
+      } else if (provider === 'groq') {
+        key = document.getElementById('groqApiKey').value.trim();
+        if (!key) return alert("Please paste a valid Groq API key!");
+      } else if (provider === 'ollama') {
+        key = 'http://localhost:11434';
+      }
+
+      localStorage.setItem('buddy_api_provider', provider);
+      localStorage.setItem('buddy_api_key', key);
+      ACTIVE_PROVIDER = provider;
+      USER_API_KEY = key;
+
+      document.getElementById('activeModelLabel').innerText = `Active Model: ${provider.toUpperCase()} (Connected)`;
+      document.getElementById('activeModelLabel').style.color = '#00F0FF';
+
+      alert(`✅ ${provider.toUpperCase()} API successfully connected! Buddy will now run using your free API.`);
+      switchTab('chat');
+      appendBotMessage(`🎉 <strong>${provider.toUpperCase()} Engine Activated!</strong> You are now chatting directly with your free model. Ask me any complex task, automation script, or business strategy.`);
+    }
+
     function switchTab(tabId) {
       document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
       event.target.classList.add('active');
 
       document.getElementById('view-chat').style.display = (tabId === 'chat') ? 'flex' : 'none';
+      document.getElementById('view-free-api').style.display = (tabId === 'free-api') ? 'block' : 'none';
+      document.getElementById('view-device-automation').style.display = (tabId === 'device-automation') ? 'block' : 'none';
+      document.getElementById('view-training').style.display = (tabId === 'training') ? 'block' : 'none';
       document.getElementById('view-calculator').style.display = (tabId === 'calculator') ? 'block' : 'none';
       document.getElementById('view-store').style.display = (tabId === 'store') ? 'block' : 'none';
-      document.getElementById('view-pipeline').style.display = (tabId === 'pipeline') ? 'block' : 'none';
     }
 
     function setPreset(key) {
@@ -555,8 +744,8 @@
       processAIResponse(val);
     }
 
-    // Conversational Intelligence Engine
-    function processAIResponse(userInput) {
+    // Live AI or Sovereign Fallback Engine
+    async function processAIResponse(userInput) {
       const lower = userInput.toLowerCase();
       
       // Phone extraction
@@ -578,9 +767,48 @@
       }
       updateDossierUI();
 
-      // Intelligent Context Responses
+      // If user has plugged in their live Gemini key:
+      if (ACTIVE_PROVIDER === 'gemini' && USER_API_KEY) {
+        try {
+          appendBotMessage('<em>⚡ Buddy is thinking via your Free Gemini API…</em>');
+          const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${USER_API_KEY}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: `You are Buddy, the sovereign autonomous AI operator for Buddy AI Partners in Bhubaneswar founded by Rahul Kumar Dhal. You help users automate their business, integrate WhatsApp, build scrapers, and deploy CRMs. The user says: ${userInput}` }] }]
+            })
+          });
+          const data = await resp.json();
+          const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "Received response from Gemini.";
+          
+          // Remove thinking indicator
+          const log = document.getElementById('chatLog');
+          log.removeChild(log.lastChild);
+          appendBotMessage(reply.replace(/\n/g, '<br>'));
+          return;
+        } catch (e) {
+          console.error("Gemini API call failed, falling back to local engine:", e);
+        }
+      }
+
+      // Intelligent Local Context Responses
       setTimeout(() => {
-        if (lower.includes('price') || lower.includes('cost') || lower.includes('how much') || lower.includes('package')) {
+        if (lower.includes('device') || lower.includes('phone') || lower.includes('termux') || lower.includes('automate task')) {
+          appendBotMessage(
+            "To automate tasks using your own device:<br><br>" +
+            "1. <strong>Android Phone (Termux):</strong> Install Termux from F-Droid, run Python scripts to scrape leads and handle WhatsApp 24/7 with zero cloud hosting costs.<br>" +
+            "2. <strong>WhatsApp Bridge:</strong> Scan your QR code to connect your personal or business number. It responds in &lt;2s.<br>" +
+            "3. <strong>Desktop Auto-Runner:</strong> Use cron/launchd to schedule automated client follow-ups.<br><br>" +
+            "Check the <strong>'Device & WhatsApp Automation'</strong> tab above for the complete copy-paste code!"
+          );
+        } else if (lower.includes('free api') || lower.includes('gemini') || lower.includes('groq') || lower.includes('api key')) {
+          appendBotMessage(
+            "You can get 100% free AI keys in under 60 seconds with <strong>zero credit card</strong>:<br><br>" +
+            "• <strong>Google Gemini API:</strong> Visit <a href='https://aistudio.google.com/app/apikey' target='_blank' style='color:#00F0FF'>aistudio.google.com</a> &rarr; 15 free calls/min forever.<br>" +
+            "• <strong>Groq API:</strong> Visit <a href='https://console.groq.com/keys' target='_blank' style='color:#C084FC'>console.groq.com</a> &rarr; 30 free calls/min at 500 tokens/sec.<br><br>" +
+            "Switch to the <strong>'Connect Your Free API'</strong> tab to paste your key and run live unmetered AI!"
+          );
+        } else if (lower.includes('price') || lower.includes('cost') || lower.includes('how much') || lower.includes('package')) {
           appendBotMessage(
             "We have 4 transparent commercial packages:<br><br>" +
             "• <strong>Starter Pack:</strong> ₹3,500 (Personal AI Assistant on Laptop/Mobile)<br>" +
@@ -596,14 +824,6 @@
           appendBotMessage(
             "For clinics and hospitals, Buddy connects directly to your WhatsApp number. When a patient messages, it verifies doctor OPD slots, gives pre-test preparation instructions (e.g. 4-hour fasting for blood or MRI), and confirms the booking instantly.<br><br>" +
             "Would you like to deploy this for your clinic in Bhubaneswar?"
-          );
-        } else if (lower.includes('real estate') || lower.includes('crestview') || lower.includes('costa') || lower.includes('flat')) {
-          DOSSIER.sector = 'Real Estate & Builders';
-          DOSSIER.goal = 'ORERA Check & VIP Site Visit';
-          updateDossierUI();
-          appendBotMessage(
-            "For Real Estate, Costa Fortune Crestview 3 BHK apartments start at ₹34.20 Lakhs on Chandaka-Kantabada Road. 100% ORERA Approved (MP/19/2024/01244) with SBI/HDFC pre-sanctioned loans.<br><br>" +
-            "Please share your <strong>Name and Phone Number</strong> to receive the floor plan brochure on WhatsApp."
           );
         } else if (phoneMatch) {
           appendBotMessage(
@@ -628,7 +848,6 @@
       document.getElementById('lblDeal').innerText = `₹${deal.toLocaleString('en-IN')}`;
       document.getElementById('lblTime').innerText = `${hours} Hours`;
 
-      // Slow response drops conversion from 12% to 2%
       const lostDeals = Math.round(leads * 0.10 * 12);
       const lostRevenue = lostDeals * deal;
       const recoveredRevenue = Math.round(lostRevenue * 0.75);
